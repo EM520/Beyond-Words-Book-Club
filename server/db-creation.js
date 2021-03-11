@@ -98,11 +98,16 @@ async function main() {
   });
 
   await conn.schema.createTable(`genres_users`, (table) => {
+    table.integer("genre_id").unsigned();
     table.foreign("genre_id").references("genres.id").onDelete("cascade");
+    table.integer("user_id").unsigned();
     table.foreign("user_id").references("users.id").onDelete("cascade");
   });
+
   await conn.schema.createTable(`book_collections`, (table) => {
+    table.integer("book_id").unsigned();
     table.foreign("book_id").references("books.id").onDelete("cascade");
+    table.integer("user_id").unsigned();
     table.foreign("user_id").references("users.id").onDelete("cascade");
   });
 
@@ -114,6 +119,29 @@ async function main() {
     username: "bookclubtest",
     password: sha512("bookclubtest" + salt),
     salt: salt,
+    email: "test@example.com",
+    first_name: "Elena",
+    last_name: "Lee",
+    bio: "Discover the secret to results that last!",
+    photo:
+      "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
+  });
+
+  await conn("genres").insert({
+    name: "Literary Fiction",
+  });
+
+  await conn("authors").insert({
+    first_name: "James",
+    last_name: "Clear",
+  });
+
+  await conn("books").insert({
+    title: "ddad",
+    copyright: "xxxxxx",
+    synopsis: "dadaf",
+    genres_id: 1,
+    author_id: 1,
   });
 
   // await conn('users').insert({
