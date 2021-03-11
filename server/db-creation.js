@@ -74,6 +74,7 @@ async function main() {
     table.string("title", 200);
     table.string("copyright", 200);
     table.string("synopsis", 500);
+    table.string("cover_pic", 900);
     table.integer("author_id").unsigned();
     table.foreign("author_id").references("authors.id").onDelete("cascade");
     table.integer("genres_id").unsigned();
@@ -137,9 +138,10 @@ async function main() {
   });
 
   await conn("books").insert({
-    title: "ddad",
-    copyright: "xxxxxx",
-    synopsis: "dadaf",
+    title: "Atomic Habits",
+    copyright: "2018 by James Clear",
+    synopsis: "Tiny changes ,remarkable Results",
+    cover_pic:"https://edit.org/images/cat/book-covers-big-2019101610.jpg",
     genres_id: 1,
     author_id: 1,
   });
