@@ -5,6 +5,7 @@ import { Counter } from './features/counter/Counter'
 import { Users } from './features/users/Users'
 import { LoginSignup } from './features/auth/LoginSignup'
 import Profile from './features/profile/Profile'
+import Signup from './features/signup/Signup'
 
 export default function App() {
   return (
@@ -37,6 +38,10 @@ export default function App() {
           <Route path="/users">
             <Users />
           </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+
           <AuthRoute path="/protected">
             <h2>test</h2>
           </AuthRoute>
