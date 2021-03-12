@@ -146,6 +146,26 @@ async function main() {
     author_id: 1,
   });
 
+  await conn("groups").insert({
+    book_id: 1,
+  });
+  
+  await conn("discussions").insert({
+    discussion: "BEST BOOK VOTED!!",
+    user_id:1, 
+    group_id:1,
+  });
+
+  await conn("genres_users").insert({
+    genre_id:1, 
+    user_id:1,
+  });
+
+  await conn("book_collections").insert({
+    book_id:1, 
+    user_id:1,
+  });
+
   // await conn('users').insert({
   //   title: 'post',
   //   body: 'bla',

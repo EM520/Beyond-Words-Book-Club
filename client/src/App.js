@@ -4,6 +4,7 @@ import AuthRoute from './features/auth/AuthRoute'
 import { Counter } from './features/counter/Counter'
 import { Users } from './features/users/Users'
 import { LoginSignup } from './features/auth/LoginSignup'
+import Profile from './features/profile/Profile'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             </li>
             <li>
               <Link to="/users">Users</Link>
+              <Profile />
             </li>
             <li>
               <Link to="/protected">Protected</Link>
