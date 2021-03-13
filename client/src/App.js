@@ -6,6 +6,7 @@ import { Users } from './features/users/Users'
 import { LoginSignup } from './features/auth/LoginSignup'
 import Profile from './features/profile/Profile'
 import Signup from './features/signup/Signup'
+import HomePage from './features/homepage/HomePage'
 
 export default function App() {
   return (
@@ -18,7 +19,7 @@ export default function App() {
             </li>
             <li>
               <Link to="/users">Users</Link>
-              <Profile />
+              {/* <Profile /> */}
             </li>
             <li>
               <Link to="/protected">Protected</Link>
@@ -30,7 +31,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Counter />
+            <HomePage />
           </Route>
           <Route path="/login">
             <LoginSignup />
