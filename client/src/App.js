@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import AuthRoute from './features/auth/AuthRoute'
+import { SplashPage } from './splashPage/SplashPage'
 import { Counter } from './features/counter/Counter'
 import { Users } from './features/users/Users'
 import { LoginSignup } from './features/auth/LoginSignup'
@@ -31,6 +32,9 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Counter />
+          </Route>
+          <Route exact path="/splash">
+            <SplashPage />
           </Route>
           <Route path="/login">
             <LoginSignup />
