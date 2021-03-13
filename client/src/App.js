@@ -17,7 +17,7 @@ export default function App() {
             </li>
             <li>
               <Link to="/users">Users</Link>
-              <Profile />
+              
             </li>
             <li>
               <Link to="/protected">Protected</Link>
@@ -35,7 +35,8 @@ export default function App() {
             <LoginSignup />
           </Route>
           <Route path="/users">
-            <Users />
+           <Profile />
+           <Users />
           </Route>
           <AuthRoute path="/protected">
             <h2>test</h2>
