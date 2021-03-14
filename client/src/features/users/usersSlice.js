@@ -6,8 +6,7 @@ export const usersSlice = createSlice({
   initialState: {
     value: 0,
     users: [
-      { id: 1, name: 'Douglas' },
-      { id: 2, name: 'John' },
+      
     ],
   },
   reducers: {
