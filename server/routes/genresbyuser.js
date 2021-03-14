@@ -3,6 +3,7 @@ import conn from '../db.js'
 // console.log(conn, 'conn')
 const router = express.Router()
 router.get('/genres', async (request, response) => {
+    console.log(genres.rows, 'genre')
     // const id = [req.user.id]
   const genres = await conn.raw(
       `

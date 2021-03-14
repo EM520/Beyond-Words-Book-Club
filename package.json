@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "antd": "^4.13.1",
+    "concurrently": "^6.0.0",
+    "react-icons": "^4.2.0"
   }
 }

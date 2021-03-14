@@ -1,4 +1,4 @@
-// import NavBar from '../nav/NavBar'
+import NavBar from '../headerfooter/NavBar'
 import GenresByUser from '../genresbyuser/GenresByUser'
 import styles from './HomePage.module.css'
 // import styles from './Homepage.css'
@@ -6,9 +6,12 @@ export default function HomePage(){
 
 return (
     <>
+    <div>
     {/* <NavBar/> */}
+    </div>
+    <div>
     <GenresByUser />
-
+    </div>
     <div 
     // style={{ backgroundImage: url('../../splashPage/splashimages/midbanner-sell-books.jpg') }} 
     > 
