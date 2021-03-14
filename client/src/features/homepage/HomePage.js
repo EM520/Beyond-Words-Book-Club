@@ -1,4 +1,4 @@
-import NavBar from '../nav/NavBar'
+import NavBar from '../headerfooter/NavBar'
 export default function HomePage(){
 
 return (

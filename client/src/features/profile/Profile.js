@@ -1,4 +1,4 @@
-import NavBar from "../nav/NavBar";
+import NavBar from "../headerfooter/NavBar";
 import styles from "./Profile.module.css";
 import { Link } from "react-router-dom";
 export default function Profile() {
