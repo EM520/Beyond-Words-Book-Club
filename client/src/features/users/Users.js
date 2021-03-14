@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectUsers, getUsers } from './usersSlice'
+import NavBar from '../nav/NavBar'
 
 export function Users() {
   const users = useSelector(selectUsers)
@@ -11,10 +12,13 @@ export function Users() {
     dispatch(getUsers())
   }, [])
   return (
+    <>
+    <NavBar />
     <div>
       {users.map((user) => (
         <p key={'user-' + user.id}>{user.name}</p>
       ))}
     </div>
+    </>
   )
 }
