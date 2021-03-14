@@ -3,12 +3,12 @@
 .navBar {
    
     width: 90%;
-    height: 120px;
+    height: 130px;
     margin: 0 auto;
-    background-color:#90DFE0;
+    background-color:#9fe5e7;
     background-position:absolute;
   }
-  .navLogoImg{
+  /* .navLogoImg{
     background-image: url('../pic/logo.png');
    background-position: relative;
    top:0;
@@ -19,7 +19,7 @@
     width: 300px;
     height: 100px;
     border-radius: 5px;
-  }
+  } */
 
   .navBar ul{
     display: flex;
@@ -30,9 +30,9 @@
   }
   .navBar li{
     list-style-type: none;
-    font-size: 45px; 
+    font-size: 3vw; 
     font-family: Amatic SC;
-    padding:30px 30px 30px 30px;
+    padding:10px 30px 30px 30px;
     
   }
   

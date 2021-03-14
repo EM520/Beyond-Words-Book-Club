@@ -26,7 +26,7 @@ export default function Profile() {
         </div>
         <div className={styles.profileImg}>
           <img src="https://i.pinimg.com/originals/4b/5d/19/4b5d1954fbb5b6bad18f0ac25c4ab3c3.png" />
-          <button>Update New Avatar</button>
+          <button>Update Profile Photo</button>
         </div>
       </div>
       <div className={styles.profileGenrelist}>

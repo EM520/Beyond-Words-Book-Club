@@ -8,6 +8,8 @@ import {LoginSignup}  from "./features/auth/Signup";
 import Profile from "./features/profile/Profile";
 import Signup from "./features/auth/Signup";
 import HomePage from "./features/homepage/HomePage";
+import About from "./features/about/About";
+
 import "./App.css";
 
 export default function App() {
@@ -40,6 +42,10 @@ export default function App() {
           </AuthRoute>
           <AuthRoute path="/login">
           <Signup />
+            
+          </AuthRoute>
+          <AuthRoute path="/about">
+          <About />
             
           </AuthRoute>
         </Switch>
