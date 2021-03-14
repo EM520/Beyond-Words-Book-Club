@@ -1,0 +1,10 @@
+.genreList{
+    justify-items: left;
+    height: 250px;
+    width: 250px;
+    object-fit:cover;
+}
+.genreListMain {
+    display:flex;
+
+}

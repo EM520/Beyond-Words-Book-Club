@@ -16,7 +16,7 @@ export function Users() {
     <NavBar />
     <div>
       {users.map((user) => (
-        <p key={'user-' + user.id}>{user.name}</p>
+        <p key={'user-' + user.id}>{user.first_name}</p>
       ))}
     </div>
     </>

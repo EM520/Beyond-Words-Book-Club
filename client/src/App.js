@@ -18,12 +18,19 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/about">About</Link>
               {/* <Profile /> */}
             </li>
             <li>
-              <Link to="/protected">Protected</Link>
+              <Link to="/protected">List of Genres</Link>
             </li>
+            <li>
+              <Link to="/protected">Top 20 Book Clubs</Link>
+            </li>
+            <li>
+              <Link to="/protected">Profile</Link>
+            </li>
+
           </ul>
         </nav>
 
@@ -33,8 +40,8 @@ export default function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/login">
-            <LoginSignup />
+          <Route path="/about">
+            {/* <About /> */}
           </Route>
           <Route path="/users">
             <Users />
