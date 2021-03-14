@@ -2,7 +2,7 @@
   background-color: rgb(61, 197, 231);
 } */
 .splashBg {
-  background-image: url(../pic/bookclub-splash.jpeg) ;
+  background-image: url(../pic/background-splash.jpg) ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,7 +15,7 @@
   left: 0;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 120%;
+  /* background-size: 100% 140%; */
   z-index: 1;
 }
 
@@ -23,7 +23,7 @@
   position: absolute;
   right: 0;
   color: black;
-  font-size: 50px;
+  font-size: 3.7vw;
   font-family:Amatic SC ;
   
   color:rgb(13, 150, 168);
@@ -34,7 +34,7 @@
 
 .splashLogo{
     width:30%;
-    height:32%;
+    height:30%;
     position:absolute;
     top:50px;
     left: 330px;
