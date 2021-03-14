@@ -8,8 +8,8 @@ export default function Splash(){
            
             <Link className={styles.splashlink} to="/login">Login/Signup</Link>
             <div className={styles.splashDiv}>
-            <span className={styles.splashLogo}></span>
-            <span className={styles.splashTag}></span>
+            {/* <span className={styles.splashLogo}></span>
+            <span className={styles.splashTag}></span> */}
             </div>
             
         

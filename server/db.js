@@ -3,7 +3,7 @@ import knex from 'knex'
 const db = knex({
   client: 'pg',
   connection: {
-    host: 'local host',
+    host: 'localhost',
     user: 'postgres',
     password: '',
     database: 'bookclub',
