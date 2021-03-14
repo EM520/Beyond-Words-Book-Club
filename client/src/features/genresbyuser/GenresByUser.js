@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectGenreUser, getGenreUser } from './genreuserSlice'
-import NavBar from '../nav/NavBar'
+// import NavBar from '../nav/NavBar'
 import styles from './GenreUser.module.css'
 
 export default function GenresByUser() {

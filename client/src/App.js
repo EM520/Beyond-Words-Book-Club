@@ -19,7 +19,7 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/login">About</Link>
               {/* <Profile /> */}
             </li>
             <li>
@@ -45,7 +45,7 @@ export default function App() {
             <SplashPage />
           </Route>
           <Route path="/login">
-            <LoginSignup />
+            <Login />
           </Route>
           <Route path="/users">
             <Users />
