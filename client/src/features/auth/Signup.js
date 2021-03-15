@@ -19,7 +19,7 @@ export  default function Signup() {
       <input className={styles.loginInput} type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Input username please"/>
       <input className={styles.loginInput} type="text" onChange={(e) => setPassword(e.target.value)} placeholder="Input password please"/>
       <div className={styles.loginSignupBtn}>
-        <button className={styles.loginBtn} type="submit">Log In</button>  
+        <button className={styles.loginBtn} onSubmit={handleSubmit}type="submit">Log In</button>  
         Or <button className={styles.signupBtn} type="submit">Create New Account</button>
       </div>
     </form>
