@@ -4,7 +4,7 @@ import { selectBookClub, getBookClub } from "./bookclubSlice"
 import styles from "./BookClub.module.css"
 
 export default function BookClub(id) {
-    // const id = 1
+  // const id = 1
   const bookclub = useSelector(selectBookClub)
   console.log(bookclub, "bc")
   const dispatch = useDispatch()
@@ -20,12 +20,13 @@ export default function BookClub(id) {
               style={{ backgroundImage: `url(${book.cover_pic})` }}
               className={styles.bookList}
             ></div>
-            <p>{book.title}</p>
-            <p>{book.copyright}</p>
-            <p>{book.synopsis}</p>
-            <p>{`${book.first_name} ${book.last_name}`}</p>
-
-
+            <button> Join This Club </button>
+            <div className={styles.description}>
+              <p>{book.title}</p>
+              <p>{book.copyright}</p>
+              <p>{book.synopsis}</p>
+              <p>{`${book.first_name} ${book.last_name}`}</p>
+            </div>
           </div>
         ))}
       </div>

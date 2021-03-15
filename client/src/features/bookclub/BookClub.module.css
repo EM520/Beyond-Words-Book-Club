@@ -4,4 +4,12 @@
     background-size: contain;
     background-repeat: no-repeat;
 
+
+}
+
+.description {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+
 }
