@@ -21,4 +21,20 @@ router.get('/bookclub/:bookId', async (request, response) => {
 
 })
 
+router.post("/bookclub", async (request, response) => {
+  // const id = req.user.bookId;
+  // const userId = request.user.id
+  const { book_id } = request.body;
+  await conn.raw(
+    `
+        INSERT INTO book_collections (book_id, user_id)
+        VALUES( ?,?)
+    `,
+    [book_id, 1]
+  );
+  response.json({ message: "book collection added" });
+});
+
+
+
 export default router
