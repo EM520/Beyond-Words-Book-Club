@@ -15,7 +15,6 @@ reducers: {
 },
 })
 
-// console.log(users)
 
 export const {
 setGenreUser,
