@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import AuthRoute from "./features/auth/AuthRoute";
 import { Counter } from "./features/counter/Counter";
-import Splash  from "./features/splashelena/Splash";
+import Splash  from "./features/splash/Splash";
 import { Users } from "./features/users/Users";
 import {LoginSignup}  from "./features/auth/Signup";
 import Profile from "./features/profile/Profile";
