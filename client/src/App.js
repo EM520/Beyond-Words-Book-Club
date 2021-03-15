@@ -27,7 +27,8 @@ export default function App() {
             <HomePage />
           </Route>
           <Route path="/about">
-            
+          <About />
+
           </Route>
           <Route path="/genres">
             {/* <Profile />
@@ -44,10 +45,9 @@ export default function App() {
           <Signup />
             
           </AuthRoute>
-          <AuthRoute path="/about">
-          <About />
+          {/* <AuthRoute path="/about"> */}
             
-          </AuthRoute>
+          {/* </AuthRoute> */}
         </Switch>
       </div>
     </Router>
