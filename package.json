@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^4.13.1",
+    "bootstrap": "^4.6.0",
     "concurrently": "^6.0.0",
+    "react-bootstrap": "^1.5.2",
     "react-icons": "^4.2.0"
   }
 }
