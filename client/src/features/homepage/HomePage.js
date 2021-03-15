@@ -1,4 +1,5 @@
 import NavBar from "../headerfooter/NavBar"
+import Footer from "../headerfooter/Footer";
 import GenresByUser from "../genresbyuser/GenresByUser"
 import styles from "./HomePage.module.css"
 // import styles from './Homepage.css'

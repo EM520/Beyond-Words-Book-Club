@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import NavBar from "../headerfooter/NavBar";
+import Footer from "../headerfooter/Footer";
 import styles from "./Profile.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios"
@@ -42,7 +43,7 @@ export default function Profile() {
         <button>Genre6</button>
 
       </div>
-      {/* <Footer/> */}
+      <div className={styles.footer}><Footer/></div>
     </>
   );
 }
