@@ -16,7 +16,7 @@ export default function NavBar(){
         <Link className={styles.navLink} to="/genres">List of Genres</Link>
       </li>
       <li>
-        <Link className={styles.navLink} to="/bookclub">Top 20 Book Club</Link>
+        <Link className={styles.navLink} to="/top20">Top 20 Book Club</Link>
       </li>
       <li>
         <Link className={styles.navLink} to="/profile">Profile</Link>
