@@ -83,6 +83,5 @@ export const profilesSlice = createSlice({
 //   export const selectCount = (state) => state.users.value;
   export const selectUsers = (state) => state.userState.user;
   export const selectGenreUser=(state) =>state.genreuserState.genreuser
-  export const selectUsers = (state) => state.users.user;
   export default profilesSlice.reducer;
   
