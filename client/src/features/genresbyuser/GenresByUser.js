@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import axios from "axios"
 import { useSelector, useDispatch } from "react-redux"
 import { selectGenreUser, getGenreUser } from "./genreuserSlice"
 import styles from "./GenreUser.module.css"
