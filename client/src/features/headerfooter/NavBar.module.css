@@ -39,5 +39,26 @@
   .navLink{
     text-decoration: none;
     color:rgb(61, 58, 58);
+    /* display: inline-block;
+    list-style-type: none;
+    position: relative; */
     
   }
+
+  /* The code commented out was an attempt
+  at making a dropdown menu of Genres
+  for the Genres navbar link */
+
+  /* .navLink:hover > ul {
+    display: block;
+ }
+
+ .subLink {
+  display: none;
+  position: absolute;
+  width: 100px;
+  left: 0;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+} */

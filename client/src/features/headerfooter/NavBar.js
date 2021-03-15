@@ -17,6 +17,11 @@ export default function NavBar(){
       </li>
       <li>
         <Link className={styles.navLink} to="/genres">List of Genres</Link>
+        {/* <ul>
+            <li><Link className={styles.subLink} to="/genre1">Sub Item 1</Link></li>
+            <li><Link className={styles.subLink} to="/genre2">Sub Item 2</Link></li>
+         </ul> */}
+         {/* This commented out code was an attempt at making a dropdown using CSS */}
       </li>
       <li>
         <Link className={styles.navLink} to="/bookclub">Top 20 Books</Link>
