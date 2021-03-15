@@ -1,5 +1,4 @@
 import styles from "./Footer.module.css"
-// import DropdownButton from 'react-bootstrap/DropdownButton'
 import {Link} from "react-router-dom"
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -27,7 +26,7 @@ export default function Footer(){
         
       </li>
       <li>
-      &copy; 2021 Lorum Ipsu, Inc.
+      <span>&copy; 2021 Lorum Ipsum, Inc.</span>
       </li>
     </ul>
   </nav>
