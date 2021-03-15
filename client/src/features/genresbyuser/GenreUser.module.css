@@ -1,10 +1,21 @@
 .genreList{
-    justify-items: left;
-    height: 250px;
-    width: 250px;
-    object-fit:cover;
+    height: 110px;
+    /* width: 200px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
 .genreListMain {
     display:flex;
+    flex-direction: row;
+
+    /* margin: 20px; */
+
+
+}
+.genreListsubMain {
+
+    margin: 5px;
+    align-items: center;
 
 }

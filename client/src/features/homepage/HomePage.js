@@ -11,7 +11,7 @@ export default function HomePage() {
       <div>
         <GenresByUser />
       </div>
-      <div
+      <div className= {styles.adPic}
       // style={{ backgroundImage: url('../../splashPage/splashimages/midbanner-sell-books.jpg') }}
       >
         {/* <img src='../../splashPage/splashimages/midbanner-sell-books.jpg' className= {styles.adPic}/> */}

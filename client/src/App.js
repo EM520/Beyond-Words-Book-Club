@@ -27,13 +27,13 @@ export default function App() {
           <Route path="/about">
             
           </Route>
-          <Route path="/users">
-            <Profile />
-            <Users />
+          <Route path="/genres">
+            {/* <Profile />
+            <Users /> */}
           </Route>
-          {/* <Route path="/signup">
-            <Signup />
-          </Route> */}
+          <Route path="/top20">
+            {/* <Signup /> */}
+          </Route>
 
           <AuthRoute path="/profile">
             <Profile/>
