@@ -1,0 +1,56 @@
+/* body {
+  background-color: rgb(61, 197, 231);
+} */
+.splashBg {
+  background-image: url(../pic/background-splash.jpg) ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgb(245, 241, 241);
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: 100% 140%; */
+  z-index: 1;
+}
+
+.splashlink {
+  position: absolute;
+  right: 0;
+  color: black;
+  font-size: 3.7vw;
+  font-family:Amatic SC ;
+  
+  color:rgb(13, 150, 168);
+  margin-right: 30px;
+  margin-top: 30px;
+ 
+}
+
+.splashLogo{
+    width:30%;
+    height:30%;
+    position:absolute;
+    top:50px;
+    left: 330px;
+    border-radius: 8px;
+    background-image: url('../pic/logo.png');
+    background-size: cover;
+    z-index: 2;
+}
+
+.splashTag{
+  width:25%;
+  height:40%;
+  position:absolute;
+  top:20px;
+  left:760px;
+  background-image: url('../pic/tag_line.png');
+  background-size: cover;
+  background-position: 30%;
+}
