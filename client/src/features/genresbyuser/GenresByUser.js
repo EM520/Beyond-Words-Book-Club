@@ -13,9 +13,9 @@ export default function GenresByUser() {
   }, [])
   return (
     <>
-      <div className="genreListMain">
+      <div className = {styles.genreListMain}>
         {genreuser.map((genre) => (
-          <div key={"guser-" + genre.id}>
+          <div key={"guser-" + genre.id}  className = {styles.genreListsubMain}>
             <div
               style={{ backgroundImage: `url(${genre.cover_pic})` }}
               className={styles.genreList}

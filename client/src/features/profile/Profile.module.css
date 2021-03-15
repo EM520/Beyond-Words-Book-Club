@@ -30,7 +30,7 @@
     width: 200px;
     height:50px;
     border-radius: 5px;
-    background-color: rgb(47, 240, 240);
+    background-color:#9fe5e7;
     font-weight: bold;
     font-size: 20px;
     color:rgb(51, 47, 47);
@@ -93,7 +93,7 @@
 .profileGenrelist button{
     width:180px;
     height:50px;
-    background-color:rgb(47, 240, 240);
+    background-color:#9fe5e7;
     border-radius:5px;
     border: transparent;
     box-shadow: 5px 5px 5px rgb(142, 156, 155);

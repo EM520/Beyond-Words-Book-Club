@@ -9,6 +9,8 @@ import Profile from "./features/profile/Profile";
 import Signup from "./features/auth/Signup";
 
 import HomePage from "./features/homepage/HomePage";
+import About from "./features/about/About";
+
 import "./App.css";
 
 export default function App() {
@@ -26,15 +28,16 @@ export default function App() {
             <HomePage />
           </Route>
           <Route path="/about">
-            
+          <About />
+
           </Route>
-          <Route path="/users">
-            <Profile />
-            <Users />
+          <Route path="/genres">
+            {/* <Profile />
+            <Users /> */}
           </Route>
-          {/* <Route path="/signup">
-            <Signup />
-          </Route> */}
+          <Route path="/top20">
+            {/* <Signup /> */}
+          </Route>
 
           <AuthRoute path="/profile">
             <Profile/>
@@ -43,6 +46,9 @@ export default function App() {
           <Signup />
             
           </AuthRoute>
+          {/* <AuthRoute path="/about"> */}
+            
+          {/* </AuthRoute> */}
         </Switch>
       </div>
     </Router>

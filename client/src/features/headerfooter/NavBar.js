@@ -1,11 +1,14 @@
 import styles from "./NavBar.module.css"
+// import DropdownButton from 'react-bootstrap/DropdownButton'
 import {Link} from "react-router-dom"
 import { FaShoppingCart } from "react-icons/fa";
+import logowords from '../pic/logowords.png'
 export default function NavBar(){
     return <nav className={styles.navBar} >
       
     <ul >
     <span className={styles.navLogoImg}></span>
+    <li><img src={logowords} alt="Logo" height="120px" /></li>
       <li>
         <Link className={styles.navLink} to="/home">Home</Link>
       </li>
@@ -14,9 +17,15 @@ export default function NavBar(){
       </li>
       <li>
         <Link className={styles.navLink} to="/genres">List of Genres</Link>
+        {/* <ul>
+            <li><Link className={styles.subLink} to="/genre1">Sub Item 1</Link></li>
+            <li><Link className={styles.subLink} to="/genre2">Sub Item 2</Link></li>
+         </ul> */}
+         {/* This commented out code was an attempt at making a dropdown using CSS */}
       </li>
       <li>
-        <Link className={styles.navLink} to="/bookclub">Top 20 Book Club</Link>
+        
+        <Link className={styles.navLink} to="/top20">Top 20 Book Club</Link>
       </li>
       <li>
         <Link className={styles.navLink} to="/profile">Profile</Link>

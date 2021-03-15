@@ -1,5 +1,5 @@
 .adPic {
-        /* background-image: url("../../splashPage/splashimages/midbanner-sell-books.jpg"); */
+        background-image: url(../../splashPage/splashimages/midbanner-sell-books.jpg);
     height: 220px;
-    width: 220px;    
+    /* width: 220px;     */
 }
