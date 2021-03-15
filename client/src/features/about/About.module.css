@@ -1,31 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+body {
+    background-color: #F0EFE0;
+}
+
 .content {
-    height: 310px;
-    width: 810px;
     position: absolute;
-    margin-top: 420px;
     display: flex;
     flex-direction: row;
+    width: 90%;
+    
+    
  }
 
  .content ul {
-    width: 815px;
     display: flex; 
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
-    padding: 0 0 0 0;
-    margin: 0;
+    margin-top: 40px;
+    margin-left: 3em;
+
 
 }
 
+h1 {
+    font-family: Amatic SC;
+    font-size: 3vw;
+}
+
 .content li {
-    width: 240px;
-    padding: 0px 30px 0px 30px;
-    background: white;
-    margin-right: 5px;
+    width: 30vw;
+    padding: 2em 2em 1em 2em;
+    background-color: #D17F45;
+    border: 5px solid  #F0EFE0;
+
+
 }
 
 span {
    text-align: left;
-   font-size: 12px;
+   /* font-size: 3vh; */
    font-weight: lighter;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: em;
+    
+}
+
+.people {
+    width: 100%;
+    height: auto;
+}
+
+.ad {
+    width: 100%;
+    height: auto;
 }

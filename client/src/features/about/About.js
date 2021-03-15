@@ -10,7 +10,7 @@ export default function About() {
     <div class={styles.content}>
       <ul>
         <li>
-          <h3>About Us</h3>
+          <h1>About Us</h1>
             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -21,10 +21,10 @@ export default function About() {
             </span>
         </li>
         <li>
-            <span><img src={peoplesitting} alt="Group Reading" height="120px" /></span>
+            <img className={styles.people} src={peoplesitting} alt="Group Reading"  />
         </li>
         <li>
-            <span><img src={adplaceholder} alt="Sponsored Ad" height="120px" /></span>             
+            <img className={styles.ad} src={adplaceholder} alt="Sponsored Ad"  />            
         </li>        
       </ul>
 
