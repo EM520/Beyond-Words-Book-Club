@@ -2,6 +2,10 @@ import NavBar from "../headerfooter/NavBar"
 import Footer from "../headerfooter/Footer";
 import GenresByUser from "../genresbyuser/GenresByUser"
 import styles from "./HomePage.module.css"
+import sellbooksad from '../pic/midbanner-sell-books.jpg'
+import diversereaders from '../pic/diversereaders.png'
+import adspecsclubpage from '../pic/adspecsclubpage.jpg'
+
 // import styles from './Homepage.css'
 export default function HomePage() {
   return (
@@ -9,18 +13,19 @@ export default function HomePage() {
       <div>
         <NavBar />
       </div>
-      <div>
+      <div className={styles.bookrow}>
         <GenresByUser />
       </div>
-      <div className= {styles.adPic}
-      // style={{ backgroundImage: url('../../splashPage/splashimages/midbanner-sell-books.jpg') }}
-      >
-        {/* <img src='../../splashPage/splashimages/midbanner-sell-books.jpg' className= {styles.adPic}/> */}
+      <div className={styles.horizontalad}>
+        <img className={styles.adPic} src={sellbooksad} alt="Sell Us Your Books"  />
+        <img className={styles.readers} src={diversereaders} alt="Sell Us Your Books"  />
+        <img className={styles.adPic2} src={adspecsclubpage} alt="Your Ad Here"  />
       </div>
-      <div> This is the Main page of Beyond Words Book Club</div>
 
-      {/* <div> NavBar will be on top</div>
-    <div>Footer will be on the bottom</div> */}
+
+      <div className={styles.footer}><Footer/></div>
+
     </>
   )
 }
+
