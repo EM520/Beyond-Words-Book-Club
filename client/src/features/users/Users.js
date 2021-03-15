@@ -14,7 +14,7 @@ export function Users() {
     <>
     <div>
       {users.map((user) => (
-        <p key={'user-' + user.id}>{user.name}</p>
+        <p key={'user-' + user.id}>{user.first_name}</p>
       ))}
     </div>
     </>

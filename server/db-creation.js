@@ -117,8 +117,8 @@ async function main() {
 
   const salt = createSalt(20);
   await conn("users").insert({
-    username: "bookclubtest",
-    password: sha512("bookclubtest" + salt),
+    username: "bookclub",
+    password: sha512("bookclub" + salt),
     salt: salt,
     email: "test@example.com",
     first_name: "Elena",

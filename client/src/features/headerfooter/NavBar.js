@@ -1,5 +1,5 @@
 import styles from "./NavBar.module.css"
-import DropdownButton from 'react-bootstrap/DropdownButton'
+// import DropdownButton from 'react-bootstrap/DropdownButton'
 import {Link} from "react-router-dom"
 import { FaShoppingCart } from "react-icons/fa";
 import logowords from '../pic/logowords.png'
@@ -24,7 +24,8 @@ export default function NavBar(){
          {/* This commented out code was an attempt at making a dropdown using CSS */}
       </li>
       <li>
-        <Link className={styles.navLink} to="/bookclub">Top 20 Books</Link>
+        
+        <Link className={styles.navLink} to="/top20">Top 20 Book Club</Link>
       </li>
       <li>
         <Link className={styles.navLink} to="/profile">Profile</Link>

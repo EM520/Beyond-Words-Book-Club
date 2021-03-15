@@ -1,0 +1,21 @@
+.genreList{
+    height: 110px;
+    /* width: 200px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.genreListMain {
+    display:flex;
+    flex-direction: row;
+
+    /* margin: 20px; */
+
+
+}
+.genreListsubMain {
+
+    margin: 5px;
+    align-items: center;
+
+}

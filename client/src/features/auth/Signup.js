@@ -11,7 +11,7 @@ export  default function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault()
     request.login(username, password).then((r) => {
-      history.push('/protected')
+      history.push('/home')
     })
   }
   return (
