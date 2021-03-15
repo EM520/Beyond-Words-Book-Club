@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios"
 import { useSelector, useDispatch } from "react-redux"
 
-
 export default function Profile() {
   return (
     <>

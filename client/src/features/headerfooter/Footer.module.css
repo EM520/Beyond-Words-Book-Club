@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+h3 {
+    font-size: 12px; 
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
+    font-weight: normal;
+}
+
+.footer {
+    width: 90%;
+    height: 110px;
+    margin: 0 auto;
+    background-color:#9fe5e7;
+    /* background-position:absolute; */
+  }
+
+  .footer ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 10vh;   
+
+  }
+
+  .footer li{
+    list-style-type: none;
+    font-size: 12px; 
+    font-family: Arial, Helvetica, sans-serif;
+    padding:10px 30px 30px 30px;
+    
+  }
+  
+  .footerLink{
+    text-decoration: none;
+    color:rgb(61, 58, 58);
+    /* display: inline-block;
+    list-style-type: none;
+    position: relative; */
+    
+  }
