@@ -1,4 +1,5 @@
 import NavBar from "../headerfooter/NavBar"
+import SearchBar from "../searchbar/SearchBar"
 import Footer from "../headerfooter/Footer";
 import GenresByUser from "../genresbyuser/GenresByUser"
 import styles from "./HomePage.module.css"
@@ -10,20 +11,26 @@ import adspecsclubpage from '../pic/adspecsclubpage.jpg'
 export default function HomePage() {
   return (
     <>
+    {/* <div className={styles.main}> */}
       <div>
         <NavBar />
+        <SearchBar />
       </div>
+      <div className={styles.bookscroll}>
       <div className={styles.bookrow}>
         <GenresByUser />
+        </div>
       </div>
       <div className={styles.horizontalad}>
         <img className={styles.adPic} src={sellbooksad} alt="Sell Us Your Books"  />
         <img className={styles.readers} src={diversereaders} alt="Sell Us Your Books"  />
         <img className={styles.adPic2} src={adspecsclubpage} alt="Your Ad Here"  />
       </div>
+      <Footer/>
+    {/* </div> */}
 
 
-      <div><Footer/></div>
+
 
     </>
   )
