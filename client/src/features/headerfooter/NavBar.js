@@ -28,7 +28,7 @@ export default function NavBar(){
         <Link className={styles.navLink} to="/top20">Top 20 List</Link>
       </li>
       <li>
-        <Link className={styles.navLink} to="/profile">Profile</Link>
+        <Link className={styles.navLink} to="/profile">Profile</Link>&nbsp; / &nbsp; Logout
       </li>
       <FaShoppingCart />
     </ul>
