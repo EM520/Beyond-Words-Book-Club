@@ -1,25 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
 .navBar {
-   
-    width: 90%;
     height: 20vh;
     margin: 0 auto;
     background-color:#9fe5e7;
     background-position:absolute;
   }
-  /* .navLogoImg{
-    background-image: url('../pic/logo.png');
-   background-position: relative;
-   top:0;
-   left:0;
-   bottom: 0;
-   right:0;
-    background-size: 100%;
-    width: 300px;
-    height: 100px;
-    border-radius: 5px;
-  } */
 
   .navBar ul{
     display: flex;
