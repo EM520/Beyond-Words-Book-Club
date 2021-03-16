@@ -8,9 +8,18 @@ export const profilesSlice = createSlice({
         // { id: 1, name: 'Douglas' },
         // { id: 2, name: 'John' },
       ],
-      genreusers: [],
-
-    
+      genreusers: [
+        // {id:1,name:"Romans"},
+        // {id:2,name:"LOVE"},
+        // {id:3,name:"Historical Fiction"},
+        // {id:4,name:"Detective and Mystery"}
+      ],
+      bookusers:[
+        //  {id:1,title:"Atomic"},
+        //  {id:2,title:"With the Wind "},
+        //  {id:3,title:"西游记 "},
+        //  {id:4,title:"三国演义 "}
+      ]
     },
     reducers: {
     //   increment: (state) => {
@@ -32,6 +41,9 @@ export const profilesSlice = createSlice({
       setGenreUsers: (state, action) => {
         state.genreusers = action.payload;
       },
+      setBookUsers: (state, action) => {
+        state.bookusers = action.payload;
+      },
     },
   });
   
@@ -43,6 +55,7 @@ export const profilesSlice = createSlice({
     // incrementByAmount,
     setUsers,
     setGenreUsers,
+    setBookUsers
   } = profilesSlice.actions;
   
   // The function below is called a thunk and allows us to perform async logic. It
@@ -63,26 +76,42 @@ export const profilesSlice = createSlice({
   //   }
   // }
   
-  export const getUsers = () => (dispatch) => {
+  export const getUser = () => (dispatch) => {
     axios.get("/api/users").then((r) => {
       // const action = setUsers(r.data)
       dispatch(setUsers(r.data));
     });
   };
 
+  export const getBookUser = () =>(dispatch) =>{
+    axios.get("/api/books").then((r)=>{
+        dispatch(setBookUsers(r.data))
+    })
+}
+
   export const getGenreUser = () =>(dispatch) =>{
-      axios.get("/api/genreusers").then((r)=>{
+      axios.get("/api/genres").then((r)=>{
           dispatch(setGenreUsers(r.data))
       })
   }
+
+  export const deleteBookUser = (idNum) => (dispatch) => {
+    // console.log(typeof idNum, idNum, "del");
+    axios.delete("/api/books/" + idNum).then((resp) => {
+     
+      dispatch(getBookUser());
+      
+    });
+  };
   
   // The function below is called a selector and allows us to select a value from
   // the state. Selectors can also be defined inline where they're used instead of
   // in the slice file. For example: `useSelector((state) => state.counter.value)`
   
 //   export const selectCount = (state) => state.users.value;
-  export const selectUsers = (state) => state.userState.user;
-  export const selectGenreUser=(state) =>state.genreuserState.genreuser
-  export const selectUsers = (state) => state.users.user;
+  export const selectUser = (state) => state.userState.users;
+  export const selectBookUser=(state) =>state.bookuserState.bookusers;
+  export const selectGenreUser=(state) =>state.genreuserState.genreusers;
+  
   export default profilesSlice.reducer;
   
