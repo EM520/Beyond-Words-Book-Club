@@ -1,49 +1,112 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import NavBar from "../headerfooter/NavBar";
 import Footer from "../headerfooter/Footer";
 import styles from "./Profile.module.css";
-import { Link } from "react-router-dom";
-import axios from "axios"
+
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectUser,
+  selectBookUser,
+  selectGenreUser,
+  getUser,
+  getBookUser,
+  getGenreUser,
+} from "./profileSlice";
+
+
 import { useSelector, useDispatch } from "react-redux"
 
+
 export default function Profile() {
+  const user = useSelector(selectUser);
+  const bookuser = useSelector(selectBookUser);
+  const genreuser = useSelector(selectGenreUser);
+  const dispatch = useDispatch();
+
+  const [text, setText] = useState("");
+  const [username, setUserName] = useState("");
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
+  useEffect(() => {
+    dispatch(getUser());
+    dispatch(getBookUser());
+    dispatch(getGenreUser());
+  }, []);
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setMessage("Congrats!Profile Updated!");
+
+    setUserName("");
+    setEmail("");
+    setBio("");
+  }
+
   return (
     <>
       <NavBar />
-      <Link className={styles.backHome} to="/home">
-        Back Home Page
-      </Link>
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
           <div className={styles.profileGrouplist}>
-          <p>Groups 1</p>
-          <p>Groups 2</p>
-          <p>Groups 3</p>
-          <p>Groups 4</p>
-          <p>Groups 5</p>
+            {bookuser.map((item) => (
+              <p key={"bookuser-" + item.id}>{item.title}</p>
+            ))}
           </div>
-         
-          <form>
-            <input placeholder="Change your Username here"/>
-            <input placeholder="Change your Password here"/>
-            <input placeholder="Change your Bio here"/>
+
+          <form onSubmit={handleSubmit} className={styles.profileForm}>
+            <div className={styles.profileUpdate}>
+              <input
+                value={username}
+                type="text"
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Change your Username here"
+              />
+
+              <input
+                value={email}
+                type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Change your Password here"
+              />
+
+              <input
+                value={bio}
+                type="text"
+                onChange={(e) => setBio(e.target.value)}
+                placeholder="Change your Bio here"
+              />
+            </div>
+            <div className={styles.profileSubmit}>
+              <button>Submit</button>
+              <label htmlFor="profileupdate">{message}</label>
+            </div>
           </form>
         </div>
-        <div className={styles.profileImg}>
-          <img src="https://i.pinimg.com/originals/4b/5d/19/4b5d1954fbb5b6bad18f0ac25c4ab3c3.png" />
-          <button>Update Profile Photo</button>
+        <div>
+          {user.map((item) => (
+            <div key={"user-" + item.id} className={styles.profileImg}>
+              <img src={item.photo} />
+              <button>Update Profile Photo</button>
+            </div>
+          ))}
         </div>
       </div>
-      <div className={styles.profileGenrelist}>
-        <button>Genre1</button>
-        <button>Genre2</button>
-        <button>Genre3</button>
-        <button>Genre4</button>
-        <button>Genre5</button>
-        <button>Genre6</button>
 
+      <div className={styles.profileGenrelist}>
+        {genreuser.map((item) => (
+
+        <p key={"genreuser-" + item.id}>{item.name}
+          <input type="checkbox"/>
+          <span class="checkmark"></span>
+        </p>
+          
+        ))}
       </div>
+
       <div className={styles.footer}><Footer/></div>
+
     </>
   );
 }
+// src="https://i.pinimg.com/originals/4b/5d/19/4b5d1954fbb5b6bad18f0ac25c4ab3c3.png"

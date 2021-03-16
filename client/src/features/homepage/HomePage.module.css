@@ -30,6 +30,11 @@
 
 }
 .adPic {
+
+  background-image: url(../pic/midbanner-sell-books.jpg);
+  height: 220px;
+}
+
     width: 90%;
     height: auto;
     grid-column-start: 1;
@@ -54,3 +59,4 @@
     grid-row-start: 2;
     grid-row-end: 5;
 }
+

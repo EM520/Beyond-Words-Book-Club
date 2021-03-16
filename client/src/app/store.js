@@ -11,6 +11,12 @@ export default configureStore({
     users: usersReducer,
     auth: authReducer,
     genreuser: genreuserReducer,
+
+    userState:profilesReducer,
+    bookuserState:profilesReducer,
+    genreuserState:profilesReducer,
+
     bookclub: bookclubReducer,
+
   },
 })
