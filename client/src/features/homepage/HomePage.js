@@ -23,9 +23,10 @@ export default function HomePage() {
       </div>
 
 
-      <div className={styles.footer}><Footer/></div>
+      <div><Footer/></div>
 
     </>
   )
 }
 
+  
