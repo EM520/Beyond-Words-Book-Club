@@ -3,7 +3,7 @@
 .navBar {
    
     width: 90%;
-    height: 130px;
+    height: 20vh;
     margin: 0 auto;
     background-color:#9fe5e7;
     background-position:absolute;
@@ -30,7 +30,7 @@
   }
   .navBar li{
     list-style-type: none;
-    font-size: 3vw; 
+    font-size: 2.6vw; 
     font-family: Amatic SC;
     padding:10px 30px 30px 30px;
     
@@ -43,6 +43,12 @@
     list-style-type: none;
     position: relative; */
     
+  }
+
+  .logoWords {
+      max-width:  100%;
+      max-height: 120px;
+      object-position: center;
   }
 
   /* The code commented out was an attempt
