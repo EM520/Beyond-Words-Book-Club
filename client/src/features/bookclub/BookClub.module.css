@@ -1,5 +1,6 @@
 .bookList{
-    height: 200px;
+    height: 16vw;
+    width:18vw;
     /* width: 200px; */
     background-size: contain;
     background-repeat: no-repeat;
@@ -7,15 +8,17 @@
 }
 
 .description {
-    width: 200px;
-    height: 200px;
+    width: 15vw;
+    height: 13vw;
     border: 1px solid black;
 
 }
 
 .bookclubmain {
- height: 500px;
- width:300px;
+ height: 500vw;
+ /* margin: 0 auto; */
+
+ /* width:300vw; */
  /* border: 1px solid black; */
  /* margin: 0 auto; */
 
@@ -27,4 +30,52 @@
     width: 100%
     
   }
+.discussionmain{
+    height: 32vw;
+    width: 70vw;
+    border: 1px solid black;
 
+}
+.clubmain{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+
+}
+
+.discussionlist {
+    height: 25vw;
+    border-bottom: 1px solid black;
+}
+.discImg {
+    height: 30px;
+    width: 30px;
+}
+.boxcomment {
+    margin: 10px;
+    height: 4vw;
+    width: 60vw;
+    text-indent: 5px;
+    background-color: rgb(229, 226, 226);
+    outline: none;
+
+}
+.join {
+    height: 30px;
+    width: 100px;
+    font-family: "Amatic SC";
+    font-size: 20px;
+    background-color: rgb(55, 55, 177);
+    color:rgb(229, 226, 226);
+    margin: 10px;
+}
+.commentMain {
+    display: flex;
+    /* margin: 10px; */
+
+}
+.commentMain img {
+    height: 48px;
+  width: 48px;
+  margin: 10px;
+}

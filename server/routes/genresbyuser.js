@@ -2,8 +2,9 @@ import express from 'express'
 import conn from '../db.js'
 // console.log(conn, 'conn')
 const router = express.Router()
-router.get('/genres', async (request, response) => {
-    // const id = [req.user.id]
+router.get('/genresuser', async (request, response) => {
+  // console.log(request.user.id, 'id')
+    const id = [req.user.id]
   const genre = await conn.raw(
       `
       SELECT DISTINCT ON (g.id) b.title, b.cover_pic, g.name, g.id
@@ -12,7 +13,7 @@ router.get('/genres', async (request, response) => {
       LEFT OUTER JOIN books b on g.id = b.genres_id
       WHERE gu.user_id = ?
       `,
-      [1]
+      [id]
       )
      
     response.json(genre.rows);
