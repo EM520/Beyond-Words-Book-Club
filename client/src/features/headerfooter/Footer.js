@@ -21,12 +21,12 @@ export default function Footer(){
       </li>
       <li>
         <h3>CONNECT</h3>
-    
-        <FaFacebook size="30px"/>&nbsp;&nbsp;<FaTwitter size="30px"/>&nbsp;&nbsp;<FaInstagram size="30px"/>
-        
+      <div className={styles.fa}>
+        <FaFacebook />&nbsp;&nbsp;<FaTwitter />&nbsp;&nbsp;<FaInstagram />
+      </div>
       </li>
       <li>
-      <span>&copy; 2021 Lorum Ipsum, Inc.</span>
+      <div className={styles.copyright}>&copy; 2021 Lorum Ipsum, Inc.</div>
       </li>
     </ul>
   </nav>
