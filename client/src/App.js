@@ -11,6 +11,7 @@ import Signup from "./features/auth/Signup";
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
 import BookClub from "./features/bookclub/BookClub"
+import Signupform from "./features/auth/Signupform";
 
 import "./App.css";
 
@@ -46,6 +47,10 @@ export default function App() {
           </AuthRoute>
           <AuthRoute path="/login">
           <Signup />
+            
+          </AuthRoute>
+          <AuthRoute path="/signupform">
+          <Signupform />
             
           </AuthRoute>
           {/* <AuthRoute path="/about"> */}
