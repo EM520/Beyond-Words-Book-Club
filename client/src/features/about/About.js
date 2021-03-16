@@ -1,4 +1,5 @@
 import NavBar from "../headerfooter/NavBar";
+import Footer from "../headerfooter/Footer";
 import styles from "./About.module.css";
 import peoplesitting from '../pic/peoplesitting.jpg'
 import adplaceholder from '../pic/adplaceholder.png'
@@ -29,6 +30,7 @@ export default function About() {
       </ul>
 
   </div>
-        {/* <Footer/> */}
+  <div className={styles.footer}><Footer/></div>
+
       </>
   )}

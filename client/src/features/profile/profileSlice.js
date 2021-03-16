@@ -109,9 +109,11 @@ export const profilesSlice = createSlice({
   // in the slice file. For example: `useSelector((state) => state.counter.value)`
   
 //   export const selectCount = (state) => state.users.value;
+
   export const selectUser = (state) => state.userState.users;
   export const selectBookUser=(state) =>state.bookuserState.bookusers;
   export const selectGenreUser=(state) =>state.genreuserState.genreusers;
   
+
   export default profilesSlice.reducer;
   

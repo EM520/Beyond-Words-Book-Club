@@ -8,7 +8,7 @@ export default function NavBar(){
       
     <ul >
     <span className={styles.navLogoImg}></span>
-    <li><img src={logowords} alt="Logo" height="120px" /></li>
+    <li><img className={styles.logoWords} src={logowords} alt="Logo"  /></li>
       <li>
         <Link className={styles.navLink} to="/home">Home</Link>
       </li>
@@ -16,7 +16,7 @@ export default function NavBar(){
         <Link className={styles.navLink} to="/about">About</Link>
       </li>
       <li>
-        <Link className={styles.navLink} to="/genres">List of Genres</Link>
+        <Link className={styles.navLink} to="/genres">Genre List</Link>
         {/* <ul>
             <li><Link className={styles.subLink} to="/genre1">Sub Item 1</Link></li>
             <li><Link className={styles.subLink} to="/genre2">Sub Item 2</Link></li>
@@ -25,7 +25,7 @@ export default function NavBar(){
       </li>
       <li>
         
-        <Link className={styles.navLink} to="/top20">Top 20 Book Club</Link>
+        <Link className={styles.navLink} to="/top20">Top 20 List</Link>
       </li>
       <li>
         <Link className={styles.navLink} to="/profile">Profile</Link>

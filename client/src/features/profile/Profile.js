@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../headerfooter/NavBar";
+import Footer from "../headerfooter/Footer";
 import styles from "./Profile.module.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectUser,
@@ -10,6 +12,10 @@ import {
   getBookUser,
   getGenreUser,
 } from "./profileSlice";
+
+
+import { useSelector, useDispatch } from "react-redux"
+
 
 export default function Profile() {
   const user = useSelector(selectUser);
@@ -98,7 +104,8 @@ export default function Profile() {
         ))}
       </div>
 
-      {/* <Footer/> */}
+      <div className={styles.footer}><Footer/></div>
+
     </>
   );
 }

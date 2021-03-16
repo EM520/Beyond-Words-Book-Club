@@ -10,6 +10,7 @@ import Signup from "./features/auth/Signup";
 
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
+import BookClub from "./features/bookclub/BookClub"
 
 import "./App.css";
 
@@ -36,6 +37,7 @@ export default function App() {
             <Users /> */}
           </Route>
           <Route path="/top20">
+            <BookClub />
             {/* <Signup /> */}
           </Route>
 
