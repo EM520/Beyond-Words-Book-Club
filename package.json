@@ -6,7 +6,8 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "cd server && yarn start",
-    "start": "concurrently \"yarn run client\" \"yarn run server\""
+    "start": "concurrently \"yarn run client\" \"yarn run server\"",
+    "db-init": "cd server && node db-creation.js"
   },
   "keywords": [],
   "author": "",
