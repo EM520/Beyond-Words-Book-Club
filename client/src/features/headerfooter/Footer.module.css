@@ -18,7 +18,7 @@ h3 {
   .footer ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
     margin-left: 10vh;   
 
@@ -39,4 +39,13 @@ h3 {
     list-style-type: none;
     position: relative; */
     
+  }
+
+  .fa {
+    font-size: 2vw;
+  }
+
+  .copyright {
+    margin-left: 30vw;
+    margin-top: 3.5vh;
   }
