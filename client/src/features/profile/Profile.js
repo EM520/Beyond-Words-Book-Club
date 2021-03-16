@@ -13,10 +13,6 @@ import {
   getGenreUser,
 } from "./profileSlice";
 
-
-import { useSelector, useDispatch } from "react-redux"
-
-
 export default function Profile() {
   const user = useSelector(selectUser);
   const bookuser = useSelector(selectBookUser);
@@ -95,17 +91,18 @@ export default function Profile() {
 
       <div className={styles.profileGenrelist}>
         {genreuser.map((item) => (
-
-        <p key={"genreuser-" + item.id}>{item.name}
-          <input type="checkbox"/>
-          <span class="checkmark"></span>
-        </p>
-          
+          <p key={"genreuser-" + item.id}>
+            {item.name}
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </p>
         ))}
       </div>
 
-      <div className={styles.footer}><Footer/></div>
-
+      {/* <div className={styles.footer}>
+        
+      </div> */}
+      <Footer />
     </>
   );
 }

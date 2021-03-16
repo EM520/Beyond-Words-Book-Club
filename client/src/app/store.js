@@ -4,6 +4,7 @@ import usersReducer from '../features/users/usersSlice'
 import authReducer from '../features/auth/auth'
 import genreuserReducer from '../features/genresbyuser/genreuserSlice'
 import bookclubReducer from '../features/bookclub/bookclubSlice'
+import profilesReducer from '../features/profile/profileSlice'
 
 export default configureStore({
   reducer: {
