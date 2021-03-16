@@ -1,20 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
-// import request from "../../utils/request";
+import request from "../../utils/request";
 
 export const bookclubSlice = createSlice({
   name: "bookclub",
   initialState: {
     bookclub: [],
+    discussion: [],
   },
   reducers: {
     setBookClub: (state, action) => {
       state.bookclub = action.payload
     },
+    setDiscussion: (state, action) => {
+        state.discussion = action.payload
+    }
   },
 })
 
-export const { setBookClub } = bookclubSlice.actions
+export const { setBookClub, setDiscussion } = bookclubSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -29,9 +33,31 @@ export const getBookClub = (id) => (dispatch) => {
   })
 }
 
+export const getDiscussion = (id) => (dispatch) => {
+    console.log(id, 'id')
+    axios.get("/api/discussions/"+ id)
+    .then((r) => {
+        dispatch(setDiscussion(r.data))
+        console.log(r.data, 'disc')
+    })
+
+}
+
+export const addDiscussion = (obj) => (dispatch) => {
+    console.log(obj.parent, 'obj')
+    // debugger
+
+    request.post("/discussions", { discussion: obj.comment, parent_id: obj.parent, group_id: obj.groupid  })
+    .then((resp) => {
+        console.log(resp, "add discussion")
+        dispatch(getDiscussion())
+      })
+    }
+
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
 
 export const selectBookClub = (state) => state.bookclub.bookclub
+export const selectDiscussion = (state) => state.bookclub.discussion
 export default bookclubSlice.reducer

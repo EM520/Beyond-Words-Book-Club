@@ -20,7 +20,7 @@ export default function BookDetail(id) {
               style={{ backgroundImage: `url(${book.cover_pic})` }}
               className={styles.bookList}
             ></div>
-            <button> Join This Club </button>
+            <button className={styles.join}> Join This Club </button>
             <div className={styles.description}>
               <p>{book.title}</p>
               <p>{book.copyright}</p>
