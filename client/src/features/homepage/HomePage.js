@@ -18,10 +18,10 @@ export default function HomePage() {
 
     <div className={styles.homepageTop}>
     <h2>Username's favorite genres!</h2>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <SearchBar />
     </div>
+
     <div className={styles.dumbArrow}><GiBottomRight3DArrow size={40}/></div>
       <div className={styles.bookscroll}>
         <div className={styles.bookrow}>

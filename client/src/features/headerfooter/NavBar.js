@@ -25,10 +25,10 @@ export default function NavBar(){
       </li>
       <li>
         
-        <Link className={styles.navLink} to="/top20">Top 20 List</Link>
+        <Link className={styles.navLink} to="/top20">Top 20 Clubs</Link>
       </li>
       <li>
-        <Link className={styles.navLink} to="/profile">Profile</Link>&nbsp; / &nbsp; Logout
+        <Link className={styles.navLink} to="/profile">Profile</Link>&nbsp; / &nbsp; <Link className={styles.navLink} to="/realtop20">Logout</Link>
       </li>
       <FaShoppingCart />
     </ul>
