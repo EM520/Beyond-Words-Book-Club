@@ -41,7 +41,7 @@ export default function Profile() {
     setBio("");
   }
 function handleClick(id){
-  dispatch(deleteBookUser(id));
+  dispatch(deleteBookUser(7));
 }
   return (
     <>
@@ -53,7 +53,9 @@ function handleClick(id){
               
               <div className={styles.profileGrouplistp}>
               
+              <img src={item.cover_pic} width="50px" height="60px"/>
               <p key={"bookuser-" + item.id}>{item.title}</p>
+              
               <FaTrash onClick={()=>{handleClick(item.id)}}/>
               <span>ROMOVE THIS GROUP</span>
               
