@@ -93,7 +93,8 @@ async function main() {
     table.increments("id");
     table.string("discussion");
     table.integer("user_id").unsigned();
-    table.integer("parent_id").unsigned();
+    table.increments("parent_id", { primaryKey: false }).unsigned();
+    table.timestamp("timestamp")
     table.foreign("user_id").references("users.id").onDelete("cascade");
     table.integer("group_id").unsigned();
     table.foreign("group_id").references("groups.id").onDelete("cascade");
@@ -109,9 +110,12 @@ async function main() {
 
   await conn.schema.createTable(`book_collections`, (table) => {
     table.integer("book_id").unsigned();
+
     // table.foreign("book_id").references("books.id").onDelete("cascade");
     table.integer("user_id").unsigned();
     // table.foreign("user_id").references("users.id").onDelete("cascade");
+
+   
   });
 
   // username
@@ -163,10 +167,10 @@ async function main() {
   //   user_id:1,
   // });
 
-  // await conn("book_collections").insert({
-  //   book_id:1, 
-  //   user_id:1,
-  // });
+  await conn("book_collections").insert({
+    book_id:1, 
+    user_id:1,
+  });
 
   // await conn('users').insert({
   //   title: 'post',

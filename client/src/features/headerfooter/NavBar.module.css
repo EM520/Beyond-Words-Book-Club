@@ -37,6 +37,12 @@
       object-position: center;
   }
 
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+    z-index: 100;
+  }
+
   /* The code commented out was an attempt
   at making a dropdown menu of Genres
   for the Genres navbar link */

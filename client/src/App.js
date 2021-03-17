@@ -29,14 +29,16 @@ export default function App() {
           <Route path="/home">
             <HomePage />
           </Route>
-          <Route path="/about">
-          <About />
 
+          <Route path="/about">
+            <About />
           </Route>
+
           <Route path="/genres">
             {/* <Profile />
             <Users /> */}
           </Route>
+
           <Route path="/top20">
             <BookClub />
             {/* <Signup /> */}
@@ -45,16 +47,16 @@ export default function App() {
           <AuthRoute path="/profile">
             <Profile/>
           </AuthRoute>
+
           <AuthRoute path="/login">
-          <Signup />
-            
+            <Signup />
           </AuthRoute>
+
           <AuthRoute path="/signupform">
-          <Signupform />
-            
+            <Signupform />
           </AuthRoute>
+
           {/* <AuthRoute path="/about"> */}
-            
           {/* </AuthRoute> */}
         </Switch>
       </div>
