@@ -108,15 +108,7 @@ async function main() {
   //   table.foreign("user_id").references("users.id").onDelete("cascade");
   // });
 
-  await conn.schema.createTable(`book_collections`, (table) => {
-    table.integer("book_id").unsigned();
 
-    // table.foreign("book_id").references("books.id").onDelete("cascade");
-    table.integer("user_id").unsigned();
-    // table.foreign("user_id").references("users.id").onDelete("cascade");
-
-   
-  });
 
   // username
   // [[deleted]]

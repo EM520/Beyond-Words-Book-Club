@@ -9,7 +9,7 @@ router.get('/books', async (request, response) => {
     // const id = [req.user.id]
   const booktitle = await conn.raw(
       `
-    SELECT b.title , b.cover_pic FROM books b
+    SELECT b.id ,b.title , b.cover_pic FROM books b
     INNER JOIN book_collections bc
     ON b.id = bc.book_id
     WHERE bc.user_id=?
