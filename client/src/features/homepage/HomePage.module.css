@@ -1,3 +1,20 @@
+h2 {
+  font-family: Amatic SC;
+  font-size: 2vw;
+}
+
+.homepageTop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 9vh;
+}
+
+.dumbArrow {
+  margin-left: 30vh;  
+  color:  #e4843f;
+}
+
 .bookscroll {
   margin: 0 auto;
   width: 74%;

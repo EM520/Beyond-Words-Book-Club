@@ -13,8 +13,9 @@ export default function BookClub() {
         <BookDetail />
         <Discussions />
         </div>
+        <Footer/>
       </div>
-      <div className={styles.footer}><Footer/></div>
+
     </>
   )
 }
