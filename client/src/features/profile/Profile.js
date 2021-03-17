@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../headerfooter/NavBar";
 import Footer from "../headerfooter/Footer";
 import styles from "./Profile.module.css";
+import { FaTrash } from "react-icons/fa";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -11,6 +12,7 @@ import {
   getUser,
   getBookUser,
   getGenreUser,
+  deleteBookUser
 } from "./profileSlice";
 
 export default function Profile() {
@@ -38,7 +40,9 @@ export default function Profile() {
     setEmail("");
     setBio("");
   }
-
+function handleClick(id){
+  dispatch(deleteBookUser(id));
+}
   return (
     <>
       <NavBar />
@@ -46,8 +50,16 @@ export default function Profile() {
         <div className={styles.profileInfo}>
           <div className={styles.profileGrouplist}>
             {bookuser.map((item) => (
+              
+              <div className={styles.profileGrouplistp}>
+              
               <p key={"bookuser-" + item.id}>{item.title}</p>
+              <FaTrash onClick={()=>{handleClick(item.id)}}/>
+              <span>ROMOVE THIS GROUP</span>
+              
+              </div>
             ))}
+            
           </div>
 
           <form onSubmit={handleSubmit} className={styles.profileForm}>

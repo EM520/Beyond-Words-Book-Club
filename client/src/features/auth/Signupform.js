@@ -1,12 +1,25 @@
-import { useState } from 'react'
+import React,{ useState,useEffect } from 'react'
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import request from '../../utils/request'
 import styles from "./Signupform.module.css"
 import NavBar from "../headerfooter/NavBar";
-
+import Footer from "../headerfooter/Footer";
+import {
+  
+  selectGenre,
+   setGenres,
+  getGenres,
+  
+} from "./signupformSlice";
 
 export default function Signupform (){
+const genre = useSelector(selectGenre);
+  const dispatch = useDispatch();
+  useEffect(() => {
 
+    dispatch(getGenres());
+  }, []);
 
 function handleSubmit(){
 
@@ -15,6 +28,7 @@ function handleSubmit(){
     return(
         <>
         <NavBar />
+        
         <div className={styles.signupform}>
         
             <form onSubmit={handleSubmit} >
@@ -23,20 +37,41 @@ function handleSubmit(){
                 <input placeholder="Input your password"/>
                 <input placeholder="Comfirm your password"/>
                 <input placeholder="Input your Email"/>
-                <textarea placeholder="Talk about yourself"></textarea>
+                <textarea name="signupform1" rows="8" cols="50"
+                placeholder="Talk about yourself"></textarea>
                 </div>
 
                 <div className={styles.signupform2}> 
-                <textarea placeholder="Input your Bio"></textarea>
+                <div className={styles.signupAvatar}>
+                Upload Your Avatar
+               </div>
+               <button className={styles.uploadBtn}>Upload your avatar</button>
                 <input placeholder="Input your first name"/>
                 <input placeholder="Input your last name"/>
-                <button>Upload your avatar</button>
                 </div>
-
+                
             </form>
-            <button>Submit</button>
+            
+                    <button>Submit</button>
+                    <div>
+                <h1>Choose your Favorite Genre</h1>   
+            <div className={styles.signupformGenreList}> 
+            
+             {genre.map((item)=>(
+                 <>
+                        <p key={"genre-" + item.id}>{item.name}</p>
+                        <input type="checkbox" />
+                    <span class="checkmark"></span>
+                </>
+                    ))}
+            </div>
+            </div>
+            <Footer/>
         </div>
+        
+         
         </>
+       
         )
     
 }

@@ -5,6 +5,7 @@ import authReducer from '../features/auth/auth'
 import genreuserReducer from '../features/genresbyuser/genreuserSlice'
 import bookclubReducer from '../features/bookclub/bookclubSlice'
 import profilesReducer from '../features/profile/profileSlice'
+import signupformReducer from '../features/auth/signupformSlice'
 
 export default configureStore({
   reducer: {
@@ -19,5 +20,6 @@ export default configureStore({
 
     bookclub: bookclubReducer,
 
+    genreState:signupformReducer,
   },
 })

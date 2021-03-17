@@ -16,7 +16,7 @@ router.get('/genres', async (request, response) => {
       )
      
     response.json(genre.rows);
-    console.log(rows, 'genres');
+    // console.log(rows, 'genres');
 
 })
 
