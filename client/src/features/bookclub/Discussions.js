@@ -2,53 +2,33 @@ import React, { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { selectDiscussion, getDiscussion, addDiscussion } from "./bookclubSlice"
 import styles from "./BookClub.module.css"
+import DiscussionReply from "./DiscussionReply"
+import DiscussionReplyForm from "./DiscussionReplyForm"
 
 const Discussions = (id) => {
 //   const discussion = useSelector(selectDiscussion)
 
-const discussion = [
+const discussions = [
   {
-    parent_id: 1,
-    discussion: 'BEST BOOK VOTED!!',
-    child_id: null,
-    group_id: 1,
-    photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
-    first_name: 'Marissa',
-    children: [
-        {
-            discussion: 'not good for me',
-            parent_id: 1,
-            child_id: 1,
-            group_id: 1,
-            photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
-            first_name: 'Marissa'
-        }
+    "photo": "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
+    "username": "bookclub",
+    "id": 1,
+    "parent_id": null,
+    "discussion": "BEST BOOK VOTED!!",
+    "replies": [
+      {
+        "photo": "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
+        "username": "user1",
+        "id": 2,
+        "parent_id": 1,
+        "discussion": "I agree!"
+      }
     ]
-  },
-{
-
-    parent_id: 2,
-    discussion: 'Meh!!',
-    child_id: null,
-    group_id: 1,
-    photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
-    first_name: 'Marissa',
-    children: [
-        {
-            discussion: 'not good for me',
-            parent_id: 2,
-            child_id: 1,
-            group_id: 1,
-            photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
-            first_name: 'Marissa'
-        }
-    ]
-  },
-
+  }
 ]
 
-  console.log(discussion, "d")
-  console.log(discussion[0].children, 'children')
+  // console.log(discussion, "d")
+  // console.log(discussion[0].children, 'children')
   const dispatch = useDispatch()
   const [input, setInput] = useState("")
   const [showInput, setShowInput] = useState(false)
@@ -64,20 +44,19 @@ const discussion = [
 
   return (
     <>
+      {/* className={styles.discussionmain} */}
       <div className={styles.discussionmain}>
+      {/* className={styles.discussionlist} */}
         <div className={styles.discussionlist}>
-          {discussion.map((disc) => (
-            <div key={"discussion-" + disc.id} className={styles.commentDiv}>
+          {discussions.map((disc) => (
+            // className={styles.commentDiv}
+            <div key={"discussion-" + disc.id}>
               <img src={disc.photo} className={styles.discImg} />
               <p>{disc.discussion}</p>
-              <div>
-                <br />
+              <div style={{marginLeft: '40px'}}>
+                <DiscussionReplyForm parentId={disc.parent_id} />
                 <a href="#" onClick={()=>setShowInput(true)}>Reply</a>
-                    {discussion[0].children.map((child) => (
-                        <li>
-                            {child.discussion}
-                        </li>
-                    ))}
+                <DiscussionReply replies={disc.replies} />
               </div>
             </div>
           ))}
@@ -85,7 +64,8 @@ const discussion = [
 
         <div className={styles.commentMain}>
           {/* <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/> */}
-          <form onSubmit={() => handleSubmit(input, 0, discussion[0].group_id)}>
+          {/* handleSubmit(input, 0, discussion[0].group_id) */}
+          <form onSubmit={() => console.log('a')}>
             <input
               placeholder="Add a comment"
               className={styles.boxcomment}
