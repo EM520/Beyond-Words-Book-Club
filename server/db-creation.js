@@ -26,9 +26,9 @@ function createSalt(len = 20) {
 // NOTE this order does not matter if cascade deletion is set otherwise this is the order it'd need to be
 // due to foreign key reference issue during deletion
 const tables = [
-  "discussions",
+  // "discussions",
   // "genres_users",
-  // "book_collections",
+  "book_collections",
   // "groups",
   // "users",
   // "books",
@@ -83,6 +83,11 @@ async function main() {
   //   // table.foreign('group_id').references('groups.id').onDelete('cascade')
   // });
 
+// await conn.schema.createTable(`book_collections`, (table) => {
+//     table.integer("book_id").unsigned();
+//     table.integer("user_id").unsigned();
+//   });
+
   // await conn.schema.createTable(`groups`, (table) => {
   //   table.increments("id");
   //   table.integer("book_id").unsigned();
@@ -94,9 +99,10 @@ async function main() {
     table.string("discussion");
     table.integer("user_id").unsigned();
     table.increments("parent_id", { primaryKey: false }).unsigned();
+    // table.integer("child_id").unsigned();
     table.timestamp("timestamp")
-    table.foreign("user_id").references("users.id").onDelete("cascade");
     table.integer("group_id").unsigned();
+    table.foreign("user_id").references("users.id").onDelete("cascade");
     table.foreign("group_id").references("groups.id").onDelete("cascade");
 
   });
@@ -159,10 +165,10 @@ async function main() {
   //   user_id:1,
   // });
 
-  await conn("book_collections").insert({
-    book_id:1, 
-    user_id:1,
-  });
+  // await conn("book_collections").insert({
+  //   book_id:1, 
+  //   user_id:1,
+  // });
 
   // await conn('users').insert({
   //   title: 'post',

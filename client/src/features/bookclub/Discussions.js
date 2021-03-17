@@ -4,8 +4,51 @@ import { selectDiscussion, getDiscussion, addDiscussion } from "./bookclubSlice"
 import styles from "./BookClub.module.css"
 
 const Discussions = (id) => {
-  const discussion = useSelector(selectDiscussion)
+//   const discussion = useSelector(selectDiscussion)
+
+const discussion = [
+  {
+    parent_id: 1,
+    discussion: 'BEST BOOK VOTED!!',
+    child_id: null,
+    group_id: 1,
+    photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
+    first_name: 'Marissa',
+    children: [
+        {
+            discussion: 'not good for me',
+            parent_id: 1,
+            child_id: 1,
+            group_id: 1,
+            photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
+            first_name: 'Marissa'
+        }
+    ]
+  },
+{
+
+    parent_id: 2,
+    discussion: 'Meh!!',
+    child_id: null,
+    group_id: 1,
+    photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
+    first_name: 'Marissa',
+    children: [
+        {
+            discussion: 'not good for me',
+            parent_id: 2,
+            child_id: 1,
+            group_id: 1,
+            photo: 'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
+            first_name: 'Marissa'
+        }
+    ]
+  },
+
+]
+
   console.log(discussion, "d")
+  console.log(discussion[0].children, 'children')
   const dispatch = useDispatch()
   const [input, setInput] = useState("")
   const [showInput, setShowInput] = useState(false)
@@ -30,6 +73,11 @@ const Discussions = (id) => {
               <div>
                 <br />
                 <a href="#" onClick={()=>setShowInput(true)}>Reply</a>
+                    {discussion[0].children.map((child) => (
+                        <li>
+                            {child.discussion}
+                        </li>
+                    ))}
               </div>
             </div>
           ))}

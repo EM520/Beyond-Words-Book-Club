@@ -39,7 +39,7 @@ router.get("/discussions/:groupId", async (request, response) => {
   const id = request.params.groupId
   const discussion = await conn.raw(
       `
-      SELECT d.discussion, d.parent_id, d.group_id, u.photo, u.first_name, d.id
+      SELECT d.discussion, d.parent_id, d.child_id, d.group_id, u.photo, u.first_name
       FROM discussions d
       LEFT OUTER JOIN groups g
       ON d.group_id = g.id
@@ -48,6 +48,7 @@ router.get("/discussions/:groupId", async (request, response) => {
       LEFT OUTER JOIN users u
       ON d.user_id= u.id
       WHERE d.group_id = ?
+      ORDER BY d.parent_id, d.child_id DESC
     
       `,
       [id]
