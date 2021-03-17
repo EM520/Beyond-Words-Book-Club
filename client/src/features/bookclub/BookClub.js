@@ -11,6 +11,7 @@ export default function BookClub() {
         <NavBar />
         <div className = {styles.clubmain}>
         <BookDetail />
+        
         <Discussions />
         </div>
         <Footer/>
