@@ -5,6 +5,7 @@ const router = express.Router()
 
 //Get book title based on users with same collection
 router.get('/books', async (request, response) => {
+    console.log(request.user.id,"books3333")
     // const id = [req.user.id]
   const booktitle = await conn.raw(
       `
@@ -13,24 +14,25 @@ router.get('/books', async (request, response) => {
     ON b.id = bc.book_id
     WHERE bc.user_id=?
       `,
-      [1]
+      [request.user.id]
       )
     response.json(booktitle.rows);
-    console.log(rows, 'booktitle');
+    // console.log(rows, 'booktitle');
 })
 
 //Get user photo  based on users 
 router.get('/users', async (request, response) => {
-    // const id = [req.user.id]
+    console.log(request.user.id)
+    //const id = [req.user.id]
   const userphoto = await conn.raw(
       `
     SELECT photo FROM users
     WHERE id=?
       `,
-      [1]
+      [request.user.id]
       )  
     response.json(userphoto.rows);
-    console.log(rows, 'userphoto');    
+    // console.log(rows, 'userphoto');    
 })
 
 //Get genre name  based on users 
@@ -45,31 +47,32 @@ router.get('/genres', async (request, response) => {
       ON gu.user_id = u.id
       WHERE u.id=?
       `,
-      [1]
+      [request.user.id]
       )  
     response.json(genre.rows);
     console.log(rows, 'genre');    
 })
 
-//Update book group  based on users 
-router.patch("/books/:userId", async (req, res) => {
-    console.log("request body", req.body);
-    const userId = req.params.userId;
-    await conn("books").where({ id: userId }).update(req.body);
-    res.json({ message: "Books Group updated" });
-  });
+// //Update book group  based on users 
+// router.patch("/books/:userId", async (req, res) => {
+//     console.log("request body", req.body);
+//     const userId = req.params.userId;
+//     await conn("books").where({ id: userId }).update(req.body);
+//     res.json({ message: "Books Group updated" });
+//   });
 
-//Books group Delete 
-router.delete('/bookgroup', async (request, response) => {
+// Delete Books group  
+router.delete('/bookgroup/:bookId', async (req, res) => {
+//     const bookId =req.params.bookId;
     
-  await conn.raw(
-      `
-      DELETE FROM book_collections bc
+//   await conn.raw(
+//       `
+//       DELETE FROM book_collections bc
       
-      WHERE bc.book_id=?
-      `,
-      [6]
-      )  
+//       WHERE bc.book_id=?
+//       `,
+//       [bookId]
+//       )  
     response.json({ message: "Books Group deleted" });
        
 })

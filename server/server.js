@@ -6,7 +6,7 @@ import authRoutes from './routes/auth.js'
 import genresbyuserRoutes from './routes/genresbyuser.js'
 
 import profileRoutes from './routes/profile.js'
-
+import signupformRoutes from './routes/signupform.js'
 import bookclubRoutes from './routes/bookclub.js'
 
 const app = express()
@@ -20,7 +20,7 @@ app.use('/api', authRoutes)
 app.use('/api',genresbyuserRoutes)
 
 app.use('/api',profileRoutes)
-
+app.use('/api',signupformRoutes)
 app.use('/api',bookclubRoutes)
 
 // example of grabbing logged in user

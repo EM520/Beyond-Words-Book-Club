@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import request from "../../utils/request";
 
-export const profilesSlice = createSlice({
+export const signupformSlice = createSlice({
     name: "profiles",
     initialState: {
       users: [
         // { id: 1, name: 'Douglas' },
         // { id: 2, name: 'John' },
       ],
-      genreusers: [
+      genres: [
         // {id:1,name:"Romans"},
         // {id:2,name:"LOVE"},
         // {id:3,name:"Historical Fiction"},
@@ -39,8 +39,8 @@ export const profilesSlice = createSlice({
       setUsers: (state, action) => {
         state.users = action.payload;
       },
-      setGenreUsers: (state, action) => {
-        state.genreusers = action.payload;
+      setGenres: (state, action) => {
+        state.genres = action.payload;
       },
       setBookUsers: (state, action) => {
         state.bookusers = action.payload;
@@ -54,11 +54,11 @@ export const profilesSlice = createSlice({
     // increment,
     // decrement,
     // incrementByAmount,
-    setUsers,
-    setGenreUsers,
-    setBookUsers,
+    // setUsers,
+    setGenres,
+    // setBookUsers,
     
-  } = profilesSlice.actions;
+  } = signupformSlice.actions;
   
   // The function below is called a thunk and allows us to perform async logic. It
   // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -78,33 +78,33 @@ export const profilesSlice = createSlice({
   //   }
   // }
   
-  export const getUser = () => (dispatch) => {
-    request.get("/users").then((r) => {
-      // const action = setUsers(r.data)
-      dispatch(setUsers(r.data));
-    });
-  };
+//   export const getUser = () => (dispatch) => {
+//     request.get("/users").then((r) => {
+//       // const action = setUsers(r.data)
+//       dispatch(setUsers(r.data));
+//     });
+//   };
 
-  export const getBookUser = () =>(dispatch) =>{
-    request.get("/books").then((r)=>{
-        dispatch(setBookUsers(r.data))
-    })
-}
+//   export const getBookUser = () =>(dispatch) =>{
+//     request.get("/books").then((r)=>{
+//         dispatch(setBookUsers(r.data))
+//     })
+// }
 
-  export const getGenreUser = () =>(dispatch) =>{
-      request.get("/genres").then((r)=>{
-          dispatch(setGenreUsers(r.data))
+  export const getGenres = () =>(dispatch) =>{
+      request.get("/genrelist").then((r)=>{
+          dispatch(setGenres(r.data))
       })
   }
 
-  export const deleteBookUser = (id) => (dispatch) => {
+//   export const deleteBookUser = (id) => (dispatch) => {
     
-    axios.delete("/api/bookgroup" + id).then((resp) => {
+//     axios.delete("/api/bookgroup" + id).then((resp) => {
      
-      dispatch(getBookUser());
+//       dispatch(getBookUser());
       
-    });
-  };
+//     });
+//   };
   
   // The function below is called a selector and allows us to select a value from
   // the state. Selectors can also be defined inline where they're used instead of
@@ -112,10 +112,10 @@ export const profilesSlice = createSlice({
   
 //   export const selectCount = (state) => state.users.value;
 
-  export const selectUser = (state) => state.userState.users;
-  export const selectBookUser=(state) =>state.bookuserState.bookusers;
-  export const selectGenreUser=(state) =>state.genreuserState.genreusers;
+//   export const selectUser = (state) => state.userState.users;
+//   export const selectBookUser=(state) =>state.bookuserState.bookusers;
+  export const selectGenre=(state) =>state.genreState.genres;
   
 
-  export default profilesSlice.reducer;
+  export default signupformSlice.reducer;
   

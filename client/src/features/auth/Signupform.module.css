@@ -1,5 +1,5 @@
 .signupform{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width:90vw;
     height:25vw;
     margin: 0 auto;
@@ -29,10 +29,41 @@
     width:100%;
     margin-left: 100px;
 }
+
+.signupAvatar{
+ border-radius:5px;
+ border:3px solid grey;
+ width:14vw;
+ height:14vw;
+ margin:0 auto;
+
+}
+
+.uploadBtn{
+    width:9vw;
+ height:3vw;
+  margin:0 auto;
+  margin-top:5px;
+}
 .signupform form input{
     margin:0.5vw 0 0.5vw 0;
     height:3vw;
     background-color: transparent;
     border-radius: 5px;
     border-color:rgb(212, 221, 221);
+}
+
+.signupformGenreList{
+    /* border:3px solid whitesmoke; */
+     width:90vw;
+    height:15vw;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    font-size:2vw;
+    
+}
+
+.signupformGenreList p{
+    margin-right:50px; 
 }

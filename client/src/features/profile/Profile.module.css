@@ -44,6 +44,7 @@
   height: 500px;
 }
 .profileGrouplist {
+   
   padding-top: 10px;
   width: 80%;
   height: 250px;
@@ -53,7 +54,15 @@
   text-indent: 1rem;
 }
 
+.profileGrouplistp{
+display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .profileGrouplist p {
+ 
   font-size: 2vw;
   font-weight: bold;
   line-height: 2;
