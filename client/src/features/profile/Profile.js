@@ -26,6 +26,8 @@ export default function Profile() {
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
+
+  console.log(bookuser,"bookuser")
   useEffect(() => {
     dispatch(getUser());
     dispatch(getBookUser());
@@ -41,7 +43,7 @@ export default function Profile() {
     setBio("");
   }
 function handleClick(id){
-  dispatch(deleteBookUser(7));
+  dispatch(deleteBookUser(id));
 }
   return (
     <>
@@ -49,6 +51,7 @@ function handleClick(id){
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
           <div className={styles.profileGrouplist}>
+
             {bookuser.map((item) => (
               
               <div className={styles.profileGrouplistp}>
