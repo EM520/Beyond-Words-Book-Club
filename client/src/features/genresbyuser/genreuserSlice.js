@@ -28,6 +28,7 @@ setGenreUser,
 
 export const getGenreUser = (state) => (dispatch) => {
 request.get('/genresuser').then((r) => {
+  // console.log()
   // const action = setUsers(r.data)
   dispatch(setGenreUser(r.data))
 })

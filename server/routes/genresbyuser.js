@@ -3,8 +3,8 @@ import conn from '../db.js'
 // console.log(conn, 'conn')
 const router = express.Router()
 router.get('/genresuser', async (request, response) => {
-  // console.log(request.user.id, 'id')
-    const id = [req.user.id]
+  console.log(request.user.id, 'id')
+    const id = request.user.id
   const genre = await conn.raw(
       `
       SELECT DISTINCT ON (g.id) b.title, b.cover_pic, g.name, g.id
@@ -17,7 +17,6 @@ router.get('/genresuser', async (request, response) => {
       )
      
     response.json(genre.rows);
-    // console.log(rows, 'genres');
 
 })
 

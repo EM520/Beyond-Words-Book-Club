@@ -39,7 +39,7 @@ router.get("/discussions/:groupId", async (request, response) => {
   const id = request.params.groupId
   const discussion = await conn.raw(
       `
-      SELECT d.discussion, d.parent_id, d.group_id, u.photo, u.first_name
+      SELECT d.discussion, d.parent_id, d.group_id, u.photo, u.first_name, d.id
       FROM discussions d
       LEFT OUTER JOIN groups g
       ON d.group_id = g.id
@@ -48,7 +48,7 @@ router.get("/discussions/:groupId", async (request, response) => {
       LEFT OUTER JOIN users u
       ON d.user_id= u.id
       WHERE d.group_id = ?
-      ORDER BY d.parent_id
+    
       `,
       [id]
       )
@@ -66,14 +66,28 @@ router.post("/discussions", async (request, response) => {
 
   const { discussion, group_id, parent_id } = request.body;
   console.log(request.body, 'body')
-  await conn.raw(
-    `
-    INSERT INTO discussions (discussion, user_id,  parent_id, group_id)
-    VALUES(?,?,?,?);
-`,
-[discussion, userId, parent_id, group_id]
+  if (parent_id !==0) {
+    await conn.raw(
+      `
+      INSERT INTO discussions (discussion, user_id,  parent_id, group_id)
+      VALUES(?,?,?,?);
+  `,
+  [discussion, userId, parent_id, group_id]
+  
+    )
+    
+  } else {
+    await conn.raw(
+      `
+      INSERT INTO discussions (discussion, user_id, group_id)
+      VALUES(?,?,?);
+  `,
+  [discussion, userId, group_id]
+  
+    )
 
-  );
+  }
+
   response.json({ message: "discussion added" });
 });
 

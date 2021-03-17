@@ -14,15 +14,15 @@
 
 }
 
-.bookclubmain {
- height: 500vw;
+/* .bookclubmain { */
+ /* height: 500vw; */
  /* margin: 0 auto; */
 
  /* width:300vw; */
  /* border: 1px solid black; */
  /* margin: 0 auto; */
 
-}
+/* } */
 
 .footer {
     position: absolute; 
@@ -32,7 +32,7 @@
   }
 .discussionmain{
     height: 32vw;
-    width: 70vw;
+    /* width: 70vw; */
     border: 1px solid black;
 
 }
@@ -78,4 +78,8 @@
     height: 48px;
   width: 48px;
   margin: 10px;
+}
+
+.commentDiv{
+    display: flex;
 }
