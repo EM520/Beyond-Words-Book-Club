@@ -100,7 +100,7 @@ await conn.schema.createTable(`book_collections`, (table) => {
     table.integer("user_id").unsigned();
     table.integer("parent_id").unsigned().nullable();
     table.foreign("parent_id").references("discussions.id").onDelete("cascade");
-    table.timestamp("timestamp")
+    table.timestamp("created_at").defaultTo(conn.fn.now());
     table.integer("group_id").unsigned();
     table.foreign("user_id").references("users.id").onDelete("cascade");
     table.foreign("group_id").references("groups.id").onDelete("cascade");
