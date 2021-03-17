@@ -99,8 +99,7 @@ export const profilesSlice = createSlice({
 
   export const deleteBookUser = (id) => (dispatch) => {
     
-    axios.delete("/api/bookgroup" + id).then((resp) => {
-     
+    axios.delete("/api/bookgroup/" + id).then((resp) => {
       dispatch(getBookUser());
       
     });

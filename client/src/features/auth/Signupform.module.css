@@ -1,7 +1,6 @@
 .signupform{
     /* border: 2px solid red; */
     width:90vw;
-    height:25vw;
     margin: 0 auto;
     margin-top: 40px;   
 }
@@ -11,7 +10,7 @@
     flex-direction:row;
     justify-content:space-between;
     width:70vw;
-    height:35vw;
+   
     margin: 0 auto;  
 }
 
@@ -21,6 +20,11 @@
     justify-content: flex-start;
     /* border:3px solid blue; */
     width:100%;  
+}
+
+.signupform1 textarea{
+    margin-top:5px;
+    background-color:transparent;
 }
 
 .signupform2{
@@ -56,7 +60,7 @@
 .signupformGenreList{
     /* border:3px solid whitesmoke; */
      width:90vw;
-    height:15vw;
+    
     display: flex;
     flex-direction:row;
     justify-content: flex-start;
@@ -66,4 +70,10 @@
 
 .signupformGenreList p{
     margin-right:50px; 
+}
+
+.submitBtn{
+    padding:10px 5px;
+    border:2px solid whitesmoke;
+    margin-left:80vw;
 }

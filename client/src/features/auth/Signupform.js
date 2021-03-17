@@ -37,7 +37,7 @@ function handleSubmit(){
                 <input placeholder="Input your password"/>
                 <input placeholder="Comfirm your password"/>
                 <input placeholder="Input your Email"/>
-                <textarea name="signupform1" rows="8" cols="50"
+                <textarea name="signupform1" rows="9" cols="50"
                 placeholder="Talk about yourself"></textarea>
                 </div>
 
@@ -52,7 +52,7 @@ function handleSubmit(){
                 
             </form>
             
-                    <button>Submit</button>
+                    <button className={styles.submitBtn}>Submit</button>
                     <div>
                 <h1>Choose your Favorite Genre</h1>   
             <div className={styles.signupformGenreList}> 
@@ -64,7 +64,9 @@ function handleSubmit(){
                     <span class="checkmark"></span>
                 </>
                     ))}
+                    
             </div>
+            <button className={styles.submitBtn}>Submit</button>
             </div>
             <Footer/>
         </div>

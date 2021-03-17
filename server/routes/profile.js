@@ -9,7 +9,7 @@ router.get('/books', async (request, response) => {
     // const id = [req.user.id]
   const booktitle = await conn.raw(
       `
-    SELECT b.title FROM books b
+    SELECT b.title , b.cover_pic FROM books b
     INNER JOIN book_collections bc
     ON b.id = bc.book_id
     WHERE bc.user_id=?
@@ -17,7 +17,7 @@ router.get('/books', async (request, response) => {
       [request.user.id]
       )
     response.json(booktitle.rows);
-    // console.log(rows, 'booktitle');
+  
 })
 
 //Get user photo  based on users 
@@ -50,7 +50,7 @@ router.get('/genres', async (request, response) => {
       [request.user.id]
       )  
     response.json(genre.rows);
-    console.log(rows, 'genre');    
+    
 })
 
 // //Update book group  based on users 
@@ -63,17 +63,16 @@ router.get('/genres', async (request, response) => {
 
 // Delete Books group  
 router.delete('/bookgroup/:bookId', async (req, res) => {
-//     const bookId =req.params.bookId;
+    const bookId =req.params.bookId;
     
-//   await conn.raw(
-//       `
-//       DELETE FROM book_collections bc
-      
-//       WHERE bc.book_id=?
-//       `,
-//       [bookId]
-//       )  
-    response.json({ message: "Books Group deleted" });
+  await conn.raw(
+      `
+      DELETE FROM book_collections bc
+      WHERE bc.book_id=?
+      `,
+      [bookId]
+      )  
+    res.json({ message: "Books Group deleted" });
        
 })
 
