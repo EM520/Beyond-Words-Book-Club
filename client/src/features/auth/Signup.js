@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import request from '../../utils/request'
+import { useAuth } from './auth'
 import styles from "./LoginSignup.module.css"
 
 
@@ -8,10 +8,11 @@ export  default function Signup() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const history = useHistory()
+  const { login } = useAuth()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    request.login(username, password).then((r) => {
+    login(username, password).then((r) => {
       history.push('/home')
     })
   }

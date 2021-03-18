@@ -2,15 +2,16 @@
     /* border: 2px solid red; */
     width:90vw;
     margin: 0 auto;
-    margin-top: 40px;   
+    margin-top: 40px; 
+    margin-bottom: 40px;   
 }
 
 .signupform form{
     display: flex;
     flex-direction:row;
     justify-content:space-between;
-    width:70vw;
-   
+  
+    /* border:3px solid rgb(190, 181, 62);  */
     margin: 0 auto;  
 }
 
@@ -18,7 +19,7 @@
     display: flex;
     flex-direction:column;
     justify-content: flex-start;
-    /* border:3px solid blue; */
+   
     width:100%;  
 }
 
@@ -32,6 +33,7 @@
     flex-direction:column;
     width:100%;
     margin-left: 100px;
+    
 }
 
 .signupAvatar{
@@ -52,6 +54,7 @@
 .signupform form input{
     margin:0.5vw 0 0.5vw 0;
     height:3vw;
+    /* width:60%; */
     background-color: transparent;
     border-radius: 5px;
     border-color:rgb(212, 221, 221);
@@ -59,21 +62,34 @@
 
 .signupformGenreList{
     /* border:3px solid whitesmoke; */
-     width:90vw;
+    
     
     display: flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content: flex-start;
-    font-size:2vw;
-    
+    font-size:2vw; 
 }
 
-.signupformGenreList p{
+.signupformGenreList h1{
     margin-right:50px; 
+    margin:0 auto;
 }
 
+.signupformGenreListp{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start; 
+    /* border: 2px solid blue; */
+    margin-top: 20px;
+   
+}
+.signupformGenreListp p{
+    margin-right: 50px;
+}
 .submitBtn{
-    padding:10px 5px;
+    padding:8px 5px;
     border:2px solid whitesmoke;
     margin-left:80vw;
+    margin-top: 20px;
+    border: 2px solid gray;
 }

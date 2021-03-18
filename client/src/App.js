@@ -1,19 +1,18 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import AuthRoute from "./features/auth/AuthRoute";
-import { Counter } from "./features/counter/Counter";
+import NavBar from "./features/headerfooter/NavBar";
+import Footer from './features/headerfooter/Footer';
 import Splash  from "./features/splash/Splash";
-import { Users } from "./features/users/Users";
-import {LoginSignup}  from "./features/auth/Signup";
 import Profile from "./features/profile/Profile";
 import Signup from "./features/auth/Signup";
+import Sandbox from "./features/sandbox/Sandbox";
 import RealTop20 from "./features/realtop20/RealTop20";
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
 import BookClub from "./features/bookclub/BookClub";
-import GenreSelection from "./features/genreselection/GenreSelection"
+import SearchResultsPage from "./features/search/SearchResultsPage";
 import Signupform from "./features/auth/Signupform";
-
 import "./App.css";
 
 export default function App() {
@@ -22,6 +21,7 @@ export default function App() {
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        {/* <NavBar /> */}
         <Switch>
           <Route exact path="/">
             <Splash />
@@ -34,42 +34,41 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-
+          
+          {/* todo convert to dropdown */}
           <Route path="/genres">
-            {/* <Profile />
-            <Users /> */}
+            
           </Route>
 
           <Route path="/top20">
-            <BookClub />
-            {/* <Signup /> */}
-          </Route>
-
-          <Route path="/realtop20">
             <RealTop20 />
-            {/* <Signup /> */}
           </Route>
 
-          <Route path="/genreselection">
-            <GenreSelection />
-            {/* <Signup /> */}
+          <Route path="/book-club">
+            <BookClub />
+          </Route>
+
+          <Route path="/search">
+            <SearchResultsPage />
+          </Route>
+          
+          <Route path="/sandbox">
+            <Sandbox />
           </Route>
 
           <AuthRoute path="/profile">
             <Profile/>
           </AuthRoute>
 
-          <AuthRoute path="/login">
+          <Route path="/login">
             <Signup />
-          </AuthRoute>
+          </Route>
 
-          <AuthRoute path="/signupform">
+          <Route path="/signupform">
             <Signupform />
-          </AuthRoute>
-
-          {/* <AuthRoute path="/about"> */}
-          {/* </AuthRoute> */}
+          </Route>
         </Switch>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

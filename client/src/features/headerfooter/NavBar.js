@@ -1,9 +1,20 @@
 import styles from "./NavBar.module.css"
 // import DropdownButton from 'react-bootstrap/DropdownButton'
-import {Link} from "react-router-dom"
+import {Link, useHistory } from "react-router-dom" 
+import { useDispatch } from "react-redux"
+import { useAuth } from '../auth/auth'
 import { FaShoppingCart } from "react-icons/fa";
 import logowords from '../pic/logowords.png'
 export default function NavBar(){
+    const history = useHistory()
+    const { logout } = useAuth()
+
+    function handleLogout() {
+      logout().then(() => {
+        history.push('/login')
+      })
+    }
+
     return <nav className={styles.navBar} >
       
     <ul >
@@ -28,7 +39,7 @@ export default function NavBar(){
         <Link className={styles.navLink} to="/top20">Top 20 Clubs</Link>
       </li>
       <li>
-        <Link className={styles.navLink} to="/profile">Profile</Link>&nbsp; / &nbsp; <Link className={styles.navLink} to="/realtop20">Logout</Link>
+        <Link className={styles.navLink} to="/profile">Profile</Link>&nbsp; / &nbsp; <Link className={styles.navLink} onClick={handleLogout}>Logout</Link>
       </li>
       <FaShoppingCart />
     </ul>

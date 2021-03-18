@@ -10,6 +10,7 @@ import {
   selectGenre,
    setGenres,
   getGenres,
+  addGenres
   
 } from "./signupformSlice";
 
@@ -22,7 +23,7 @@ const genre = useSelector(selectGenre);
   }, []);
 
 function handleSubmit(){
-
+//   dispatch (addGenres())
 }
 
     return(
@@ -53,24 +54,26 @@ function handleSubmit(){
             </form>
             
                     <button className={styles.submitBtn}>Submit</button>
-                    <div>
-                <h1>Choose your Favorite Genre</h1>   
+                    
+                
             <div className={styles.signupformGenreList}> 
-            
+             <h1>Choose your Favorite Genre</h1> 
+             <div className={styles.signupformGenreListp}>  
              {genre.map((item)=>(
-                 <>
-                        <p key={"genre-" + item.id}>{item.name}</p>
+                <>
+                        <p key={"genre-" + item.id}>{item.name}
                         <input type="checkbox" />
                     <span class="checkmark"></span>
+                    </p>
                 </>
                     ))}
                     
             </div>
-            <button className={styles.submitBtn}>Submit</button>
-            </div>
-            <Footer/>
+            <button type="submit"className={styles.submitBtn} >Submit</button>
+          
+           </div> 
         </div>
-        
+        <Footer/>
          
         </>
        

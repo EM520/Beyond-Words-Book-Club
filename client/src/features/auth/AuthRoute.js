@@ -7,6 +7,7 @@ const PrivateRoute = ({ children }) => {
   const isAuthenticated = useSelector(
     (appState) => appState.auth.isAuthenticated
   )
+  console.log('isAuthenticated', isAuthenticated)
   return (
     <Route>{isAuthenticated ? children : <Redirect to="/login" />}</Route>
     // <Route
