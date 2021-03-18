@@ -48,7 +48,9 @@ const Discussions = (id) => {
 
   return (
     <>
+      {/* className={styles.discussionmain} */}
       <div className={styles.discussionmain}>
+      {/* className={styles.discussionlist} */}
         <div className={styles.discussionlist}>
           {discussions.map((disc) => (
             // className={styles.commentDiv}
