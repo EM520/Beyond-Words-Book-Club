@@ -6,12 +6,8 @@ import authRoutes from './routes/auth.js'
 import bookRoutes from './routes/books.js'
 import bookCollectionRoutes from './routes/book-collections.js'
 import discussionsRoutes from './routes/discussions.js'
-import genresbyuserRoutes from './routes/genresbyuser.js'
-
-import profileRoutes from './routes/profile.js'
+import genresRoutes from './routes/genres.js'
 import signupformRoutes from './routes/signupform.js'
-import bookclubRoutes from './routes/bookclub.js'
-import genreSelectionRoutes from './routes/genreselection.js'
 
 const app = express()
 const PORT = 3001
@@ -24,11 +20,8 @@ app.use('/api', bookRoutes)
 app.use('/api', bookCollectionRoutes)
 app.use('/api', discussionsRoutes)
 app.use('/api', authRoutes)
-app.use('/api', genresbyuserRoutes)
-app.use('/api', genreSelectionRoutes)
-app.use('/api', profileRoutes)
+app.use('/api', genresRoutes)
 app.use('/api', signupformRoutes)
-app.use('/api', bookclubRoutes)
 
 // example of grabbing logged in user
 app.get('/api/test-user', (req, res) => {

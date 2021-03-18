@@ -17,8 +17,6 @@ router.get('/books/:bookId', async (request, response) => {
   )
   const rows = bookclub.rows
   response.json(rows)
-  // response.json({message:'testing routes'})
-  console.log(rows, 'bookclub')
 })
 
 export default router
