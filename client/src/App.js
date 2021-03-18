@@ -7,6 +7,7 @@ import { Users } from "./features/users/Users";
 import {LoginSignup}  from "./features/auth/Signup";
 import Profile from "./features/profile/Profile";
 import Signup from "./features/auth/Signup";
+import Sandbox from "./features/sandbox/Sandbox";
 import RealTop20 from "./features/realtop20/RealTop20";
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
@@ -43,6 +44,14 @@ export default function App() {
           <Route path="/top20">
             <BookClub />
             {/* <Signup /> */}
+          </Route>
+
+          <Route path="/book-club">
+            <BookClub />
+          </Route>
+          
+          <Route path="/sandbox">
+            <Sandbox />
           </Route>
 
           <AuthRoute path="/search">
