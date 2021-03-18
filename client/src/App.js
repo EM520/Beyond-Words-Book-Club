@@ -12,6 +12,7 @@ import RealTop20 from "./features/realtop20/RealTop20";
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
 import BookClub from "./features/bookclub/BookClub";
+import SearchResultsPage from "./features/search/SearchResultsPage";
 import GenreSelection from "./features/genreselection/GenreSelection"
 import Signupform from "./features/auth/Signupform";
 import Search from "./features/search/Search";
@@ -35,19 +36,22 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-
+          
+          {/* todo convert to dropdown */}
           <Route path="/genres">
-            {/* <Profile />
-            <Users /> */}
+            
           </Route>
 
           <Route path="/top20">
-            <BookClub />
-            {/* <Signup /> */}
+            <RealTop20 />
           </Route>
 
           <Route path="/book-club">
             <BookClub />
+          </Route>
+
+          <Route path="/search">
+            <SearchResultsPage />
           </Route>
           
           <Route path="/sandbox">
