@@ -1,145 +1,132 @@
-.bookList{
-    height: 16vw;
-    width:18vw;
-    /* width: 200px; */
-    background-size: contain;
-    background-repeat: no-repeat;
-
+.bookList {
+  height: 16vw;
+  width: 18vw;
+  /* width: 200px; */
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .description {
-    width: 15vw;
-    height: 13vw;
-    border: 1px solid black;
-
+  width: 15vw;
+  height: 13vw;
+  border: 1px solid black;
 }
 
 /* .bookclubmain { */
- /* height: 500vw; */
- /* margin: 0 auto; */
+/* height: 500vw; */
+/* margin: 0 auto; */
 
- /* width:300vw; */
- /* border: 1px solid black; */
- /* margin: 0 auto; */
+/* width:300vw; */
+/* border: 1px solid black; */
+/* margin: 0 auto; */
 
 /* } */
 
 .footer {
-    position: absolute; 
-    bottom: 0; 
-    width: 100%
-    
-  }
-.discussionmain{
-    /* height: 32vw; */
-    /* width: 70vw; */
-    border: 1px solid rgb(196, 190, 190);
-    font-size: 14px;
-    font-family: 'Segoe UI', Roboto;
-    padding: 24px;
-
-
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
-.clubmain{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-
+.discussionmain {
+  /* height: 32vw; */
+  /* width: 70vw; */
+  border: 1px solid rgb(196, 190, 190);
+  font-size: 14px;
+  font-family: 'Segoe UI', Roboto;
+  padding: 24px;
+}
+.clubmain {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
 
 .discussionlist {
-    height: 25vw;
-    border-bottom: 1px solid rgb(190, 190, 190);
-    overflow-y: auto;
-    height: 400px;
-
+  height: 25vw;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  overflow-y: auto;
+  height: 400px;
 }
 .discImg {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 .boxcomment {
-    margin: 10px;
-    height: 3vw;
-    width: 60vw;
-    text-indent: 5px;
-    background-color: transparent;
-    outline: none;
-    border-radius: 10px;
-    border: 1px solid rgb(218, 215, 215);
-    resize: none;
-    
-
-
+  margin: 10px;
+  height: 3vw;
+  width: 60vw;
+  text-indent: 5px;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid rgb(218, 215, 215);
+  resize: none;
 }
 .join {
-    height: 30px;
-    width: 100px;
-    font-family: "Amatic SC";
-    font-size: 20px;
-    background-color: rgb(55, 55, 177);
-    color:rgb(229, 226, 226);
-    margin: 10px;
+  height: 30px;
+  width: 100px;
+  font-family: 'Amatic SC';
+  font-size: 20px;
+  background-color: rgb(55, 55, 177);
+  color: rgb(229, 226, 226);
+  margin: 10px;
 }
 .commentMain {
-    display: flex;
-    /* background-color: cadetblue; */
-    /* margin: 10px; */
-
+  display: flex;
+  /* background-color: cadetblue; */
+  /* margin: 10px; */
 }
 .commentMain img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
 
-.commentDiv{
-    display: flex;
-    /* padding: 0 auto; */
+.commentDiv {
+  display: flex;
+  /* padding: 0 auto; */
 }
 .overflow {
-    /* float:left; */
-    overflow-y: auto;
-    height: 100px;
+  /* float:left; */
+  overflow-y: auto;
+  height: 100px;
 }
 .replyinput {
-    height: 25px;
-    width: 100%;
-    outline: none;
-    border-radius: 10px;
-    border: 1px solid rgb(218, 215, 215);
-    text-indent : 10px;
-    background-color: transparent;
-
-
+  height: 25px;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid rgb(218, 215, 215);
+  text-indent: 10px;
+  background-color: transparent;
 }
-.userdate{
-    font-size: 10px;
-    font-family: inherit;
+.userdate {
+  font-size: 10px;
+  font-family: inherit;
 }
 .button {
-    height: 30px;
-    width: 80px;
-    background-color: transparent;
-    color: black;
-    outline: none;
-    outline-color: rgb(197, 192, 192);
-    border-radius: 10px;
-    cursor: pointer;
-    margin-left: 750px;
+  height: 30px;
+  width: 80px;
+  background-color: transparent;
+  color: black;
+  outline: none;
+  outline-color: rgb(197, 192, 192);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 750px;
 }
 .reply {
-    text-decoration: none;
-    color: black;
-    font-size: 12px;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
 }
 .reply:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 /* .button:hover {
 
 } */
 .commentUser {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }

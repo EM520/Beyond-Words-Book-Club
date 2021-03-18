@@ -1,53 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
 .navBar {
-    height: 20vh;
-    margin: 0 auto;
-    background-color:#9fe5e7;
-    background-position:absolute;
-  }
+  height: 20vh;
+  margin: 0 auto;
+  background-color: #9fe5e7;
+  background-position: absolute;
+}
 
-  .navBar ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    
-  }
-  .navBar li{
-    list-style-type: none;
-    font-size: 2.6vw; 
-    font-family: Amatic SC;
-    padding:10px 30px 30px 30px;
-    
-  }
-  
-  .navLink{
-    text-decoration: none;
-    color:rgb(61, 58, 58);
-    /* display: inline-block;
+.navBar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navBar li {
+  list-style-type: none;
+  font-size: 2.6vw;
+  font-family: Amatic SC;
+  padding: 10px 30px 30px 30px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: rgb(61, 58, 58);
+  /* display: inline-block;
     list-style-type: none;
     position: relative; */
-    
-  }
+}
 
-  .logoWords {
-      max-width:  100%;
-      max-height: 120px;
-      object-position: center;
-  }
+.logoWords {
+  max-width: 100%;
+  max-height: 120px;
+  object-position: center;
+}
 
-  .dropdown {
-    position: absolute;
-    display: inline-block;
-    z-index: 100;
-  }
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+}
 
-  /* The code commented out was an attempt
+/* The code commented out was an attempt
   at making a dropdown menu of Genres
   for the Genres navbar link */
 
-  /* .navLink:hover > ul {
+/* .navLink:hover > ul {
     display: block;
  }
 

@@ -1,22 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css';
+import React, { useState, useEffect } from 'react'
+import { Form, Input, Button } from 'antd'
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import 'antd/dist/antd.css'
 
-export default function  HorizontalLoForm ()  {
-  const [form] = Form.useForm();
-  const [, forceUpdate] = useState({}); // To disable submit button at the beginning.
+export default function HorizontalLoForm() {
+  const [form] = Form.useForm()
+  const [, forceUpdate] = useState({}) // To disable submit button at the beginning.
 
   useEffect(() => {
-    forceUpdate({});
-  }, []);
+    forceUpdate({})
+  }, [])
 
   const onFinish = (values) => {
-    console.log('Finish:', values);
-  };
+    console.log('Finish:', values)
+  }
 
   return (
-    <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
+    <Form
+      form={form}
+      name="horizontal_login"
+      layout="inline"
+      onFinish={onFinish}
+    >
       <Form.Item
         name="username"
         rules={[
@@ -26,7 +31,10 @@ export default function  HorizontalLoForm ()  {
           },
         ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="Username"
+        />
       </Form.Item>
       <Form.Item
         name="password"
@@ -50,7 +58,8 @@ export default function  HorizontalLoForm ()  {
             htmlType="submit"
             disabled={
               !form.isFieldsTouched(true) ||
-              !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              !!form.getFieldsError().filter(({ errors }) => errors.length)
+                .length
             }
           >
             Log in
@@ -58,7 +67,7 @@ export default function  HorizontalLoForm ()  {
         )}
       </Form.Item>
     </Form>
-  );
-};
+  )
+}
 
 // ReactDOM.render(<HorizontalLoginForm />, mountNode);

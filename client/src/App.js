@@ -1,19 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import AuthRoute from "./features/auth/AuthRoute";
-import NavBar from "./features/headerfooter/NavBar";
-import Footer from './features/headerfooter/Footer';
-import Splash  from "./features/splash/Splash";
-import Profile from "./features/profile/Profile";
-import Signup from "./features/auth/Signup";
-import Sandbox from "./features/sandbox/Sandbox";
-import RealTop20 from "./features/realtop20/RealTop20";
-import HomePage from "./features/homepage/HomePage";
-import About from "./features/about/About";
-import BookClub from "./features/bookclub/BookClub";
-import SearchResultsPage from "./features/search/SearchResultsPage";
-import Signupform from "./features/auth/Signupform";
-import "./App.css";
+import AuthRoute from './features/auth/AuthRoute'
+import NavBar from './features/headerfooter/NavBar'
+import Footer from './features/headerfooter/Footer'
+import Splash from './features/splash/Splash'
+import Profile from './features/profile/Profile'
+import Signup from './features/auth/Signup'
+import Sandbox from './features/sandbox/Sandbox'
+import RealTop20 from './features/realtop20/RealTop20'
+import HomePage from './features/homepage/HomePage'
+import About from './features/about/About'
+import BookClub from './features/bookclub/BookClub'
+import SearchResultsPage from './features/search/SearchResultsPage'
+import Signupform from './features/auth/Signupform'
+import './App.css'
 
 export default function App() {
   return (
@@ -34,11 +34,9 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          
+
           {/* todo convert to dropdown */}
-          <Route path="/genres">
-            
-          </Route>
+          <Route path="/genres"></Route>
 
           <Route path="/top20">
             <RealTop20 />
@@ -51,13 +49,13 @@ export default function App() {
           <Route path="/search">
             <SearchResultsPage />
           </Route>
-          
+
           <Route path="/sandbox">
             <Sandbox />
           </Route>
 
           <AuthRoute path="/profile">
-            <Profile/>
+            <Profile />
           </AuthRoute>
 
           <Route path="/login">
@@ -71,5 +69,5 @@ export default function App() {
         {/* <Footer /> */}
       </div>
     </Router>
-  );
+  )
 }

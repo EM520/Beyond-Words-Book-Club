@@ -1,55 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 body {
-    background-color:  #F0EFE0;
+  background-color: #f0efe0;
 }
 
 .content {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
- }
-
- .content ul {
-    display: flex; 
-    justify-content: center;
-    list-style: none;
-    margin-top: 1em;
-    /* margin-left: 6em; */
-
+.content ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 1em;
+  /* margin-left: 6em; */
 }
 
 h1 {
-    font-family: Amatic SC;
-    font-size: 3vw;
+  font-family: Amatic SC;
+  font-size: 3vw;
 }
 
 .content li {
-    width: 30vw;
-    padding: 2em 2em 1em 2em;
-    background-color: #d69668;
-    border: 5px solid  #F0EFE0;
-    width: 28%;
-
-
+  width: 30vw;
+  padding: 2em 2em 1em 2em;
+  background-color: #d69668;
+  border: 5px solid #f0efe0;
+  width: 28%;
 }
 
 span {
-   text-align: left;
-   /* font-size: 3vh; */
-   font-weight: lighter;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: em;
-    
+  text-align: left;
+  /* font-size: 3vh; */
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: em;
 }
 
 .people {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .ad {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }

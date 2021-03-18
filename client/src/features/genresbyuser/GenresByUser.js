@@ -1,8 +1,8 @@
-import React, { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { selectGenreUser, getGenreUser } from "./genreuserSlice"
-import styles from "./GenreUser.module.css"
-import {Link} from "react-router-dom"
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectGenreUser, getGenreUser } from './genreuserSlice'
+import styles from './GenreUser.module.css'
+import { Link } from 'react-router-dom'
 
 export default function GenresByUser() {
   const genreuser = useSelector(selectGenreUser)
@@ -63,32 +63,38 @@ export default function GenresByUser() {
   //     name: 'fiction'
   //   }
 
-    
   // ]
-  console.log(genreuser, "gu")
+  console.log(genreuser, 'gu')
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getGenreUser())
   }, [])
   return (
     <>
-
-      <div className = {styles.genreListMain}>
+      <div className={styles.genreListMain}>
         {genreuser.map((genre) => (
-          <div key={"guser-" + genre.id}  className = {styles.genreListsubMain}>
+          <div key={'guser-' + genre.id} className={styles.genreListsubMain}>
             {/* <div
               style={{ backgroundImage: `url(${genre.cover_pic})` }}
               className={styles.genreList}
             ></div> */}
-            <p><img className={styles.genreList} 
-                src={genre.cover_pic} alt={genre.title} 
+            <p>
+              <img
+                className={styles.genreList}
+                src={genre.cover_pic}
+                alt={genre.title}
                 className={styles.bookimage}
-            /></p>
-            <div className={styles.genreLink}> 
-            <p><Link  to="/genres" className={styles.genreUserLink}>{genre.name}</Link></p>
+              />
+            </p>
+            <div className={styles.genreLink}>
+              <p>
+                <Link to="/genres" className={styles.genreUserLink}>
+                  {genre.name}
+                </Link>
+              </p>
             </div>
           </div>
-        ))} 
+        ))}
       </div>
     </>
   )

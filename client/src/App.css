@@ -5,9 +5,11 @@
 }
 
 footer {
-  position: absolute; bottom: 0; width: 100%
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 body {
-  background-color:  #F0EFE0;
+  background-color: #f0efe0;
 }

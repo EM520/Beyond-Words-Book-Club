@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
-import axios from "axios"
-import request from "../../utils/request";
+import { createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import request from '../../utils/request'
 
 export const bookclubSlice = createSlice({
-  name: "bookclub",
+  name: 'bookclub',
   initialState: {
     bookclub: [],
     discussion: [],
@@ -13,8 +13,8 @@ export const bookclubSlice = createSlice({
       state.bookclub = action.payload
     },
     setDiscussion: (state, action) => {
-        state.discussion = action.payload
-    }
+      state.discussion = action.payload
+    },
   },
 })
 
@@ -26,33 +26,36 @@ export const { setBookClub, setDiscussion } = bookclubSlice.actions
 // code can then be executed and other actions can be dispatched
 
 export const getBookClub = (id) => (dispatch) => {
-    // const id = 1
-    console.log(setBookClub, id, "/bookclub/"+ id, 'ac')
-  axios.get("/api/bookclub/"+ id).then((r) => {
+  // const id = 1
+  console.log(setBookClub, id, '/bookclub/' + id, 'ac')
+  axios.get('/api/bookclub/' + id).then((r) => {
     dispatch(setBookClub(r.data))
   })
 }
 
 export const getDiscussion = (id) => (dispatch) => {
-    console.log(id, 'id')
-    axios.get("/api/discussions/"+ id)
-    .then((r) => {
-        dispatch(setDiscussion(r.data))
-        console.log(r.data, 'disc')
-    })
-
+  console.log(id, 'id')
+  axios.get('/api/discussions/' + id).then((r) => {
+    dispatch(setDiscussion(r.data))
+    console.log(r.data, 'disc')
+  })
 }
 
 export const addDiscussion = (obj) => (dispatch) => {
-    console.log(obj ,'obj')
-    // debugger
+  console.log(obj, 'obj')
+  // debugger
 
-    request.post("/discussions", { discussion: obj.discussion, parent_id: obj.parent_id, group_id: obj.group_id  })
+  request
+    .post('/discussions', {
+      discussion: obj.discussion,
+      parent_id: obj.parent_id,
+      group_id: obj.group_id,
+    })
     .then((resp) => {
-        console.log(resp, "add discussion")
-        dispatch(getDiscussion(obj.group_id))
-      })
-    }
+      console.log(resp, 'add discussion')
+      dispatch(getDiscussion(obj.group_id))
+    })
+}
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

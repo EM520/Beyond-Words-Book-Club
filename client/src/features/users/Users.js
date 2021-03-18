@@ -12,11 +12,11 @@ export function Users() {
   }, [])
   return (
     <>
-    <div>
-      {users.map((user) => (
-        <p key={'user-' + user.id}>{user.first_name}</p>
-      ))}
-    </div>
+      <div>
+        {users.map((user) => (
+          <p key={'user-' + user.id}>{user.first_name}</p>
+        ))}
+      </div>
     </>
   )
 }
