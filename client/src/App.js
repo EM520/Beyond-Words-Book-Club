@@ -57,9 +57,9 @@ export default function App() {
             <Signup />
           </Route>
 
-          <AuthRoute path="/signupform">
+          <Route path="/signupform">
             <Signupform />
-          </AuthRoute>
+          </Route>
 
           {/* <AuthRoute path="/about"> */}
           {/* </AuthRoute> */}
