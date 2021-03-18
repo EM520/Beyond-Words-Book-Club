@@ -80,10 +80,15 @@ export default function GenresByUser() {
               style={{ backgroundImage: `url(${genre.cover_pic})` }}
               className={styles.genreList}
             ></div> */}
-            <p><img className={styles.genreList} src={genre.cover_pic} alt="Group Reading"  /></p>
-            <p><Link className={styles.genreUserLink} to="/genres">{genre.name}</Link></p>
+            <p><img className={styles.genreList} 
+                src={genre.cover_pic} alt={genre.title} 
+                className={styles.bookimage}
+            /></p>
+            <div className={styles.genreLink}> 
+            <p><Link  to="/genres" className={styles.genreUserLink}>{genre.name}</Link></p>
+            </div>
           </div>
-        ))}
+        ))} 
       </div>
     </>
   )
