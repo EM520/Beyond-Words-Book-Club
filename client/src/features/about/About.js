@@ -8,7 +8,6 @@ import SearchBar from '../searchbar/SearchBar'
 export default function About() {
   return (
     <>
-      <NavBar />
       <SearchBar />
       <div class={styles.content}>
         <ul>
@@ -47,7 +46,6 @@ export default function About() {
           </li>
         </ul>
       </div>
-      <Footer />
     </>
   )
 }

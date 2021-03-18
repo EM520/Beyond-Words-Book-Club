@@ -48,6 +48,16 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
+          <div className={styles.dropdown}>
+          <button className={styles.dropbtn}>Genre List</button>
+            <div className={styles.dropdowncontent}>
+              <Link to="">Link 1</Link>
+              <Link to="">Link 2</Link>
+              <Link to="">Link 3</Link>
+            </div>
+          </div>
+        </li>
+        <li>
           <Link className={styles.navLink} to="/profile">
             Profile
           </Link>
