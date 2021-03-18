@@ -55,7 +55,7 @@ const Discussions = (id) => {
             <div key={"discussion-" + disc.id}>
               <div className={styles.commentDiv}> 
                 <img src={disc.photo} className={styles.discImg} />
-                <div >
+                <div className={styles.commentUser}>
                   <p className={styles.userdate}>{disc.username} - {disc.date}</p>
                   <p>{disc.discussion}</p>
                   

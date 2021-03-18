@@ -95,6 +95,7 @@
 
 .commentDiv{
     display: flex;
+    /* padding: 0 auto; */
 }
 .overflow {
     /* float:left; */
@@ -138,3 +139,7 @@
 /* .button:hover {
 
 } */
+.commentUser {
+    padding: 0;
+    margin: 0;
+}

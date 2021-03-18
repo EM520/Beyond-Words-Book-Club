@@ -141,7 +141,7 @@ await conn.schema.createTable(`book_collections`, (table) => {
     last_name: "One",
     bio: "I am user 1",
     photo:
-      "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
+      "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
   });
 
   await conn("genres").insert({

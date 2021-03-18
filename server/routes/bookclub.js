@@ -57,6 +57,7 @@ router.get("/discussions/:groupId", async (request, response) => {
         WHERE group_id = ?`
   const discussion = await conn.raw(sql,[id])
   const rows = discussion.rows
+  console.table(rows)
   const discussionMap = {}
   for (let discussion of rows) {
     discussionMap[discussion.id] = discussion
@@ -91,7 +92,7 @@ router.post("/discussions", async (request, response) => {
   // console.log(Date().getHours());
 
   const { discussion, group_id, parent_id } = request.body;
-  console.log(request.body, 'body')
+  console.table(request.body)
     await conn.raw(
       `
       INSERT INTO discussions (discussion, user_id,  parent_id, group_id)
