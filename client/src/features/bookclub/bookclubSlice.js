@@ -44,13 +44,13 @@ export const getDiscussion = (id) => (dispatch) => {
 }
 
 export const addDiscussion = (obj) => (dispatch) => {
-    console.log(obj.parent, 'obj')
+    console.log(obj ,'obj')
     // debugger
 
-    request.post("/discussions", { discussion: obj.comment, parent_id: obj.parent, group_id: obj.groupid  })
+    request.post("/discussions", { discussion: obj.discussion, parent_id: obj.parent_id, group_id: obj.group_id  })
     .then((resp) => {
         console.log(resp, "add discussion")
-        dispatch(getDiscussion())
+        dispatch(getDiscussion(obj.group_id))
       })
     }
 
