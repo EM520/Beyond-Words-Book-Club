@@ -2,7 +2,8 @@ import express from 'express'
 import conn from '../db.js'
 // console.log(conn, 'conn')
 const router = express.Router()
-router.get('/bookclub/:bookId', async (request, response) => {
+
+router.get('/books/:bookId', async (request, response) => {
   const id = request.params.bookId
   const bookclub = await conn.raw(
     `
@@ -19,19 +20,5 @@ router.get('/bookclub/:bookId', async (request, response) => {
   // response.json({message:'testing routes'})
   console.log(rows, 'bookclub')
 })
-
-// router.post('/bookclub', async (request, response) => {
-//   // const id = req.user.bookId;
-//   const userId = request.user.id
-//   const { book_id } = request.body
-//   await conn.raw(
-//     `
-//         INSERT INTO book_collections (book_id, user_id)
-//         VALUES( ?,?)
-//     `,
-//     [book_id, userId]
-//   )
-//   response.json({ message: 'book collection added' })
-// })
 
 export default router
