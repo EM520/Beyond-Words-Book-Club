@@ -54,10 +54,6 @@ export default function App() {
             <Sandbox />
           </Route>
 
-          <AuthRoute path="/search">
-            <Search/>
-          </AuthRoute>
-
           <AuthRoute path="/profile">
             <Profile/>
           </AuthRoute>
