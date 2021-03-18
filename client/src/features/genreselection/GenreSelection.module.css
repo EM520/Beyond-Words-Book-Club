@@ -1,0 +1,16 @@
+.checkbox {
+    width: 60vw;
+}
+
+.select {
+    margin-left: 100px;    
+}
+
+.checkboxes {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: columns;
+    gap: 1.5em;
+    padding: 1vw;    
+
+}
