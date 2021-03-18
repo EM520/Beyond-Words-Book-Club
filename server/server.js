@@ -1,36 +1,31 @@
-import express from "express";
-import "./config.js";
-import attachUser from "./middleware/auth.js";
-import userRoutes from "./routes/users.js";
-import authRoutes from "./routes/auth.js";
-import bookCollectionRoutes from "./routes/book-collections.js";
-import genresbyuserRoutes from "./routes/genresbyuser.js";
+import express from 'express'
+import './config.js'
+import attachUser from './middleware/auth.js'
+import userRoutes from './routes/users.js'
+import authRoutes from './routes/auth.js'
+import bookRoutes from './routes/books.js'
+import bookCollectionRoutes from './routes/book-collections.js'
+import discussionsRoutes from './routes/discussions.js'
+import genresRoutes from './routes/genres.js'
 
-import profileRoutes from "./routes/profile.js";
-import signupformRoutes from "./routes/signupform.js";
-import bookclubRoutes from "./routes/bookclub.js";
-import genreSelectionRoutes from "./routes/genreselection.js";
+const app = express()
+const PORT = 3001
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(attachUser)
 
-const app = express();
-const PORT = 3001;
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(attachUser);
-
-app.use("/api", userRoutes);
-app.use("/api", bookCollectionRoutes);
-app.use("/api", authRoutes);
-app.use("/api", genresbyuserRoutes);
-app.use("/api", genreSelectionRoutes);
-app.use("/api", profileRoutes);
-app.use("/api", signupformRoutes);
-app.use("/api", bookclubRoutes);
+app.use('/api', userRoutes)
+app.use('/api', bookRoutes)
+app.use('/api', bookCollectionRoutes)
+app.use('/api', discussionsRoutes)
+app.use('/api', authRoutes)
+app.use('/api', genresRoutes)
 
 // example of grabbing logged in user
-app.get("/api/test-user", (req, res) => {
-  console.log(req.user);
-  res.json(req.user);
-});
+app.get('/api/test-user', (req, res) => {
+  console.log(req.user)
+  res.json(req.user)
+})
 
 // body, params, query
 // app.get('/users', (request, response) => {
@@ -38,5 +33,5 @@ app.get("/api/test-user", (req, res) => {
 // })
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
-});
+  console.log(`Listening on port ${PORT}`)
+})

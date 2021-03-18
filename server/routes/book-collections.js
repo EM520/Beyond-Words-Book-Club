@@ -1,9 +1,9 @@
-import express from "express";
-import conn from "../db.js";
+import express from 'express'
+import conn from '../db.js'
 // console.log(conn, 'conn')
-const router = express.Router();
+const router = express.Router()
 
-router.get("/book-collections/user", async (request, response) => {
+router.get('/book-collections/user', async (request, response) => {
   // console.log(request.user.id, "userID");
   // const id = [req.user.id]
   const userGroups = await conn.raw(
@@ -14,12 +14,26 @@ router.get("/book-collections/user", async (request, response) => {
       WHERE bc.user_id=?
         `,
     [request.user.id]
-  );
-  response.json(userGroups.rows);
-});
+  )
+  response.json(userGroups.rows)
+})
 
-router.delete("/book-collections/:bookId", async (req, res) => {
-  const bookId = req.params.bookId;
+router.post('/book-collections', async (request, response) => {
+  // const id = req.user.bookId;
+  const userId = request.user.id
+  const { book_id } = request.body
+  await conn.raw(
+    `
+        INSERT INTO book_collections (book_id, user_id)
+        VALUES( ?,?)
+    `,
+    [book_id, userId]
+  )
+  response.json({ message: 'book collection added' })
+})
+
+router.delete('/book-collections/:bookId', async (req, res) => {
+  const bookId = req.params.bookId
 
   await conn.raw(
     `
@@ -27,8 +41,8 @@ router.delete("/book-collections/:bookId", async (req, res) => {
     WHERE bc.book_id=?
     `,
     [bookId]
-  );
-  res.json({ message: "Books Group deleted" });
-});
+  )
+  res.json({ message: 'Books Group deleted' })
+})
 
-export default router;
+export default router

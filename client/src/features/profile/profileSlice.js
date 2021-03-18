@@ -78,7 +78,7 @@ export const {
 // }
 
 export const getUser = () => (dispatch) => {
-  request.get('/profileuser').then((r) => {
+  request.get('/users/user').then((r) => {
     // const action = setUsers(r.data)
     dispatch(setUsers(r.data))
   })
@@ -91,7 +91,7 @@ export const getUserGroups = () => (dispatch) => {
 }
 
 export const getGenreUser = () => (dispatch) => {
-  request.get('/genres').then((r) => {
+  request.get('/genres/user').then((r) => {
     dispatch(setGenreUsers(r.data))
   })
 }

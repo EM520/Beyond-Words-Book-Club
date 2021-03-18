@@ -28,7 +28,7 @@ export const { setBookClub, setDiscussion } = bookclubSlice.actions
 export const getBookClub = (id) => (dispatch) => {
   // const id = 1
   console.log(setBookClub, id, '/bookclub/' + id, 'ac')
-  axios.get('/api/bookclub/' + id).then((r) => {
+  axios.get('/api/books/' + id).then((r) => {
     dispatch(setBookClub(r.data))
   })
 }
