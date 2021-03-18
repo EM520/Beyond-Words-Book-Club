@@ -6,12 +6,11 @@ import { useAuth } from '../auth/auth'
 import { FaShoppingCart } from "react-icons/fa";
 import logowords from '../pic/logowords.png'
 export default function NavBar(){
-    const dispatch = useDispatch()
     const history = useHistory()
     const { logout } = useAuth()
 
     function handleLogout() {
-      dispatch(logout()).then(() => {
+      logout().then(() => {
         history.push('/login')
       })
     }
