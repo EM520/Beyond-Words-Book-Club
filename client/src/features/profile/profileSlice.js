@@ -86,7 +86,7 @@ export const profilesSlice = createSlice({
   };
 
   export const getUserGroups = () =>(dispatch) =>{
-    request.get("/book-collection/user").then((r)=>{
+    request.get("/book-collections/user").then((r)=>{
         dispatch(setUserGroups(r.data))
     })
 }
@@ -99,7 +99,7 @@ export const profilesSlice = createSlice({
 
   export const deleteBookUser = (id) => (dispatch) => {
     
-    axios.delete("/api/book-collection/" + id).then((resp) => {
+    axios.delete("/api/book-collections/" + id).then((resp) => {
       dispatch(getUserGroups())
       // dispatch(getBookUser());
       

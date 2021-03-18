@@ -3,7 +3,7 @@ import "./config.js";
 import attachUser from "./middleware/auth.js";
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auth.js";
-import bookCollectionRoutes from "./routes/book-collection.js";
+import bookCollectionRoutes from "./routes/book-collections.js";
 import genresbyuserRoutes from "./routes/genresbyuser.js";
 
 import profileRoutes from "./routes/profile.js";

@@ -3,7 +3,7 @@ import conn from "../db.js";
 // console.log(conn, 'conn')
 const router = express.Router();
 
-router.get("/book-collection/user", async (request, response) => {
+router.get("/book-collections/user", async (request, response) => {
   // console.log(request.user.id, "userID");
   // const id = [req.user.id]
   const userGroups = await conn.raw(
@@ -18,7 +18,7 @@ router.get("/book-collection/user", async (request, response) => {
   response.json(userGroups.rows);
 });
 
-router.delete("/book-collection/:bookId", async (req, res) => {
+router.delete("/book-collections/:bookId", async (req, res) => {
   const bookId = req.params.bookId;
 
   await conn.raw(
