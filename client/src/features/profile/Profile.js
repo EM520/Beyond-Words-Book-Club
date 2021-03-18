@@ -4,6 +4,7 @@ import Footer from "../headerfooter/Footer";
 import styles from "./Profile.module.css";
 import { FaTrash } from "react-icons/fa";
 
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectUser,
@@ -50,24 +51,12 @@ function handleClick(id){
       <NavBar />
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
-          <div className={styles.profileGrouplist}>
+          
 
-            {bookuser.map((item) => (
-              
-              <div className={styles.profileGrouplistp}>
-              
-              <img src={item.cover_pic} width="50px" height="60px"/>
-              <p key={"bookuser-" + item.id}>{item.title}</p>
-              
-              <FaTrash onClick={()=>{handleClick(item.id)}}/>
-              <span>ROMOVE THIS GROUP</span>
-              
-              </div>
-            ))}
-            
-          </div>
-
+  
+    <div className={styles.formleft}>
           <form onSubmit={handleSubmit} className={styles.profileForm}>
+          <label className={styles.message}htmlFor="profileupdate">{message}</label>
             <div className={styles.profileUpdate}>
               <input
                 value={username}
@@ -90,23 +79,14 @@ function handleClick(id){
                 placeholder="Change your Bio here"
               />
             </div>
+            <button className={styles.submitBtn}>Submit</button>
             <div className={styles.profileSubmit}>
-              <button>Submit</button>
-              <label htmlFor="profileupdate">{message}</label>
+              
+              
             </div>
           </form>
-        </div>
-        <div>
-          {user.map((item) => (
-            <div key={"user-" + item.id} className={styles.profileImg}>
-              <img src={item.photo} />
-              <button>Update Profile Photo</button>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      <div className={styles.profileGenrelist}>
+          <div className={styles.profileGenrelist}>
         {genreuser.map((item) => (
           <p key={"genreuser-" + item.id}>
             {item.name}
@@ -114,6 +94,40 @@ function handleClick(id){
             <span class="checkmark"></span>
           </p>
         ))}
+        <button className={styles.removeBtn}>Remove</button>
+        </div>
+        </div>
+    
+      <div>
+          {user.map((item) => (
+            <div key={"user-" + item.id} className={styles.profileImg}>
+              <img src={item.photo} />
+              <button>Update Profile Photo</button>
+            </div>
+          ))}
+        </div>
+
+        
+       
+        
+        
+          </div>
+          <div className={styles.profileGrouplist}>
+
+            {bookuser.map((item) => (
+              
+              <div className={styles.profileGrouplistp}>
+              
+              <img src={item.cover_pic} width="50px" height="60px"/>
+              <div className={styles.profileGrouplistp1}>
+              <p key={"bookuser-" + item.id}>{item.title}</p>
+              
+              <FaTrash onClick={()=>{handleClick(item.id)}}/>
+              </div>
+              </div>
+            ))}
+            
+          </div>
       </div>
 
       {/* <div className={styles.footer}>

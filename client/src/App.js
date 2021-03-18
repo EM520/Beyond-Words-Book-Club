@@ -12,7 +12,7 @@ import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
 import BookClub from "./features/bookclub/BookClub"
 import Signupform from "./features/auth/Signupform";
-
+import Search from "./features/search/Search";
 import "./App.css";
 
 export default function App() {
@@ -43,6 +43,10 @@ export default function App() {
             <BookClub />
             {/* <Signup /> */}
           </Route>
+
+          <AuthRoute path="/search">
+            <Search/>
+          </AuthRoute>
 
           <AuthRoute path="/profile">
             <Profile/>

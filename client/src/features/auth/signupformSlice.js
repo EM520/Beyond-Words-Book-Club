@@ -85,8 +85,8 @@ export const signupformSlice = createSlice({
 //     });
 //   };
 
-//   export const getBookUser = () =>(dispatch) =>{
-//     request.get("/books").then((r)=>{
+//   export const addGenres = () =>(dispatch) =>{
+//     axios.("/books").then((r)=>{
 //         dispatch(setBookUsers(r.data))
 //     })
 // }
