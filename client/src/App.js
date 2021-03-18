@@ -7,10 +7,11 @@ import { Users } from "./features/users/Users";
 import {LoginSignup}  from "./features/auth/Signup";
 import Profile from "./features/profile/Profile";
 import Signup from "./features/auth/Signup";
-
+import RealTop20 from "./features/realtop20/RealTop20";
 import HomePage from "./features/homepage/HomePage";
 import About from "./features/about/About";
-import BookClub from "./features/bookclub/BookClub"
+import BookClub from "./features/bookclub/BookClub";
+import GenreSelection from "./features/genreselection/GenreSelection"
 import Signupform from "./features/auth/Signupform";
 import Search from "./features/search/Search";
 import "./App.css";

@@ -1,11 +1,12 @@
 import express from "express";
 import conn from "../db.js";
+import { createSalt, hashPassword } from "../utils/auth.js";
 // console.log(conn, 'conn')
 const router = express.Router();
 
 //Get book title based on users with same collection
 router.get("/books", async (request, response) => {
-  console.log(request.user.id, "books3333");
+  // console.log(request.user.id, "userID");
   // const id = [req.user.id]
   const booktitle = await conn.raw(
     `
@@ -20,17 +21,19 @@ router.get("/books", async (request, response) => {
 });
 
 //Get user photo  based on users
-router.get("/users", async (request, response) => {
-  console.log(request.user.id);
+router.get("/profileuser", async (request, response) => {
+  console.log(request.user, "prouser");
   //const id = [req.user.id]
-  const userphoto = await conn.raw(
+  const userData = await conn.raw(
     `
-    SELECT photo FROM users
+    SELECT * FROM users
     WHERE id=?
       `,
     [request.user.id]
   );
-  response.json(userphoto.rows);
+  const user = userData.rows[0];
+  console.log(user);
+  response.json(user);
   // console.log(rows, 'userphoto');
 });
 
@@ -53,19 +56,27 @@ router.get("/genres", async (request, response) => {
 
 //Update bio in users
 router.patch("/users", async (req, res) => {
-  console.log(req.body.bio);
-  const newbio = req.body.bio;
+  const updatedUser = req.body;
+  if (updatedUser.password) {
+    updatedUser.salt = createSalt(20);
+    updatedUser.password = hashPassword(
+      updatedUser.password + updatedUser.salt
+    );
+  }
+  await conn.table("users").update(updatedUser).where({ id: req.user.id });
+  // console.log(req.body.bio);
+  // const newbio = req.body.bio;
 
-  const updatebio = await conn.raw(
-    `
-    UPDATE users
-    SET bio=?
-    WHERE id =?
-    `,
-    [newbio, req.user.id]
-  );
-  // res.json(updatebio.rows);
-  res.json("bio updated");
+  // const updatebio = await conn.raw(
+  //   `
+  //   UPDATE users
+  //   SET bio=?
+  //   WHERE id =?
+  //   `,
+  //   [newbio, req.user.id]
+  // );
+  // // res.json(updatebio.rows);
+  res.json({ mesage: "user updated" });
 });
 
 // //Update book group  based on users

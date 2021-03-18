@@ -8,40 +8,44 @@ import { FaTrash } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectUser,
-  selectBookUser,
+  selectUserGroups,
   selectGenreUser,
   getUser,
-  getBookUser,
+  getUserGroups,
   getGenreUser,
-  deleteBookUser
+  deleteBookUser,
+  updateUser
 } from "./profileSlice";
 
 export default function Profile() {
   const user = useSelector(selectUser);
-  const bookuser = useSelector(selectBookUser);
+  const userGroups = useSelector(selectUserGroups);
   const genreuser = useSelector(selectGenreUser);
   const dispatch = useDispatch();
 
   const [text, setText] = useState("");
   const [username, setUserName] = useState("");
   const [message, setMessage] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [bio, setBio] = useState("");
 
-  console.log(bookuser,"bookuser")
+  // console.log(bookuser,"bookuser")
   useEffect(() => {
     dispatch(getUser());
-    dispatch(getBookUser());
+    dispatch(getUserGroups());
     dispatch(getGenreUser());
   }, []);
+
+  useEffect(() => {
+    setUserName(user.username)
+    setBio(user.bio)
+  }, [user])
   function handleSubmit(e) {
     e.preventDefault();
 
     setMessage("Congrats!Profile Updated!");
 
-    setUserName("");
-    setEmail("");
-    setBio("");
+    dispatch(updateUser({username, password, bio}))
   }
 function handleClick(id){
   dispatch(deleteBookUser(id));
@@ -66,9 +70,9 @@ function handleClick(id){
               />
 
               <input
-                value={email}
+                value={password}
                 type="text"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Change your Password here"
               />
 
@@ -99,12 +103,10 @@ function handleClick(id){
         </div>
     
       <div>
-          {user.map((item) => (
-            <div key={"user-" + item.id} className={styles.profileImg}>
-              <img src={item.photo} />
+      <div className={styles.profileImg}>
+              <img src={user.photo} />
               <button>Update Profile Photo</button>
             </div>
-          ))}
         </div>
 
         
@@ -114,13 +116,13 @@ function handleClick(id){
           </div>
           <div className={styles.profileGrouplist}>
 
-            {bookuser.map((item) => (
+            {userGroups.map((item) => (
               
               <div className={styles.profileGrouplistp}>
               
               <img src={item.cover_pic} width="50px" height="60px"/>
               <div className={styles.profileGrouplistp1}>
-              <p key={"bookuser-" + item.id}>{item.title}</p>
+              <p key={"user-groups-" + item.id}>{item.title}</p>
               
               <FaTrash onClick={()=>{handleClick(item.id)}}/>
               </div>

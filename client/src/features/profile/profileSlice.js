@@ -15,7 +15,7 @@ export const profilesSlice = createSlice({
         // {id:3,name:"Historical Fiction"},
         // {id:4,name:"Detective and Mystery"}
       ],
-      bookusers:[
+      userGroups:[
         //  {id:1,title:"Atomic"},
         //  {id:2,title:"With the Wind "},
         //  {id:3,title:"西游记 "},
@@ -42,8 +42,8 @@ export const profilesSlice = createSlice({
       setGenreUsers: (state, action) => {
         state.genreusers = action.payload;
       },
-      setBookUsers: (state, action) => {
-        state.bookusers = action.payload;
+      setUserGroups: (state, action) => {
+        state.userGroups = action.payload;
       },
     },
   });
@@ -56,7 +56,7 @@ export const profilesSlice = createSlice({
     // incrementByAmount,
     setUsers,
     setGenreUsers,
-    setBookUsers,
+    setUserGroups,
     
   } = profilesSlice.actions;
   
@@ -79,15 +79,15 @@ export const profilesSlice = createSlice({
   // }
   
   export const getUser = () => (dispatch) => {
-    request.get("/users").then((r) => {
+    request.get("/profileuser").then((r) => {
       // const action = setUsers(r.data)
       dispatch(setUsers(r.data));
     });
   };
 
-  export const getBookUser = () =>(dispatch) =>{
-    request.get("/books").then((r)=>{
-        dispatch(setBookUsers(r.data))
+  export const getUserGroups = () =>(dispatch) =>{
+    request.get("/book-collection/user").then((r)=>{
+        dispatch(setUserGroups(r.data))
     })
 }
 
@@ -99,11 +99,17 @@ export const profilesSlice = createSlice({
 
   export const deleteBookUser = (id) => (dispatch) => {
     
-    axios.delete("/api/bookgroup/" + id).then((resp) => {
-      dispatch(getBookUser());
+    axios.delete("/api/book-collection/" + id).then((resp) => {
+      dispatch(getUserGroups())
+      // dispatch(getBookUser());
       
     });
   };
+
+  export const updateUser = (newUser) => async (dispatch) => {
+    await request.patch('/users', newUser)
+    
+  }
 
   // export const updateUser = () => (dispatch) => {
     
@@ -120,7 +126,7 @@ export const profilesSlice = createSlice({
 //   export const selectCount = (state) => state.users.value;
 
   export const selectUser = (state) => state.userState.users;
-  export const selectBookUser=(state) =>state.bookuserState.bookusers;
+  export const selectUserGroups =( state) => state.profileState.userGroups;
   export const selectGenreUser=(state) =>state.genreuserState.genreusers;
   
 
