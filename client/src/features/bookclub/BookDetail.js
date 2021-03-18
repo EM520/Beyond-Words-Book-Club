@@ -1,12 +1,12 @@
-import React, { useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { selectBookClub, getBookClub } from "./bookclubSlice"
-import styles from "./BookClub.module.css"
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { selectBookClub, getBookClub } from './bookclubSlice'
+import styles from './BookClub.module.css'
 
 export default function BookDetail(id) {
   // const id = 1
   const bookclub = useSelector(selectBookClub)
-  console.log(bookclub, "bc")
+  console.log(bookclub, 'bc')
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getBookClub(1))
@@ -15,7 +15,7 @@ export default function BookDetail(id) {
     <>
       <div className={styles.bookclubmain}>
         {bookclub.map((book) => (
-          <div key={"book-" + book.id}>
+          <div key={'book-' + book.id}>
             <div
               style={{ backgroundImage: `url(${book.cover_pic})` }}
               className={styles.bookList}

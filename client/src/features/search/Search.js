@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from "react";
-import NavBar from "../headerfooter/NavBar";
-import Footer from "../headerfooter/Footer";
-import styles from "./Search.module.css";
+import React, { useState, useEffect } from 'react'
+import NavBar from '../headerfooter/NavBar'
+import Footer from '../headerfooter/Footer'
+import styles from './Search.module.css'
 // import { Select } from 'antd';
 
-export default function Search(){
-    return(
-        <>
-        <NavBar />
-        <div className={styles.container}>
-            <div className={styles.searchbar}>
-            <label>Sort by:</label>
-            <select >    
-                <option>---Most Popular---</option>
-                <option>BookName</option>
-                <option>Author</option>
-                <option>Rank</option>
-            </select> 
-            
-            <label>Item per page:</label> 
-             <select >    
-                
-                <option>30</option>
-                <option>20</option>
-                <option>10</option>
-            </select> 
-            
-            </div>
+export default function Search() {
+  return (
+    <>
+      <NavBar />
+      <div className={styles.container}>
+        <div className={styles.searchbar}>
+          <label>Sort by:</label>
+          <select>
+            <option>---Most Popular---</option>
+            <option>BookName</option>
+            <option>Author</option>
+            <option>Rank</option>
+          </select>
+
+          <label>Item per page:</label>
+          <select>
+            <option>30</option>
+            <option>20</option>
+            <option>10</option>
+          </select>
         </div>
-        <Footer/>
-        </>
-    )
+      </div>
+      <Footer />
+    </>
+  )
 }
 
 // import { Select } from 'antd';
