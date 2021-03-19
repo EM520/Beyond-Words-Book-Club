@@ -64,6 +64,10 @@ router.post('/genres/user', async (req, res) => {
   res.json({message:"User Gneres added successfully"});
 })
 
+// genres_users delete of that record
+router.delete('/genres/user/:genreId', (req, res) => {
+  res.json({ message: 'delete genre from user' })
+})
 
 // TODO: get rid of this...
 router.get('/genrelist', async (request, response) => {
