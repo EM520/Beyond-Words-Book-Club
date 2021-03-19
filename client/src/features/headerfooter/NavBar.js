@@ -37,25 +37,25 @@ export default function NavBar() {
           <button className={styles.dropbtn}>Genre List</button>
             <div className={styles.dropdowncontent}>
               <ul className={styles.dowdownlist}>
-              <li><Link to="">Genre 1</Link>
-              <Link to="">Genre 2</Link>
-              <Link to="">Genre 3</Link>
-              <Link to="">Genre 4</Link>
+              <li><Link to="/search?q=literaryfiction">Literary Fiction</Link>
+              <Link to="">Suspense/Thrillers</Link>
+              <Link to="">Science Fiction</Link>
+              <Link to="">Historical Fiction</Link>
               </li>
-              <li><Link to="">Genre 5</Link>
-              <Link to="">Genre 6</Link>
-              <Link to="">Genre 7</Link>
-              <Link to="">Genre 8</Link>
+              <li><Link to="">Bios/Autobiographies</Link>
+              <Link to="">Memoir</Link>
+              <Link to="">Detective/Mysery</Link>
+              <Link to="">Action/Adventure</Link>
               </li>
-              <li><Link to="">Genre 9</Link> 
-              <Link to="">Genre 10</Link>  
-              <Link to="">Genre 11</Link>     
-              <Link to="">Genre 12</Link> 
+              <li><Link to="">Self-Help</Link> 
+              <Link to="">Fantasy</Link>  
+              <Link to="">Romance</Link>     
+              <Link to="">Horror</Link> 
               </li>
-              <li><Link to="">Genre 13</Link>
-              <Link to="">Genre 14</Link>
-              <Link to="">Genre 15</Link>
-              <Link to="">Genre 16</Link>
+              <li><Link to="">Classics</Link>
+              <Link to="">History</Link>
+              <Link to="">Poetry</Link>
+              <Link to="">Essays</Link>
               </li>
               </ul>                           
             </div>
