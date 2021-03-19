@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
 .navBar {
-  height: 20vh;
+  /* min-height: 1vh; */
   margin: 0 auto;
   background-color: #9fe5e7;
   background-position: absolute;
@@ -51,18 +51,21 @@
 .dropdowncontent {
   display: none;
   position: absolute;
-  min-width: 160px;
+  min-width: 600px;
   box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2);
   background-color:#f0efe0;  
   z-index: 1;
 }
 
-/* Links inside the dropdown */
+.dowdownlist {
+  display: flex;
+  flex-direction: columns;
+}
+
 .dropdowncontent a {
   color: black;
   font-size: 2vw;
   padding: 1vh 1vh;
-  text-decoration: none;
   display: block;
 }
 

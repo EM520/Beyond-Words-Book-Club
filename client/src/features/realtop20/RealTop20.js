@@ -10,6 +10,8 @@
 //   }, [])
 //   return (
 //     <>
+//    <SearchBar />
+
 //       <div className={styles.top20main}>
 //         {top20.map((book) => (
 //           <div key={'book-' + book.id}>
