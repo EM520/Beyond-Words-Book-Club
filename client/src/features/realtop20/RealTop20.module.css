@@ -1,0 +1,15 @@
+.top20main {
+    padding: 0;
+}
+
+.bookList {
+    height: 16vw;
+    width: 18vw;
+    /* width: 200px; */
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+.description {
+    font-size: 20px;
+}  
