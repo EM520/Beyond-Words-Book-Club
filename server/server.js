@@ -7,6 +7,7 @@ import bookRoutes from './routes/books.js'
 import bookCollectionRoutes from './routes/book-collections.js'
 import discussionsRoutes from './routes/discussions.js'
 import genresRoutes from './routes/genres.js'
+import top20Routes from './routes/top20.js'
 
 const app = express()
 const PORT = 3001
@@ -20,6 +21,7 @@ app.use('/api', bookCollectionRoutes)
 app.use('/api', discussionsRoutes)
 app.use('/api', authRoutes)
 app.use('/api', genresRoutes)
+app.use('/api', top20Routes)
 
 // example of grabbing logged in user
 app.get('/api/test-user', (req, res) => {
