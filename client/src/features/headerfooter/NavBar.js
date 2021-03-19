@@ -33,20 +33,45 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
+          <div className={styles.dropdown}>
+          <button className={styles.dropbtn}>Genre List</button>
+            <div className={styles.dropdowncontent}>
+              <ul className={styles.dowdownlist}>
+              <li><Link to="">Genre 1</Link>
+              <Link to="">Genre 2</Link>
+              <Link to="">Genre 3</Link>
+              <Link to="">Genre 4</Link>
+              </li>
+              <li><Link to="">Genre 5</Link>
+              <Link to="">Genre 6</Link>
+              <Link to="">Genre 7</Link>
+              <Link to="">Genre 8</Link>
+              </li>
+              <li><Link to="">Genre 9</Link> 
+              <Link to="">Genre 10</Link>  
+              <Link to="">Genre 11</Link>     
+              <Link to="">Genre 12</Link> 
+              </li>
+              <li><Link to="">Genre 13</Link>
+              <Link to="">Genre 14</Link>
+              <Link to="">Genre 15</Link>
+              <Link to="">Genre 16</Link>
+              </li>
+              </ul>                           
+            </div>
+          </div>
+        </li>
+        {/* <li>
           <Link className={styles.navLink} to="/genres">
             Genre List
           </Link>
-          {/* <ul>
-            <li><Link className={styles.subLink} to="/genre1">Sub Item 1</Link></li>
-            <li><Link className={styles.subLink} to="/genre2">Sub Item 2</Link></li>
-         </ul> */}
-          {/* This commented out code was an attempt at making a dropdown using CSS */}
-        </li>
+        </li> */}
         <li>
           <Link className={styles.navLink} to="/top20">
             Top 20 Clubs
           </Link>
         </li>
+        
         <li>
           <Link className={styles.navLink} to="/profile">
             Profile

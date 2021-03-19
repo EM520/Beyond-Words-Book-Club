@@ -21,7 +21,7 @@ export default function App() {
       <div>
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        {/* <NavBar /> */}
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <Splash />
@@ -66,7 +66,7 @@ export default function App() {
             <Signupform />
           </Route>
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   )
