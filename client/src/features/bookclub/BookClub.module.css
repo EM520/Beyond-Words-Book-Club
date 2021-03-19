@@ -1,44 +1,57 @@
-.bookList {
-  height: 16vw;
-  width: 18vw;
-  /* width: 200px; */
-  background-size: contain;
-  background-repeat: no-repeat;
+.bookCover{
+    height:150px;
+    width:150px;
+    /* width: 200px; */
+    /* background-size: contain;
+    background-repeat: no-repeat; */
+
+
 }
 
 .description {
-  width: 15vw;
-  height: 13vw;
-  border: 1px solid black;
+    width: 20vw;
+    height: 23vw;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid rgb(196, 190, 190);
+    display: inline;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
-/* .bookclubmain { */
-/* height: 500vw; */
-/* margin: 0 auto; */
 
-/* width:300vw; */
-/* border: 1px solid black; */
-/* margin: 0 auto; */
+.parMargin {
+    margin-bottom: 0;
+}
 
-/* } */
+.bookclubmain {
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+    gap: 20px;
+    justify-items: center;
+}
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%
+    
+  }
+.discussionmain{
+    border: 1px solid rgb(196, 190, 190);
+    font-size: 14px;
+    font-family: 'Segoe UI', Roboto;
+    padding: 24px;
+
+
 }
-.discussionmain {
-  /* height: 32vw; */
-  /* width: 70vw; */
-  border: 1px solid rgb(196, 190, 190);
-  font-size: 14px;
-  font-family: 'Segoe UI', Roboto;
-  padding: 24px;
-}
-.clubmain {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
+.clubmain{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content:space-evenly;
 }
 
 .discussionlist {
@@ -63,18 +76,21 @@
   resize: none;
 }
 .join {
-  height: 30px;
-  width: 100px;
-  font-family: 'Amatic SC';
-  font-size: 20px;
-  background-color: rgb(55, 55, 177);
-  color: rgb(229, 226, 226);
-  margin: 10px;
+
+    height: 30px;
+    width: 150px;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    outline-color: rgb(197, 192, 192);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+
 }
 .commentMain {
-  display: flex;
-  /* background-color: cadetblue; */
-  /* margin: 10px; */
+    display: flex;
+
 }
 .commentMain img {
   width: 32px;
@@ -92,17 +108,20 @@
   height: 100px;
 }
 .replyinput {
-  height: 25px;
-  width: 100%;
-  outline: none;
-  border-radius: 10px;
-  border: 1px solid rgb(218, 215, 215);
-  text-indent: 10px;
-  background-color: transparent;
+    height: 25px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgb(218, 215, 215);
+    text-indent : 10px;
+    background-color: transparent;
+
+
 }
-.userdate {
-  font-size: 10px;
-  font-family: inherit;
+.userdate{
+    font-size: 10px;
+    font-family: inherit;
+    margin-bottom: 0;
 }
 .button {
   height: 30px;
@@ -116,9 +135,9 @@
   margin-left: 750px;
 }
 .reply {
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
 }
 .reply:hover {
   text-decoration: underline;
@@ -129,4 +148,8 @@
 .commentUser {
   padding: 0;
   margin: 0;
+}
+.replyComment{
+    margin-left: 40px;
+    margin-top: -9px;
 }
