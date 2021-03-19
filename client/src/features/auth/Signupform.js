@@ -5,29 +5,27 @@ import request from '../../utils/request'
 import styles from './Signupform.module.css'
 import NavBar from '../headerfooter/NavBar'
 import Footer from '../headerfooter/Footer'
-import { selectGenre, setGenres, getGenres, addGenres } from './signupformSlice'
+import { selectUserGenre,  addUserGenres,addUser } from './signupformSlice'
 
 export default function Signupform() {
-  const genre = useSelector(selectGenre)
+  const genre = useSelector(selectUserGenre)
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(getGenres())
-  }, [])
+  
 
   function handleSubmit() {
-    //   dispatch (addGenres())
+   dispatch(addUser())
+  dispatch (addUserGenres())
   }
 
   return (
     <>
-      <NavBar />
-
+    <NavBar />
       <div className={styles.signupform}>
         <form onSubmit={handleSubmit}>
           <div className={styles.signupform1}>
             <input placeholder="Input your username" />
-            <input placeholder="Input your password" />
-            <input placeholder="Comfirm your password" />
+            <input type="password" placeholder="Input your password" />
+            <input type="password" placeholder="Comfirm your password" />
             <input placeholder="Input your Email" />
             <textarea
               name="signupform1"
@@ -45,7 +43,7 @@ export default function Signupform() {
           </div>
         </form>
 
-        <button className={styles.submitBtn}>Submit</button>
+        <button type="submit" className={styles.submitBtn}>Submit</button>
 
         <div className={styles.signupformGenreList}>
           <h1>Choose your Favorite Genre</h1>
@@ -65,7 +63,7 @@ export default function Signupform() {
           </button>
         </div>
       </div>
-      <Footer />
+     <Footer />
     </>
   )
 }

@@ -9,7 +9,7 @@ export const profilesSlice = createSlice({
       // { id: 1, name: 'Douglas' },
       // { id: 2, name: 'John' },
     ],
-    genreusers: [
+    genres: [
       // {id:1,name:"Romans"},
       // {id:2,name:"LOVE"},
       // {id:3,name:"Historical Fiction"},
@@ -39,11 +39,14 @@ export const profilesSlice = createSlice({
     setUsers: (state, action) => {
       state.users = action.payload
     },
-    setGenreUsers: (state, action) => {
-      state.genreusers = action.payload
+    setGenres: (state, action) => {
+      state.genres = action.payload
     },
     setUserGroups: (state, action) => {
       state.userGroups = action.payload
+    },
+    setUserGenres: (state, action) => {
+      state.userGenres = action.payload
     },
   },
 })
@@ -55,8 +58,9 @@ export const {
   // decrement,
   // incrementByAmount,
   setUsers,
-  setGenreUsers,
+  setGenres,
   setUserGroups,
+  setUserGenres,
 } = profilesSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -90,9 +94,15 @@ export const getUserGroups = () => (dispatch) => {
   })
 }
 
-export const getGenreUser = () => (dispatch) => {
-  request.get('/genres/user').then((r) => {
-    dispatch(setGenreUsers(r.data))
+export const addUserGenres = () => (dispatch) => {
+  request.post('/genres/user').then((r) => {
+    dispatch(setUserGenres(r.data))
+  })
+}
+
+export const getGenres = () => (dispatch) => {
+  axios.get('/api/genres').then((r) => {
+    dispatch(setGenres(r.data))
   })
 }
 
@@ -121,8 +131,9 @@ export const updateUser = (newUser) => async (dispatch) => {
 
 //   export const selectCount = (state) => state.users.value;
 
-export const selectUser = (state) => state.userState.users
+export const selectUser = (state) => state.profileState.users
 export const selectUserGroups = (state) => state.profileState.userGroups
-export const selectGenreUser = (state) => state.genreuserState.genreusers
+export const selectGenres = (state) => state.profileState.genres
+export const selectUserGenres = (state) => state.profileState.userGenres
 
 export default profilesSlice.reducer

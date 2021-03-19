@@ -111,8 +111,14 @@
   border: transparent;
 }
 
+
 .profileUpdate input:focus {
   outline: none;
+}
+.profileBio{
+  margin-top: 30px;
+  border: transparent;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
 }
 
 .profileInfo label {
@@ -151,12 +157,10 @@
 }
 
 .profileGenrelist {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 20px;
   width: 100%;
-
   padding-top: 20px;
   /* border:3px solid rgb(27, 55, 212); */
 }
@@ -181,10 +185,14 @@
   align-items: center;
 }
 
-.removeBtn {
+/* .removeBtn {
   width: 10vw;
   height: 3vw;
   border-radius: 5px;
   box-shadow: 5px 5px 3px rgb(133, 123, 123);
   margin-top: 30px;
+} */
+
+.updatetest{
+  background-color: aqua;
 }

@@ -49,18 +49,21 @@ router.get('/genres/user', async (request, response) => {
 
 // Add genre to table genreusers
 router.post('/genres/user', async (req, res) => {
-  //  console.log(req.user.id)
-  const addGenre = await conn.raw(
+   console.log(req.body,"genres on user test")
+   console.log(req.user.id)
+  await conn.raw(
     `
-      INSERT INTO genres_users (genre_id  ,user_id )
+      INSERT INTO genres_users
       VALUES
       (?,?) 
       `,
-    [req.body.genre_id, req.user.id]
+      [req.body.genre_id,req.user.id]
+    // [req.body.genre_id, req.user.id]
   )
-  // res.json(addGenre.rows);
-  // res.json({message:"post successfully"});
+  // res.json(usergenres.rows)
+  res.json({message:"User Gneres added successfully"});
 })
+
 
 // TODO: get rid of this...
 router.get('/genrelist', async (request, response) => {
