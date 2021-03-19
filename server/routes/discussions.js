@@ -60,14 +60,15 @@ router.post('/discussions', async (request, response) => {
   // console.log(Date().getHours());
 
   const { discussion, group_id, parent_id } = request.body
-  console.table(request.body)
-  await conn.raw(
-    `
-      INSERT INTO discussions (discussion, user_id,  parent_id, group_id)
-      VALUES(?,?,?,?);
-  `,
-    [discussion, userId, parent_id, group_id]
-  )
+  await conn.table('discussions').insert({ ...request.body, user_id: userId })
+  // console.table(request.body)
+  // await conn.raw(
+  //   `
+  //     INSERT INTO discussions (discussion, user_id, parent_id, group_id)
+  //     VALUES(?,?,?,?);
+  // `,
+  //   [discussion, userId, parent_id, group_id]
+  // )
 
   response.json({ message: 'discussion added' })
 })

@@ -16,7 +16,7 @@ router.get('/searchresults/', async (request, response) => {
        WHERE (a.first_name like ? OR a.last_name like ?) 
        OR b.title like ? OR g.name like ?
        `,
-   [id]
+   []
       )
      const rows = search.rows
     response.json(rows);
