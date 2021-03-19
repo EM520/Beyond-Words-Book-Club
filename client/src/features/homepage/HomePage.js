@@ -6,7 +6,7 @@ import styles from './HomePage.module.css'
 import sellbooksad from '../pic/midbanner-sell-books.jpg'
 import diversereaders from '../pic/diversereaders.png'
 import adspecsclubpage from '../pic/adspecsclubpage.jpg'
-import { GiBottomRight3DArrow } from 'react-icons/gi'
+// import { GiBottomRight3DArrow } from 'react-icons/gi'
 
 // import styles from './Homepage.css'
 export default function HomePage() {
@@ -17,14 +17,14 @@ export default function HomePage() {
       </div>
 
       <div className={styles.homepageTop}>
-        <h2>Username's favorite genres!</h2>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* <h2>Username's favorite genres!</h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         <SearchBar />
       </div>
 
-      <div className={styles.dumbArrow}>
+      {/* <div className={styles.dumbArrow}>
         <GiBottomRight3DArrow size={40} />
-      </div>
+      </div> */}
       <div className={styles.bookscroll}>
         <div className={styles.bookrow}>
           <GenresByUser />
