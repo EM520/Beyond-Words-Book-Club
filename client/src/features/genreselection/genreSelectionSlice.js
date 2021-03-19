@@ -22,7 +22,7 @@ export const { setGenres } = genreSelectionSlice.actions
 // code can then be executed and other actions can be dispatched
 
 export const getGenres = (state) => (dispatch) => {
-  request.get('/genres/user').then((r) => {
+  request.get('/genres').then((r) => {
     console.log(r.data)
     //   const action = setUsers(r.data)
     dispatch(setGenres(r.data))

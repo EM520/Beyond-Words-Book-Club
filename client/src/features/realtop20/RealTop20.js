@@ -6,9 +6,7 @@ import SearchBar from '../searchbar/SearchBar'
 export default function ReadTop20() {
   return (
     <>
-      <NavBar />
-      <SearchBar />
-      <Footer />
+
     </>
   )
 }
