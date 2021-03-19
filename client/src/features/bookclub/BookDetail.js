@@ -13,19 +13,21 @@ export default function BookDetail(id) {
   }, [])
   return (
     <>
-      <div className={styles.bookclubmain}>
+      <div >
         {bookclub.map((book) => (
-          <div key={'book-' + book.id}>
-            <div
-              style={{ backgroundImage: `url(${book.cover_pic})` }}
-              className={styles.bookList}
-            ></div>
+          <div key={"book-" + book.id} className={styles.bookclubmain}>
+                            <img src={book.cover_pic} className={styles.bookCover}/>
+
             <button className={styles.join}> Join This Club </button>
             <div className={styles.description}>
-              <p>{book.title}</p>
-              <p>{book.copyright}</p>
-              <p>{book.synopsis}</p>
-              <p>{`${book.first_name} ${book.last_name}`}</p>
+            <strong>TITLE: </strong> 
+              <p className={styles.parMargin}>{book.title}</p>
+              <strong>COPYRIGHT: </strong>
+              <p className={styles.parMargin}>{book.copyright}</p>
+              <strong>SYNOPIS: </strong>
+              <p className={styles.parMargin}>{book.synopsis}</p>
+              <strong>AUTHOR: </strong>
+              <p className={styles.parMargin}>{`${book.first_name} ${book.last_name}`}</p>
             </div>
           </div>
         ))}

@@ -74,25 +74,21 @@ export default function GenresByUser() {
       <div className={styles.genreListMain}>
         {genreuser.map((genre) => (
           <div key={'guser-' + genre.id} className={styles.genreListsubMain}>
-            {/* <div
-              style={{ backgroundImage: `url(${genre.cover_pic})` }}
-              className={styles.genreList}
-            ></div> */}
-            <p>
-              <img
-                className={styles.genreList}
-                src={genre.cover_pic}
-                alt={genre.title}
-                className={styles.bookimage}
-              />
-            </p>
-            <div className={styles.genreLink}>
+            <Link to="/genres" className={styles.genreUserLink}>
               <p>
-                <Link to="/genres" className={styles.genreUserLink}>
-                  {genre.name}
-                </Link>
+                <img
+                  className={styles.genreList}
+                  src={genre.cover_pic}
+                  alt={genre.title}
+                  className={styles.bookimage}
+                />
               </p>
-            </div>
+              <div className={styles.genreLink}>
+                <p>
+                  {genre.name}
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

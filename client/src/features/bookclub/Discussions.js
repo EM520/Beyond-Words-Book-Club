@@ -46,6 +46,11 @@ const Discussions = (id) => {
     }
   }
 
+  function handleShowReply (e) {
+    e.preventDefault()
+    setShowReply(!showReply)
+  }
+
   return (
     <>
       {/* className={styles.discussionmain} */}
@@ -67,7 +72,7 @@ const Discussions = (id) => {
               <div style={{ marginLeft: '40px' }}>
                 <a
                   href="#"
-                  onClick={() => setShowReply(!showReply)}
+                  onClick={handleShowReply}
                   className={styles.reply}
                 >
                   Reply
