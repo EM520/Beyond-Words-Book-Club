@@ -25,12 +25,11 @@ export const { setRealTop20 } = realTop20Slice.actions
 export const getRealTop20 = (id) => (dispatch) => {
   request.get('/top20').then((r) => {
     console.log(r.data)
-    //   const action = setUsers(r.data)
     dispatch(setRealTop20(r.data))
   })
 }
 
-export const selectTop20 = (state) => state.top20.top20
+export const selectTop20 = (state) => state.realTop20.realTop20
 export default realTop20Slice.reducer
 
 

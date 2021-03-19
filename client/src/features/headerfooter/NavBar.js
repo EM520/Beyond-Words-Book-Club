@@ -38,24 +38,24 @@ export default function NavBar() {
             <div className={styles.dropdowncontent}>
               <ul className={styles.dowdownlist}>
               <li><Link to="/search?q=literaryfiction">Literary Fiction</Link>
-              <Link to="">Suspense/Thrillers</Link>
-              <Link to="">Science Fiction</Link>
-              <Link to="">Historical Fiction</Link>
+              <Link to="search?q=suspensethrillers">Suspense/Thrillers</Link>
+              <Link to="search?q=sciencefiction">Science Fiction</Link>
+              <Link to="search?q=historicalfiction">Historical Fiction</Link>
               </li>
-              <li><Link to="">Bios/Autobiographies</Link>
-              <Link to="">Memoir</Link>
-              <Link to="">Detective/Mysery</Link>
-              <Link to="">Action/Adventure</Link>
+              <li><Link to="search?q=biosautobiographies">Bios/Autobiographies</Link>
+              <Link to="search?q=memoir">Memoir</Link>
+              <Link to="search?q=detectivemystery">Detective/Mysery</Link>
+              <Link to="search?q=actionadventure">Action/Adventure</Link>
               </li>
-              <li><Link to="">Self-Help</Link> 
-              <Link to="">Fantasy</Link>  
-              <Link to="">Romance</Link>     
-              <Link to="">Horror</Link> 
+              <li><Link to="search?q=selfhelp">Self-Help</Link> 
+              <Link to="search?q=fantasy">Fantasy</Link>  
+              <Link to="search?q=romance">Romance</Link>     
+              <Link to="search?q=horror">Horror</Link> 
               </li>
-              <li><Link to="">Classics</Link>
-              <Link to="">History</Link>
-              <Link to="">Poetry</Link>
-              <Link to="">Essays</Link>
+              <li><Link to="search?q=classics">Classics</Link>
+              <Link to="search?q=history">History</Link>
+              <Link to="search?q=poetry">Poetry</Link>
+              <Link to="search?q=essays">Essays</Link>
               </li>
               </ul>                           
             </div>
