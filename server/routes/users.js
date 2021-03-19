@@ -1,5 +1,7 @@
 import express from 'express'
 import conn from '../db.js'
+import { createSalt, hashPassword } from '../utils/auth.js'
+
 // console.log(conn, 'conn')
 const router = express.Router()
 router.get('/users', async (request, response) => {
