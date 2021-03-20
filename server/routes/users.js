@@ -36,7 +36,8 @@ router.patch('/users', async (req, res) => {
   res.json({ mesage: 'user updated' })
 })
 
-router.post('/users/adduser', async (req, res) => {
+router.post('/registration', async (req, res) => {
+  console.log(req.body)
   const addUser = req.body
   if (addUser.password) {
     addUser.salt = createSalt(20)

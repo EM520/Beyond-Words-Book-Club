@@ -66,6 +66,15 @@ router.post('/genres/user', async (req, res) => {
 
 // genres_users delete of that record
 router.delete('/genres/user/:genreId', (req, res) => {
+  const genreId = req.params.genreId
+  const userId = req.user.id
+  await conn.raw(
+    `
+    DELETE FROM genres_users gu
+    WHERE gu.genre_id=? and gu.user_id = ?
+    `,
+    [genreId,userId]
+  )
   res.json({ message: 'delete genre from user' })
 })
 

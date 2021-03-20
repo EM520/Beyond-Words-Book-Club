@@ -34,13 +34,13 @@ router.post('/book-collections', async (request, response) => {
 
 router.delete('/book-collections/:bookId', async (req, res) => {
   const bookId = req.params.bookId
-
+  const userId = req.user.id
   await conn.raw(
     `
     DELETE FROM book_collections bc
-    WHERE bc.book_id=?
+    WHERE bc.book_id=? and user_id = ?
     `,
-    [bookId]
+    [bookId,userId]
   )
   res.json({ message: 'Books Group deleted' })
 })

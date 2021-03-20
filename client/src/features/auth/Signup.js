@@ -24,7 +24,7 @@ export default function Signup() {
 
   return (
     <>
-    <NavBar />
+   
     <form onSubmit={handleSubmit} className={styles.loginSignup}>
       <input
         className={styles.loginInput}
@@ -56,7 +56,7 @@ export default function Signup() {
         </button>
       </div>
     </form>
-    <Footer />
+    
     </>
   )
 }

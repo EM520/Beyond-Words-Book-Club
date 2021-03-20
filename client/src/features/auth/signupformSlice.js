@@ -15,6 +15,12 @@ export const signupformSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
+    userGenres: [
+      // {id:1,name:"Romans"},
+      // {id:2,name:"LOVE"},
+      // {id:3,name:"Historical Fiction"},
+      // {id:4,name:"Detective and Mystery"}
+    ],
    
   },
   reducers: {
@@ -37,7 +43,9 @@ export const signupformSlice = createSlice({
     setUserGenres: (state, action) => {
       state.genres = action.payload
     },
-    
+    setGenres: (state, action) => {
+      state.genres = action.payload
+    },
     // addUsers: (state, action) => {
     //   state.users = action.payload
     // },
@@ -51,6 +59,7 @@ export const {
   // decrement,
   // incrementByAmount,
   setUsers,
+  setGenres,
   setUserGenres,
 
   // setBookUsers,
@@ -74,15 +83,20 @@ export const {
 //   }
 // }
 
-//   export const getUser = () => (dispatch) => {
-//     request.get("/users").then((r) => {
-//       // const action = setUsers(r.data)
-//       dispatch(setUsers(r.data));
-//     });
-//   };
+  export const getGenres = () => (dispatch) => {
+    axios.get("/api/genres").then((r) => {
+      dispatch(setGenres(r.data));
+    });
+  };
+
+  export const getUserGenres = () => (dispatch) => {
+    request.get("/genres/user").then((r) => {
+      dispatch(setUserGenres(r.data));
+    });
+  };
 
   export const addUser = () =>(dispatch) =>{
-    request.post("/users/adduser").then((r)=>{
+    request.post("/registration").then((r)=>{
         dispatch(setUsers(r.data))
     })
 }
@@ -93,14 +107,15 @@ export const addUserGenres = () => (dispatch) => {
   })
 }
 
-//   export const deleteBookUser = (id) => (dispatch) => {
+  export const deleteUserGenre = (id) => (dispatch) => {
 
-//     axios.delete("/api/bookgroup" + id).then((resp) => {
+    axios.delete("/api/genres/user/" + id).then((resp) => {
+      dispatch(getUserGenres());
 
-//       dispatch(getBookUser());
+    });
+  };
 
-//     });
-//   };
+ 
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -111,6 +126,7 @@ export const addUserGenres = () => (dispatch) => {
 //   export const selectUser = (state) => state.userState.users;
 //   export const selectBookUser=(state) =>state.bookuserState.bookusers;
 export const selectUser = (state) => state.signupformState.users
-export const selectUserGenre = (state) => state.signupformState.genres
+export const selectGenre = (state) => state.signupformState.genres
+export const selectUserGenre = (state) => state.signupformState.userGenres
 
 export default signupformSlice.reducer

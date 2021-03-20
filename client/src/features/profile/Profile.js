@@ -42,6 +42,7 @@ export default function Profile() {
     setUserName(user.username)
     setBio(user.bio)
   }, [user])
+  
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -57,7 +58,7 @@ export default function Profile() {
   }
   return (
     <>
-      <NavBar />
+     
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
           <div className={styles.formleft}>
@@ -74,8 +75,9 @@ export default function Profile() {
                 />
 
                 <input
+                  required
                   value={password}
-                  type="text"
+                  type="password"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Change your Password here"
                 />
@@ -135,10 +137,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* <div className={styles.footer}>
-        
-      </div> */}
-      <Footer />
+     
     </>
   )
 }
