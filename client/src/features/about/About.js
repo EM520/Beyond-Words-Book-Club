@@ -13,7 +13,7 @@ export default function About() {
         <ul>
           <li>
             <h1>About Us</h1>
-            <span>
+            <div className={styles.abouttext}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -26,7 +26,7 @@ export default function About() {
               quae ab illo inventore veritatis et quasi architecto beatae vitae
               dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
               aspernatur aut odit aut fugit
-            </span>
+            </div>
           </li>
           <li>
             <img
@@ -34,12 +34,12 @@ export default function About() {
               src={peoplesitting}
               alt="Group Reading"
             />
-            <span>
+            <div className={styles.abouttext}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat{' '}
-            </span>
+            </div>
           </li>
           <li>
             <img className={styles.ad} src={adplaceholder} alt="Sponsored Ad" />

@@ -7,6 +7,8 @@ import bookclubReducer from '../features/bookclub/bookclubSlice'
 import profilesReducer from '../features/profile/profileSlice'
 import signupformReducer from '../features/auth/signupformSlice'
 import genreSelectionReducer from '../features/genreselection/genreSelectionSlice'
+import realTop20Reducer from '../features/realtop20/realTop20Slice'
+
 
 export default configureStore({
   reducer: {
@@ -19,5 +21,6 @@ export default configureStore({
     bookclub: bookclubReducer,
     
     genres: genreSelectionReducer,
+    realTop20: realTop20Reducer,
   },
 })
