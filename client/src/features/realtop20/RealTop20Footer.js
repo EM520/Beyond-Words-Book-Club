@@ -4,7 +4,6 @@ import peopleonbacks from '../pic/peopleonbacks.jpg'
 import adtoptwentypage from '../pic/adtoptwentypage.jpg'
 import holdingbooks from '../pic/holdingbooks.jpg'
 
-
 export default function RealTop20Footer() {
   return (
     <>
