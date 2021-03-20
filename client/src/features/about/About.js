@@ -13,7 +13,7 @@ export default function About() {
         <ul>
           <li>
             <h1>About Us</h1>
-            <div className = {styles.abouttext}>
+            <div className={styles.abouttext}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

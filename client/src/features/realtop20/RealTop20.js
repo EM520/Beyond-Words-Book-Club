@@ -27,7 +27,7 @@ export default function RealTop20() {
 
         <div className={styles.description}>
             {`${top20.first_name} ${top20.last_name} - "${top20.title}" 
-            (${top20.count} posts)`}              
+            (${top20.count} ${(top20.count == 1) ? "post" : "posts"})`}              
         </div>
       </div> 
     ))}
