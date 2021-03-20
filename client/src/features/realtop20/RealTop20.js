@@ -24,15 +24,14 @@ export default function RealTop20() {
           src={top20.cover_pic}
           alt={top20.title}
           className={styles.bookimage}/>
+
         <div className={styles.description}>
             {`${top20.first_name} ${top20.last_name} - "${top20.title}" 
             (${top20.count} posts)`}              
         </div>
-          <div>
-            {/* <RealTop20Footer /> */}
-          </div>
-      </div>
+      </div> 
     ))}
+          <RealTop20Footer />
   </div>
   </>
   )
