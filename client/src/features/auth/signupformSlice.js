@@ -15,12 +15,7 @@ export const signupformSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
-    userGenres: [
-      // {id:1,name:"Romans"},
-      // {id:2,name:"LOVE"},
-      // {id:3,name:"Historical Fiction"},
-      // {id:4,name:"Detective and Mystery"}
-    ],
+    
    
   },
   reducers: {
@@ -96,7 +91,9 @@ export const {
   };
 
   export const addUser = () =>(dispatch) =>{
-    request.post("/registration").then((r)=>{
+    
+    axios.post("/api/registration").then((r)=>{
+      console.log(r.data)
         dispatch(setUsers(r.data))
     })
 }

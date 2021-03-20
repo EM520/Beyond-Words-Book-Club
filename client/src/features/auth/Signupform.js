@@ -34,27 +34,18 @@ export default function Signupform() {
       reader.readAsDataURL(file);
     }
   }
-  useEffect(() => {
-    setUserName("")
-    setEmail("")
-    setBio("")
-  }, [])
 
   useEffect(() => {
-    dispatch(getUserGenres())
-   
-    
+    dispatch(getGenres())
   }, [])
   
-  // useEffect(() => {
-  //   dispatch(getGenres())
-    
-  // }, [])
+ 
 
   function handleSubmit(e) {
     e.preventDefault()
-    setMessage('Congrats! Your Account Created!')
     dispatch (addUser())
+    alert('Congrats! Your Account Created!')
+    
     // if(confirmPassword !==password ){
     //   setConfirmPasswordError('Must match password')
     // }else{
@@ -75,17 +66,21 @@ export default function Signupform() {
   //   dispatch(addUser())
   // }
 
-  function handleClick(id) {
-    dispatch(deleteUserGenre(id))
-    // dispatch(addUserGenres(id))
-    
+  function handleClick(e) {
+    // setUserName("")
+    // setEmail("")
+    // setPassword("")
+    // setConfirmPassword("")
+    // setBio("")
+    // setFirstName("")
+    // setLastName("")
   }
 
   return (
     <>
   
       <div className={styles.signupform}>
-        <form onSubmit={()=>handleSubmit()} action="GET">
+        <form onSubmit={handleSubmit} action="GET">
           <div className={styles.signupform1}>
             <input 
             required
@@ -188,28 +183,8 @@ export default function Signupform() {
           <label className={styles.message} htmlFor="formsubmit">
                 {message}
           </label>
-          <button type="submit" className={styles.submitBtn} >Submit</button>
+          <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
           </form>
-        
-
-        
-       
-        
-
-        <div className={styles.signupformGenreList}>
-
-        <h1>Your Genre List </h1>
-<div className={styles.signupformGenreListp}>
-    {userGenres.map((item) => (
-      <>
-        <p key={'genre-' + item.id}>
-          {item.name}
-          <input type="checkbox" />
-          <span class="checkmark"></span>
-        </p>
-      </>
-    ))}
-  </div> 
        
         <h1>Choose your Favorite Genre</h1>
           <div className={styles.signupformGenreListp}>
@@ -221,11 +196,6 @@ export default function Signupform() {
                   <input type="checkbox" name="genre_id" value={item.id}/>
                   <span class="checkmark"></span>
 
-         <button
-              className="genreDeleteBtn"
-              onClick={() => {
-              deleteUserGenre(item.id);
-            }} > X</button>
               </p>
               </>
             ))}
@@ -233,7 +203,7 @@ export default function Signupform() {
           
         </div>
         
-    </div>
+    
     </>
   )
 }
