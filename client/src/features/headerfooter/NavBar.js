@@ -37,25 +37,25 @@ export default function NavBar() {
           <button className={styles.dropbtn}>Genre List</button>
             <div className={styles.dropdowncontent}>
               <ul className={styles.dowdownlist}>
-              <li><Link to="">Genre 1</Link>
-              <Link to="">Genre 2</Link>
-              <Link to="">Genre 3</Link>
-              <Link to="">Genre 4</Link>
+              <li><Link to="/search?q=literaryfiction">Literary Fiction</Link>
+              <Link to="search?q=suspensethrillers">Suspense/Thrillers</Link>
+              <Link to="search?q=sciencefiction">Science Fiction</Link>
+              <Link to="search?q=historicalfiction">Historical Fiction</Link>
               </li>
-              <li><Link to="">Genre 5</Link>
-              <Link to="">Genre 6</Link>
-              <Link to="">Genre 7</Link>
-              <Link to="">Genre 8</Link>
+              <li><Link to="search?q=biosautobiographies">Bios/Autobiographies</Link>
+              <Link to="search?q=memoir">Memoir</Link>
+              <Link to="search?q=detectivemystery">Detective/Mysery</Link>
+              <Link to="search?q=actionadventure">Action/Adventure</Link>
               </li>
-              <li><Link to="">Genre 9</Link> 
-              <Link to="">Genre 10</Link>  
-              <Link to="">Genre 11</Link>     
-              <Link to="">Genre 12</Link> 
+              <li><Link to="search?q=selfhelp">Self-Help</Link> 
+              <Link to="search?q=fantasy">Fantasy</Link>  
+              <Link to="search?q=romance">Romance</Link>     
+              <Link to="search?q=horror">Horror</Link> 
               </li>
-              <li><Link to="">Genre 13</Link>
-              <Link to="">Genre 14</Link>
-              <Link to="">Genre 15</Link>
-              <Link to="">Genre 16</Link>
+              <li><Link to="search?q=classics">Classics</Link>
+              <Link to="search?q=history">History</Link>
+              <Link to="search?q=poetry">Poetry</Link>
+              <Link to="search?q=essays">Essays</Link>
               </li>
               </ul>                           
             </div>
