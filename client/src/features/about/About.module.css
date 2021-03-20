@@ -48,3 +48,7 @@ span {
   width: 100%;
   height: auto;
 }
+
+.abouttext {
+  font-size: 1.2vw;
+}
