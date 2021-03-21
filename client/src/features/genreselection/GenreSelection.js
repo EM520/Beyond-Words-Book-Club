@@ -17,7 +17,7 @@ export default function GenreSelection() {
   }, [])
 
   const options = genres.map((genre) => {
-    return { label: genre.name, value: genre.name }
+    return { label: genre.name, value: genre.id }
   })
 
   return (
@@ -26,7 +26,6 @@ export default function GenreSelection() {
       <Checkbox.Group
         className={styles.checkboxes}
         options={options}
-        defaultValue={['Science Fiction']}
         onChange={onChange}
       />
     </div>
