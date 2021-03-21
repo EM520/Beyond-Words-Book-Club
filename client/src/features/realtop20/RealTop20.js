@@ -16,7 +16,10 @@ export default function RealTop20() {
   return (
     <>
    <SearchBar />
-
+  <div className={styles.pagetitle}>
+    <h1> Top 20 Groups</h1>
+    <h6>Join!  Discuss!</h6>
+  </div> 
   <div className={styles.top20main}>
     {top20.map((top20) => (
       <div key={'top20-' + top20.id}>

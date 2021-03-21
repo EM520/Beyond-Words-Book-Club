@@ -8,8 +8,13 @@
   margin: 0 auto;
   margin-top: 0.5em;
   display: block;
+  background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+
 }
 
 .BarStyling:focus {
   outline: none;
 }
+
