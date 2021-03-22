@@ -8,6 +8,7 @@ import profilesReducer from '../features/profile/profileSlice'
 import signupformReducer from '../features/auth/signupformSlice'
 import genreSelectionReducer from '../features/genreselection/genreSelectionSlice'
 import realTop20Reducer from '../features/realtop20/realTop20Slice'
+import searchReducer from '../features/search/searchSlice'
 
 
 export default configureStore({
@@ -22,5 +23,6 @@ export default configureStore({
     
     genres: genreSelectionReducer,
     realTop20: realTop20Reducer,
+    search: searchReducer,
   },
 })

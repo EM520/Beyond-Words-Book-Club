@@ -7,6 +7,7 @@ export const bookclubSlice = createSlice({
   initialState: {
     bookclub: [],
     discussion: [],
+    userbookcollections: [],
   },
   reducers: {
     setBookClub: (state, action) => {
@@ -15,10 +16,14 @@ export const bookclubSlice = createSlice({
     setDiscussion: (state, action) => {
       state.discussion = action.payload
     },
+    setUserBookCollections: (state, action) => {
+      state.userbookcollections = action.payload
+    },
+
   },
 })
 
-export const { setBookClub, setDiscussion } = bookclubSlice.actions
+export const { setBookClub, setDiscussion, setUserBookCollections} = bookclubSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -26,18 +31,28 @@ export const { setBookClub, setDiscussion } = bookclubSlice.actions
 // code can then be executed and other actions can be dispatched
 
 export const getBookClub = (id) => (dispatch) => {
-  // const id = 1
-  console.log(setBookClub, id, '/bookclub/' + id, 'ac')
+  console.log(id, 'ac-id')
   axios.get('/api/books/' + id).then((r) => {
     dispatch(setBookClub(r.data))
+  })
+}
+
+
+
+export const getUserBookCollections = (bookId) => (dispatch) => {
+  // const id = 1
+  request.get('/book-collections/'+bookId).then((r) => {
+    console.log(r.data, 'ubc1')
+    dispatch(setUserBookCollections(r.data))
   })
 }
 
 export const getDiscussion = (id) => (dispatch) => {
   console.log(id, 'id')
   axios.get('/api/discussions/' + id).then((r) => {
-    dispatch(setDiscussion(r.data))
     console.log(r.data, 'disc')
+
+    dispatch(setDiscussion(r.data))
   })
 }
 
@@ -55,7 +70,23 @@ export const addDiscussion = (obj) => (dispatch) => {
       console.log(resp, 'add discussion')
       dispatch(getDiscussion(obj.group_id))
     })
+    
+
+    
 }
+
+
+export const addUserBookCollection = (id) => (dispatch) => {
+  console.log(id, 'add book')
+  request
+  .post('/book-collections', {book_id: id })
+  .then((resp) => {
+    console.log(resp, 'add userbook')
+    // dispatch(getDiscussion(obj.group_id))
+
+  })
+  }
+
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -63,4 +94,6 @@ export const addDiscussion = (obj) => (dispatch) => {
 
 export const selectBookClub = (state) => state.bookclub.bookclub
 export const selectDiscussion = (state) => state.bookclub.discussion
+export const selectUserBookCollections = (state) => state.bookclub.userbookcollections
+
 export default bookclubSlice.reducer

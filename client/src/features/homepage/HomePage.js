@@ -1,6 +1,4 @@
-import NavBar from '../headerfooter/NavBar'
-import SearchBar from '../searchbar/SearchBar'
-import Footer from '../headerfooter/Footer'
+import SearchBar from '../search/SearchBar'
 import GenresByUser from '../genresbyuser/GenresByUser'
 import styles from './HomePage.module.css'
 import sellbooksad from '../pic/midbanner-sell-books.jpg'
@@ -10,13 +8,15 @@ import adspecsclubpage from '../pic/adspecsclubpage.jpg'
 
 // import styles from './Homepage.css'
 export default function HomePage() {
+
+
+  
   return (
     <>
-      <div>
-        <NavBar />
-      </div>
 
-      <div className={styles.homepageTop}>
+      <div 
+      // className={styles.homepageTop}
+      >
         {/* <h2>Username's favorite genres!</h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
         <SearchBar />
@@ -48,7 +48,6 @@ export default function HomePage() {
           alt="Your Ad Here"
         />
       </div>
-      <Footer />
     </>
   )
 }

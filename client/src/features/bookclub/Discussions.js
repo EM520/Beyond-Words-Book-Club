@@ -6,36 +6,17 @@ import DiscussionReply from './DiscussionReply'
 import DiscussionReplyForm from './DiscussionReplyForm'
 import { Comment, Avatar } from 'antd'
 
-const Discussions = (id) => {
+const Discussions = ({id}) => {
   const discussions = useSelector(selectDiscussion)
+  console.log(id, 'id again')
 
-  // const discussions = [
-  //   {
-  //     "photo": "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
-  //     "username": "bookclub",
-  //     "id": 1,
-  //     "parent_id": null,
-  //     "discussion": "BEST BOOK VOTED!!",
-  //     "replies": [
-  //       {
-  //         "photo": "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
-  //         "username": "user1",
-  //         "id": 2,
-  //         "parent_id": 1,
-  //         "discussion": "I agree!"
-  //       }
-  //     ]
-  //   }
-  // ]
 
-  // console.log(discussion, "d")
-  // console.log(discussion[0].children, 'children')
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
   const [showReply, setShowReply] = useState(false)
 
   useEffect(() => {
-    dispatch(getDiscussion(1))
+    dispatch(getDiscussion(id))
   }, [])
 
   function handleSubmit(discussion, parent_id, group_id) {
@@ -98,7 +79,7 @@ const Discussions = (id) => {
           {/* </form> */}
         </div>
         <button
-          onClick={() => handleSubmit(input, null, 1)}
+          onClick={() => handleSubmit(input, null, id)}
           className={styles.button}
         >
           Submit
