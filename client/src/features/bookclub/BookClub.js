@@ -37,7 +37,7 @@ export default function BookClub() {
           <BookDetail bookId = {bookId}  isPartOfGroup = {isPartOfGroup}/>
 
           {/* {lengthComments > 0 ? <Discussions id = {userbookcollections[0].group_id} /> : null } */}
-          {lengthComments > 0 ? <Discussions id = {bookId} /> : null }
+          {lengthComments > 0 ? <Discussions id = {bookId} gId = {userbookcollections[0].group_id}/> : null }
           {/* <Discussions id = {bookId} /> */}
 
         </div>

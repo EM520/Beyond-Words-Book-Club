@@ -57,18 +57,20 @@ export const getDiscussion = (id) => (dispatch) => {
 }
 
 export const addDiscussion = (obj) => (dispatch) => {
-  console.log(obj, 'obj')
+  const bookId = Number(obj.id)
+  console.log(obj, bookId, 'obj')
+
   // debugger
 
   request
     .post('/discussions', {
       discussion: obj.discussion,
       parent_id: obj.parent_id,
-      group_id: obj.group_id,
+      group_id: obj.group_id
     })
     .then((resp) => {
       console.log(resp, 'add discussion')
-      dispatch(getDiscussion(obj.group_id))
+      dispatch(getDiscussion(bookId))
     })
     
 

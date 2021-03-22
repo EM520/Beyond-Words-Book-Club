@@ -4,11 +4,11 @@ import { selectDiscussion, getDiscussion, addDiscussion } from './bookclubSlice'
 import styles from './BookClub.module.css'
 import DiscussionReply from './DiscussionReply'
 import DiscussionReplyForm from './DiscussionReplyForm'
-import { Comment, Avatar } from 'antd'
+// import { Comment, Avatar } from 'antd'
 
-const Discussions = ({id}) => {
+const Discussions = ({id, gId}) => {
   const discussions = useSelector(selectDiscussion)
-  console.log(id, 'id again')
+  console.log(id, gId, 'id again')
 
 
   const dispatch = useDispatch()
@@ -19,10 +19,10 @@ const Discussions = ({id}) => {
     dispatch(getDiscussion(id))
   }, [])
 
-  function handleSubmit(discussion, parent_id, group_id) {
+  function handleSubmit(discussion, parent_id, group_id, id) {
     // preventDefault()
     if (discussion !== '') {
-      dispatch(addDiscussion({ discussion, parent_id, group_id }))
+      dispatch(addDiscussion({ discussion, parent_id, group_id, id }))
       setInput('')
 
     }
@@ -63,7 +63,7 @@ const Discussions = ({id}) => {
                   <DiscussionReply replies={disc.replies} />
                 ) : null}
                 {/* <DiscussionReplyForm replies={disc} /> */}
-                {showReply ? <DiscussionReplyForm replies={disc} /> : null}
+                {showReply ? <DiscussionReplyForm replies={disc} id = {id}/> : null}
               </div>
             </div>
           ))}
@@ -81,7 +81,7 @@ const Discussions = ({id}) => {
           {/* </form> */}
         </div>
         <button
-          onClick={() => handleSubmit(input, null, id)}
+          onClick={() => handleSubmit(input, null, gId, id)}
           className={styles.button}
         >
           Submit
