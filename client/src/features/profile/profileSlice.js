@@ -102,7 +102,9 @@ export const getUserGroups = () => (dispatch) => {
 }
 
 export const getUserGenres = () => (dispatch) => {
+  
   request.get('/genres/user').then((r) => {
+    console.log(r.data)
     dispatch(setUserGenres(r.data))
   })
 }
