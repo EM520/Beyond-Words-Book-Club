@@ -6,10 +6,15 @@
 }
 
 .searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
   margin-top: 20px;
-  width: 30vw;
-  margin: 20px 60%;
-  font-size: 1.5vw;
+  width: 40vw;
+  margin: 10px 60%;
+  font-size: 1vw;
+  
+  margin-bottom: 20px;
 }
 
 .BarStyling {

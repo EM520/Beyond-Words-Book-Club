@@ -4,22 +4,24 @@
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 40px;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.signupform form {
+  margin: 0 auto;
+}
+.signupforminfo{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  /* border:3px solid rgb(190, 181, 62);  */
-  margin: 0 auto;
+    /* border:3px solid rgb(190, 181, 62);  */
 }
 
 .signupform1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
+  border: 2px solid rgb(49, 146, 211);
   width: 100%;
 }
 
@@ -33,11 +35,12 @@
   flex-direction: column;
   width: 100%;
   margin-left: 100px;
+  /* border: 2px solid rgb(19, 180, 91); */
 }
 
 .signupAvatar {
   border-radius: 5px;
-  border: 3px solid grey;
+  border: 3px solid rgb(201, 194, 194);
   width: 14vw;
   height: 14vw;
   margin: 0 auto;
@@ -73,11 +76,16 @@
 }
 
 .signupformGenreListp {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  font-size: 1vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1vw;
+  row-gap: 1vw;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border-top: 3px solid rgb(184, 180, 180);
   /* border: 2px solid blue; */
-  margin-top: 20px;
+  
 }
 .signupformGenreListp p {
   margin-right: 50px;

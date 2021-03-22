@@ -15,6 +15,7 @@
   justify-content: flex-start;
   align-items: center;
   margin-right: 80px;
+ 
 }
 .message {
   margin-left: 28%;
@@ -51,8 +52,8 @@
 
 .profileInfo {
   width: 100%;
-
   /* border:3px solid rgb(17, 19, 18); */
+  border-bottom:3px solid rgb(157, 160, 158);
   display: flex;
   flex-direction: row;
 }
@@ -111,8 +112,23 @@
   border: transparent;
 }
 
+
 .profileUpdate input:focus {
   outline: none;
+}
+
+.profileUpdate textarea {
+  text-indent: 1rem;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
+  width: 100%;
+  height: 5vw;
+  margin-top: 20px;
+  border: transparent;
+}
+.profileBio{
+  margin-top: 30px;
+  border: transparent;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
 }
 
 .profileInfo label {
@@ -121,14 +137,13 @@
 }
 
 .profileForm {
-  width: 100%;
-  margin: 0 auto;
+ 
+  /* margin: 0 auto; */
   /* border: 3px solid rgb(39, 209, 138); */
-
   display: flex;
   flex-direction: column;
-
   justify-content: flex-start;
+  width: 100%;
 }
 .profileSubmit {
   display: flex;
@@ -150,27 +165,26 @@
   outline: none;
 }
 
-.profileGenrelist {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.userGenreslist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 20px;
   width: 100%;
-
   padding-top: 20px;
-  /* border:3px solid rgb(27, 55, 212); */
+  border-bottom:3px solid rgb(164, 165, 173);
 }
 
-.profileGenrelist p {
-  width: 180px;
+.userGenreslist div {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-self:center;
+  width: 100%;
   height: 50px;
-
   border-radius: 5px;
   border: transparent;
   /* box-shadow: 5px 5px 5px rgb(142, 156, 155); */
   /* border:3px solid rgb(212, 27, 135);  */
-
-  font-family: Amatic SC;
   font-size: 25px;
   margin-bottom: 30px;
 }
@@ -181,10 +195,14 @@
   align-items: center;
 }
 
-.removeBtn {
+/* .removeBtn {
   width: 10vw;
   height: 3vw;
   border-radius: 5px;
   box-shadow: 5px 5px 3px rgb(133, 123, 123);
   margin-top: 30px;
+} */
+
+.updatetest{
+  background-color: aqua;
 }

@@ -6,6 +6,7 @@ export const genreSelectionSlice = createSlice({
   name: 'genres',
   initialState: {
     genres: [],
+    
   },
   reducers: {
     setGenres: (state, action) => {
@@ -21,13 +22,15 @@ export const { setGenres } = genreSelectionSlice.actions
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 
-export const getGenres = (state) => (dispatch) => {
+export const getGenres = () => (dispatch) => {
   request.get('/genres').then((r) => {
     console.log(r.data)
     //   const action = setUsers(r.data)
     dispatch(setGenres(r.data))
   })
 }
+
+
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

@@ -9,7 +9,13 @@ export const profilesSlice = createSlice({
       // { id: 1, name: 'Douglas' },
       // { id: 2, name: 'John' },
     ],
-    genreusers: [
+    genres: [
+      // {id:1,name:"Romans"},
+      // {id:2,name:"LOVE"},
+      // {id:3,name:"Historical Fiction"},
+      // {id:4,name:"Detective and Mystery"}
+    ],
+    userGenres: [
       // {id:1,name:"Romans"},
       // {id:2,name:"LOVE"},
       // {id:3,name:"Historical Fiction"},
@@ -39,11 +45,14 @@ export const profilesSlice = createSlice({
     setUsers: (state, action) => {
       state.users = action.payload
     },
-    setGenreUsers: (state, action) => {
-      state.genreusers = action.payload
+    setGenres: (state, action) => {
+      state.genres = action.payload
     },
     setUserGroups: (state, action) => {
       state.userGroups = action.payload
+    },
+    setUserGenres: (state, action) => {
+      state.userGenres = action.payload
     },
   },
 })
@@ -55,8 +64,9 @@ export const {
   // decrement,
   // incrementByAmount,
   setUsers,
-  setGenreUsers,
+  setGenres,
   setUserGroups,
+  setUserGenres,
 } = profilesSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -86,20 +96,43 @@ export const getUser = () => (dispatch) => {
 
 export const getUserGroups = () => (dispatch) => {
   request.get('/book-collections/user').then((r) => {
+    console.log(r.data,'<<<<<<<getUserGroups>>>>')
     dispatch(setUserGroups(r.data))
   })
 }
 
-export const getGenreUser = () => (dispatch) => {
+export const getUserGenres = () => (dispatch) => {
   request.get('/genres/user').then((r) => {
-    dispatch(setGenreUsers(r.data))
+    dispatch(setUserGenres(r.data))
   })
 }
 
-export const deleteBookUser = (id) => (dispatch) => {
-  axios.delete('/api/book-collections/' + id).then((resp) => {
+export const deleteUserGenres = (genreId) => (dispatch) => {
+  request.delete('/genres-users/user/' + genreId).then((r) => {
+    console.log(genreId,'<<<<<<<deleteUserGenres>>>>')
+    dispatch(getUserGenres())
+   
+  })
+}
+
+export const addUserGenres = () => (dispatch) => {
+  request.post('/genres/user').then((r) => {
+    dispatch(setUserGenres(r.data))
+  })
+}
+
+export const getGenres = () => (dispatch) => {
+  axios.get('/api/genres').then((r) => {
+    dispatch(setGenres(r.data))
+  })
+}
+
+export const deleteBookUser = (bookId) => (dispatch) => {
+  console.log(bookId,'<<<<<<<deleteUserGroups>>>>')
+  request.delete('/book-collections/user/'+ bookId).then((r) => {
+    
     dispatch(getUserGroups())
-    // dispatch(getBookUser());
+   
   })
 }
 
@@ -121,8 +154,9 @@ export const updateUser = (newUser) => async (dispatch) => {
 
 //   export const selectCount = (state) => state.users.value;
 
-export const selectUser = (state) => state.userState.users
+export const selectUser = (state) => state.profileState.users
 export const selectUserGroups = (state) => state.profileState.userGroups
-export const selectGenreUser = (state) => state.genreuserState.genreusers
+export const selectGenres = (state) => state.profileState.genres
+export const selectUserGenres = (state) => state.profileState.userGenres
 
 export default profilesSlice.reducer
