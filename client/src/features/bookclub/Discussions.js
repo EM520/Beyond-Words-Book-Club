@@ -24,6 +24,7 @@ const Discussions = ({id}) => {
     if (discussion !== '') {
       dispatch(addDiscussion({ discussion, parent_id, group_id }))
       setInput('')
+
     }
   }
 
@@ -61,6 +62,7 @@ const Discussions = ({id}) => {
                 {disc.replies ? (
                   <DiscussionReply replies={disc.replies} />
                 ) : null}
+                {/* <DiscussionReplyForm replies={disc} /> */}
                 {showReply ? <DiscussionReplyForm replies={disc} /> : null}
               </div>
             </div>

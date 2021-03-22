@@ -14,6 +14,8 @@ export default function SearchResultsPage() {
   useEffect(() => {
     dispatch(getSearch(location.search))
   }, [])
+
+
   return (
     <>
       <div >
@@ -29,11 +31,9 @@ export default function SearchResultsPage() {
             </div>
             <div>  
             <p><strong>TITLE: </strong> {s.title}</p>
- 
-              <strong>COPYRIGHT: </strong>
-              <p>{s.copyright}</p>
-              <strong>AUTHOR: </strong>
-              <p>{s.author}</p>
+            <p><strong>AUTHOR: </strong>{s.author}</p>
+            <p><strong>GENRE: </strong>{s.name}</p>  
+            <p><strong>COPYRIGHT: </strong>{s.copyright}</p>
               </div>
             
               </div>

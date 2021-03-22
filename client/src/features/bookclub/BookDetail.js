@@ -21,6 +21,7 @@ export default function BookDetail(props) {
     console.log(bookId, 'bb')
     dispatch(addUserBookCollection(bookId))
     history.push({pathname: '/book-club/'+bookId})
+    window.location.reload()
   }
 
 

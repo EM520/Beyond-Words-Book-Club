@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom'
-
 import styles from './Search.module.css'
 
 const SearchBar = () => {
   const [keyword, setKeyword] = useState('')
    const history = useHistory()
-    const newKeyword = keyword.replace(' ', '+')
-    console.log(newKeyword, 'nk')
+    // const newKeyword = keyword.replace(' ', '+')
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log('hello')
     history.push({
       pathname: '/search',
-     search: `?q=${newKeyword}`
+     search: `?q=${keyword}`
     })
+    setKeyword('')
+    window.location.reload()
   }
 
   return (
@@ -27,7 +28,6 @@ const SearchBar = () => {
         onChange={(e) => setKeyword(e.target.value)}
       />
     </form>
-    {/* {display ? <SearchResultsPage query={keyword} /> : null} */}
 
 
     </div>
