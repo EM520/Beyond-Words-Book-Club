@@ -14,7 +14,7 @@ router.get('/search', async (request, response) => {
   const search = await conn.raw(
        `
        SELECT b.title, CONCAT(a.first_name, ' ',  a.last_name) as author, g.name, g.id as genre_id, 
-       b.cover_pic,b.synopsis, b.id FROM 
+       b.cover_pic,b.synopsis, b.copyright, b.id FROM 
        books b
        INNER JOIN authors a
        ON b.author_id = a.id

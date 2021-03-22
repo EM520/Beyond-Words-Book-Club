@@ -4,13 +4,12 @@ import BookDetail from './BookDetail'
 import Discussions from './Discussions'
 import SearchBar from '../search/SearchBar'
 import {getUserBookCollections, selectUserBookCollections} from './bookclubSlice'
-import {useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import styles from './BookClub.module.css'
 
 export default function BookClub() {
   const userbookcollections = useSelector(selectUserBookCollections)
-  const location = useLocation()
   const param = useParams()
   const bookId = param.id
   console.log(param.id, bookId, 'loc')
@@ -38,8 +37,8 @@ export default function BookClub() {
           <BookDetail bookId = {bookId}  isPartOfGroup = {isPartOfGroup}/>
 
           {/* {lengthComments > 0 ? <Discussions id = {userbookcollections[0].group_id} /> : null } */}
-          {/* {lengthComments > 0 ? <Discussions id = {bookId} /> : null } */}
-          <Discussions id = {bookId} />
+          {lengthComments > 0 ? <Discussions id = {bookId} /> : null }
+          {/* <Discussions id = {bookId} /> */}
 
         </div>
       </div>

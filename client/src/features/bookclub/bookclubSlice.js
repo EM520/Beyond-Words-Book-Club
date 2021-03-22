@@ -79,7 +79,7 @@ export const addDiscussion = (obj) => (dispatch) => {
 export const addUserBookCollection = (id) => (dispatch) => {
   console.log(id, 'add book')
   request
-  .post('/book-collections', {book_id: id })
+  .post('/book-collections/user', {book_id: id })
   .then((resp) => {
     console.log(resp, 'add userbook')
     // dispatch(getDiscussion(obj.group_id))
