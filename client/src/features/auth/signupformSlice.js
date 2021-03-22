@@ -3,7 +3,7 @@ import axios from 'axios'
 import request from '../../utils/request'
 
 export const signupformSlice = createSlice({
-  name: 'profiles',
+  name: 'signupform',
   initialState: {
     users: [
       // { id: 1, name: 'Douglas' },
@@ -15,12 +15,8 @@ export const signupformSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
-    bookusers: [
-      //  {id:1,title:"Atomic"},
-      //  {id:2,title:"With the Wind "},
-      //  {id:3,title:"西游记 "},
-      //  {id:4,title:"三国演义 "}
-    ],
+    
+   
   },
   reducers: {
     //   increment: (state) => {
@@ -39,12 +35,15 @@ export const signupformSlice = createSlice({
     setUsers: (state, action) => {
       state.users = action.payload
     },
+    setUserGenres: (state, action) => {
+      state.genres = action.payload
+    },
     setGenres: (state, action) => {
       state.genres = action.payload
     },
-    setBookUsers: (state, action) => {
-      state.bookusers = action.payload
-    },
+    // addUsers: (state, action) => {
+    //   state.users = action.payload
+    // },
   },
 })
 
@@ -54,8 +53,10 @@ export const {
   // increment,
   // decrement,
   // incrementByAmount,
-  // setUsers,
+  setUsers,
   setGenres,
+  setUserGenres,
+
   // setBookUsers,
 } = signupformSlice.actions
 
@@ -77,33 +78,67 @@ export const {
 //   }
 // }
 
-//   export const getUser = () => (dispatch) => {
-//     request.get("/users").then((r) => {
-//       // const action = setUsers(r.data)
-//       dispatch(setUsers(r.data));
-//     });
-//   };
+  export const getGenres = () => (dispatch) => {
+    axios.get("/api/genres").then((r) => {
+      dispatch(setGenres(r.data));
+    });
+  };
 
-//   export const addGenres = () =>(dispatch) =>{
-//     axios.("/books").then((r)=>{
-//         dispatch(setBookUsers(r.data))
-//     })
-// }
+  export const getUserGenres = () => (dispatch) => {
+    request.get("/genres/user").then((r) => {
+      dispatch(setUserGenres(r.data));
+    });
+  };
 
-export const getGenres = () => (dispatch) => {
-  request.get('/genrelist').then((r) => {
-    dispatch(setGenres(r.data))
+  export const addUser = (
+    username,
+    password,
+    email,
+    bio,
+    photo,
+    firstname,
+    lastname,
+    selectedGenres
+    ) => (dispatch) => {
+        console.log(">>>>>>test registration>>>>>>")
+        axios.post(
+          "/api/registration",
+          {
+            username:  username,
+            password:  password,
+            email:     email,
+            bio:       bio,
+            photo:     photo,
+            firstname: firstname,
+            lastname:  lastname
+          }
+        )
+          .then((r)=>{
+          console.log(r.data,">>>>>>test registration>>>>>>")
+          dispatch(setUsers(r.data))
+          dispatch(addUserGenres(selectedGenres))
+          })
+          .catch((error) => {
+            console.log('Add User Error =======>>> ', error)
+          })
+  }
+    
+
+export const addUserGenres = (genresId) => (dispatch) => {
+  request.post('/genres/user/',genresId).then((r) => {
+    dispatch(setUserGenres(r.data))
   })
 }
 
-//   export const deleteBookUser = (id) => (dispatch) => {
+  export const deleteUserGenre = (id) => (dispatch) => {
 
-//     axios.delete("/api/bookgroup" + id).then((resp) => {
+    axios.delete("/api/genres/user/" + id).then((resp) => {
+      dispatch(getUserGenres());
 
-//       dispatch(getBookUser());
+    });
+  };
 
-//     });
-//   };
+ 
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -113,6 +148,8 @@ export const getGenres = () => (dispatch) => {
 
 //   export const selectUser = (state) => state.userState.users;
 //   export const selectBookUser=(state) =>state.bookuserState.bookusers;
-export const selectGenre = (state) => state.genreState.genres
+export const selectUser = (state) => state.signupformState.users
+export const selectGenre = (state) => state.signupformState.genres
+export const selectUserGenre = (state) => state.signupformState.userGenres
 
 export default signupformSlice.reducer
