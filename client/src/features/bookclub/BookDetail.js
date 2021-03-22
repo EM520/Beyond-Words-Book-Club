@@ -37,13 +37,14 @@ export default function BookDetail(props) {
             <div className={styles.description}>
             <strong>TITLE: </strong> 
               <p className={styles.parMargin}>{book.title}</p>
-              <strong>COPYRIGHT: </strong>
-              <p className={styles.parMargin}>{book.copyright}</p>
-              <strong>SYNOPIS: </strong>
-              <p className={styles.parMargin}>{book.synopsis}</p>
               <strong>AUTHOR: </strong>
               <p className={styles.parMargin}>{`${book.first_name} ${book.last_name}`}</p>
-            </div>
+              <strong>SYNOPIS: </strong>
+              <p className={styles.parMargin}>{book.synopsis}</p>
+              <strong>COPYRIGHT: </strong>
+              <p className={styles.parMargin}>{book.copyright}</p>
+
+ </div>
           </div>
         ))}
       </div>

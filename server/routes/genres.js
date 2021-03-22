@@ -35,7 +35,7 @@ router.get('/genres/user', async (request, response) => {
   // const id = [req.user.id]
   const genre = await conn.raw(
     `
-      SELECT * FROM genres ge
+      SELECT ge.id,ge.name  FROM genres ge
       INNER JOIN genres_users gu 
       ON ge.id=gu.genre_id
       INNER JOIN users u

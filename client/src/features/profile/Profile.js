@@ -58,6 +58,10 @@ export default function Profile() {
     dispatch(deleteBookUser(id)) 
   }
 
+ function addUserGenres(id){
+   dispatch(addUserGenres(id))
+ }
+
   console.log(userGenre)
   return (
     <>
@@ -110,26 +114,31 @@ export default function Profile() {
           </div>
 
         </div>
-        <p>You favorite Genres List </p>
+        <h1>You favorite Genres List </h1>
         <div className={styles.userGenreslist}>
              
             {userGenre.map((item) => (
                <div>
                  
                 <p key={'user-Genres-' + item.id}>
-                  {item.name}  {item.id}
+                  {item.name}  
                 </p>
-                 <FaTrash onClick={() => {removeUserGenres(item.id)}}/>
+                 <FaTrash  color={"#93908F"}size={18}
+                 onClick={() => {removeUserGenres(item.id)}}/>
                 </div>
                 
               ))}
               
         </div>
         
-            <div >
-              <GenreSelection/>
+            <div className={styles.test1} >
+              <GenreSelection 
+              userGenre={userGenre} 
+              addUserGenres={addUserGenres}/>
             </div>
 
+        <div className={styles.test}>
+        <h1>You favorite Groups List </h1>
         <div className={styles.profileGrouplist}>
           {userGroups.map((item) => (
             <div className={styles.profileGrouplistp}>
@@ -137,7 +146,7 @@ export default function Profile() {
               <div className={styles.profileGrouplistp1}>
                 <p key={'user-groups-' + item.id}>{item.title}</p>
 
-                <FaTrash
+                <FaTrash 
                   onClick={() => {
                     removeBookUser(item.id)
                   }}
@@ -146,7 +155,7 @@ export default function Profile() {
             </div>
           ))}
         </div>
-
+        </div>
         
       </div>
 

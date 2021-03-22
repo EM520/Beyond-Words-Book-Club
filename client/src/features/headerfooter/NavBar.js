@@ -37,7 +37,7 @@ export default function NavBar() {
           <button className={styles.dropbtn}>Genre List</button>
             <div className={styles.dropdowncontent}>
               <ul className={styles.dowdownlist}>
-              <li><Link to="/search?q=literaryfiction">Literary Fiction</Link>
+              <li><Link to="/search?q=Literary%20Fiction">Literary Fiction</Link>
               <Link to="search?q=suspensethrillers">Suspense/Thrillers</Link>
               <Link to="search?q=sciencefiction">Science Fiction</Link>
               <Link to="search?q=historicalfiction">Historical Fiction</Link>
