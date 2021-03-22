@@ -1,3 +1,17 @@
+
+.pagetitle {
+    padding-top: 5vh;
+    padding-left: 20vh;
+    margin-bottom: 1vw;
+    line-height: 100%;
+}
+
+h6 {
+    font-size: 3.5vh;
+    font-family: Amatic SC;
+    letter-spacing: .354rem;
+}
+
 .top20main {
     /* display: flex; */
     padding-left: 20vh;

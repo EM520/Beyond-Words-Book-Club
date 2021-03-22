@@ -19,9 +19,11 @@ export default function GenreSelection(props) {
   }, [])
    console.log(genres)
   const options = genres.map((genre) => {
+
     
     return { label: genre.name, value:genre.id }
         
+
   })
 
   return (
@@ -31,7 +33,7 @@ export default function GenreSelection(props) {
       <Checkbox.Group
         className={styles.checkboxes}
         options={options}
-       
+
         onChange={onChange}
       />
     </div>
