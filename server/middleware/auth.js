@@ -8,5 +8,6 @@ export default function attachUser(req, res, next) {
     const decoded = jwtToken.decode(token)
     req.user = { id: decoded.id, username: decoded.username }
   }
+  console.log('user', req.user)
   next()
 }

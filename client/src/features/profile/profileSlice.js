@@ -15,6 +15,12 @@ export const profilesSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
+    userGenres: [
+      // {id:1,name:"Romans"},
+      // {id:2,name:"LOVE"},
+      // {id:3,name:"Historical Fiction"},
+      // {id:4,name:"Detective and Mystery"}
+    ],
     userGroups: [
       //  {id:1,title:"Atomic"},
       //  {id:2,title:"With the Wind "},
@@ -90,7 +96,22 @@ export const getUser = () => (dispatch) => {
 
 export const getUserGroups = () => (dispatch) => {
   request.get('/book-collections/user').then((r) => {
+    console.log(r.data,'<<<<<<<getUserGroups>>>>')
     dispatch(setUserGroups(r.data))
+  })
+}
+
+export const getUserGenres = () => (dispatch) => {
+  request.get('/genres/user').then((r) => {
+    dispatch(setUserGenres(r.data))
+  })
+}
+
+export const deleteUserGenres = (genreId) => (dispatch) => {
+  request.delete('/genres-users/user/' + genreId).then((r) => {
+    console.log(genreId,'<<<<<<<deleteUserGenres>>>>')
+    dispatch(getUserGenres())
+   
   })
 }
 
@@ -106,10 +127,12 @@ export const getGenres = () => (dispatch) => {
   })
 }
 
-export const deleteBookUser = (id) => (dispatch) => {
-  axios.delete('/api/book-collections/' + id).then((resp) => {
+export const deleteBookUser = (bookId) => (dispatch) => {
+  console.log(bookId,'<<<<<<<deleteUserGroups>>>>')
+  request.delete('/book-collections/user/'+ bookId).then((r) => {
+    
     dispatch(getUserGroups())
-    // dispatch(getBookUser());
+   
   })
 }
 

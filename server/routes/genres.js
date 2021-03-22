@@ -51,41 +51,47 @@ router.get('/genres/user', async (request, response) => {
 router.post('/genres/user', async (req, res) => {
    console.log(req.body,"genres on user test")
    console.log(req.user.id)
+req.body.forEach(async(id) => {
+    
   await conn.raw(
     `
       INSERT INTO genres_users
       VALUES
       (?,?) 
       `,
-      [req.body.genre_id,req.user.id]
+      [id,req.user.id]
     // [req.body.genre_id, req.user.id]
+  
   )
+});
   // res.json(usergenres.rows)
   res.json({message:"User Gneres added successfully"});
 })
 
-// genres_users delete of that record
-router.delete('/genres/user/:genreId', (req, res) => {
-  // const genreId = req.params.genreId
-  // const userId = req.user.id
-  // await conn.raw(
-  //   `
-  //   DELETE FROM genres_users gu
-  //   WHERE gu.genre_id=? and gu.user_id = ?
-  //   `,
-  //   [genreId,userId]
-  // )
-  res.json({ message: 'delete genre from user' })
+//genres_users delete of that record
+router.delete('/genres-users/user/:genreId', async(req, res) => {
+  const genreId = req.params.genreId
+  const userId = req.user.id
+  console.log(genreId,userId,"genreId and userId &&&&&&&&&&&&")
+  await conn.raw(
+    `
+    DELETE FROM genres_users gu
+    WHERE gu.genre_id=? and gu.user_id = ?
+    `,
+    [genreId,userId]
+  )
+
+  res.json({ message: 'genre deleted from user' })
 })
 
-// TODO: get rid of this...
-router.get('/genrelist', async (request, response) => {
-  const genre = await conn.raw(
-    `
-      SELECT name FROM genres 
-      `
-  )
-  response.json(genre.rows)
-})
+// // TODO: get rid of this...
+// router.get('/genrelist', async (request, response) => {
+//   const genre = await conn.raw(
+//     `
+//       SELECT name FROM genres 
+//       `
+//   )
+//   response.json(genre.rows)
+// })
 
 export default router

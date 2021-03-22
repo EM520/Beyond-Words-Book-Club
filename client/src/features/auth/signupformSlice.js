@@ -90,16 +90,42 @@ export const {
     });
   };
 
-  export const addUser = () =>(dispatch) =>{
+  export const addUser = (
+    username,
+    password,
+    email,
+    bio,
+    photo,
+    firstname,
+    lastname,
+    selectedGenres
+    ) => (dispatch) => {
+        console.log(">>>>>>test registration>>>>>>")
+        axios.post(
+          "/api/registration",
+          {
+            username:  username,
+            password:  password,
+            email:     email,
+            bio:       bio,
+            photo:     photo,
+            firstname: firstname,
+            lastname:  lastname
+          }
+        )
+          .then((r)=>{
+          console.log(r.data,">>>>>>test registration>>>>>>")
+          dispatch(setUsers(r.data))
+          dispatch(addUserGenres(selectedGenres))
+          })
+          .catch((error) => {
+            console.log('Add User Error =======>>> ', error)
+          })
+  }
     
-    axios.post("/api/registration").then((r)=>{
-      console.log(r.data)
-        dispatch(setUsers(r.data))
-    })
-}
 
-export const addUserGenres = () => (dispatch) => {
-  request.post('/genres/user').then((r) => {
+export const addUserGenres = (genresId) => (dispatch) => {
+  request.post('/genres/user/',genresId).then((r) => {
     dispatch(setUserGenres(r.data))
   })
 }

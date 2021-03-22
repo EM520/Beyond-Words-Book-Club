@@ -4,22 +4,24 @@
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 40px;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-.signupform form {
+  margin: 0 auto;
+}
+.signupforminfo{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  /* border:3px solid rgb(190, 181, 62);  */
-  margin: 0 auto;
+    /* border:3px solid rgb(190, 181, 62);  */
 }
 
 .signupform1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* border: 2px solid rgb(187, 33, 33); */
+  border: 2px solid rgb(49, 146, 211);
   width: 100%;
 }
 
@@ -33,6 +35,7 @@
   flex-direction: column;
   width: 100%;
   margin-left: 100px;
+  /* border: 2px solid rgb(19, 180, 91); */
 }
 
 .signupAvatar {

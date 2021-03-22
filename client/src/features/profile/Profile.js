@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import NavBar from '../headerfooter/NavBar'
-import Footer from '../headerfooter/Footer'
 import styles from './Profile.module.css'
 import { FaTrash } from 'react-icons/fa'
+import GenreSelection from '../genreselection/GenreSelection'
 
 import { useSelector, useDispatch } from 'react-redux'
 import {
@@ -12,8 +11,8 @@ import {
   selectUserGenres,
   getUser,
   getUserGroups,
-  getGenres,
-  addUserGenres,
+  getUserGenres,
+  deleteUserGenres,
   deleteBookUser,
   updateUser,
 } from './profileSlice'
@@ -21,7 +20,7 @@ import {
 export default function Profile() {
   const user = useSelector(selectUser)
   const userGroups = useSelector(selectUserGroups)
-  const genre= useSelector(selectGenres)
+  // const genre= useSelector(selectGenres)
   const userGenre= useSelector(selectUserGenres)
   const dispatch = useDispatch()
 
@@ -35,7 +34,7 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUser())
     dispatch(getUserGroups())
-    dispatch(getGenres())
+    dispatch(getUserGenres())
   }, [])
 
   useEffect(() => {
@@ -45,17 +44,21 @@ export default function Profile() {
   
   function handleSubmit(e) {
     e.preventDefault()
-
     setMessage('Congrats!Profile Updated!')
-
     dispatch(updateUser({ username, password, bio }))
-    dispatch(addUserGenres())
-  }
-  function handleClick(id) {
-    dispatch(deleteBookUser(id))
-    dispatch(addUserGenres())
     
   }
+  function removeUserGenres(id) { 
+    console.log(id,">>>deleteUserGenres!!!>>>>") 
+    dispatch(deleteUserGenres(id))
+  }
+  
+  function removeBookUser(id) {
+    console.log(id,">>>deleteBookUser!!!>>>>")
+    dispatch(deleteBookUser(id)) 
+  }
+
+  console.log(userGenre)
   return (
     <>
      
@@ -87,8 +90,7 @@ export default function Profile() {
               type="text"
               onChange={(e) => setBio(e.target.value)}
               className={styles.profileBio}
-              rows="6"
-              cols="100"
+              
               placeholder="Change your Bio here"
               ></textarea>
    
@@ -97,28 +99,37 @@ export default function Profile() {
               <div className={styles.profileSubmit}></div>
             </form>
 
-            <p className={styles.updatetest}>Update your Geßnres</p>
-            <div className={styles.profileGenrelist}>
-              {genre.map((item) => (
-                <p key={'genreuser-' + item.id}>
-                  {item.name}
-                  <input type="checkbox"
-                  value = {item.id}
-                  />
-                  <span class="checkmark"></span>
-                </p>
-              ))}
-              
-            </div>
+           
           </div>
 
           <div>
             <div className={styles.profileImg}>
               <img src={user.photo} />
-              <button>Update Profile Photo</button>
+              
             </div>
           </div>
+
         </div>
+        <p>You favorite Genres List </p>
+        <div className={styles.userGenreslist}>
+             
+            {userGenre.map((item) => (
+               <div>
+                 
+                <p key={'user-Genres-' + item.id}>
+                  {item.name}  {item.id}
+                </p>
+                 <FaTrash onClick={() => {removeUserGenres(item.id)}}/>
+                </div>
+                
+              ))}
+              
+        </div>
+        
+            <div >
+              <GenreSelection/>
+            </div>
+
         <div className={styles.profileGrouplist}>
           {userGroups.map((item) => (
             <div className={styles.profileGrouplistp}>
@@ -128,13 +139,15 @@ export default function Profile() {
 
                 <FaTrash
                   onClick={() => {
-                    handleClick(item.id)
+                    removeBookUser(item.id)
                   }}
                 />
               </div>
             </div>
           ))}
         </div>
+
+        
       </div>
 
      

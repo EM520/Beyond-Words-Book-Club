@@ -5,28 +5,33 @@ import { Checkbox } from 'antd'
 import styles from './GenreSelection.module.css'
 import { getGenres, selectGenres } from './genreSelectionSlice'
 
-export default function GenreSelection() {
+export default function GenreSelection(props) {
   function onChange(checkedValues) {
-    console.log('checked = ', checkedValues)
+    // console.log('checked = ', checkedValues)
+    props.onGenreSelectChange(checkedValues)
   }
 
   const dispatch = useDispatch()
   const genres = useSelector(selectGenres)
   useEffect(() => {
+
     dispatch(getGenres())
   }, [])
-
+   console.log(genres)
   const options = genres.map((genre) => {
-    return { label: genre.name, value: genre.name }
+    
+    return { label: genre.name, value:genre.id }
+        
   })
 
   return (
     <div className={styles.checkbox}>
       <h1>Genres of interest (select as many as you want!)</h1>
+      
       <Checkbox.Group
         className={styles.checkboxes}
         options={options}
-        defaultValue={['Science Fiction']}
+       
         onChange={onChange}
       />
     </div>

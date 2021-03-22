@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ReactDOM from "react-dom";
 import { useSelector, useDispatch } from 'react-redux'
 // import { useHistory } from 'react-router-dom'
 import styles from './Signupform.module.css'
+import GenreSelection from '../genreselection/GenreSelection'
 // import validator from 'validator'
 
 import { selectGenre,selectUserGenre, deleteUserGenre, addUserGenres,addUser,getGenres,getUserGenres } from './signupformSlice'
@@ -10,26 +11,32 @@ import { selectGenre,selectUserGenre, deleteUserGenre, addUserGenres,addUser,get
 export default function Signupform() { 
   const userGenres= useSelector(selectUserGenre)
   const genres= useSelector(selectGenre)
+  const [selectedGenres,setSelectedGenres]=useState([])
   const [username, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [bio, setBio] = useState('')
+  const [photo, setPhoto] = useState('')
   const [firstname, setFirstName] = useState('')
   const [lastname, setLastName] = useState('')
   const dispatch = useDispatch()
 //upload img for signupform
-  const uploadedImage = React.useRef(null);
-  const imageUploader = React.useRef(null);
+  const [uploadedImage,setUploadedImage] = useState(null);
+  const imageUploader = useRef(null);
+
   const handleImageUpload = e => {
+    
     const [file] = e.target.files;
+   
     if (file) {
       const reader = new FileReader();
-      const { current } = uploadedImage;
-      current.file = file;
+      // const { current } = uploadedImage;
+      // current.file = file;
       reader.onload = e => {
-        current.src = e.target.result;
+        setUploadedImage(e.target.result)
+       
       };
       reader.readAsDataURL(file);
     }
@@ -41,10 +48,25 @@ export default function Signupform() {
   
  
 
-  function handleSubmit(e) {
+   async function handleSubmit(e) {
     e.preventDefault()
-    dispatch (addUser())
-    alert('Congrats! Your Account Created!')
+    let photo=uploadedImage
+    console.log('1')
+    await dispatch (addUser(
+      username,
+      password,
+      email,
+      bio,
+      photo,
+      firstname,
+      lastname,
+      selectedGenres
+      ))
+      console.log('2') 
+      console.log('3')      
+    alert('Congrats! Your Account was Created!') 
+   }
+    
     
     // if(confirmPassword !==password ){
     //   setConfirmPasswordError('Must match password')
@@ -56,7 +78,7 @@ export default function Signupform() {
     // }else {
     //   setEmailError('Please enter a valid Email')
     // }
-  }
+  
 
   // function handleClick(e) {
   //   e.preventDefault()
@@ -76,11 +98,25 @@ export default function Signupform() {
     // setLastName("")
   }
 
+  function onGenreSelectChange(genres){
+    console.log(genres)
+    setSelectedGenres(genres)
+  }
+
   return (
     <>
   
-      <div className={styles.signupform}>
-        <form onSubmit={handleSubmit} action="GET">
+      <div >
+          <label 
+           className={styles.message}
+           htmlFor="formsubmit">
+           {message}
+          </label>
+        <form  
+        className={styles.signupform}
+        onSubmit={handleSubmit} 
+        action="GET">
+          <div className={styles.signupforminfo}>
           <div className={styles.signupform1}>
             <input 
             required
@@ -127,7 +163,8 @@ export default function Signupform() {
           </div>
 
           <div className={styles.signupform2}>
-           
+            {/* <input type="image" /> */}
+            {/* <input type="file"/> */}
       <div
       style={{
         display: "flex",
@@ -137,7 +174,7 @@ export default function Signupform() {
       }}
       >
       <input
-      name="photo"
+        name="photo"
         type="file"
         accept="image/*"
         onChange={handleImageUpload}
@@ -151,11 +188,12 @@ export default function Signupform() {
         onClick={() => imageUploader.current.click()}
       >
         <img
-          ref={uploadedImage}
+          // ref={uploadedImage}
+          src={uploadedImage}
           style={{
-            width: "100%",
-            height: "100%",
-            position: "acsolute"
+            width: "200px",
+            height: "200px",
+            position: "absolute"
           }}
         />
       </div>
@@ -180,16 +218,17 @@ export default function Signupform() {
             />
 
           </div>
-          <label className={styles.message} htmlFor="formsubmit">
-                {message}
-          </label>
-          <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
-          </form>
-       
-        <h1>Choose your Favorite Genre</h1>
-          <div className={styles.signupformGenreListp}>
+          </div>
+         
+           
           
-            {genres.map((item) => (
+          <div >
+          
+           <GenreSelection  
+           name="genre_id" 
+           genres={genres} 
+           onGenreSelectChange={onGenreSelectChange}/>
+            {/* {genres.map((item) => (
               <>
                 <p key={'genre-' + item.id}>
                   {item.name}
@@ -198,8 +237,10 @@ export default function Signupform() {
 
               </p>
               </>
-            ))}
+            ))} */}
           </div>
+          <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
+          </form>
           
         </div>
         
