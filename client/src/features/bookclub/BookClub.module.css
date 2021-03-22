@@ -1,30 +1,26 @@
 .bookCover{
-    height:150px;
-    width:100px;
-    /* width: 200px; */
-    /* background-size: contain;
-    background-repeat: no-repeat; */
-
+width: 60%;
+max-width: 250px;
+height: auto;
 
 }
 
 .description {
     width: 20vw;
-    height: 23vw;
+    /* height: 23vw; */
     border: 1px solid black;
-    padding: 15px;
-    font-size: 18px;
+    padding: 1.1vw;
     border: 1px solid rgb(196, 190, 190);
     display: inline;
-    margin: 10px;
+    margin: .5vw;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    font-size: 1.2em;
     
 }
 
-
 .parMargin {
     margin-bottom: 0;
+    text-align: left;
 }
 
 .bookclubmain {
@@ -32,6 +28,10 @@
     grid-template-rows: 1fr auto auto;
     gap: 20px;
     justify-items: center;
+}
+
+.discussion {
+  font-family: arial;
 }
 
 .footer {
@@ -43,7 +43,7 @@
 .discussionmain{
     border: 1px solid rgb(196, 190, 190);
     font-size: 14px;
-    font-family: 'Segoe UI', Roboto;
+    font-family: arial;
     padding: 24px;
 
 
@@ -66,7 +66,7 @@
   width: 30px;
 }
 .boxcomment {
-  margin: 10px;
+  margin: 1em;
   height: 3vw;
   width: 60vw;
   text-indent: 5px;

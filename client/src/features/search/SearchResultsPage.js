@@ -29,7 +29,7 @@ export default function SearchResultsPage() {
           <div  >
             <img src={s.cover_pic} className={styles.bookImg}/>
             </div>
-            <div>  
+            <div className={styles.bookinfo}>  
             <p><strong>TITLE: </strong> {s.title}</p>
             <p><strong>AUTHOR: </strong>{s.author}</p>
             <p><strong>GENRE: </strong>{s.name}</p>  
