@@ -32,18 +32,35 @@ router.post('/book-collections', async (request, response) => {
   response.json({ message: 'book collection added' })
 })
 
-router.delete('/book-collections/:bookId', async (req, res) => {
-  const bookId = req.params.bookId
-  const userId = req.user.id
+// router.delete('/book-collections/:bookId', async (req, res) => {
+//   const bookId = req.params.bookId
+//   const userId = req.user.id
 
-  await conn.raw(
+//   await conn.raw(
+//     `
+//     DELETE FROM book_collections bc
+//     WHERE bc.book_id=? and user_id = ?
+//     `,
+//     [bookId, userId]
+//   )
+//   res.json({ message: 'Books Group deleted' })
+// })
+
+router.get('/book-collections/:bookId', async (request, response) => {
+  // bookId = request.body.book_id
+  // console.log(request.user.id, "userID");
+  const userId = request.user.id
+  const userBookCollections = await conn.raw(
     `
-    DELETE FROM book_collections bc
-    WHERE bc.book_id=? and user_id = ?
-    `,
-    [bookId]
+      SELECT bc.book_id, bc.user_id, g.id as group_id 
+      FROM book_collections bc
+      INNER JOIN groups g
+      ON bc.book_id = g.book_id
+      WHERE bc.book_id= ? and bc.user_id = ?
+        `,
+    [request.params.bookId, userId]
   )
-  res.json({ message: 'Books Group deleted' })
+  response.json(userBookCollections.rows)
 })
 
 export default router

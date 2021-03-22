@@ -42,7 +42,7 @@ export default function App() {
             <RealTop20 />
           </Route>
 
-          <Route path="/book-club">
+          <Route path="/book-club/:id">
             <BookClub />
           </Route>
 

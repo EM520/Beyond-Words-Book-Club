@@ -21,7 +21,7 @@ export const { setGenreUser } = genreuserSlice.actions
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 
-export const getGenreUser = (state) => (dispatch) => {
+export const getGenreUser = () => (dispatch) => {
   request.get('/genres/books/user').then((r) => {
     // console.log()
     // const action = setUsers(r.data)

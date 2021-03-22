@@ -7,7 +7,7 @@ router.get('/books/:bookId', async (request, response) => {
   const id = request.params.bookId
   const bookclub = await conn.raw(
     `
-        SELECT b.title, b.copyright, b.synopsis, b.cover_pic, b.author_id, a.first_name, a.last_name 
+        SELECT b.title, b.copyright, b.synopsis, b.cover_pic, b.author_id, a.first_name, a.last_name, b.id
         FROM books b
         JOIN authors a 
         ON b.author_id = a.id

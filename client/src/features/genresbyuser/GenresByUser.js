@@ -74,7 +74,12 @@ export default function GenresByUser() {
       <div className={styles.genreListMain}>
         {genreuser.map((genre) => (
           <div key={'guser-' + genre.id} className={styles.genreListsubMain}>
-            <Link to="/genres" className={styles.genreUserLink}>
+            <Link to={{
+              pathname: '/search',
+              search: `?q=${genre.name}`
+            }}
+            
+            className={styles.genreUserLink}>
               <p>
                 <img
                   className={styles.genreList}
@@ -88,7 +93,7 @@ export default function GenresByUser() {
                   {genre.name}
                 </p>
               </div>
-            </Link>
+          </Link>
           </div>
         ))}
       </div>

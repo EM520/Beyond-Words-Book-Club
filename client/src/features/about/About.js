@@ -3,7 +3,7 @@ import Footer from '../headerfooter/Footer'
 import styles from './About.module.css'
 import peoplesitting from '../pic/peoplesitting.jpg'
 import adplaceholder from '../pic/adplaceholder.png'
-import SearchBar from '../searchbar/SearchBar'
+import SearchBar from '../search/SearchBar'
 
 export default function About() {
   return (

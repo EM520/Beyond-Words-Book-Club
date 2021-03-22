@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import SearchBar from '../searchbar/SearchBar'
+import SearchBar from '../search/SearchBar'
 import { selectTop20, getRealTop20 } from './realTop20Slice'
 import styles from './RealTop20.module.css'
 import RealTop20Footer from './RealTop20Footer'
+import { Link } from 'react-router-dom'
+
 
 export default function RealTop20() {
   const top20 = useSelector(selectTop20)
@@ -22,6 +24,7 @@ export default function RealTop20() {
   </div> 
   <div className={styles.top20main}>
     {top20.map((top20) => (
+     <Link to={{pathname: '/book-club/'+top20.id}}>
       <div key={'top20-' + top20.id}>
           <img className={styles.bookList}
           src={top20.cover_pic}
@@ -33,6 +36,7 @@ export default function RealTop20() {
             (${top20.count} ${(top20.count == 1) ? "post" : "posts"})`}              
         </div>
       </div> 
+      </Link>  
     ))}
           <RealTop20Footer />
   </div>
