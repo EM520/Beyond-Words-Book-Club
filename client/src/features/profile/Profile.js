@@ -19,6 +19,7 @@ import {
 
 export default function Profile() {
   const user = useSelector(selectUser)
+  const [selectedGenres,setSelectedGenres]=useState([])
   const userGroups = useSelector(selectUserGroups)
   // const genre= useSelector(selectGenres)
   const userGenre= useSelector(selectUserGenres)
@@ -62,9 +63,14 @@ export default function Profile() {
    dispatch(addUserGenres(id))
  }
 
+ function onGenreSelectedChange(genres){
+  console.log(genres)
+  setSelectedGenres(genres)
+}
+
   console.log(userGenre)
   return (
-    <>
+    <div className="dbtest">
      
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
@@ -109,6 +115,7 @@ export default function Profile() {
           <div>
             <div className={styles.profileImg}>
               <img src={user.photo} />
+              <span>Username:{user.username} /  userId: {user.id}</span>
               
             </div>
           </div>
@@ -134,7 +141,8 @@ export default function Profile() {
             <div className={styles.test1} >
               <GenreSelection 
               userGenre={userGenre} 
-              addUserGenres={addUserGenres}/>
+              onGenreSelectedChange={onGenreSelectedChange}/>
+              
             </div>
 
         <div className={styles.test}>
@@ -160,7 +168,7 @@ export default function Profile() {
       </div>
 
      
-    </>
+    </div>
   )
 }
 // src="https://i.pinimg.com/originals/4b/5d/19/4b5d1954fbb5b6bad18f0ac25c4ab3c3.png"

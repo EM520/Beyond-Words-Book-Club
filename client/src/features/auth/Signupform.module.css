@@ -1,14 +1,21 @@
 .signupform {
   /* border: 2px solid red; */
   width: 90vw;
-  margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding-top: 30px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   margin: 0 auto;
+}
+
+.message{
+  font-size:30px;
+  text-align: center;
+  margin-bottom: 50px;
+  color:rgb(29, 163, 180);
+  text-shadow: 2px 2px #d7e8eb;
+  
 }
 .signupforminfo{
   display: flex;
@@ -21,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 2px solid rgb(49, 146, 211);
+  /* border: 2px solid rgb(49, 146, 211); */
   width: 100%;
 }
 
@@ -91,9 +98,9 @@
   margin-right: 50px;
 }
 .submitBtn {
-  padding: 8px 5px;
-  border: 2px solid whitesmoke;
+  padding: 5px 5px;
+  border: none;
   margin-left: 80vw;
   margin-top: 20px;
-  border: 2px solid gray;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
 }

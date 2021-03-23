@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import 'antd/dist/antd.css'
 import { Checkbox } from 'antd'
 import styles from './GenreSelection.module.css'
-import { getGenres, selectGenres } from './genreSelectionSlice'
+import { getGenres, selectGenres ,addUserGenres,} from './genreSelectionSlice'
 
 export default function GenreSelection(props) {
-  function onChange(checkedValues) {
-    // console.log('checked = ', checkedValues)
-    props.onGenreSelectChange(checkedValues)
-  }
 
+  function onChange(checkedValues) {
+    
+    props.onGenreSelectedChange(checkedValues)
+    // console.log('checked = ', checkedValues)
+  }
+  const [selectedGenres,setSelectedGenres]=useState([])
   const dispatch = useDispatch()
   const genres = useSelector(selectGenres)
   useEffect(() => {
@@ -26,6 +28,12 @@ export default function GenreSelection(props) {
 
   })
 
+  function handleClick(selectedGenres){
+    
+    dispatch(addUserGenres(selectedGenres))
+    console.log(selectedGenres)
+  }
+
   return (
     <div className={styles.checkbox}>
       <h1>Genres of interest (select as many as you want!)</h1>
@@ -33,9 +41,10 @@ export default function GenreSelection(props) {
       <Checkbox.Group
         className={styles.checkboxes}
         options={options}
-
+        
         onChange={onChange}
       />
+      <button type="submit" onClick={()=>handleClick(selectedGenres)}>ADD NEW GENRES</button>
     </div>
   )
 }
