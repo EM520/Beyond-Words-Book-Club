@@ -155,6 +155,7 @@ export default function Profile() {
                 <p key={'user-groups-' + item.id}>{item.title}</p>
 
                 <FaTrash 
+                color={"#93908F"}size={18}
                   onClick={() => {
                     removeBookUser(item.id)
                   }}
