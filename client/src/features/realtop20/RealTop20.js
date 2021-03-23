@@ -17,7 +17,7 @@ export default function RealTop20() {
     
   }, [])
   return (
-    <>
+    <div className="dbtest">
    <SearchBar />
   <div className={styles.pagetitle}>
     <h1> Top 20 Groups</h1>
@@ -41,6 +41,6 @@ export default function RealTop20() {
     ))}
           <RealTop20Footer />
   </div>
-  </>
+  </div>
   )
 }

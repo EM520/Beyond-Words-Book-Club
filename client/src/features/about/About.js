@@ -7,7 +7,7 @@ import SearchBar from '../search/SearchBar'
 
 export default function About() {
   return (
-    <>
+    <div className="dbtest">
       <SearchBar />
       <div class={styles.content}>
         <ul>
@@ -46,6 +46,6 @@ export default function About() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   )
 }
