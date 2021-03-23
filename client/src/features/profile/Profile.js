@@ -59,12 +59,12 @@ export default function Profile() {
     dispatch(deleteBookUser(id)) 
   }
 
- function addUserGenres(id){
-   dispatch(addUserGenres(id))
+ function addUserGenres(selectedGenres){
+   dispatch(addUserGenres(selectedGenres))
  }
 
  function onGenreSelectedChange(genres){
-  console.log(genres)
+  console.log(genres,"profile selected genres")
   setSelectedGenres(genres)
 }
 
@@ -142,7 +142,7 @@ export default function Profile() {
               <GenreSelection 
               userGenre={userGenre} 
               onGenreSelectedChange={onGenreSelectedChange}/>
-              
+      
             </div>
 
         <div className={styles.test}>

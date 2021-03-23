@@ -79,22 +79,26 @@ export default function GenresByUser() {
               search: `?q=${genre.name}`
             }}
             
-            className={styles.genreUserLink}>
-              <p>
+            >
+
+              <div className={styles.bookandtitle}>
+              <div className={styles.genreUserLink}>
                 <img
-                  className={styles.genreList}
                   src={genre.cover_pic}
                   alt={genre.title}
                   className={styles.bookimage}
                 />
-              </p>
+
               <div className={styles.genreLink}>
                 <p>
                   {genre.name}
                 </p>
               </div>
+              </div>
+              </div>
           </Link>
           </div>
+          
         ))}
       </div>
     </>

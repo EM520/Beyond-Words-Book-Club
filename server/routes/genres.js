@@ -49,9 +49,9 @@ router.get('/genres/user', async (request, response) => {
 
 // Add genre to table genreusers
 router.post('/genres/user', async (req, res) => {
-   console.log(req.body,"genres on user test")
+   console.log(req.body.selectedGenres,"genres on user test")
    console.log(req.user.id)
-req.body.forEach(async(id) => {
+req.body.selectedGenres.forEach(async(id) => {
     
   await conn.raw(
     `
