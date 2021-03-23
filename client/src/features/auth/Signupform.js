@@ -66,11 +66,10 @@ export default function Signupform() {
       lastname,
       
       ))
-      console.log('2') 
-      console.log('3')      
-      
+     console.log('2') 
+
+     await login(username, password) 
     // After the new user signed up  ,it login in  so user can add genres into account and sort matters
-    login(username, password)
     setMessage('Congrats! Your Account was Created! Choose your genres please!') 
     setGenreIsVisible(!genreIsVisible)
    }

@@ -17,7 +17,7 @@ export default function RealTop20() {
     
   }, [])
   return (
-    <>
+    <div className="dbtest">
    <SearchBar />
   <div className={styles.pagetitle}>
     <h1> Top 20 Groups</h1>
@@ -25,7 +25,7 @@ export default function RealTop20() {
   </div> 
   <div className={styles.top20main}>
     {top20.map((top20) => (
-     <Link to={{pathname: '/book-club/'+top20.id}}>
+     <Link to={{pathname: '/book-club/'+top20.id}} key={'top20-' + top20.id}>
       <div key={'top20-' + top20.id}>
           <img className={styles.bookList}
           src={top20.cover_pic}
@@ -41,6 +41,6 @@ export default function RealTop20() {
     ))}
           <RealTop20Footer />
   </div>
-  </>
+  </div>
   )
 }

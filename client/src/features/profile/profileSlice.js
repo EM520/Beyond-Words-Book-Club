@@ -127,6 +127,7 @@ export const addUserGenres = (selectedGenres) => (dispatch) => {
 
 export const getGenres = () => (dispatch) => {
   axios.get('/api/genres').then((r) => {
+    console.log(r.data, 'genres>>>')
     dispatch(setGenres(r.data))
   })
 }

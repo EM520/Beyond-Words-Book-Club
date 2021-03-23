@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAuth } from './auth'
 import styles from './LoginSignup.module.css'
-import NavBar from '../headerfooter/NavBar'
-import Footer from '../headerfooter/Footer'
 
 export default function Signup() {
   const [username, setUsername] = useState('')

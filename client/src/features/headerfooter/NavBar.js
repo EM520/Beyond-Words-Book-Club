@@ -3,18 +3,47 @@ import styles from './NavBar.module.css'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../auth/auth'
 import logowords from '../pic/logowords.png'
+import { Menu, Dropdown } from 'antd'
+import {getGenres, selectGenres} from '../profile/profileSlice.js'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+// import { Menu } from 'react-bootstrap/lib/Dropdown'
+
+
+
 export default function NavBar() {
   const history = useHistory()
   const { logout } = useAuth()
+  const dispatch = useDispatch()
+  const genres = useSelector(selectGenres)
+  useEffect(() => {
+    dispatch(getGenres())
 
+  },[])
   function handleLogout() {
     logout().then(() => {
-      history.push('/login')
       window.location.reload()
-
-
+      history.push('/home')
     })
   }
+
+  const handleDropDown = (genre) => {
+      history.push({
+      pathname: '/search',
+      search: `?q=${genre}`
+      })  
+      window.location.reload()
+  }
+  const menu = (
+    <Menu className={styles.dropgenre}>
+      {genres.map((g)=> (
+        <Menu.Item key = {g.id}>
+           <span className={styles.genreSelect} onClick={()=>handleDropDown(g.name)}>{g.name}</span>
+        </Menu.Item>
+      ))}
+    </Menu>
+
+  )
 
   return (
     <nav className={styles.navBar}>
@@ -34,39 +63,12 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <div className={styles.dropdown}>
-          <button className={styles.dropbtn}>Genre List</button>
-            <div className={styles.dropdowncontent}>
-              <ul className={styles.dowdownlist}>
-              <li><a href="/search?q=Literary%20Fiction">Literary Fiction</a>
-              <a href="/search?q=Suspense">Suspense/Thrillers</a>
-              <a href="/search?q=Science%20Fiction">Science Fiction</a>
-              <a href="/search?q=Historical%20Fiction">Historical Fiction</a>
-              </li>
-              <li><a href="/search?q=Bios">Bios/Autobiographies</a>
-              <a href="/search?q=memoir">Memoir</a>
-              <a href="/search?q=detective">Detective/Mystery</a>
-              <a href="/search?q=action">Action/Adventure</a>
-              </li>
-              <li><a href="/search?q=self%20help">Self-Help</a> 
-              <a href="/search?q=fantasy">Fantasy</a>  
-              <a href="/search?q=romance">Romance</a>     
-              <a href="/search?q=horror">Horror</a> 
-              </li>
-              <li><a href="/search?q=classics">Classics</a>
-              <a href="/search?q=history">History</a>
-              <a href="/search?q=poetry">Poetry</a>
-              <a href="/search?q=essays">Essays</a>
-              </li>
-              </ul>                           
-            </div>
-          </div>
+            <Dropdown overlay={menu} trigger={['click']}>
+              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                GENRE LISTS
+              </a>    
+            </Dropdown>
         </li>
-        {/* <li>
-          <Link className={styles.navLink} to="/genres">
-            Genre List
-          </Link>
-        </li> */}
         <li>
           <Link className={styles.navLink} to="/top20">
             Top 20 Clubs

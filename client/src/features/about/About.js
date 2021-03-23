@@ -1,5 +1,3 @@
-import NavBar from '../headerfooter/NavBar'
-import Footer from '../headerfooter/Footer'
 import styles from './About.module.css'
 import peoplesitting from '../pic/peoplesitting.jpg'
 import adplaceholder from '../pic/adplaceholder.png'
@@ -7,7 +5,7 @@ import SearchBar from '../search/SearchBar'
 
 export default function About() {
   return (
-    <>
+    <div className="dbtest">
       <SearchBar />
       <div class={styles.content}>
         <ul>
@@ -46,6 +44,6 @@ export default function About() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   )
 }
