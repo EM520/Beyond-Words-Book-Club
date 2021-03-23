@@ -23,7 +23,7 @@ export default function SearchResultsPage() {
           <SearchBar />
         </div>
         {search.map((s) => (
-        <Link to={{pathname: '/book-club/'+s.id}}>
+        <Link key={"search-" + s.genre_id} to={{pathname: '/book-club/'+s.id}}>
         <div  key={"search-" + s.genre_id} className={styles.searchContainer}>  
 
           <div  >

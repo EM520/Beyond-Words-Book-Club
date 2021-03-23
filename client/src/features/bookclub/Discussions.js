@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectDiscussion, getDiscussion, addDiscussion } from './bookclubSlice'
 import styles from './BookClub.module.css'
-import DiscussionReply from './DiscussionReply'
-import DiscussionReplyForm from './DiscussionReplyForm'
+// import DiscussionReply from './DiscussionReply'
+// import DiscussionReplyForm from './DiscussionReplyForm'
 import DiscussionMain from './DiscussionMain'
+import {Divider} from 'antd'
+
 
 // import { Comment, Avatar } from 'antd'
 
@@ -43,6 +45,7 @@ const Discussions = ({id, gId}) => {
             <div key={'discussion-' + disc.id}>
               <div className={styles.commentDiv}>
                 <DiscussionMain parent={disc} id ={id}/>
+                <Divider />
                 {/* <img src={disc.photo} className={styles.discImg} />
                 <div className={styles.commentUser}>
                   <p className={styles.userdate}>

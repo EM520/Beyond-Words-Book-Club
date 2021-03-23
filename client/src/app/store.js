@@ -21,7 +21,7 @@ export default configureStore({
     signupformState: signupformReducer,
     bookclub: bookclubReducer,
     
-    genres: genreSelectionReducer,
+    genreSlectionState: genreSelectionReducer,
     realTop20: realTop20Reducer,
     search: searchReducer,
   },

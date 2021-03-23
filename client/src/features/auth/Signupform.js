@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from './Signupform.module.css'
 import GenreSelection from '../genreselection/GenreSelection'
 // import validator from 'validator'
+import { useAuth } from './auth'
+
 
 import { selectGenre,selectUserGenre, deleteUserGenre, addUserGenres,addUser,getGenres,getUserGenres } from './signupformSlice'
 
@@ -25,7 +27,8 @@ export default function Signupform() {
 //upload img for signupform
   const [uploadedImage,setUploadedImage] = useState(null);
   const imageUploader = useRef(null);
-
+  const [genreIsVisible, setGenreIsVisible] = useState(false)
+  const { login } = useAuth()
   const handleImageUpload = e => {
     
     const [file] = e.target.files;
@@ -60,11 +63,19 @@ export default function Signupform() {
       photo,
       firstname,
       lastname,
-      selectedGenres
+      
       ))
       console.log('2') 
       console.log('3')      
-    alert('Congrats! Your Account was Created!') 
+      
+    // After the new user signed up  ,it login in  so user can add genres into account and sort matters
+    login(username, password)
+    setMessage('Congrats! Your Account was Created! Choose your genres please!') 
+    setGenreIsVisible(!genreIsVisible)
+   }
+
+   function addUserGenres(selectedGenres){
+     dispatch(addUserGenres(selectedGenres))
    }
     
     
@@ -98,7 +109,7 @@ export default function Signupform() {
     // setLastName("")
   }
 
-  function onGenreSelectChange(genres){
+  function onGenreSelectedChange(genres){
     console.log(genres)
     setSelectedGenres(genres)
   }
@@ -106,16 +117,21 @@ export default function Signupform() {
   return (
     <>
   
-      <div >
-          <label 
-           className={styles.message}
-           htmlFor="formsubmit">
-           {message}
-          </label>
-        <form  
+      <div className="dbtest">
+          
+        {genreIsVisible ? (<div >
+          <p className={styles.message}>{message}</p>
+          
+          <GenreSelection  
+          name="genre_id" 
+          genres={genres} 
+          onGenreSelectedChange={onGenreSelectedChange}/>
+          <button type="submit" onClick={()=>addUserGenres(selectedGenres)}></button>
+         </div>) : (<form  
         className={styles.signupform}
         onSubmit={handleSubmit} 
         action="GET">
+          
           <div className={styles.signupforminfo}>
           <div className={styles.signupform1}>
             <input 
@@ -220,27 +236,18 @@ export default function Signupform() {
           </div>
           </div>
          
-           
-          
-          <div >
-          
-           <GenreSelection  
-           name="genre_id" 
-           genres={genres} 
-           onGenreSelectChange={onGenreSelectChange}/>
-            {/* {genres.map((item) => (
-              <>
-                <p key={'genre-' + item.id}>
-                  {item.name}
-                  <input type="checkbox" name="genre_id" value={item.id}/>
-                  <span class="checkmark"></span>
-
-              </p>
-              </>
-            ))} */}
-          </div>
+         
           <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
-          </form>
+          </form>)}
+{/* 
+         {genreIsVisible ? (<div >
+          
+          <GenreSelection  
+          name="genre_id" 
+          genres={genres} 
+          onGenreSelectedChange={onGenreSelectedChange}/>
+           
+         </div>) : ""}  */}
           
         </div>
         
