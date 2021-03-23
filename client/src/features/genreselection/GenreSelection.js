@@ -5,6 +5,7 @@ import { Checkbox } from 'antd'
 import styles from './GenreSelection.module.css'
 import { getGenres, selectGenres ,addUserGenres,} from './genreSelectionSlice'
 import {useHistory} from "react-router-dom"
+import SubmitBtn from '../submitBtn/SubmitBtn'
 
 export default function GenreSelection(props) {
   const [selectedGenres,setSelectedGenres]=useState([])
@@ -53,6 +54,7 @@ export default function GenreSelection(props) {
 
       />
       <button type="submit" onClick={()=>handleClick(selectedGenres)}>ADD NEW GENRES</button>
+      {/* <SubmitBtn onClick={()=>handleClick(selectedGenres)} /> */}
     </div>
   )
   
