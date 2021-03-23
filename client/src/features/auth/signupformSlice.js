@@ -116,7 +116,7 @@ export const {
           .then((r)=>{
           console.log(r.data,">>>>>>test registration>>>>>>")
           dispatch(setUsers(r.data))
-          dispatch(addUserGenres(selectedGenres))
+          // dispatch(addUserGenres(selectedGenres))
           })
           .catch((error) => {
             console.log('Add User Error =======>>> ', error)
@@ -124,9 +124,9 @@ export const {
   }
     
 
-export const addUserGenres = (genresId) => (dispatch) => {
-  request.post('/genres/user/',genresId).then((r) => {
-    dispatch(setUserGenres(r.data))
+export const addUserGenres = (selectedGenres) => (dispatch) => {
+  request.post('/genres/user/',selectedGenres).then((r) => {
+    dispatch(getUserGenres(selectedGenres))
   })
 }
 
