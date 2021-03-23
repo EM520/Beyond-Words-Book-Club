@@ -37,25 +37,25 @@ export default function NavBar() {
           <button className={styles.dropbtn}>Genre List</button>
             <div className={styles.dropdowncontent}>
               <ul className={styles.dowdownlist}>
-              <li><Link to="/search?q=literaryfiction">Literary Fiction</Link>
-              <Link to="search?q=suspensethrillers">Suspense/Thrillers</Link>
-              <Link to="search?q=sciencefiction">Science Fiction</Link>
-              <Link to="search?q=historicalfiction">Historical Fiction</Link>
+              <li><a href="/search?q=Literary%20Fiction">Literary Fiction</a>
+              <a href="/search?q=Suspense">Suspense/Thrillers</a>
+              <a href="/search?q=Science%20Fiction">Science Fiction</a>
+              <a href="/search?q=Historical%20Fiction">Historical Fiction</a>
               </li>
-              <li><Link to="search?q=biosautobiographies">Bios/Autobiographies</Link>
-              <Link to="search?q=memoir">Memoir</Link>
-              <Link to="search?q=detectivemystery">Detective/Mysery</Link>
-              <Link to="search?q=actionadventure">Action/Adventure</Link>
+              <li><a href="/search?q=Bios">Bios/Autobiographies</a>
+              <a href="/search?q=memoir">Memoir</a>
+              <a href="/search?q=detective">Detective/Mystery</a>
+              <a href="/search?q=action">Action/Adventure</a>
               </li>
-              <li><Link to="search?q=selfhelp">Self-Help</Link> 
-              <Link to="search?q=fantasy">Fantasy</Link>  
-              <Link to="search?q=romance">Romance</Link>     
-              <Link to="search?q=horror">Horror</Link> 
+              <li><a href="/search?q=self%20help">Self-Help</a> 
+              <a href="/search?q=fantasy">Fantasy</a>  
+              <a href="/search?q=romance">Romance</a>     
+              <a href="/search?q=horror">Horror</a> 
               </li>
-              <li><Link to="search?q=classics">Classics</Link>
-              <Link to="search?q=history">History</Link>
-              <Link to="search?q=poetry">Poetry</Link>
-              <Link to="search?q=essays">Essays</Link>
+              <li><a href="/search?q=classics">Classics</a>
+              <a href="/search?q=history">History</a>
+              <a href="/search?q=poetry">Poetry</a>
+              <a href="/search?q=essays">Essays</a>
               </li>
               </ul>                           
             </div>
@@ -81,7 +81,7 @@ export default function NavBar() {
             Logout
           </Link>
         </li>
-        <FaShoppingCart />
+        {/* <FaShoppingCart /> */}
       </ul>
     </nav>
   )

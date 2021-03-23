@@ -1,20 +1,10 @@
-/* .genreList{ */
-/* height: 30vh; */
-/* width: 200px; */
-/* width: 100%;
-    max-width: 11vw;
-    height: auto;
-    background-size: contain;
-    background-repeat: no-repeat;
 
-} */
 .genreListMain {
   display: flex;
-  flex-direction: row;
-}
-.genreListsubMain {
-  margin: 5px;
-  align-items: center;
+  flex-direction: columns;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 10vw;
 }
 
 .genreUserLink {
@@ -26,10 +16,12 @@
   color: black;
   /* background-color: #d69668; */
 }
-.genreLink {
+/* .genreLink {
   text-align: center;
-}
+} */
 .bookimage {
-  height: 150px;
-  width: 100px;
+  width: 50%;
+  height: auto;
+  max-width: 250px;
+  margin-top: 5vh;
 }
