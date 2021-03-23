@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit"
-import axios from "axios"
 import request from "../../utils/request";
 
 export const realTop20Slice = createSlice({

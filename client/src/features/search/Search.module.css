@@ -38,8 +38,8 @@
 
 .searchContainer {
 display: flex;
-flex-direction: columns;
-justify-content: flex-start;
+flex-direction: columns; 
+ justify-content: flex-start;
 
 
 }
@@ -53,4 +53,11 @@ justify-content: flex-start;
 .bookinfo {
   margin-top: 1vw;
   margin-left: -5vw;
+}
+.buttonSearch {
+  position: absolute;
+  /* left:1030px; */
+  top:177px;
+  right : 315px;
+
 }
