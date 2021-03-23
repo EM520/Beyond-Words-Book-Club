@@ -6,6 +6,7 @@ import styles from './Signupform.module.css'
 import GenreSelection from '../genreselection/GenreSelection'
 import validator from 'validator'
 import { useAuth } from './auth'
+import SubmitBtn from '../submitBtn/SubmitBtn'
 
 
 
@@ -242,8 +243,9 @@ export default function Signupform() {
           </div>
           </div>
          
-         
-          <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
+         <SubmitBtn type="submit" onClick={handleClick}/>
+          
+          {/* <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button> */}
           </form>)}
 
 
