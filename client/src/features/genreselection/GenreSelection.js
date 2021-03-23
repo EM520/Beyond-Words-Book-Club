@@ -4,20 +4,26 @@ import 'antd/dist/antd.css'
 import { Checkbox } from 'antd'
 import styles from './GenreSelection.module.css'
 import { getGenres, selectGenres ,addUserGenres,} from './genreSelectionSlice'
+import {useHistory} from "react-router-dom"
 
 export default function GenreSelection(props) {
-
+  const [selectedGenres,setSelectedGenres]=useState([])
+  const history = useHistory()
   function onChange(checkedValues) {
     
     props.onGenreSelectedChange(checkedValues)
-    // console.log('checked = ', checkedValues)
+    console.log('checkedGenresId = ', checkedValues)
+    setSelectedGenres(checkedValues)
+    console.log(selectedGenres,"store selectedGenres*****")
+    
   }
-  const [selectedGenres,setSelectedGenres]=useState([])
+
+
   const dispatch = useDispatch()
   const genres = useSelector(selectGenres)
   useEffect(() => {
 
-    dispatch(getGenres())
+  dispatch(getGenres())
   }, [])
    console.log(genres)
   const options = genres.map((genre) => {
@@ -31,7 +37,9 @@ export default function GenreSelection(props) {
   function handleClick(selectedGenres){
     
     dispatch(addUserGenres(selectedGenres))
-    console.log(selectedGenres)
+    // alert("Your favorite genres added!")
+    props.isSignUp ? history.push({pathname:'/home'}): window.location.reload()
+    console.log(selectedGenres,">>>>>>selectedGenresbyclick>>>")
   }
 
   return (
@@ -41,8 +49,8 @@ export default function GenreSelection(props) {
       <Checkbox.Group
         className={styles.checkboxes}
         options={options}
-        
         onChange={onChange}
+
       />
       <button type="submit" onClick={()=>handleClick(selectedGenres)}>ADD NEW GENRES</button>
     </div>

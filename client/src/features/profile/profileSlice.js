@@ -117,11 +117,11 @@ export const deleteUserGenres = (genreId) => (dispatch) => {
   })
 }
 
-export const addUserGenres = (genreId) => (dispatch) => {
+export const addUserGenres = (selectedGenres) => (dispatch) => {
 
-  request.post('/genres_users/user',{genre_id:genreId}).then((r) => {
-    console.log(genreId,'<<<<<<<addUserGenres>>>>')
-    dispatch(getUserGenres(genreId))
+  request.post('/genres/user',{selectedGenres}).then((r) => {
+    console.log(selectedGenres,'<<<<<<<addUserGenres>>>>')
+    dispatch(getUserGenres())
   })
 }
 

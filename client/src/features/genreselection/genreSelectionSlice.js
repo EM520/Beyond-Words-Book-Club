@@ -45,7 +45,7 @@ export const getUserGenres = () => (dispatch) => {
 export const addUserGenres = (selectedGenres) => (dispatch) => {
   
   request.post('/genres/user/',{selectedGenres}).then((r) => {
-    console.log(selectedGenres)
+    console.log(selectedGenres,"selectedGenres>>>>>>")
     dispatch(getUserGenres(selectedGenres))
   })
 }

@@ -5,6 +5,7 @@
 }
 
 .checkboxes {
+  /* font-size: 2vw; */
   display: inline-flex;
   flex-wrap: wrap;
   flex-direction:row;

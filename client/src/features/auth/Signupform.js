@@ -29,6 +29,7 @@ export default function Signupform() {
   const imageUploader = useRef(null);
   const [genreIsVisible, setGenreIsVisible] = useState(false)
   const { login } = useAuth()
+  const isSignUp = true
   const handleImageUpload = e => {
     
     const [file] = e.target.files;
@@ -109,9 +110,9 @@ export default function Signupform() {
     // setLastName("")
   }
 
-  function onGenreSelectedChange(genres){
-    console.log(genres)
-    setSelectedGenres(genres)
+  function onGenreSelectedChange(selectedGenres){
+    console.log(selectedGenres,"signupform selected genres")
+    setSelectedGenres(selectedGenres)
   }
 
   return (
@@ -122,11 +123,11 @@ export default function Signupform() {
         {genreIsVisible ? (<div >
           <p className={styles.message}>{message}</p>
           
-          <GenreSelection  
+          <GenreSelection  isSignUp = {isSignUp}
           name="genre_id" 
-          genres={genres} 
+          selectedGenres={selectedGenres} 
           onGenreSelectedChange={onGenreSelectedChange}/>
-          <button type="submit" onClick={()=>addUserGenres(selectedGenres)}></button>
+          
          </div>) : (<form  
         className={styles.signupform}
         onSubmit={handleSubmit} 
@@ -239,6 +240,8 @@ export default function Signupform() {
          
           <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button>
           </form>)}
+
+
 {/* 
          {genreIsVisible ? (<div >
           
