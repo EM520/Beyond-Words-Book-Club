@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: Amatic SC;
+  font-size: 3vw;
+}
+
+h2 {
+  font-family: Amatic SC;
+  font-size: 2vw;
+}
+
+h3 {
+  font-size: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
+  /* padding-bottom: .5vh; */
+  font-weight: normal;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -16,7 +33,7 @@ body {
 
 p {
   margin-bottom: 0em;
-  
+
 }
 
 .dbtest{

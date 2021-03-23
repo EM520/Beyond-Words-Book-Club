@@ -15,7 +15,7 @@ export default function DiscussionMain({parent, id}) {
     
   return (
     <>
-    <div>
+    <div className= {styles.commentMain}>
         <img src={parent.photo} className={styles.discImg} />
         <div className={styles.commentUser}>
             <p className={styles.userdate}>
