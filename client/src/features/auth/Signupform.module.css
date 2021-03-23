@@ -17,6 +17,10 @@
   text-shadow: 2px 2px #d7e8eb;
   
 }
+
+.textlabelred{
+  color:red;
+}
 .signupforminfo{
   display: flex;
   flex-direction: row;

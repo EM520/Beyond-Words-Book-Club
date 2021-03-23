@@ -51,7 +51,7 @@ export default function SearchResultsPage() {
 
         </Link>  
         ))}
-      </div>
+        </div>
     </>
   )
 }

@@ -13,6 +13,7 @@ export default function Signup() {
     e.preventDefault()
     login(username, password).then((r) => {
       history.push('/home')
+      window.location.reload()
     })
   }
 

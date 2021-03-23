@@ -47,6 +47,7 @@ export default function Profile() {
     e.preventDefault()
     setMessage('Congrats!Profile Updated!')
     dispatch(updateUser({ username, password, bio }))
+    window.location.reload()
     
   }
   function removeUserGenres(id) { 
@@ -116,6 +117,7 @@ export default function Profile() {
             <div className={styles.profileImg}>
               <img src={user.photo} />
               <span>Username:{user.username} /  userId: {user.id}</span>
+              <p>Bio:{user.bio}</p>
               
             </div>
           </div>
