@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
 
       <div 
-      // className={styles.homepageTop}
+      className="dbtest"
       >
         {/* <h2>Username's favorite genres!</h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}

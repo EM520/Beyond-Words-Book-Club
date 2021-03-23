@@ -67,8 +67,7 @@ export default function Signupform() {
       
       ))
       console.log('2') 
-      console.log('3')      
-      
+      console.log('3')       
     // After the new user signed up  ,it login in  so user can add genres into account and sort matters
     login(username, password)
     setMessage('Congrats! Your Account was Created! Choose your genres please!') 
