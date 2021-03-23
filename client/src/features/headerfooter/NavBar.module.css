@@ -71,7 +71,7 @@
 
 /* .dropdowncontent a:hover {background-color:#f0efe0;} */
 
-.dropdown:hover .dropdowncontent {display: block;}
+.dropdown:focus .dropdowncontent {display: block;}
 
 /* .dropdown:hover .dropbtn {background-color: #f0efe0;} */
 

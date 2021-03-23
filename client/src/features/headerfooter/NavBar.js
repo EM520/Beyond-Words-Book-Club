@@ -10,6 +10,9 @@ export default function NavBar() {
   function handleLogout() {
     logout().then(() => {
       history.push('/login')
+      window.location.reload()
+
+
     })
   }
 

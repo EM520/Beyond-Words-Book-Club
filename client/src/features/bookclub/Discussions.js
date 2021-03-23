@@ -31,7 +31,7 @@ const Discussions = ({id, gId}) => {
 
     }
   }
-
+  console.log(discussions, 'yoyoyo')
   function handleShowReply (e) {
     e.preventDefault()
     setShowReply(!showReply)
