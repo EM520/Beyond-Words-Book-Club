@@ -98,7 +98,7 @@ export const {
     photo,
     firstname,
     lastname,
-    selectedGenres
+    // selectedGenres
     ) => (dispatch) => {
         console.log(">>>>>>test registration>>>>>>")
         axios.post(
