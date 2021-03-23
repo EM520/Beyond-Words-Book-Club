@@ -38,7 +38,7 @@ const Discussions = ({id, gId}) => {
   }
 
   return (
-    <>
+    <div className="dbtest">
       <div className={styles.discussionmain}>
         <div className={styles.discussionlist}>
           {discussions.map((disc) => (
@@ -90,7 +90,7 @@ const Discussions = ({id, gId}) => {
           Submit
         </button>
       </div>
-    </>
+    </div>
   )
 }
 

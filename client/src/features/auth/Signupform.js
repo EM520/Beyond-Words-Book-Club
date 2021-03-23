@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux'
 // import { useHistory } from 'react-router-dom'
 import styles from './Signupform.module.css'
 import GenreSelection from '../genreselection/GenreSelection'
-// import validator from 'validator'
+import validator from 'validator'
 import { useAuth } from './auth'
+
 
 
 import { selectGenre,selectUserGenre, deleteUserGenre, addUserGenres,addUser,getGenres,getUserGenres } from './signupformSlice'
@@ -16,9 +17,11 @@ export default function Signupform() {
   const [selectedGenres,setSelectedGenres]=useState([])
   const [username, setUserName] = useState('')
   const [email, setEmail] = useState('')
+  const [emailError,setEmailError] = useState('')
   const [message, setMessage] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [confirmPasswordError,setConfirmPasswordError] = useState('')
   const [bio, setBio] = useState('')
   const [photo, setPhoto] = useState('')
   const [firstname, setFirstName] = useState('')
@@ -55,7 +58,18 @@ export default function Signupform() {
    async function handleSubmit(e) {
     e.preventDefault()
     let photo=uploadedImage
+    if(confirmPassword !==password ){
+      setConfirmPasswordError('Must match password')
+    }else{
+      setConfirmPasswordError('')
+    }
+    if (validator.isEmail(email)) {
+      setEmailError('')
+    }else {
+      setEmailError('Please enter a valid Email')
+    }
     console.log('1')
+
     await dispatch (addUser(
       username,
       password,
@@ -67,10 +81,10 @@ export default function Signupform() {
       
       ))
      console.log('2') 
-
+     
      await login(username, password) 
     // After the new user signed up  ,it login in  so user can add genres into account and sort matters
-    setMessage('Congrats! Your Account was Created! Choose your genres please!') 
+    setMessage('Congrats! Account was created! Choose your genres please!') 
     setGenreIsVisible(!genreIsVisible)
    }
 
@@ -78,27 +92,6 @@ export default function Signupform() {
      dispatch(addUserGenres(selectedGenres))
    }
     
-    
-    // if(confirmPassword !==password ){
-    //   setConfirmPasswordError('Must match password')
-    // }else{
-    //   setConfirmPasswordError('')
-    // }
-    // if (validator.isEmail(email)) {
-    //   setEmailError('')
-    // }else {
-    //   setEmailError('Please enter a valid Email')
-    // }
-  
-
-  // function handleClick(e) {
-  //   e.preventDefault()
-
-  //   setMessage('Congrats!Profile Updated!')
-
-  //   dispatch(addUser())
-  // }
-
   function handleClick(e) {
     // setUserName("")
     // setEmail("")
@@ -151,6 +144,12 @@ export default function Signupform() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Input your password"
              />
+
+             <label 
+            htmlFor="confirmPassword" 
+            className={styles.textlabelred}>
+              { confirmPasswordError ?confirmPasswordError:null }
+            </label> 
             <input 
             required
             name="confirmPassword"
@@ -159,6 +158,12 @@ export default function Signupform() {
             onChange={(e) => setConfirmPassword(e.target.value)}
             placeholder="Comfirm your password"
              />
+
+            <label 
+            htmlFor="email" 
+            className={styles.textlabelred }>
+            { emailError ?emailError:null }
+            </label> 
             <input
             required
             name="email"
@@ -167,6 +172,7 @@ export default function Signupform() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Input your Email"
               />
+
             <textarea
               name="bio"
               rows="9"
