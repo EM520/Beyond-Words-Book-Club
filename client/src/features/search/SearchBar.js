@@ -27,6 +27,7 @@ const SearchBar = () => {
   }
 
   return (
+    <div >
     <div className="bar">
     <form onSubmit={(e) => handleSubmit(e)}>  
       <input
@@ -41,7 +42,7 @@ const SearchBar = () => {
     </Tooltip>
     </form>
 
-
+    </div>
     </div>
   )
 }

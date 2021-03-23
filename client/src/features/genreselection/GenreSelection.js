@@ -55,4 +55,5 @@ export default function GenreSelection(props) {
       <button type="submit" onClick={()=>handleClick(selectedGenres)}>ADD NEW GENRES</button>
     </div>
   )
+  
 }
