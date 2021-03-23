@@ -14,7 +14,8 @@ export default function RealTop20() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getRealTop20())
-  })
+    
+  }, [])
   return (
     <>
    <SearchBar />

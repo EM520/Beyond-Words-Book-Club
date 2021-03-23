@@ -99,10 +99,10 @@ height: auto;
   border-radius: 50%;
 }
 
-.commentDiv {
+/* .commentDiv {
   display: flex;
   /* padding: 0 auto; */
-}
+/* } */ 
 .overflow {
   /* float:left; */
   overflow-y: auto;
@@ -123,6 +123,7 @@ height: auto;
     font-size: 10px;
     font-family: inherit;
     margin-bottom: 0;
+    color: rgba(0, 0, 0, 0.45); 
 }
 .button {
   height: 30px;

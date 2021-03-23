@@ -1,8 +1,9 @@
 import styles from './BookClub.module.css'
 import React, { useState } from 'react'
-export let clickReply = true
+import DiscussionReply from './DiscussionReply'
+import DiscussionReplyForm from './DiscussionReplyForm'
 
-export default function DiscussionMain({parent}) {
+export default function DiscussionMain({parent, id}) {
     const [showReply, setShowReply] = useState(false)
 
     console.log(parent.username, 'dm')
@@ -10,16 +11,11 @@ export default function DiscussionMain({parent}) {
     function handleShowReply (e) {
         e.preventDefault()
         setShowReply(!showReply)
-
-        clickReply = showReply
-        console.log (clickReply, showReply, 'cs')
-        // export const showReply 
       }
     
   return (
     <>
     <div>
-
         <img src={parent.photo} className={styles.discImg} />
         <div className={styles.commentUser}>
             <p className={styles.userdate}>
@@ -36,7 +32,12 @@ export default function DiscussionMain({parent}) {
         >
             Reply
         </a> 
+        {parent.replies ? (
+                  <DiscussionReply replies={parent.replies} />
+                ) : null}
+                {showReply ? <DiscussionReplyForm replies={parent} id = {id}/> : null}
     </div>
+                
 </>
   )
 }

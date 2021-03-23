@@ -91,7 +91,7 @@ export default function GenresByUser() {
 
               <div className={styles.genreLink}>
                 <p>
-                  {genre.name}
+                  {genre.name.toUpperCase()}
                 </p>
               </div>
               </div>
