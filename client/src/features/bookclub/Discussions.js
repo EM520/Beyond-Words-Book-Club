@@ -4,6 +4,8 @@ import { selectDiscussion, getDiscussion, addDiscussion } from './bookclubSlice'
 import styles from './BookClub.module.css'
 import DiscussionReply from './DiscussionReply'
 import DiscussionReplyForm from './DiscussionReplyForm'
+import DiscussionMain from './DiscussionMain'
+
 // import { Comment, Avatar } from 'antd'
 
 const Discussions = ({id, gId}) => {
@@ -35,15 +37,13 @@ const Discussions = ({id, gId}) => {
 
   return (
     <>
-      {/* className={styles.discussionmain} */}
       <div className={styles.discussionmain}>
-        {/* className={styles.discussionlist} */}
         <div className={styles.discussionlist}>
           {discussions.map((disc) => (
-            // className={styles.commentDiv}
             <div key={'discussion-' + disc.id}>
               <div className={styles.commentDiv}>
-                <img src={disc.photo} className={styles.discImg} />
+                <DiscussionMain parent={disc} id ={id}/>
+                {/* <img src={disc.photo} className={styles.discImg} />
                 <div className={styles.commentUser}>
                   <p className={styles.userdate}>
                     {disc.username} - {disc.date}
@@ -58,28 +58,28 @@ const Discussions = ({id, gId}) => {
                   className={styles.reply}
                 >
                   Reply
-                </a>
-                {disc.replies ? (
+                </a> */}
+
+                {/* {disc.replies ? (
                   <DiscussionReply replies={disc.replies} />
-                ) : null}
-                {/* <DiscussionReplyForm replies={disc} /> */}
-                {showReply ? <DiscussionReplyForm replies={disc} id = {id}/> : null}
+                ) : null} */}
+                {/* <DiscussionReplyForm replies={disc} id = {id} showKInput={showReply} /> */}
+                {/* {showReply ? <DiscussionReplyForm replies={disc} id = {id} showInput={showReply}/> : null}
+                <Divider /> */}
               </div>
             </div>
           ))}
         </div>
 
         <div className={styles.commentMain}>
-          {/* <img src="https://static.xx.fbcdn.net/rsrc.php/v1/yi/r/odA9sNLrE86.jpg" alt="avatar"/> */}
-          {/* <form onSubmit={() => handleSubmit(input, null, 1)}> */}
           <textarea
             placeholder="Add a comment"
             value={input}
             className={styles.boxcomment}
             onChange={(e) => setInput(e.target.value)}
           />
-          {/* </form> */}
         </div>
+
         <button
           onClick={() => handleSubmit(input, null, gId, id)}
           className={styles.button}

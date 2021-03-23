@@ -1,9 +1,7 @@
 import styles from './NavBar.module.css'
 // import DropdownButton from 'react-bootstrap/DropdownButton'
 import { Link, useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import { useAuth } from '../auth/auth'
-import { FaShoppingCart } from 'react-icons/fa'
 import logowords from '../pic/logowords.png'
 export default function NavBar() {
   const history = useHistory()
@@ -81,7 +79,6 @@ export default function NavBar() {
             Logout
           </Link>
         </li>
-        <FaShoppingCart />
       </ul>
     </nav>
   )

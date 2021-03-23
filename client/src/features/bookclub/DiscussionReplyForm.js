@@ -3,12 +3,11 @@ import { addDiscussion } from './bookclubSlice'
 import { useDispatch } from 'react-redux'
 import styles from './BookClub.module.css'
 
-export default function DiscussionReplyForm({ replies, id }) {
+export default function DiscussionReplyForm({ replies, id}) {
   const [input, setInput] = useState('')
   const dispatch = useDispatch()
-
+  const [showReply, setShowReply] = useState(true)
   // post request here!
-
   function handleSubmit(e) {
     e.preventDefault()
     const discussion = {
@@ -19,21 +18,27 @@ export default function DiscussionReplyForm({ replies, id }) {
     }
     dispatch(addDiscussion(discussion))
     setInput('')
+    setShowReply(false)
+
+
   }
+
   return (
+   <> {showReply ?
     <form
       action=""
       onSubmit={(e) => {
         handleSubmit(e)
       }}
-    >
+    > 
       <input
         type="text"
         onChange={(e) => setInput(e.target.value)}
         value={input}
         className={styles.replyinput}
         autoFocus={true}
-      />
-    </form>
+      /> 
+    </form> : null }
+  </>  
   )
 }

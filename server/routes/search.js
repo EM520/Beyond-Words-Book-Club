@@ -5,7 +5,7 @@ const router = express.Router()
 router.get('/search', async (request, response) => {
 
    const qString = request.query.q
-   console.log(qString, 'wStyring')
+   console.log(qString, 'wString')
    
    const searchString = qString.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
    const newQ = `%${searchString}%`
