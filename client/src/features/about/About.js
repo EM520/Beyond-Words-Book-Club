@@ -1,5 +1,3 @@
-import NavBar from '../headerfooter/NavBar'
-import Footer from '../headerfooter/Footer'
 import styles from './About.module.css'
 import peoplesitting from '../pic/peoplesitting.jpg'
 import adplaceholder from '../pic/adplaceholder.png'

@@ -6,14 +6,22 @@ import SearchBar from '../search/SearchBar'
 import styles from './Search.module.css'
 
 export default function SearchResultsPage() {
+
   // console.log(props, 'idC')
   // const id = 1
   const search = useSelector(selectSearch)
   const dispatch = useDispatch()
   const location = useLocation()
+  const urlParams = location.search
+  const searchParam = urlParams.substring(3)
+  let searchTitle = searchParam.replaceAll("%20" , ' ')
+  console.log( searchTitle,'loc')
+
+
   useEffect(() => {
-    dispatch(getSearch(location.search))
+    dispatch(getSearch(urlParams))
   }, [])
+
 
 
   return (
@@ -22,7 +30,9 @@ export default function SearchResultsPage() {
         <div>
           <SearchBar />
         </div>
-        <div className="dbtest2">
+        <div className={styles.searchTitle}>
+        {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
+        </div>
         {search.map((s) => (
         <Link key={"search-" + s.genre_id} to={{pathname: '/book-club/'+s.id}}>
         <div  key={"search-" + s.genre_id} className={styles.searchContainer}>  
@@ -42,7 +52,6 @@ export default function SearchResultsPage() {
         </Link>  
         ))}
         </div>
-      </div>
     </>
   )
 }

@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/discussions/:bookId', async (request, response) => {
   const id = request.params.bookId
   const oldSql = `
-  SELECT d.discussion, d.parent_id, d.group_id, u.photo, u.username, d.id, TO_CHAR(d.created_at, 'MM/DD/YYYY HH:MM') as date
+  SELECT d.discussion, d.parent_id, d.group_id, u.photo, u.username, d.id, TO_CHAR(d.created_at, 'MM/DD/YYYY HH:MM') as date, d.created_at
   FROM discussions d
   LEFT OUTER JOIN groups g
   ON d.group_id = g.id
@@ -15,6 +15,8 @@ router.get('/discussions/:bookId', async (request, response) => {
   LEFT OUTER JOIN users u
   ON d.user_id= u.id
   WHERE b.id = ?
+  ORDER BY d.created_at desc
+
 
   `
   // const sql = `SELECT u.photo, u.username, d.id, d.parent_id, d.discussion, d.group_id, TO_CHAR(d.created_at, 'MM/DD/YYYY HH:MM') as date
@@ -24,11 +26,14 @@ router.get('/discussions/:bookId', async (request, response) => {
   //       WHERE group_id = ?`
   const discussion = await conn.raw(oldSql, [id])
   const rows = discussion.rows
-  console.table(rows)
+  // console.table(discussion.rows)
   const discussionMap = {}
   for (let discussion of rows) {
     discussionMap[discussion.id] = discussion
   }
+    // discussionMap.sort()
+      console.log(discussionMap)
+
   for (let key in discussionMap) {
     const currentDiscussion = discussionMap[key]
     const isAReply = currentDiscussion.parent_id !== null
@@ -49,14 +54,16 @@ router.get('/discussions/:bookId', async (request, response) => {
     if (!isAReply) {
       discussionList.push(currentDiscussion)
     }
+    // discussionList.sort()
+
   }
+  console.log(discussionList, 'xoxoxoxox')
   response.json(discussionList)
 })
 
 router.post('/discussions', async (request, response) => {
   // const id = req.user.bookId;
   const userId = request.user.id
-  // console.log(Date().getHours());
 
   const { discussion, group_id, parent_id } = request.body
   await conn.table('discussions').insert({ ...request.body, user_id: userId })
