@@ -15,10 +15,7 @@ export const signupformSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
-    userGenres:[
-
-    ]
-    
+    userGenres: [],
   },
   reducers: {
     //   increment: (state) => {
@@ -80,67 +77,59 @@ export const {
 //   }
 // }
 
-  export const getGenres = () => (dispatch) => {
-    axios.get("/api/genres").then((r) => {
-      dispatch(setGenres(r.data));
-    });
-  };
+export const getGenres = () => (dispatch) => {
+  axios.get('/api/genres').then((r) => {
+    dispatch(setGenres(r.data))
+  })
+}
 
-  export const getUserGenres = () => (dispatch) => {
-    request.get("/genres/user").then((r) => {
-      dispatch(setUserGenres(r.data));
-    });
-  };
+export const getUserGenres = () => (dispatch) => {
+  request.get('/genres/user').then((r) => {
+    dispatch(setUserGenres(r.data))
+  })
+}
 
-  export const addUser = (
-    username,
-    password,
-    email,
-    bio,
-    photo,
-    firstname,
-    lastname,
-    // selectedGenres
-    ) => (dispatch) => {
-        console.log(">>>>>>test registration>>>>>>")
-        axios.post(
-          "/api/registration",
-          {
-            username:  username,
-            password:  password,
-            email:     email,
-            bio:       bio,
-            photo:     photo,
-            firstname: firstname,
-            lastname:  lastname
-          }
-        )
-          .then((r)=>{
-          console.log(r.data,">>>>>>test registration>>>>>>")
-          dispatch(setUsers(r.data))
-          // dispatch(addUserGenres(selectedGenres))
-          })
-          .catch((error) => {
-            console.log('Add User Exsit =======>>> ', error)
-          })
-  }
-    
+export const addUser = (
+  username,
+  password,
+  email,
+  bio,
+  photo,
+  firstname,
+  lastname
+  // selectedGenres
+) => (dispatch) => {
+  return axios
+    .post('/api/registration', {
+      username: username,
+      password: password,
+      email: email,
+      bio: bio,
+      photo: photo,
+      firstname: firstname,
+      lastname: lastname,
+    })
+    .then((r) => {
+      console.log(r.data, '>>>>>>test registration>>>>>>')
+      dispatch(setUsers(r.data))
+      // dispatch(addUserGenres(selectedGenres))
+    })
+    .catch((error) => {
+      console.log('Add User Exsit =======>>> ', error)
+    })
+}
 
 export const addUserGenres = (selectedGenres) => (dispatch) => {
-  request.post('/genres/user/',selectedGenres).then((r) => {
+  request.post('/genres/user/', selectedGenres).then((r) => {
     dispatch(getUserGenres(selectedGenres))
   })
 }
 
-  export const deleteUserGenres = (id) => (dispatch) => {
-
-    axios.delete("/api/genres/user/" + id).then((resp) => {
-      dispatch(getUserGenres());
-
-    });
-  };
-
- 
+export const deleteUserGenres = (id) => (dispatch) => {
+  axios.delete('/api/genres/user/' + id).then((resp) => {
+    dispatch(getUserGenres())
+  })
+}
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
