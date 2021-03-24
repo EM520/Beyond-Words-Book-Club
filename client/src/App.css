@@ -9,15 +9,6 @@ body {
   
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-.content {
-  flex: 1 0 auto;
-}
-
-
 h1 {
   font-family: Amatic SC;
   font-size: 3vw;

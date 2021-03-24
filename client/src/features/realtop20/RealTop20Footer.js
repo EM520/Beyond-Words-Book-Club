@@ -8,9 +8,9 @@ export default function RealTop20Footer() {
   return (
     <>
     <div className={styles.horizontalad}>
-        <img src={peopleonbacks} alt='People on backs reading'></img>
-        <img src={adtoptwentypage} alt='Sponsored'></img>
-        <img src={holdingbooks} alt='Person Holding Books'></img>
+        <img className={styles.adtop20} src={peopleonbacks} alt='People on backs reading'></img>
+        <img className={styles.adtop20} src={adtoptwentypage} alt='Sponsored'></img>
+        <img className={styles.adtop20}src={holdingbooks} alt='Person Holding Books'></img>
     </div>
   </>
   )
