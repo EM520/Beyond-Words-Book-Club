@@ -1,18 +1,14 @@
 .submitBtn {
     width: 8vw;
     height: 2vw;
-    margin-left: 62%;
+    margin-left: 54%;
     margin-top: 15px;
-  
     /* border-color: red; */
     border-radius: 5px;
     box-shadow: 5px 5px 3px rgb(133, 123, 123);
-  
     margin-bottom: 10px;
-    border-radius: 8px;
     border: .05em solid rgb(183, 183, 183);
     box-shadow: 5px 5px 3px rgb(152, 140, 140);
-  
   
   }
   

@@ -1,8 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
+
+body {
+  background-color: #f0efe0;
+  
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+
 
 h1 {
   font-family: Amatic SC;
@@ -21,22 +35,18 @@ h3 {
   font-weight: normal;
 }
 
-footer {
+/* footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-body {
-  background-color: #f0efe0;
-}
+} */
 
 p {
   margin-bottom: 0em;
 
 }
 
-.dbtest{
+/* .dbtest{
   padding: 2rem;
   color: black;
 }
@@ -44,7 +54,7 @@ p {
 .dbtest2{
   padding: 10rem;
   color: black;
-}
+} */
 
 a {
   color: black;
