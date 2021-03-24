@@ -2,17 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectDiscussion, getDiscussion, addDiscussion } from './bookclubSlice'
 import styles from './BookClub.module.css'
-// import DiscussionReply from './DiscussionReply'
-// import DiscussionReplyForm from './DiscussionReplyForm'
 import DiscussionMain from './DiscussionMain'
 import {Divider} from 'antd'
 
 
-// import { Comment, Avatar } from 'antd'
 
 const Discussions = ({id, gId}) => {
   const discussions = useSelector(selectDiscussion)
-  console.log(id, gId, 'id again')
+  // console.log(id, gId, 'id again')
 
 
   const dispatch = useDispatch()
@@ -22,20 +19,20 @@ const Discussions = ({id, gId}) => {
   useEffect(() => {
     dispatch(getDiscussion(id))
   }, [])
+  // console.log(discussions, 'testing')
 
   function handleSubmit(discussion, parent_id, group_id, id) {
-    // preventDefault()
     if (discussion !== '') {
       dispatch(addDiscussion({ discussion, parent_id, group_id, id }))
       setInput('')
 
     }
   }
-  console.log(discussions, 'yoyoyo')
-  function handleShowReply (e) {
-    e.preventDefault()
-    setShowReply(!showReply)
-  }
+  // console.log(discussions, 'yoyoyo')
+  // function handleShowReply (e) {
+  //   e.preventDefault()
+  //   setShowReply(!showReply)
+  // }
 
   return (
     <div className="dbtest">
@@ -46,29 +43,6 @@ const Discussions = ({id, gId}) => {
               <div className={styles.commentDiv}>
                 <DiscussionMain parent={disc} id ={id}/>
                 <Divider />
-                {/* <img src={disc.photo} className={styles.discImg} />
-                <div className={styles.commentUser}>
-                  <p className={styles.userdate}>
-                    {disc.username} - {disc.date}
-                  </p>
-                  <p>{disc.discussion}</p>
-                </div>
-              </div>
-              <div style={{ marginLeft: '40px' }}>
-                <a
-                  href="#"
-                  onClick={handleShowReply}
-                  className={styles.reply}
-                >
-                  Reply
-                </a> */}
-
-                {/* {disc.replies ? (
-                  <DiscussionReply replies={disc.replies} />
-                ) : null} */}
-                {/* <DiscussionReplyForm replies={disc} id = {id} showKInput={showReply} /> */}
-                {/* {showReply ? <DiscussionReplyForm replies={disc} id = {id} showInput={showReply}/> : null}
-                <Divider /> */}
               </div>
             </div>
           ))}
@@ -76,6 +50,7 @@ const Discussions = ({id, gId}) => {
 
         <div className={styles.commentMain}>
           <textarea
+            autoFocus
             placeholder="Add a comment"
             value={input}
             className={styles.boxcomment}
