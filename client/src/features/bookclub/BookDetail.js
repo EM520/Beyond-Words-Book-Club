@@ -31,7 +31,9 @@ export default function BookDetail(props) {
       <div >
         {bookclub.map((book) => (
           <div key={"book-" + book.id} className={styles.bookclubmain}>
-                            <img src={book.cover_pic} className={styles.bookCover}/>
+            <img src={book.cover_pic} 
+                  alt={book.title}
+                  className={styles.bookCover}/>
             { !props.isPartOfGroup 
             ? <button className={styles.join} onClick={()=>handleJoin(book.id)}> Join This Club </button> : null}
             <div className={styles.description}>

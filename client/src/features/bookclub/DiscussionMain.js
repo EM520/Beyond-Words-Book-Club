@@ -16,7 +16,9 @@ export default function DiscussionMain({parent, id}) {
   return (
     <>
     <div className= {styles.commentMain}>
-        <img src={parent.photo} className={styles.discImg} />
+        <img src={parent.photo} 
+            alt={parent.id}
+            className={styles.discImg} />
         <div className={styles.commentUser}>
             <p className={styles.userdate}>
                 {parent.username} - {parent.date}
@@ -25,13 +27,12 @@ export default function DiscussionMain({parent, id}) {
         </div>
     </div>
     <div style={{ marginLeft: '40px' }}>
-        <a
-            href="#"
+        <button
             onClick={handleShowReply}
             className={styles.reply}
         >
             Reply
-        </a> 
+        </button> 
         {parent.replies ? (
                   <DiscussionReply replies={parent.replies} />
                 ) : null}
