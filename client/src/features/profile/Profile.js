@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './Profile.module.css'
 import { FaTrash } from 'react-icons/fa'
 import GenreSelection from '../genreselection/GenreSelection'
-
+import SubmitBtn from '../submitBtn/SubmitBtn'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   selectUser,
@@ -106,7 +106,9 @@ export default function Profile() {
               ></textarea>
    
               </div>
-              <button className={styles.submitBtn}>Submit</button>
+              {/* <button className={styles.submitBtn}>Submit</button> */}
+              <SubmitBtn />
+
               <div className={styles.profileSubmit}></div>
             </form>
 

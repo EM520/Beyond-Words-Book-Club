@@ -2,7 +2,7 @@ import React from 'react'
 import BookClub from '../bookclub/BookClub'
 import Search from '../search/SearchResultsPage'
 import GenreSelection from '../genreselection/GenreSelection'
-import SubmitButton from '../profile/SubmitButton'
+import SubmitBtn from '../submitBtn/SubmitBtn'
 
 export default function Sandbox() {
   function makeRequest() {
@@ -15,7 +15,7 @@ export default function Sandbox() {
       <BookClub />
       <Search />
       <GenreSelection />
-      <SubmitButton />
+      <SubmitBtn />
     </div>
   )
 }
