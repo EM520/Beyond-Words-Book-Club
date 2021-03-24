@@ -38,7 +38,10 @@ display: flex;
     padding-bottom: 7vh;
 }  
 
+.adtop20 {
+ height: 40vh;
+}
+
 .bottomimages {
     display: flex;
 }
-
