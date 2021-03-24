@@ -1,25 +1,23 @@
 .submitBtn {
-    width: 8vw;
-    height: 2vw;
-    margin-left: 54%;
-    margin-top: 15px;
-    /* border-color: red; */
-    border-radius: 5px;
-    box-shadow: 5px 5px 3px rgb(133, 123, 123);
-    margin-bottom: 10px;
-    border: .05em solid rgb(183, 183, 183);
-    box-shadow: 5px 5px 3px rgb(152, 140, 140);
-  
-  }
-  
-  .submitBtn:focus {
-    outline: none;
-  
-  }
-  
-  .submitBtn:active {
-      background-color: #d69668;
-      box-shadow: 0 3px  rgb(157, 157, 157);
-      transform: translateY(2px);
-  
-  }
+  width: 8vw;
+  height: 2vw;
+  /* margin-left: 66%; */
+  margin-top: 35px;
+
+  /* border-color: red; */
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
+  margin-bottom: 10px;
+  border: 0.05em solid rgb(183, 183, 183);
+  box-shadow: 5px 5px 3px rgb(152, 140, 140);
+}
+
+.submitBtn:focus {
+  outline: none;
+}
+
+.submitBtn:active {
+  background-color: #d69668;
+  box-shadow: 0 3px rgb(157, 157, 157);
+  transform: translateY(2px);
+}
