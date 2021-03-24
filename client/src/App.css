@@ -9,6 +9,28 @@ body {
   
 }
 
+html
+body
+#root {
+  min-height: 100%;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 100px; */
+}
+
+.main > div {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 100%;
+  align-items: center;
+}
+
 h1 {
   font-family: Amatic SC;
   font-size: 3vw;
@@ -26,6 +48,12 @@ h3 {
   font-weight: normal;
 }
 
+h6 {
+  font-size: 3.5vh;
+  font-family: Amatic SC;
+  letter-spacing: .354rem;
+}
+
 /* footer {
   position: absolute;
   bottom: 0;
@@ -37,15 +65,6 @@ p {
 
 }
 
-/* .dbtest{
-  padding: 2rem;
-  color: black;
-}
-
-.dbtest2{
-  padding: 10rem;
-  color: black;
-} */
 
 a {
   color: black;

@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
-body {
-  background-color: #f0efe0;
-}
 
 .content {
   position: relative;
@@ -15,7 +12,6 @@ body {
   justify-content: center;
   list-style: none;
   margin-top: 1em;
-  /* margin-left: 6em; */
 }
 
 .content li {

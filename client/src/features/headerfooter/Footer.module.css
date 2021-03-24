@@ -8,15 +8,6 @@
   display: block;
 }
 
-  .ftmain {
-      flex: 1;    /* same as flex-grow: 1; */    padding: 1.25rem 1.875rem;
-      display: flex;
-      flex-wrap: wrap;
-  }
-  
-  /* margin-bottom: -1vh; */
-  /* background-position:absolute; */
-
 .footer ul {
   display: flex;
   flex-direction: row;
