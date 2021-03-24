@@ -8,17 +8,27 @@
 
 body {
   background-color: #f0efe0;
-  
 }
 
-body {
+html body #root {
+  min-height: 100%;
+}
+
+.main {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* margin-left: 100px; */
 }
-.content {
+
+.main > div {
   flex: 1 0 auto;
 }
 
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
 
 h1 {
   font-family: Amatic SC;
@@ -37,6 +47,12 @@ h3 {
   font-weight: normal;
 }
 
+h6 {
+  font-size: 3.5vh;
+  font-family: Amatic SC;
+  letter-spacing: 0.354rem;
+}
+
 /* footer {
   position: absolute;
   bottom: 0;
@@ -45,18 +61,7 @@ h3 {
 
 p {
   margin-bottom: 0em;
-
 }
-
-/* .dbtest{
-  padding: 2rem;
-  color: black;
-}
-
-.dbtest2{
-  padding: 10rem;
-  color: black;
-} */
 
 a {
   color: black;
@@ -64,9 +69,44 @@ a {
 }
 
 a:hover {
-color:#C6956A;
+  color: #c6956a;
 }
 
 a:visited {
   color: none;
+}
+
+.genreBox {
+  padding: 10px;
+  background-color: aqua;
+}
+
+.genreActive {
+  background-color: #c6956a;
+}
+
+/* button style */
+
+.submitBtn {
+  width: 8vw;
+  height: 2vw;
+  /* margin-left: 66%; */
+
+  /* border-color: red; */
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px rgb(133, 123, 123);
+
+  border-radius: 8px;
+  border: 0.05em solid rgb(183, 183, 183);
+  box-shadow: 5px 5px 3px rgb(152, 140, 140);
+}
+
+.submitBtn:focus {
+  outline: none;
+}
+
+.submitBtn:active {
+  background-color: #d69668;
+  box-shadow: 0 3px rgb(157, 157, 157);
+  transform: translateY(2px);
 }

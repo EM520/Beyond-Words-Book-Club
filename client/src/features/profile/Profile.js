@@ -4,6 +4,7 @@ import { FaTrash } from 'react-icons/fa'
 import GenreSelection from '../genreselection/GenreSelection'
 import SubmitBtn from '../submitBtn/SubmitBtn'
 import { useSelector, useDispatch } from 'react-redux'
+import UserGenresArray from '../usergenresselectbox/UserGenresArray'
 import {
   selectUser,
   selectUserGroups,
@@ -15,23 +16,23 @@ import {
   deleteUserGenres,
   deleteBookUser,
   updateUser,
+  addUserGenres
 } from './profileSlice'
+import { getRenderPropValue } from 'antd/lib/_util/getRenderPropValue'
 
 export default function Profile() {
   const user = useSelector(selectUser)
   const [selectedGenres,setSelectedGenres]=useState([])
   const userGroups = useSelector(selectUserGroups)
-  // const genre= useSelector(selectGenres)
-  const userGenre= useSelector(selectUserGenres)
+  const genres= useSelector(selectGenres)
+  const userGenres= useSelector(selectUserGenres)
   const dispatch = useDispatch()
-
-  // const [text, setText] = useState('')
   const [username, setUserName] = useState('')
   const [message, setMessage] = useState('')
   const [password, setPassword] = useState('')
   const [bio, setBio] = useState('')
-
-  // console.log(bookuser,"bookuser")
+  console.log(genres,userGenres,"&&&&&&&&&&&&&")
+  
   useEffect(() => {
     dispatch(getUser())
     dispatch(getUserGroups())
@@ -60,19 +61,45 @@ export default function Profile() {
     dispatch(deleteBookUser(id)) 
   }
 
- function addUserGenres(selectedGenres){
-   dispatch(addUserGenres(selectedGenres))
- }
+//  function addUserGenres(selectedGenres){
+//    dispatch(addUserGenres(selectedGenres))
+//  }
 
  function onGenreSelectedChange(genres){
   console.log(genres,"profile selected genres")
   setSelectedGenres(genres)
 }
 
-  console.log(userGenre)
+// function UserGenresArray(){
+//   function handleChange(genre){
+//     if(genre.active === true){
+//       dispatch(deleteUserGenres(genre.id))
+//     }else{
+//       console.log(genre)
+//       dispatch(addUserGenres(genre))
+//     }
+//     }
+//   let newgenres =genres.map((item)=>{
+//     let found = userGenres.find((x)=>x.id ==item.id)
+//     return found? {...item,active:true}:{...item,active:false}
+//   })
+
+//   return <div className={styles.combinedGenres}>
+//              {newgenres.map((item) => {
+//                return(  
+//                item.active ? 
+//                (<label> <input type="checkbox" value={item.name} 
+//                onChange={() => handleChange(item)} checked />{item.name}</label>)
+//                 : (<label><input type="checkbox" value={item.name} 
+//                 onChange={() => handleChange(item)}  />{item.name}</label>)
+//              )})}
+//             </div>
+// }
+
+  // console.log(newgenres,"newgenres!!!")
   return (
     <div className="dbtest">
-     
+     {/* <button className={"submitBtn "+styles.test2}>test</button> */}
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
           <div className={styles.formleft}>
@@ -106,8 +133,8 @@ export default function Profile() {
               ></textarea>
    
               </div>
-              {/* <button className={styles.submitBtn}>Submit</button> */}
-              <SubmitBtn />
+              <button type="submit" className={"submitBtn "+styles.submitBtn}>Submit</button>
+              
 
               <div className={styles.profileSubmit}></div>
             </form>
@@ -124,11 +151,34 @@ export default function Profile() {
             </div>
           </div>
 
-        </div>
-        <h1>You favorite Genres List </h1>
+          </div>
+        
+        
+            {/* <div className={styles.test1} >
+              <GenreSelection 
+              userGenres={userGenres} 
+              onGenreSelectedChange={onGenreSelectedChange}/>
+            </div> */}
+
+           {/* { //combined genres test!!!!//} */}
+            <h1>Click to choose your favorite Genres  </h1> 
+            {/* <div className={styles.combinedGenres}>
+             {newgenres.map((item) => {
+               return(  
+               item.active ? 
+               (<label> <input type="checkbox" value={item.name} 
+               onChange={() => handleChange(item)} checked />{item.name}</label>)
+                : (<label><input type="checkbox" value={item.name} 
+                onChange={() => handleChange(item)}  />{item.name}</label>)
+             )})}
+
+            </div> */}
+            <UserGenresArray />
+
+            
         <div className={styles.userGenreslist}>
              
-            {userGenre.map((item) => (
+            {userGenres.map((item) => (
                <div>
                  
                 <p key={'user-Genres-' + item.id}>
@@ -139,18 +189,12 @@ export default function Profile() {
                 </div>
                 
               ))}
-              
         </div>
-        
-            <div className={styles.test1} >
-              <GenreSelection 
-              userGenre={userGenre} 
-              onGenreSelectedChange={onGenreSelectedChange}/>
-      
-            </div>
+
+            
 
         <div className={styles.test}>
-        <h1>You favorite Groups List </h1>
+        <h1>Your favorite Groups List </h1>
         <div className={styles.profileGrouplist}>
           {userGroups.map((item) => (
             <div className={styles.profileGrouplistp}>

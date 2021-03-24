@@ -6,7 +6,7 @@ export default function Splash() {
   const history = useHistory()
   setTimeout(function(){
     window.location.href='/home'
-    },7000)
+    },5000)
 
   return (
     <div className={styles.splashBg}>

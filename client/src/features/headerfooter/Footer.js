@@ -6,6 +6,7 @@ import { FaInstagram } from 'react-icons/fa'
 
 export default function Footer() {
   return (
+    <footer>
     <nav className={styles.footer}>
       <ul>
         <li>
@@ -54,6 +55,8 @@ export default function Footer() {
           <div className={styles.copyright}>&copy; 2021 Lorum Ipsum, Inc.</div>
         </li>
       </ul>
+      
     </nav>
+    </footer>
   )
 }

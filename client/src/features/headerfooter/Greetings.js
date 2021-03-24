@@ -7,7 +7,7 @@ import styles from './NavBar.module.css'
 
 export default function () {
     const user = useSelector(selectUser)
-    console.log(user, 'uuu')
+    // console.log(user, 'uuu')
     const dispatch = useDispatch()
     const myVar =''
 

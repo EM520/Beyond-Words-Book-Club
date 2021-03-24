@@ -4,9 +4,8 @@
   /* min-height: 1vh; */
   margin: 0 auto;
   background-color: #9fe5e7;
-  position: relative;
-  /* margin-bottom: -1vh; */
-  /* background-position:absolute; */
+  position: relative;  
+  display: block;
 }
 
 .footer ul {
