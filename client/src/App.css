@@ -6,12 +6,9 @@
 
 body {
   background-color: #f0efe0;
-  
 }
 
-html
-body
-#root {
+html body #root {
   min-height: 100%;
 }
 
@@ -27,8 +24,8 @@ body
 }
 
 .container {
-  width: 100%;
-  align-items: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 h1 {
@@ -51,7 +48,7 @@ h3 {
 h6 {
   font-size: 3.5vh;
   font-family: Amatic SC;
-  letter-spacing: .354rem;
+  letter-spacing: 0.354rem;
 }
 
 /* footer {
@@ -62,9 +59,7 @@ h6 {
 
 p {
   margin-bottom: 0em;
-
 }
-
 
 a {
   color: black;
@@ -72,20 +67,20 @@ a {
 }
 
 a:hover {
-color:#C6956A;
+  color: #c6956a;
 }
 
 a:visited {
   color: none;
 }
 
-.genreBox{
+.genreBox {
   padding: 10px;
   background-color: aqua;
 }
 
-.genreActive{
-  background-color: #C6956A;
+.genreActive {
+  background-color: #c6956a;
 }
 
 /* button style */
@@ -95,27 +90,21 @@ a:visited {
   height: 2vw;
   /* margin-left: 66%; */
 
-
   /* border-color: red; */
   border-radius: 5px;
   box-shadow: 5px 5px 3px rgb(133, 123, 123);
 
-  
   border-radius: 8px;
-  border: .05em solid rgb(183, 183, 183);
+  border: 0.05em solid rgb(183, 183, 183);
   box-shadow: 5px 5px 3px rgb(152, 140, 140);
-
-
 }
 
 .submitBtn:focus {
   outline: none;
-
 }
 
 .submitBtn:active {
-    background-color: #d69668;
-    box-shadow: 0 3px  rgb(157, 157, 157);
-    transform: translateY(2px);
-
+  background-color: #d69668;
+  box-shadow: 0 3px rgb(157, 157, 157);
+  transform: translateY(2px);
 }

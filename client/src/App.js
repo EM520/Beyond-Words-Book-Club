@@ -19,57 +19,57 @@ export default function App() {
   return (
     <Router>
       <div class="main">
-      <NavBar/>
+        <NavBar />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <Splash />
-          </Route>
+        <div>
+          <Switch>
+            <Route exact path="/">
+              <Splash />
+            </Route>
 
-          <Route path="/home">
-            <HomePage />
-          </Route>
+            <Route path="/home">
+              <HomePage />
+            </Route>
 
-          <Route path="/about">
-            <About />
-          </Route>
+            <Route path="/about">
+              <About />
+            </Route>
 
-          {/* todo convert to dropdown */}
-          <Route path="/genres"></Route>
+            {/* todo convert to dropdown */}
+            <Route path="/genres"></Route>
 
-          <Route path="/top20">
-            <RealTop20 />
-          </Route>
+            <Route path="/top20">
+              <RealTop20 />
+            </Route>
 
-          <Route path="/book-club/:id">
-            <BookClub />
-          </Route>
+            <Route path="/book-club/:id">
+              <BookClub />
+            </Route>
 
-          <Route path="/search">
-            <SearchResultsPage />
-          </Route>
+            <Route path="/search">
+              <SearchResultsPage />
+            </Route>
 
-          <Route path="/sandbox">
-            <Sandbox />
-          </Route>
+            <Route path="/sandbox">
+              <Sandbox />
+            </Route>
 
-          <AuthRoute path="/profile">
-            <Profile />
-          </AuthRoute>
+            <AuthRoute path="/profile">
+              <Profile />
+            </AuthRoute>
 
-          <Route path="/login">
-            <Signup />
-          </Route>
+            <Route path="/login">
+              <Signup />
+            </Route>
 
-          <Route path="/signupform">
-            <Signupform />
-          </Route>
-        </Switch>
+            <Route path="/signupform">
+              <Signupform />
+            </Route>
+          </Switch>
         </div>
         <Footer />
-        </div>
+      </div>
     </Router>
   )
 }

@@ -18,6 +18,10 @@
   padding: 10px 30px 30px 30px;
 }
 
+.navBar .navLogo {
+  padding-left: 0;
+}
+
 .navLink {
   text-decoration: none;
   color: rgb(61, 58, 58);
@@ -35,8 +39,8 @@
 .dropbtn {
   background-color: transparent;
   font-size: 2.6vw;
-  color:black;
-  padding: 16px;  
+  color: black;
+  padding: 16px;
   border: none;
   outline: none;
 }
@@ -50,8 +54,8 @@
   display: none;
   position: absolute;
   min-width: 800px;
-  box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2);
-  background-color:#f0efe0;  
+  box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.2);
+  background-color: #f0efe0;
   z-index: 1;
 }
 
@@ -73,29 +77,27 @@
 
 /* .dropdown:hover .dropbtn {background-color: #f0efe0;} */
 
-
 .dropgenre {
-    max-width: 75vw;
-    box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2);
-    background-color:#f0efe0; 
-    max-height: 55vh; 
-    overflow:auto; 
-    display: grid;
-    grid-template-columns: .5fr .5fr .5fr;
-  
+  max-width: 75vw;
+  box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.2);
+  background-color: #f0efe0;
+  max-height: 55vh;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
 }
 
 .dropdg {
-  background-color:#f0efe0; 
+  background-color: #f0efe0;
 }
 
-.genreSelect{
+.genreSelect {
   color: black;
   font-size: 2vw;
   padding: 2vh 2vh;
   display: block;
   font-family: 'Amatic SC';
-  background-color:#f0efe0;  
+  background-color: #f0efe0;
 }
 
 /* .dropdg{
