@@ -3,10 +3,12 @@ import styles from './NavBar.module.css'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../auth/auth'
 import logowords from '../pic/logowords.png'
-import { Menu, Dropdown } from 'antd'
+import { Menu, Dropdown, Select } from 'antd'
 import {getGenres, selectGenres} from '../profile/profileSlice.js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Greetings from './Greetings'
+import '../../App.css'
 // import { Menu } from 'react-bootstrap/lib/Dropdown'
 
 
@@ -28,17 +30,20 @@ export default function NavBar() {
   }
 
   const handleDropDown = (genre) => {
+      
       history.push({
       pathname: '/search',
       search: `?q=${genre}`
       })  
-      window.location.reload()
+      // window.location.reload()
   }
   const menu = (
-    <Menu className={styles.dropgenre}>
+    <Menu className={styles.dropgenre} >
       {genres.map((g)=> (
         <Menu.Item key = {g.id}>
            <span className={styles.genreSelect} onClick={()=>handleDropDown(g.name)}>{g.name}</span>
+           {/* <a href="/search?q=">{g.name}</a> */}
+ 
         </Menu.Item>
       ))}
     </Menu>
@@ -46,6 +51,7 @@ export default function NavBar() {
   )
 
   return (
+  <>  
     <nav className={styles.navBar}>
       <ul>
         <span className={styles.navLogoImg}></span>
@@ -64,7 +70,7 @@ export default function NavBar() {
         </li>
         <li>
             <Dropdown overlay={menu} trigger={['click']} placement="topCenter"
-                      className={styles.navLink, styles.dropdg}
+                    
             >
               <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
                 Genre List
@@ -86,9 +92,13 @@ export default function NavBar() {
             Logout
           </Link>
         </li>
+        <Greetings />
       </ul>
     </nav>
+    <Select className="select-before"> </Select>
+  </>
   )
 }
+
 
 //make css for navbar in this same folder.  navbar.module.css

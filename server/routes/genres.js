@@ -14,7 +14,6 @@ router.get('/genres', async (request, response) => {
   response.json(genre.rows)
 })
 router.get('/genres/books/user', async (request, response) => {
-  console.log(request.user.id, 'id')
   const id = request.user.id
   const genre = await conn.raw(
     `

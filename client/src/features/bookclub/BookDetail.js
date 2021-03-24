@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBookClub, getBookClub, addUserBookCollection } from './bookclubSlice'
 import { useHistory} from 'react-router-dom'
-
 import styles from './BookClub.module.css'
 
 export default function BookDetail(props) {
