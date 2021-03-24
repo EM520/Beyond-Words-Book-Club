@@ -15,7 +15,6 @@ router.get('/discussions/:bookId', async (request, response) => {
   LEFT OUTER JOIN users u
   ON d.user_id= u.id
   WHERE b.id = ?
-  ORDER BY d.created_at desc
 
   `
   // const sql = `SELECT u.photo, u.username, d.id, d.parent_id, d.discussion, d.group_id, TO_CHAR(d.created_at, 'MM/DD/YYYY HH:MM') as date
@@ -47,7 +46,6 @@ router.get('/discussions/:bookId', async (request, response) => {
       }
       parentDiscussion.replies.push(currentDiscussion)
 
-      // console.log(parentDiscussion, 'PD')
 //--------------------SORT BY created_at Replies----------------------------
 parentDiscussion.replies.sort((a, b) => b.created_at - a.created_at)
 

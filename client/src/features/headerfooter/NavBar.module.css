@@ -100,6 +100,39 @@
   background-color: #f0efe0;
 }
 
+.navLogin {
+  cursor: pointer;
+  outline: none;
+  border-style: none;
+  background-color: transparent;
+  font-family: 'Amatic SC';
+  font-size: 20px;
+  font-weight: bold;
+
+  
+}
+
+.navLogin:hover {
+  text-decoration: underline;
+  color: rgb(61, 58, 58);
+}
+
+.greeting{
+  position: absolute;
+  right: 25px;
+  top: 120px;
+  font-weight: bold;
+
+
+}
+.greetSpan{
+  font-family: 'Amatic SC';
+  font-size: 20px;
+
+}
+.greeting img{
+  width: 18px;
+}
 /* .dropdg{
 overflow: scroll;
 } */

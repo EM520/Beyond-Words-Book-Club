@@ -9,11 +9,11 @@ import adspecsclubpage from '../pic/adspecsclubpage.jpg'
 // import styles from './Homepage.css'
 export default function HomePage() {
 
+  clearTimeout()
 
   
   return (
     <>
-
       <div 
       className="dbtest"
       >

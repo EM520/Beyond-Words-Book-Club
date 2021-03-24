@@ -7,6 +7,7 @@ import { Menu, Dropdown } from 'antd'
 import { getGenres, selectGenres } from '../profile/profileSlice.js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Greetings from './Greetings'
 // import { Menu } from 'react-bootstrap/lib/Dropdown'
 
 export default function NavBar() {
@@ -29,7 +30,7 @@ export default function NavBar() {
       pathname: '/search',
       search: `?q=${genre}`,
     })
-    window.location.reload()
+    // window.location.reload()
   }
   const menu = (
     <Menu className={styles.dropgenre}>
@@ -47,6 +48,7 @@ export default function NavBar() {
   )
 
   return (
+  <>  
     <nav className={styles.navBar}>
       <div className="container">
         <ul>
@@ -94,10 +96,13 @@ export default function NavBar() {
               Logout
             </Link>
           </li>
+          <Greetings />
         </ul>
       </div>
     </nav>
+  </>
   )
 }
+
 
 //make css for navbar in this same folder.  navbar.module.css

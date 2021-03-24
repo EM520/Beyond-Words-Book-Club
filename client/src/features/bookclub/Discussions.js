@@ -14,7 +14,7 @@ const Discussions = ({id, gId}) => {
 
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
-  const [showReply, setShowReply] = useState(false)
+  // const [showReply, setShowReply] = useState(false)
 
   useEffect(() => {
     dispatch(getDiscussion(id))
