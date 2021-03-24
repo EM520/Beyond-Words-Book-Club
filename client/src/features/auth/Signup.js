@@ -21,12 +21,29 @@ export default function Signup() {
     window.location.assign('/signupform')
   }
 
+  function validation(){
+    var username = document.getElementById("username");
+    console.log(username)
+         if(username.value.length <= 20 && username.value.length >= 3){
+         }
+         else{
+             alert("Username has to be between 3-20 characters.")
+          }
+         //duplication data list
+        //  var user = document.getElementById("username");
+        //  if(user.value == list.value){
+        //  }
+        //  else{
+        //      alert("Username already exists.")
+        //   }
+}
   return (
     <>
    
-    <form onSubmit={handleSubmit} className={styles.loginSignup}>
+    <form onSubmit={handleSubmit} noValidate className={styles.loginSignup}>
       <input
         className={styles.loginInput}
+        id="username"
         type="text"
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Input username please"

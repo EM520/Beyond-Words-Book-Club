@@ -35,6 +35,7 @@
   height: 300px;
   border-radius: 50%;
   margin-bottom: 30px;
+  /* border:2px solid rgb(190, 190, 188); */
 }
 
 .profileImg button {
@@ -152,35 +153,11 @@
   align-items: center;
   justify-content: flex-start;
 }
-.submitBtn {
-  width: 8vw;
-  height: 2vw;
-  margin-left: 62%;
-  margin-top: 15px;
-
-  /* border-color: red; */
-  border-radius: 5px;
-  box-shadow: 5px 5px 3px rgb(133, 123, 123);
-
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: .05em solid rgb(183, 183, 183);
-  box-shadow: 5px 5px 3px rgb(152, 140, 140);
+/* .submitBtn { 
+  margin-left: 30vw;
+} */
 
 
-}
-
-.submitBtn:focus {
-  outline: none;
-
-}
-
-.submitBtn:active {
-    background-color: #d69668;
-    box-shadow: 0 3px  rgb(157, 157, 157);
-    transform: translateY(2px);
-
-}
 
 .profileSubmit button:focus {
   outline: none;
@@ -193,36 +170,46 @@
   width: 100%;
   padding-top: 20px;
   /* border: 3px solid green; */
-  border-bottom:3px solid rgb(164, 165, 173);
+  /* border-bottom:3px solid rgb(164, 165, 173); */
 }
 
 .userGenreslist p{
 font-family: Arial;
 font-size: 1vw;
+border: double #aca9a9;
+border-radius: 5px;
+color:rgb(49, 48, 48);;
+/* border:3px solid rgb(212, 27, 135);  */
+height: 30px;
+margin-right: 10px;
 }
 .userGenreslist div {
-  
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content:center;
-  align-self:center;
+  align-items:center;
   width: 100%;
-  height: 50px;
-  border-radius: 5px;
-  border: transparent;
+  height: 20px;
+  
+  border:transparent;
   /* box-shadow: 5px 5px 5px rgb(142, 156, 155); */
   /* border:3px solid rgb(212, 27, 135);  */
-  font-size: 25px;
-  
+ 
+  margin-bottom: 20px;
 }
 .profileGrouplistp1 {
-  
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-around;
+  align-items:center;
 }
 
+.profileGrouplistp1 p{
+  font-family: Arial;
+  font-size: 1vw;
+  font-weight: normal;
+}
 /* .removeBtn {
   width: 10vw;
   height: 3vw;
@@ -248,3 +235,9 @@ font-size: 1vw;
    width: 100%;
    margin-bottom: 30px;
 }
+
+.submitBtn {
+  margin-left: 570px;
+  margin-top: 30px;
+}
+

@@ -1,21 +1,21 @@
-import express from 'express'
-import conn from '../db.js'
+import express from "express";
+import conn from "../db.js";
 // console.log(conn, 'conn')
-const router = express.Router()
+const router = express.Router();
 
-router.get('/genres', async (request, response) => {
+router.get("/genres", async (request, response) => {
   const genre = await conn.raw(
     `
       SELECT *
       FROM genres
       `
-  )
+  );
 
-  response.json(genre.rows)
-})
-router.get('/genres/books/user', async (request, response) => {
-  console.log(request.user.id, 'id')
-  const id = request.user.id
+  response.json(genre.rows);
+});
+router.get("/genres/books/user", async (request, response) => {
+  console.log(request.user.id, "id");
+  const id = request.user.id;
   const genre = await conn.raw(
     `
       SELECT DISTINCT ON (g.id) b.title, b.cover_pic, g.name, g.id
@@ -25,13 +25,13 @@ router.get('/genres/books/user', async (request, response) => {
       WHERE gu.user_id = ?
       `,
     [id]
-  )
+  );
 
-  response.json(genre.rows)
-})
+  response.json(genre.rows);
+});
 
 //Get genre name  based on users
-router.get('/genres/user', async (request, response) => {
+router.get("/genres/user", async (request, response) => {
   // const id = [req.user.id]
   const genre = await conn.raw(
     `
@@ -43,55 +43,65 @@ router.get('/genres/user', async (request, response) => {
       WHERE u.id=?
       `,
     [request.user.id]
-  )
-  response.json(genre.rows)
-})
+  );
+  response.json(genre.rows);
+});
 
 // Add genre to table genreusers
-router.post('/genres/user', async (req, res) => {
-   console.log(req.body.selectedGenres,"genres on user test")
-   console.log(req.user.id)
-req.body.selectedGenres.forEach(async(id) => {
-    
+router.post("/genres/user", async (req, res) => {
+  console.log(req.body.selectedGenres, "genres on user test");
+  console.log(req.user.id);
+  // req.body.selectedGenres.forEach(async(id) => {
+
+  //   await conn.raw(
+  //     `
+  // INSERT INTO genres_users
+  // VALUES
+  // (?,?)
+  // `,
+  // [id,req.user.id]
+  //     // [req.body.genre_id, req.user.id]
+
+  //   )
+  // });
+  const id = req.body.id;
+
   await conn.raw(
     `
-      INSERT INTO genres_users
-      VALUES
-      (?,?) 
-      `,
-      [id,req.user.id]
-    // [req.body.genre_id, req.user.id]
-  
-  )
-});
+  INSERT INTO genres_users
+  VALUES
+  (?,?) 
+  `,
+    [id, req.user.id]
+  );
   // res.json(usergenres.rows)
-  res.json({message:"User Gneres added successfully"});
-})
+  res.json({ message: "User Gneres added successfully" });
+});
 
 //genres_users delete of that record
-router.delete('/genres-users/user/:genreId', async(req, res) => {
-  const genreId = req.params.genreId
-  const userId = req.user.id
-  console.log(genreId,userId,"genreId and userId &&&&&&&&&&&&")
+router.delete("/genres-users/user/:genreId", async (req, res) => {
+  const genreId = req.params.genreId;
+  const userId = req.user.id;
+  console.log(genreId, userId, "genreId and userId &&&&&&&&&&&&");
   await conn.raw(
     `
     DELETE FROM genres_users gu
     WHERE gu.genre_id=? and gu.user_id = ?
     `,
-    [genreId,userId]
-  )
+    [genreId, userId]
+  );
 
-  res.json({ message: 'genre deleted from user' })
-})
+  res.json({ message: "genre deleted from user" });
+});
 
 // // TODO: get rid of this...
 // router.get('/genrelist', async (request, response) => {
 //   const genre = await conn.raw(
 //     `
-//       SELECT name FROM genres 
+//       SELECT name FROM genres
 //       `
 //   )
 //   response.json(genre.rows)
 // })
 
-export default router
+export default router;

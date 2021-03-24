@@ -15,8 +15,10 @@ export const signupformSlice = createSlice({
       // {id:3,name:"Historical Fiction"},
       // {id:4,name:"Detective and Mystery"}
     ],
+    userGenres:[
+
+    ]
     
-   
   },
   reducers: {
     //   increment: (state) => {
@@ -119,7 +121,7 @@ export const {
           // dispatch(addUserGenres(selectedGenres))
           })
           .catch((error) => {
-            console.log('Add User Error =======>>> ', error)
+            console.log('Add User Exsit =======>>> ', error)
           })
   }
     
@@ -130,7 +132,7 @@ export const addUserGenres = (selectedGenres) => (dispatch) => {
   })
 }
 
-  export const deleteUserGenre = (id) => (dispatch) => {
+  export const deleteUserGenres = (id) => (dispatch) => {
 
     axios.delete("/api/genres/user/" + id).then((resp) => {
       dispatch(getUserGenres());

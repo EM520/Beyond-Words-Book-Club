@@ -22,8 +22,9 @@ export default function NavBar() {
   },[])
   function handleLogout() {
     logout().then(() => {
-      window.location.reload()
+      
       history.push('/home')
+      window.location.reload()
     })
   }
 

@@ -6,11 +6,11 @@ import styles from './Signupform.module.css'
 import GenreSelection from '../genreselection/GenreSelection'
 import validator from 'validator'
 import { useAuth } from './auth'
-import SubmitBtn from '../submitBtn/SubmitBtn'
+import UserGenresArray from '../usergenresselectbox/UserGenresArray'
 
 
 
-import { selectGenre,selectUserGenre, deleteUserGenre, addUserGenres,addUser,getGenres,getUserGenres } from './signupformSlice'
+import { selectGenre,selectUserGenre, deleteUserGenres, addUserGenres,addUser,getGenres,getUserGenres } from './signupformSlice'
 
 export default function Signupform() { 
   const userGenres= useSelector(selectUserGenre)
@@ -93,20 +93,29 @@ export default function Signupform() {
      dispatch(addUserGenres(selectedGenres))
    }
     
-  function handleClick(e) {
-    // setUserName("")
-    // setEmail("")
-    // setPassword("")
-    // setConfirmPassword("")
-    // setBio("")
-    // setFirstName("")
-    // setLastName("")
-  }
 
   function onGenreSelectedChange(selectedGenres){
     console.log(selectedGenres,"signupform selected genres")
     setSelectedGenres(selectedGenres)
   }
+
+  function handleChange(genre){
+    if(genre.active === true){
+      dispatch(deleteUserGenres(genre.id))
+    }else{
+      console.log(genre)
+      dispatch(addUserGenres(genre))
+    }
+    }
+
+    function handleClick(e){
+      window.location.assign('/home')
+    }
+
+    // let newgenres =genres.map((item)=>{
+    //   let found = userGenres.find((x)=>x.id ==item.id)
+    //   return found? {...item,active:true}:{...item,active:false}
+    // })
 
   return (
     <>
@@ -115,11 +124,14 @@ export default function Signupform() {
           
         {genreIsVisible ? (<div >
           <p className={styles.message}>{message}</p>
-          
-          <GenreSelection  isSignUp = {isSignUp}
+          <h1>Click to choose your favorite Genres  </h1> 
+          <UserGenresArray isSignUp = {isSignUp}/>
+          <button onClick={handleClick} className={"submitBtn "+styles.submitBtn}>Submit</button>
+         
+          {/* <GenreSelection  isSignUp = {isSignUp}
           name="genre_id" 
           selectedGenres={selectedGenres} 
-          onGenreSelectedChange={onGenreSelectedChange}/>
+          onGenreSelectedChange={onGenreSelectedChange}/> */}
           
          </div>) : (<form  
         className={styles.signupform}
@@ -222,7 +234,7 @@ export default function Signupform() {
       </div>
       Click to Upload Avatar
     </div>
-    <input 
+            <input 
             required
             name="first_name"
             value={firstname}
@@ -242,10 +254,8 @@ export default function Signupform() {
 
           </div>
           </div>
-         
-         <SubmitBtn type="submit" onClick={handleClick}/>
           
-          {/* <button type="submit" className={styles.submitBtn} onClick={handleClick} >Submit</button> */}
+          <button type="submit" className={"submitBtn "+styles.submitBtn}  >Submit</button>
           </form>)}
 
 
