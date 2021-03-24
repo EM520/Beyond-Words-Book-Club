@@ -55,6 +55,7 @@
   border-bottom:3px solid rgb(157, 160, 158);
   display: flex;
   flex-direction: row;
+  padding-bottom: 30px;
 }
 .profileGrouplist {
   padding-top: 10px;
@@ -118,6 +119,10 @@
   outline: none;
 }
 
+.profileUpdate textarea:focus {
+  outline: none;
+}
+
 .profileUpdate textarea {
   text-indent: 1rem;
   /* box-shadow: 5px 5px 3px rgb(133, 123, 123); */
@@ -153,25 +158,20 @@
   align-items: center;
   justify-content: flex-start;
 }
-/* .submitBtn { 
-  margin-left: 30vw;
-} */
-
 
 
 .profileSubmit button:focus {
   outline: none;
 }
-
-.userGenreslist {
+/* .userGenreslist {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin-top: 20px;
   width: 100%;
   padding-top: 20px;
-  /* border: 3px solid green; */
-  /* border-bottom:3px solid rgb(164, 165, 173); */
-}
+  border: 3px solid green;
+   border-bottom:3px solid rgb(164, 165, 173); 
+ } 
 
 .userGenreslist p{
 font-family: Arial;
@@ -179,11 +179,11 @@ font-size: 1vw;
 border: double #aca9a9;
 border-radius: 5px;
 color:rgb(49, 48, 48);;
-/* border:3px solid rgb(212, 27, 135);  */
+ border:3px solid rgb(212, 27, 135); 
 height: 30px;
 margin-right: 10px;
-}
-.userGenreslist div {
+}  */
+/* .userGenreslist div {
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -193,11 +193,11 @@ margin-right: 10px;
   height: 20px;
   
   border:transparent;
-  /* box-shadow: 5px 5px 5px rgb(142, 156, 155); */
-  /* border:3px solid rgb(212, 27, 135);  */
+   box-shadow: 5px 5px 5px rgb(142, 156, 155); 
+  border:3px solid rgb(212, 27, 135); 
  
   margin-bottom: 20px;
-}
+} */
 .profileGrouplistp1 {
   display: flex;
   flex-direction: row;
@@ -224,7 +224,7 @@ margin-right: 10px;
 
 .test{
   /* border: 3px solid red; */
-  border-top: 3px solid rgb(164, 165, 173);
+  /* border-top: 3px solid rgb(164, 165, 173); */
 
   width: 100%;
   text-align: center;
@@ -237,7 +237,20 @@ margin-right: 10px;
 }
 
 .submitBtn {
-  margin-left: 570px;
-  margin-top: 30px;
+  margin-left: 600px;
+  margin-top: 50px;
 }
 
+.bio{
+  
+  font-size: 1vw;
+  font-family:arial;
+  color: grey;
+  border-radius: 5px;
+  /* border:3px solid green; */
+  width: 20vw;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  
+}

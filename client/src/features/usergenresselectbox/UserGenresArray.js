@@ -32,7 +32,7 @@ export default function UserGenresArray(props){
                {newgenres.map((item) => {
                  return(  
                  item.active ? 
-                 (<label> <input type="checkbox" value={item.name} 
+                 (<label className={styles.checkbox}> <input  type="checkbox" value={item.name} 
                  onChange={() => handleChange(item)} checked />{item.name}</label>)
                   : (<label><input type="checkbox" value={item.name} 
                   onChange={() => handleChange(item)}  />{item.name}</label>)

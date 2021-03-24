@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Profile.module.css'
 import { FaTrash } from 'react-icons/fa'
-import GenreSelection from '../genreselection/GenreSelection'
-import SubmitBtn from '../submitBtn/SubmitBtn'
 import { useSelector, useDispatch } from 'react-redux'
 import UserGenresArray from '../usergenresselectbox/UserGenresArray'
 import {
@@ -22,7 +20,7 @@ import { getRenderPropValue } from 'antd/lib/_util/getRenderPropValue'
 
 export default function Profile() {
   const user = useSelector(selectUser)
-  const [selectedGenres,setSelectedGenres]=useState([])
+  // const [selectedGenres,setSelectedGenres]=useState([])
   const userGroups = useSelector(selectUserGroups)
   const genres= useSelector(selectGenres)
   const userGenres= useSelector(selectUserGenres)
@@ -65,10 +63,10 @@ export default function Profile() {
 //    dispatch(addUserGenres(selectedGenres))
 //  }
 
- function onGenreSelectedChange(genres){
-  console.log(genres,"profile selected genres")
-  setSelectedGenres(genres)
-}
+//  function onGenreSelectedChange(genres){
+//   console.log(genres,"profile selected genres")
+//   setSelectedGenres(genres)
+// }
 
 // function UserGenresArray(){
 //   function handleChange(genre){
@@ -96,7 +94,6 @@ export default function Profile() {
 //             </div>
 // }
 
-  // console.log(newgenres,"newgenres!!!")
   return (
     <div className="dbtest">
      {/* <button className={"submitBtn "+styles.test2}>test</button> */}
@@ -133,7 +130,7 @@ export default function Profile() {
               ></textarea>
    
               </div>
-              <button type="submit" className={"submitBtn "+styles.submitBtn}>Submit</button>
+              <button type="submit" className={"submitBtn "+styles.submitBtn}>Update</button>
               
 
               <div className={styles.profileSubmit}></div>
@@ -146,7 +143,7 @@ export default function Profile() {
             <div className={styles.profileImg}>
               <img src={user.photo} />
               <span>Username:{user.username} /  userId: {user.id}</span>
-              <p>Bio:{user.bio}</p>
+              <p className={styles.bio}>Bio:{user.bio}</p>
               
             </div>
           </div>
@@ -154,14 +151,10 @@ export default function Profile() {
           </div>
         
         
-            {/* <div className={styles.test1} >
-              <GenreSelection 
-              userGenres={userGenres} 
-              onGenreSelectedChange={onGenreSelectedChange}/>
-            </div> */}
+
 
            {/* { //combined genres test!!!!//} */}
-            <h1>Click to choose your favorite Genres  </h1> 
+            <h1>Click to change your favorite Genres  </h1> 
             {/* <div className={styles.combinedGenres}>
              {newgenres.map((item) => {
                return(  
@@ -176,7 +169,7 @@ export default function Profile() {
             <UserGenresArray />
 
             
-        <div className={styles.userGenreslist}>
+        {/* <div className={styles.userGenreslist}>
              
             {userGenres.map((item) => (
                <div>
@@ -189,7 +182,7 @@ export default function Profile() {
                 </div>
                 
               ))}
-        </div>
+        </div> */}
 
             
 

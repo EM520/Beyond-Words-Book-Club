@@ -124,10 +124,6 @@ export default function Signupform() {
               Submit
             </button>
 
-            {/* <GenreSelection  isSignUp = {isSignUp}
-          name="genre_id" 
-          selectedGenres={selectedGenres} 
-          onGenreSelectedChange={onGenreSelectedChange}/> */}
           </div>
         ) : (
           <form className={styles.signupform} onSubmit={handleSubmit}>

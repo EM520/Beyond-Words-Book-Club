@@ -21,22 +21,22 @@ export default function Signup() {
     window.location.assign('/signupform')
   }
 
-  function validation(){
-    var username = document.getElementById("username");
-    console.log(username)
-         if(username.value.length <= 20 && username.value.length >= 3){
-         }
-         else{
-             alert("Username has to be between 3-20 characters.")
-          }
-         //duplication data list
-        //  var user = document.getElementById("username");
-        //  if(user.value == list.value){
-        //  }
-        //  else{
-        //      alert("Username already exists.")
-        //   }
-}
+//   function validation(){
+//     var username = document.getElementById("username");
+//     console.log(username)
+//          if(username.value.length <= 20 && username.value.length >= 3){
+//          }
+//          else{
+//              alert("Username has to be between 3-20 characters.")
+//           }
+//          //duplication data list
+//         //  var user = document.getElementById("username");
+//         //  if(user.value == list.value){
+//         //  }
+//         //  else{
+//         //      alert("Username already exists.")
+//         //   }
+// }
   return (
     <>
    
