@@ -79,14 +79,22 @@
 .dropgenre {
     min-width: 20vw;
     box-shadow: 0 1em 2em 0 rgba(0,0,0,0.2);
-    background-color:#f0efe0;  
+    background-color:#f0efe0; 
+    max-height: 55vh; 
+    overflow:auto; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   
 }
 
 .genreSelect{
   color: black;
   font-size: 2vw;
-  padding: 2.5vh 2.5vh;
+  padding: 2vh 2vh;
   display: block;
   font-family: 'Amatic SC';
 }
+
+/* .dropdg{
+overflow: scroll;
+} */

@@ -160,6 +160,9 @@ height: auto;
     text-decoration: none;
     color: black;
     font-size: 10px;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
 }
 .reply:hover {
   text-decoration: underline;

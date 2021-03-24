@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import ReactDOM from 'react-dom'
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-// import { useHistory } from 'react-router-dom'
 import styles from './Signupform.module.css'
-import GenreSelection from '../genreselection/GenreSelection'
 import validator from 'validator'
 import { useAuth } from './auth'
 import UserGenresArray from '../usergenresselectbox/UserGenresArray'
@@ -32,7 +29,7 @@ export default function Signupform() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [confirmPasswordError, setConfirmPasswordError] = useState('')
   const [bio, setBio] = useState('')
-  const [photo, setPhoto] = useState('')
+  // const [photo, setPhoto] = useState('')
   const [firstname, setFirstName] = useState('')
   const [lastname, setLastName] = useState('')
   const dispatch = useDispatch()

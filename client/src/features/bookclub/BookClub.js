@@ -14,8 +14,6 @@ export default function BookClub() {
   const bookId = param.id
   console.log(param.id, bookId, 'loc')
 
-  // console.log(id,'bookid')
-  // const id = 2
   const dispatch = useDispatch()
   const lengthComments = userbookcollections.length
   const isPartOfGroup = lengthComments > 0 ? true : false
@@ -23,7 +21,7 @@ export default function BookClub() {
   useEffect(() => {
     dispatch(getUserBookCollections(bookId))
   }, [])
-  console.log(userbookcollections[0],  'ubc')
+  // console.log(userbookcollections[0],  'ubc')
   
 
 
@@ -36,9 +34,7 @@ export default function BookClub() {
         <div className={styles.clubmain}>
           <BookDetail bookId = {bookId}  isPartOfGroup = {isPartOfGroup}/>
 
-          {/* {lengthComments > 0 ? <Discussions id = {userbookcollections[0].group_id} /> : null } */}
           {lengthComments > 0 ? <Discussions id = {bookId} gId = {userbookcollections[0].group_id}/> : null }
-          {/* <Discussions id = {bookId} /> */}
 
         </div>
       </div>

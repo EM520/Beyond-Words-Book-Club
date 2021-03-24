@@ -17,7 +17,6 @@ router.get('/discussions/:bookId', async (request, response) => {
   WHERE b.id = ?
   ORDER BY d.created_at desc
 
-
   `
   // const sql = `SELECT u.photo, u.username, d.id, d.parent_id, d.discussion, d.group_id, TO_CHAR(d.created_at, 'MM/DD/YYYY HH:MM') as date
   //       FROM discussions d
@@ -26,13 +25,15 @@ router.get('/discussions/:bookId', async (request, response) => {
   //       WHERE group_id = ?`
   const discussion = await conn.raw(oldSql, [id])
   const rows = discussion.rows
+
+  // console.log(discussion)
+
   // console.table(discussion.rows)
   const discussionMap = {}
   for (let discussion of rows) {
     discussionMap[discussion.id] = discussion
   }
-    // discussionMap.sort()
-      console.log(discussionMap)
+      // console.log(discussionMap)
 
   for (let key in discussionMap) {
     const currentDiscussion = discussionMap[key]
@@ -41,10 +42,17 @@ router.get('/discussions/:bookId', async (request, response) => {
       const parentId = currentDiscussion.parent_id
       const parentDiscussion = discussionMap[parentId]
       if (parentDiscussion.replies === undefined) {
+
         parentDiscussion.replies = []
       }
       parentDiscussion.replies.push(currentDiscussion)
-    }
+
+      // console.log(parentDiscussion, 'PD')
+//--------------------SORT BY created_at Replies----------------------------
+parentDiscussion.replies.sort((a, b) => b.created_at - a.created_at)
+
+//--------------------SORT BY created_at Replies----------------------------
+}
   }
   const discussionList = []
   for (let key in discussionMap) {
@@ -54,10 +62,13 @@ router.get('/discussions/:bookId', async (request, response) => {
     if (!isAReply) {
       discussionList.push(currentDiscussion)
     }
-    // discussionList.sort()
+//--------------------SORT BY created_at Parent----------------------------
 
+
+discussionList.sort((a, b) => b.created_at - a.created_at)
+
+//-------------------SORT BY created_at Parent-----------------------------
   }
-  console.log(discussionList, 'xoxoxoxox')
   response.json(discussionList)
 })
 
