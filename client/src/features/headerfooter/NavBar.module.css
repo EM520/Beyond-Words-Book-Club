@@ -97,12 +97,7 @@
   padding: 2vh 2vh;
   display: block;
   font-family: 'Amatic SC';
-<<<<<<< HEAD
-  background-color:#f0efe0; 
-
-=======
   background-color: #f0efe0;
->>>>>>> 73efa6c91fe0f2957656765042eac217179aa9ab
 }
 
 .navLogin {
@@ -113,8 +108,6 @@
   font-family: 'Amatic SC';
   font-size: 20px;
   font-weight: bold;
-
-  
 }
 
 .navLogin:hover {
@@ -122,20 +115,17 @@
   color: rgb(61, 58, 58);
 }
 
-.greeting{
+.greeting {
   position: absolute;
   right: 25px;
   top: 120px;
   font-weight: bold;
-
-
 }
-.greetSpan{
+.greetSpan {
   font-family: 'Amatic SC';
   font-size: 20px;
-
 }
-.greeting img{
+.greeting img {
   width: 18px;
 }
 /* .dropdg{

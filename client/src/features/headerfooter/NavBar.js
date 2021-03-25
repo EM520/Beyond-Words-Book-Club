@@ -48,82 +48,60 @@ export default function NavBar() {
   )
 
   return (
-  <>  
-    <nav className={styles.navBar}>
-<<<<<<< HEAD
-      <ul>
-        <span className={styles.navLogoImg}></span>
-        <li>
-          <img className={styles.logoWords} src={logowords} alt="Logo" />
-        </li>
-        <li>
-          <Link className={styles.navLink} to="/home">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link className={styles.navLink} to="/about">
-            About
-          </Link>
-        </li>
-        <li>
-            <Dropdown overlay={menu} trigger={['click']} placement="topLeft"
-                      className={styles.navLink, styles.dropdg}
-=======
-      <div className="container">
-        <ul>
-          <span className={styles.navLogoImg}></span>
-          <li className={styles.navLogo}>
-            <img className={styles.logoWords} src={logowords} alt="Logo" />
-          </li>
-          <li>
-            <Link className={styles.navLink} to="/home">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.navLink} to="/about">
-              About
-            </Link>
-          </li>
-          <li>
-            <Dropdown
-              overlay={menu}
-              trigger={['click']}
-              placement="topRight"
-              className={(styles.navLink, styles.dropdg)}
->>>>>>> 73efa6c91fe0f2957656765042eac217179aa9ab
-            >
-              <a
-                className="ant-dropdown-link"
-                onClick={(e) => e.preventDefault()}
+    <>
+      <nav className={styles.navBar}>
+        <div className="container">
+          <ul>
+            <span className={styles.navLogoImg}></span>
+            <li className={styles.navLogo}>
+              <img className={styles.logoWords} src={logowords} alt="Logo" />
+            </li>
+            <li>
+              <Link className={styles.navLink} to="/home">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className={styles.navLink} to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Dropdown
+                overlay={menu}
+                trigger={['click']}
+                placement="topRight"
+                className={(styles.navLink, styles.dropdg)}
               >
-                Genre List
-              </a>
-            </Dropdown>
-          </li>
-          <li>
-            <Link className={styles.navLink} to="/top20">
-              Top 20 Clubs
-            </Link>
-          </li>
+                <a
+                  className="ant-dropdown-link"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  Genre List
+                </a>
+              </Dropdown>
+            </li>
+            <li>
+              <Link className={styles.navLink} to="/top20">
+                Top 20 Clubs
+              </Link>
+            </li>
 
-          <li>
-            <Link className={styles.navLink} to="/profile">
-              Profile
-            </Link>
-            &nbsp; / &nbsp;{' '}
-            <Link className={styles.navLink} onClick={handleLogout}>
-              Logout
-            </Link>
-          </li>
-          <Greetings />
-        </ul>
-      </div>
-    </nav>
-  </>
+            <li>
+              <Link className={styles.navLink} to="/profile">
+                Profile
+              </Link>
+              &nbsp; / &nbsp;{' '}
+              <Link className={styles.navLink} onClick={handleLogout}>
+                Logout
+              </Link>
+            </li>
+            <Greetings />
+          </ul>
+        </div>
+      </nav>
+    </>
   )
 }
-
 
 //make css for navbar in this same folder.  navbar.module.css
