@@ -63,7 +63,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-            <Dropdown overlay={menu} trigger={['click']} placement="topCenter"
+            <Dropdown overlay={menu} trigger={['click']} placement="topLeft"
                       className={styles.navLink, styles.dropdg}
             >
               <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
