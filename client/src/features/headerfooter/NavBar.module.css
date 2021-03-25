@@ -25,6 +25,7 @@
 .navLink {
   text-decoration: none;
   color: rgb(61, 58, 58);
+  background-color: #9fe5e7;
   /* display: inline-block;
     list-style-type: none;
     position: relative; */
@@ -55,7 +56,7 @@
   position: absolute;
   min-width: 800px;
   box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.2);
-  background-color: #f0efe0;
+  background-color: #9fe5e7;
   z-index: 1;
 }
 
@@ -80,7 +81,7 @@
 .dropgenre {
   max-width: 75vw;
   box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.2);
-  background-color: #f0efe0;
+  background-color: #9fe5e7;
   max-height: 55vh;
   overflow: auto;
   display: grid;
@@ -88,7 +89,7 @@
 }
 
 .dropdg {
-  background-color: #f0efe0;
+  background-color: #9fe5e7;
 }
 
 .genreSelect {
@@ -97,7 +98,7 @@
   padding: 2vh 2vh;
   display: block;
   font-family: 'Amatic SC';
-  background-color: #f0efe0;
+  background-color: #9fe5e7;
 }
 
 .navLogin {
