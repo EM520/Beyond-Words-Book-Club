@@ -97,7 +97,12 @@
   padding: 2vh 2vh;
   display: block;
   font-family: 'Amatic SC';
+<<<<<<< HEAD
+  background-color:#f0efe0; 
+
+=======
   background-color: #f0efe0;
+>>>>>>> 73efa6c91fe0f2957656765042eac217179aa9ab
 }
 
 .navLogin {

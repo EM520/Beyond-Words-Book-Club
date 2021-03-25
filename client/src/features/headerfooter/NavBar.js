@@ -50,6 +50,26 @@ export default function NavBar() {
   return (
   <>  
     <nav className={styles.navBar}>
+<<<<<<< HEAD
+      <ul>
+        <span className={styles.navLogoImg}></span>
+        <li>
+          <img className={styles.logoWords} src={logowords} alt="Logo" />
+        </li>
+        <li>
+          <Link className={styles.navLink} to="/home">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link className={styles.navLink} to="/about">
+            About
+          </Link>
+        </li>
+        <li>
+            <Dropdown overlay={menu} trigger={['click']} placement="topLeft"
+                      className={styles.navLink, styles.dropdg}
+=======
       <div className="container">
         <ul>
           <span className={styles.navLogoImg}></span>
@@ -72,6 +92,7 @@ export default function NavBar() {
               trigger={['click']}
               placement="topRight"
               className={(styles.navLink, styles.dropdg)}
+>>>>>>> 73efa6c91fe0f2957656765042eac217179aa9ab
             >
               <a
                 className="ant-dropdown-link"
