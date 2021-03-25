@@ -19,7 +19,7 @@ export default function SearchResultsPage() {
   useEffect(() => {
     dispatch(getSearch(urlParams))
   }, [])
-
+console.log()
   return (
     <>
       <div className="container">

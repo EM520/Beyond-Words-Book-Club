@@ -15,7 +15,6 @@ import {
   getGenres,
   getUserGenres,
 } from './signupformSlice'
-
 export default function Signupform() {
   const history = useHistory()
   const userGenres = useSelector(selectUserGenre)
@@ -62,13 +61,17 @@ export default function Signupform() {
     let photo = uploadedImage
     if (confirmPassword !== password) {
       setConfirmPasswordError('Must match password')
+      return
     } else {
       setConfirmPasswordError('')
     }
     if (validator.isEmail(email)) {
       setEmailError('')
+      
     } else {
       setEmailError('Please enter a valid Email')
+      return
+
     }
     console.log('1')
     const loginUserPromise = dispatch(
@@ -77,6 +80,7 @@ export default function Signupform() {
     await loginUserPromise
     await login(username, password)
     history.push('/profile')
+    window.location.reload()
     // After the new user signed up  ,it login in  so user can add genres into account and sort matters
     setMessage('Congrats! Account was created! Choose your genres please!')
     setGenreIsVisible(!genreIsVisible)
