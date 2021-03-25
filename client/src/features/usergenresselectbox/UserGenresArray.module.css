@@ -1,0 +1,26 @@
+.combinedGenres{
+    font-family: Arial;
+    font-size: 1vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    /* border: 3px solid green; */
+    /* border-bottom:3px solid rgb(164, 165, 173); */
+  }
+
+ 
+
+  .checkbox {
+    font-family: Arial;
+    font-size: 1vw;
+    /* border: double #aca9a9; */
+    border: double #1c9eaf;
+    border-radius: 5px;
+    color:rgb(49, 48, 48);;
+    height: 30px;
+    margin-right: 10px;
+   
+    }

@@ -119,7 +119,7 @@ export const deleteUserGenres = (genreId) => (dispatch) => {
 
 export const addUserGenres = (selectedGenres) => (dispatch) => {
 
-  request.post('/genres/user',{selectedGenres}).then((r) => {
+  request.post('/genres/user',selectedGenres).then((r) => {
     console.log(selectedGenres,'<<<<<<<addUserGenres>>>>')
     dispatch(getUserGenres())
   })

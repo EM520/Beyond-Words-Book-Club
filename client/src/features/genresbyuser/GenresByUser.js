@@ -6,64 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function GenresByUser() {
   const genreuser = useSelector(selectGenreUser)
-  // const genreuser = [
-  //   {
-  //     id: 1,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 2,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 3,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 4,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   },
-  //   {
-  //     id: 5,
-  //     cover_pic: "http://placehold.it/200x300",
-  //     name: 'fiction'
-  //   }
 
-  // ]
   console.log(genreuser, 'gu')
   const dispatch = useDispatch()
   useEffect(() => {
@@ -78,7 +21,7 @@ export default function GenresByUser() {
               pathname: '/search',
               search: `?q=${genre.name}`
             }}
-            
+          
             >
 
               <div className={styles.bookandtitle}>

@@ -6,6 +6,7 @@ import styles from './GenreSelection.module.css'
 import { getGenres, selectGenres ,addUserGenres,} from './genreSelectionSlice'
 import {useHistory} from "react-router-dom"
 import SubmitBtn from '../submitBtn/SubmitBtn'
+import '../../App.css'
 
 export default function GenreSelection(props) {
   const [selectedGenres,setSelectedGenres]=useState([])

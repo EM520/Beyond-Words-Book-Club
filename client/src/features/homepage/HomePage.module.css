@@ -7,13 +7,13 @@ h2 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 5.1vh;
+  /* margin-left: 5.1vh; */
 }
 
-.dumbArrow {
+/* .dumbArrow {
   margin-left: 30vh;
   color: #e38746;
-}
+} */
 
 .bookscroll {
   margin: 0 auto;
@@ -36,6 +36,7 @@ h2 {
   padding: 4vh;
   grid-gap: 1vh;
 }
+
 .adPic {
   width: 100%;
   height: auto;
