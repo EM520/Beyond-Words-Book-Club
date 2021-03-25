@@ -1,5 +1,5 @@
 import SearchBar from '../search/SearchBar'
-import GenresByUser from '../genresbyuser/GenresByUser'
+import GenresByUser from '../genre/GenresByUser'
 import styles from './HomePage.module.css'
 import sellbooksad from '../pic/midbanner-sell-books.jpg'
 import diversereaders from '../pic/diversereaders.png'

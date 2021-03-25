@@ -21,9 +21,7 @@ export default function GenresByUser() {
               pathname: '/search',
               search: `?q=${genre.name}`
             }}
-          
             >
-
               <div className={styles.bookandtitle}>
               <div className={styles.genreUserLink}>
                 <img
