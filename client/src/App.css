@@ -14,6 +14,16 @@ html body #root {
   min-height: 100%;
 }
 
+.ant-dropdown-menu {
+  background-color: #9fe5e7 !important;
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: #9fe5e7 !important;
+  color: #c6956a !important;
+
+}
+
 .main {
   min-height: 100vh;
   display: flex;

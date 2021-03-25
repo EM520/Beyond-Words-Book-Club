@@ -1,18 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
-.ant-dropdown-link {
-  background-color: #9fe5e7;
-}
-
-.ant-dropdown-menu {
-  background-color: #9fe5e7 !important;
-}
-
-.ant-dropdown-menu-item:hover {
-  background-color: #9fe5e7 !important;
-
-}
-
 .navBar {
   background-color: #9fe5e7;
   background-position: absolute;
