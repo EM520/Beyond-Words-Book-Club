@@ -115,7 +115,7 @@ async function main() {
 
   // username
   // [[deleted]]
-
+ 
   const salt = createSalt(20)
   await conn('users').insert({
     username: 'bookclub',
@@ -128,39 +128,112 @@ async function main() {
     photo:
       'https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg',
   })
-
-  await conn('users').insert({
-    username: 'user1',
-    password: sha512('user1' + salt),
-    salt: salt,
-    email: 'user1@example.com',
-    first_name: 'User',
-    last_name: 'One',
-    bio: 'I am user 1',
-    photo: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-  })
+ const users=[{
+  username: 'user1',
+  password: sha512('user1' + salt),
+  salt: salt,
+  email: 'user1@example.com',
+  first_name: 'User',
+  last_name: 'One',
+  bio: 'I am user 1',
+  photo: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+},
+{
+  username: 'user2',
+  password: sha512('user1' + salt),
+  salt: salt,
+  email: 'user2@example.com',
+  first_name: 'User2',
+  last_name: 'Two',
+  bio: 'I am user 2',
+  photo: 'https://png.pngtree.com/png-clipart/20190516/original/pngtree-cute-girl-avatar-material-png-image_4023832.jpg',
+}
+]
+ for  (let user of users){
+  await conn('users').insert(user)
+ }
+  
 
   await conn('genres').insert({
-    name: 'Literary Fiction',
-  })
+    name: 'Literary Fiction'
+  },
+  // {
+  //   name: 'Classics'
+  // },
+  // {
+  //   name: 'Sicience Fiction'
+  // },
+  // {
+  //   name: 'Horror',  
+  // },
+  // {
+  //   name: 'Fantasy',
+  // },
+  // {
+  //   name: 'Detective and Mystery ',
+  // }
+  )
 
-  await conn('authors').insert({
+const authors=[
+  {
     first_name: 'James',
     last_name: 'Clear',
-  })
+  },
+  {
+    first_name: 'Williams',
+    last_name: 'Green',
+  },
+  {
+    first_name: 'Yann',  
+    last_name: 'GMartel',
+  },
+]
+  for (let author of authors){
+    await conn('authors').insert(author)
+   }
+  
+  const books=[
+    {
+      title: 'Atomic Habits',
+      copyright: '2018 by James Clear',
+      synopsis: 'Tiny changes ,remarkable Results',
+      cover_pic: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',
+      genres_id: 1,
+      author_id: 1,
+    },
+  {
+    title: 'Atomic Habits 2',
+      copyright: '2019 by Williams Green',
+      synopsis: 'Best seller newyork times',
+      cover_pic: 'https://images-na.ssl-images-amazon.com/images/I/51rxEvLljUL._SX322_BO1,204,203,200_.jpg',
+      genres_id: 1,
+      author_id: 2,
+  },
+  {
+    title: 'Atomic Habits 2',
+      copyright: '2019 by Williams Green',
+      synopsis: 'Best seller newyork times',
+      cover_pic: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572292885-41ZJD5Dw5KL.jpg?crop=1.00xw:0.962xh;0,0.0200xh&resize=320%3A%2A',
+      genres_id: 1,
+      author_id: 3,
+  },
+  // {
+  //   title: 'Atomic Habits 2',
+  //     copyright: '2019 by Williams Green',
+  //     synopsis: 'Best seller newyork times',
+  //     cover_pic: 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1572293115-41zqZwXZ-WL.jpg?crop=1.00xw:0.984xh;0,0.00600xh&resize=320%3A%2A',
+  //     genres_id: 6,
+  //     author_id: 2,
+  // },
+]
+   for (let book of books){
+    await conn('books').insert(book)
+   }
+  
 
-  await conn('books').insert({
-    title: 'Atomic Habits',
-    copyright: '2018 by James Clear',
-    synopsis: 'Tiny changes ,remarkable Results',
-    cover_pic: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg',
-    genres_id: 1,
-    author_id: 1,
-  })
-
-  await conn('groups').insert({
-    book_id: 1,
-  })
+  await conn('groups').insert(
+    {book_id: 1},
+    {book_id: 2,})
 
   await conn('discussions').insert({
     discussion: 'BEST BOOK VOTED!!',
@@ -179,12 +252,31 @@ async function main() {
   await conn('genres_users').insert({
     genre_id: 1,
     user_id: 1,
-  })
+  },
+  {
+    genre_id: 2,
+    user_id: 1,
+  },
+  {
+    genre_id: 2,
+    user_id: 2,
+  },
+  {
+    genre_id: 1,
+    user_id: 2,
+  },
+  
+  )
 
   await conn('book_collections').insert({
     book_id: 1,
     user_id: 1,
-  })
+  },
+  {
+    book_id: 2,
+    user_id: 2,
+  },
+  )
   // await conn.raw('DELETE FROM users WHERE id = 1')
   process.exit()
 }

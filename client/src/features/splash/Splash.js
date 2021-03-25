@@ -4,9 +4,9 @@ import { Link, useHistory } from 'react-router-dom'
 
 export default function Splash() {
   const history = useHistory()
-  setTimeout(function(){
-    window.location.href='/home'
-    },5000)
+  // setTimeout(function(){
+  //   window.location.href='/home'
+  //   },10000)
 
   return (
     <div className={styles.splashBg}>

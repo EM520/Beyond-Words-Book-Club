@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useAuth } from './auth'
-import styles from './LoginSignup.module.css'
+import styles from './Login.module.css'
 
 export default function Signup() {
   const [username, setUsername] = useState('')
