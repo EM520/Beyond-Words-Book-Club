@@ -21,13 +21,14 @@ export default function SearchResultsPage() {
   }, [])
 console.log()
   return (
-    <>
+    
       <div className="container1">
-        
-        <div className={styles.searchTitle}>
-        <div>
+         <div>
           <SearchBar />
         </div>
+        
+        <div className={styles.searchTitle}>
+       
           {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
         
         {search.map((s) => (
@@ -63,7 +64,7 @@ console.log()
         ))}
         </div>
       </div>
-    </>
+    
   )
 }
 // style={props.isDisable ? 'disabled:true' : 'disabled:false'}

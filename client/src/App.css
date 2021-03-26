@@ -1,16 +1,22 @@
 @import '~antd/dist/antd.css';
 
+
+
 * {
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
 }
 
+ul {
+  margin-bottom: 0;
+}
+
 .container1 {
   width: 90%;
-  border: 2px solid red;
+  
   margin: 0 auto;
-
+  padding-bottom: 30px;
 }
 
 body {
@@ -52,6 +58,7 @@ h1 {
   font-family: Amatic SC;
   font-size: 3vw;
   margin: 0 !important;
+  
 }
 
 h2 {
@@ -136,3 +143,5 @@ a:visited {
   box-shadow: 0 3px rgb(157, 157, 157);
   transform: translateY(2px);
 }
+
+

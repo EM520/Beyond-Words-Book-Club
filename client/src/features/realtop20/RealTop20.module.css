@@ -7,10 +7,9 @@
 }
 
 .top20main {
-    /* display: flex; */
-
+    
     padding-top: 3vh;
-    padding-bottom: 5vh;
+    
 }
 
 .bookimage {
@@ -46,8 +45,7 @@ margin-bottom: 15px;
 }
 
 .horizontalad {
-    margin-top: 30px;
+    padding-top: 30px;
     width: 90%;
     margin: 0 auto;
-
 }

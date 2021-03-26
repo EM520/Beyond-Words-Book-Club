@@ -95,7 +95,7 @@ export default function Profile() {
 // }
 
   return (
-    <div className="dbtest">
+    <div className="container1">
      {/* <button className={"submitBtn "+styles.test2}>test</button> */}
       <div className={styles.profile}>
         <div className={styles.profileInfo}>
@@ -192,17 +192,23 @@ export default function Profile() {
           {userGroups.map((item) => (
             <div className={styles.profileGrouplistp}>
               <img src={item.cover_pic} width="50px" height="60px" />
-              <div className={styles.profileGrouplistp1}>
+             
                 <p key={'user-groups-' + item.id}>{item.title}</p>
 
                 <FaTrash 
-                color={"#93908F"}size={18}
-                  onClick={() => {
-                    removeBookUser(item.id)
-                  }}
-                />
-              </div>
+              color={"#93908F"}size={18}
+              onClick={() => {
+                removeBookUser(item.id)
+              }}
+              />
+              
             </div>
+            
+             
+              
+            
+             
+             
           ))}
         </div>
         </div>
