@@ -1,3 +1,16 @@
+@-webkit-keyframes autofill {
+  to {
+    color: blue;
+    background: transparent;
+  }
+}
+
+.input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+
 .signupform {
   /* border: 2px solid red; */
   width: 90vw;
@@ -35,10 +48,12 @@
   justify-content: flex-start;
   /* border: 2px solid rgb(49, 146, 211); */
   width: 100%;
+
 }
 
 .signupform1 textarea {
   margin-top: 5px;
+  border-radius: 10px;
   background-color: transparent;
   border:2px solid rgb(190, 190, 188);
 }
@@ -53,18 +68,18 @@
 
 .signupform2 input{
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 1vw 0 1vw 0;
   height: 3vw;
   border:2px solid rgb(190, 190, 188);
 }
 .signupform2 input:hover{
-  text-outline:none ;
+  outline:none ;
 }
 
 
 .signupAvatar {
-  border-radius: 5px;
+  
   border:2px solid rgb(190, 190, 188);
   width: 14vw;
   height: 14vw;
@@ -82,7 +97,7 @@
   height: 3vw;
   
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   
   border:2px solid rgb(190, 190, 188);
 }
