@@ -6,6 +6,10 @@
   /* box-sizing: border-box; */
 }
 
+.container {
+  background-size: 80%;
+}
+
 body {
   background-color: #f0efe0;
 }
@@ -57,10 +61,16 @@ h3 {
   font-weight: normal;
 }
 
+h5 {
+  font-size: 3vw;
+  font-family: Amatic SC;
+  line-height: 3rem;
+}
+
 h6 {
   font-size: 3.5vh;
   font-family: Amatic SC;
-  letter-spacing: 0.354rem;
+  letter-spacing: 0.17rem;
 }
 
 /* footer {

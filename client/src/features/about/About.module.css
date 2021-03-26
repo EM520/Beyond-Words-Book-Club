@@ -5,21 +5,21 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .content ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin-top: 1em;
 }
 
 .content li {
   width: 30vw;
-  padding: 2em 2em 1em 2em;
+  padding: 1em 2em 1em 2em;
   background-color: #d69668;
   border: 5px solid #f0efe0;
-  width: 28%;
+  /* width: 28%; */
 }
 
 span {
@@ -31,8 +31,15 @@ span {
 }
 
 .people {
-  width: 100%;
+  width: 60%;
   height: auto;
+  margin-right: 10px;
+}
+
+.thingtodo {
+  font-family: Amatic SC;
+  font-size: 3vw;
+
 }
 
 .ad {
@@ -41,5 +48,5 @@ span {
 }
 
 .abouttext {
-  font-size: 1.2vw;
+  font-size: 1vw;
 }

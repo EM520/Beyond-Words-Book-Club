@@ -17,10 +17,10 @@ export default function RealTop20() {
     
   }, [])
   return (
-    <div className="dbtest">
+    <div className="container">
    <SearchBar />
   <div className={styles.pagetitle}>
-    <h1> Top 20 Groups</h1>
+    <h1> Top 20 Clubs</h1>
     <h6>Join!  Discuss!</h6>
   </div> 
   <div className={styles.top20main}>
