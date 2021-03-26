@@ -75,10 +75,10 @@ export default function NavBarorig() {
           <Link className={styles.navLink} to="/profile">
             Profile
           </Link>
-          &nbsp; / &nbsp;{' '}
+          {/* &nbsp; / &nbsp;{' '}
           <Link className={styles.navLink} onClick={handleLogout}>
             Logout
-          </Link>
+          </Link> */}
         </li>
       </ul>
     </nav>

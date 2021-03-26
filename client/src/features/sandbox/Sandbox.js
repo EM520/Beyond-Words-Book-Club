@@ -1,8 +1,8 @@
 import React from 'react'
 import BookClub from '../bookclub/BookClub'
 import Search from '../search/SearchResultsPage'
-import GenreSelection from '../genreselection/GenreSelection'
-import SubmitBtn from '../submitBtn/SubmitBtn'
+
+
 
 export default function Sandbox() {
   function makeRequest() {
@@ -14,8 +14,8 @@ export default function Sandbox() {
       <button onClick={makeRequest}>make request</button>
       <BookClub />
       <Search />
-      <GenreSelection />
-      <SubmitBtn />
+      
+     
     </div>
   )
 }
