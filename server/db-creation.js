@@ -164,16 +164,16 @@ async function main() {
        name: "Autobiographies"
      },
     {
-      name: "Action and Adventure"
+      name: "Adventure"
     },
     {
       name: "Fantasy",
     },
     {
-      name: "Detective and Mystery",
+      name: "Detective",
     }, 
     {
-      name: "Suspense and Thrillers",
+      name: "Thrillers",
     }, 
     {
       name: "Romance",
