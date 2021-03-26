@@ -23,6 +23,7 @@
     width:3.5vw;
     height:3.5vw;
     display: block;
+    border-radius:50%;
   }
 
 .username{
