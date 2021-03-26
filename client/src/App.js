@@ -22,7 +22,7 @@ export default function App() {
         <NavBar />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <div>
+        <div class="container">
           <Switch>
             <Route exact path="/">
               <Splash />

@@ -20,8 +20,8 @@
   text-align: center;
 } */
 .bookimage {
-  width: 50%;
+  max-width: 150px;
   height: auto;
-  max-width: 250px;
-  margin-top: 5vh;
+  max-height: 200px;
+  margin-right: 20px;
 }

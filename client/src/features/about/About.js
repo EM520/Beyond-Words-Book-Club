@@ -5,39 +5,41 @@ import SearchBar from '../search/SearchBar'
 
 export default function About() {
   return (
-    <div className="dbtest">
+    <div className="container">
       <SearchBar />
       <div class={styles.content}>
         <ul>
           <li>
             <h1>About Us</h1>
             <div className={styles.abouttext}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
-              ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit
+              Beyond Words Book Club was created in 2021 by Marissa Burgos, Elena Liu and Stefanie
+              Seskin as a place where people can find books to read based on their genres of interest and 
+              talk about them with other fans.  Just as the founders experienced lively debates while creating the
+              site, they encourage you do do the same!  
+              <p><br />Please be kind to one another and have fun!  And drop us a line 
+              any time for suggestions!  We'd love to hear from you.  Let us know what books you think we should add.
+              We will be updating this site and adding exciting new features.</p>
             </div>
           </li>
           <li>
-            <img
+          <div className={styles.abouttext}>
+          <img
               className={styles.people}
               src={peoplesitting}
               alt="Group Reading"
+              style={{ width: 200, float: 'left' }}
             />
-            <div className={styles.abouttext}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat{' '}
-            </div>
+              <div><h5>Things You Can Do Here</h5></div>
+              After you sign up for an account, select your favorite genres (as many as you want!) 
+              Your personalized homepage will list books in those genres.  Check out more titles 
+              in those genres.  Visit the bookclub, join and discuss!  Change your genre selection at 
+              any time on your profile page.  
+              <p><br />The founders strive to make this a fun place to get together and talk.  
+              Like you, we have a passion for reading.  We will soon be adding a section where you can
+              add books that you would like to trade with others!</p>
+            </div>  
+
+
           </li>
           <li>
             <img className={styles.ad} src={adplaceholder} alt="Sponsored Ad" />
