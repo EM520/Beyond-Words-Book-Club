@@ -51,6 +51,7 @@ html body #root {
 h1 {
   font-family: Amatic SC;
   font-size: 3vw;
+  margin: 0 !important;
 }
 
 h2 {
@@ -75,6 +76,7 @@ h6 {
   font-size: 3.5vh;
   font-family: Amatic SC;
   letter-spacing: 0.17rem;
+  margin-top: 10px;
 }
 
 /* footer {

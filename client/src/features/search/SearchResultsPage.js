@@ -22,13 +22,14 @@ export default function SearchResultsPage() {
 console.log()
   return (
     <>
-      <div className="container">
+      <div className="container1">
+        
+        <div className={styles.searchTitle}>
         <div>
           <SearchBar />
         </div>
-        <div className={styles.searchTitle}>
           {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
-        </div>
+        
         {search.map((s) => (
           <Link
             key={'search-' + s.genre_id}
@@ -58,7 +59,9 @@ console.log()
               </div>
             </div>
           </Link>
+          
         ))}
+        </div>
       </div>
     </>
   )

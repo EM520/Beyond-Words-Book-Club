@@ -26,8 +26,8 @@ export default function RealTop20() {
   <div className={styles.top20main}>
     {top20.map((top20) => (
      <Link to={{pathname: '/book-club/'+top20.id}} key={'top20-' + top20.id}>
-      <div key={'top20-' + top20.id}>
-          <img className={styles.bookList}
+      <div key={'top20-' + top20.id} className={styles.bookList}>
+          <img 
           src={top20.cover_pic}
           alt={top20.title}
           className={styles.bookimage}/>
@@ -39,8 +39,12 @@ export default function RealTop20() {
       </div> 
       </Link>  
     ))}
-          <RealTop20Footer />
+    <div>
+    <RealTop20Footer />
+    </div>
+          
   </div>
+  
   </div>
   )
 }

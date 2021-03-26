@@ -14,15 +14,17 @@
 }
 
 .bookimage {
-    width: 6%;
+    width: 10%;
     height: auto;
     vertical-align: middle;
+    
     /* padding: .1vh; */
 }
 
-/* .bookList {
-display: flex;
-  } */
+.bookList {
+
+margin-bottom: 15px;
+  }
   
 .description {
     font-size: 1.7vw;
@@ -34,14 +36,18 @@ display: flex;
 
 .adtop20 {
  height: 40vh;
+ width:33.3%
 }
 
 .bottomimages {
     display: flex;
+    flex-direction: row;
+    justify-content:center;
 }
 
 .horizontalad {
-    width: 89%;
+    margin-top: 30px;
+    width: 90%;
     margin: 0 auto;
 
 }
