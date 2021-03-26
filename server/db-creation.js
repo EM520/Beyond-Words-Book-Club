@@ -140,15 +140,15 @@ async function main() {
       photo: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
     },
     {
-      username: "user2",
-      password: sha512("user1" + salt),
+      username: "mrCool",
+      password: sha512("password" + salt),
       salt: salt,
       email: "user2@example.com",
-      first_name: "User2",
-      last_name: "Two",
-      bio: "I am user 2",
+      first_name: "Richie",
+      last_name: "GuessWho",
+      bio: "I am Mr. Cool",
       photo:
-        "https://png.pngtree.com/png-clipart/20190516/original/pngtree-cute-girl-avatar-material-png-image_4023832.jpg",
+        "https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg",
     },
   ];
   for (let user of users) {
@@ -517,7 +517,7 @@ async function main() {
       copyright: "2020",
       synopsis: "Rose Anderson is done with being known as “the nice one” in the small town where she lives. She’s done with playing third, fifth, seventh wheel at loud gatherings on her family’s flower farm. And most of all, she is done with the pitying looks she gets about her single status from the way-too-interested townsfolk..",
       cover_pic: "https://images-na.ssl-images-amazon.com/images/I/71Ce3yKaKTL.jpg",
-      genres_id: 6, 
+      genres_id: 7, 
       author_id: 17, 
   },
 
@@ -526,7 +526,7 @@ async function main() {
     copyright: "2018",
     synopsis: "Clara Kelley is not who they think she is. She's not the experienced Irish maid who was hired to work in one of Pittsburgh's grandest households. She's a poor farmer's daughter with nowhere to go and nothing in her pockets. But the woman who shares her name has vanished, and assuming her identity just might get Clara some money to send back home.",
     cover_pic: 'https://images-na.ssl-images-amazon.com/images/I/41fk4DFFvUL._SX331_BO1,204,203,200_.jpg',
-    genres_id: 7, 
+    genres_id: 8, 
     author_id: 18, 
 },
 {    
@@ -534,7 +534,7 @@ async function main() {
     copyright: '2018',
     synopsis: "The sign is a last resort. It sits on a farmhouse porch in 1931, but could be found anywhere in an era of breadlines, bank runs and broken dreams. It could have been written by any mother facing impossible choices.",
     cover_pic: 'https://images-na.ssl-images-amazon.com/images/I/41oSSR2M7iL._SX331_BO1,204,203,200_.jpg',
-    genres_id: 7, 
+    genres_id: 9, 
     author_id: 19, 
 },
 {    
@@ -550,7 +550,7 @@ async function main() {
     copyright: "2003",
     synopsis: "Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the “spice” melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for",
     cover_pic: "https://m.media-amazon.com/images/I/41BVZ25iOGL._SY346_.jpg",
-    genres_id: 8, 
+    genres_id: 9, 
     author_id: 21, 
 },    
 {    
@@ -558,7 +558,7 @@ async function main() {
     copyright: "2008",
     synopsis: "The Children of Dune are twin siblings Leto and Ghanima Atreides, whose father, the Emperor Paul Muad’Dib, disappeared in the desert wastelands of Arrakis nine years ago. Like their father, the twins possess supernormal abilities—making them valuable to their manipulative aunt Alia, who rules the Empire in the name of House Atreides.",
     cover_pic: "https://m.media-amazon.com/images/I/41BajT0B3UL.jpg",
-    genres_id: 8, 
+    genres_id: 9, 
     author_id: 21, 
 },
 {    
@@ -566,7 +566,7 @@ async function main() {
     copyright: "2017",
     synopsis: "Escaping wrongful imprisonment wasn’t something Connor had in mind, but being put into stasis aboard Earth’s first interstellar colony ship was something he couldn’t have prepared for.",
     cover_pic: "https://m.media-amazon.com/images/I/41BajT0B3UL.jpg",
-    genres_id: 8, 
+    genres_id: 9, 
     author_id: 21
 },
 
@@ -577,7 +577,7 @@ async function main() {
       synopsis: "The story of his long, intolerable years in captivity, his miraculous escape, and his carefully wrought revenge creates a dramatic tale of mystery and intrigue and paints a vision of France — a dazzling, dueling, exuberant France — that has become immortal.",
       cover_pic:
         "https://m.media-amazon.com/images/I/51wuk77r6UL.jpg",
-      genres_id: 9,
+      genres_id: 10,
       author_id: 22,
     },
 
@@ -629,6 +629,8 @@ async function main() {
     { book_id: 30 },
     { book_id: 31 }, 
     { book_id: 32 },
+    { book_id: 33 },
+
   ]
   for (let group of groups) {
     await conn("groups").insert(group);
