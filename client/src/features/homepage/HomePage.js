@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <>
       <div 
-      className="dbtest"
+      className="container"
       >
         {/* <h2>Username's favorite genres!</h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
