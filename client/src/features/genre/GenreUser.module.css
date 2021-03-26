@@ -1,13 +1,16 @@
 
 .genreListMain {
-  display: flex;
-  flex-direction: columns;
-  justify-content: center;
-  align-items: flex-end;
-  margin-left: 10vw;
+  display: flex; 
+  justify-content: flex-start;
+  /* align-items: flex-end; */
+  overflow: scroll;
+  
+  width: 100%;
+  padding: 4vh;
 }
 
 .genreUserLink {
+
   font-family: Arial, Helvetica, sans-serif;
   /* color: solid white; */
   outline: 1px solid black;
@@ -15,6 +18,8 @@
   text-decoration-line: none;
   color: black;
   /* background-color: #d69668; */
+  
+  text-align: center;
 }
 /* .genreLink {
   text-align: center;
@@ -23,5 +28,11 @@
   max-width: 300px;
   height: auto;
   max-height: 300px;
+  
   margin-right: 20px;
 }
+
+/* .booktitle{
+  text-align: center;
+  margin-left: 10px;
+} */

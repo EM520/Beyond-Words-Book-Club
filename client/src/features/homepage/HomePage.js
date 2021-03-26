@@ -25,13 +25,14 @@ export default function HomePage() {
       {/* <div className={styles.dumbArrow}>
         <GiBottomRight3DArrow size={40} />
       </div> */}
-      <div className={styles.bookscroll}>
-        <div className={styles.bookrow}>
+      
+        <div className={styles.bookscroll}>
           <GenresByUser />
         </div>
-      </div>
+      
 
       <div className={styles.horizontalad}>
+        
         <img
           className={styles.adPic}
           src={sellbooksad}
@@ -42,11 +43,14 @@ export default function HomePage() {
           src={diversereaders}
           alt="Sell Us Your Books"
         />
-        <img
-          className={styles.adPic2}
+      
+        
+        <img className={styles.adPic2}
+          
           src={adspecsclubpage}
           alt="Your Ad Here"
         />
+        
       </div>
     </div>
   )
