@@ -47,6 +47,7 @@ justify-content: flex-start;
  /* margin-left: 35%; */
 
 }
+
 .bookImg {
   width: 30%;
   max-width: 100px;
@@ -54,6 +55,7 @@ justify-content: flex-start;
   margin-bottom: 1vw;
   margin-top: 1vw;
 }
+
 .bookinfo {
   margin-top: 1vw;
   margin-left: 2vw;

@@ -1,20 +1,20 @@
 
 .pagetitle {
-    padding-top: 5vh;
-    padding-left: 20vh;
+    /* padding-top: 5vh;
+    padding-left: 20vh; */
     margin-bottom: 1vw;
     line-height: 180%;
 }
 
 .top20main {
     /* display: flex; */
-    padding-left: 20vh;
-    padding-top: 5vh;
+
+    padding-top: 3vh;
     padding-bottom: 5vh;
 }
 
 .bookimage {
-    width: 4%;
+    width: 6%;
     height: auto;
     vertical-align: middle;
     /* padding: .1vh; */
@@ -38,4 +38,10 @@ display: flex;
 
 .bottomimages {
     display: flex;
+}
+
+.horizontalad {
+    width: 89%;
+    margin: 0 auto;
+
 }

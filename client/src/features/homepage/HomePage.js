@@ -13,9 +13,9 @@ export default function HomePage() {
 
   
   return (
-    <>
+    <div 
+    className="container1">
       <div 
-      className="container"
       >
         {/* <h2>Username's favorite genres!</h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
@@ -48,6 +48,6 @@ export default function HomePage() {
           alt="Your Ad Here"
         />
       </div>
-    </>
+    </div>
   )
 }

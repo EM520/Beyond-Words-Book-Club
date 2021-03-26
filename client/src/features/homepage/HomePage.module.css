@@ -31,6 +31,8 @@ h2 {
 }
 
 .horizontalad {
+  width: 100%;
+  border: 2px solid green;
   display: grid;
   justify-content: center;
   padding: 4vh;
@@ -50,7 +52,7 @@ h2 {
   width: 100%;
   height: auto;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 3;
   grid-row-start: 5;
   grid-row-end: 4;
 }

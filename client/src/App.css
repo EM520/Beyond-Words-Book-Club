@@ -6,8 +6,11 @@
   /* box-sizing: border-box; */
 }
 
-.container {
-  background-size: 80%;
+.container1 {
+  width: 90%;
+  border: 2px solid red;
+  margin: 0 auto;
+
 }
 
 body {
@@ -39,10 +42,11 @@ html body #root {
   flex: 1 0 auto;
 }
 
-.container {
+/* .container {
   width: 85%;
   margin: 0 auto;
-}
+  border: 2px solid blue;
+} */
 
 h1 {
   font-family: Amatic SC;

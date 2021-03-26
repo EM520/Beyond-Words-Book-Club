@@ -17,7 +17,7 @@ export default function RealTop20() {
     
   }, [])
   return (
-    <div className="container">
+    <div className="container1">
    <SearchBar />
   <div className={styles.pagetitle}>
     <h1> Top 20 Clubs</h1>
