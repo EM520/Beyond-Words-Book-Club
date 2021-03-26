@@ -34,10 +34,10 @@ export default function UserinfoNav() {
       
               <img className={styles.userimg} src={user.photo} />
               <a className={styles.username}>{user.username}</a>  
-               | &nbsp;&nbsp;&nbsp;
+               {/* | &nbsp;&nbsp;&nbsp; */}
          {isAuthenticated?
           <Link className={styles.logout} onClick={handleLogout}>
-           Logout
+          | &nbsp;&nbsp;&nbsp; Logout
          </Link>  :"LOGIN" }
         </div>
         <div>
