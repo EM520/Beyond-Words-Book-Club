@@ -16,7 +16,7 @@ import {
   updateUser,
   addUserGenres
 } from './profileSlice'
-import { getRenderPropValue } from 'antd/lib/_util/getRenderPropValue'
+
 
 export default function Profile() {
   const user = useSelector(selectUser)

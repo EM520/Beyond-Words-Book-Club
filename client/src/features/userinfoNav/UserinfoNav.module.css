@@ -1,0 +1,43 @@
+.userinfoNav{
+    display: flex ;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:center;
+    width:230px;
+    /* border:3px solid blue; */
+   
+    
+}
+
+/* .userinfo{
+    display: flex ;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:center;
+} */
+.userimg{
+    display:0;     
+}
+
+.userimg[src] {
+    width:3.5vw;
+    height:3.5vw;
+    display: block;
+  }
+
+.username{
+   
+    margin-right: 30px;
+   font-size: 1.5vw;
+   font-family: Arial;
+   white-space:nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.logout{
+   
+   font-size: 1.5vw;
+   font-family: Arial;
+   /* border: 3px solid red; */
+}

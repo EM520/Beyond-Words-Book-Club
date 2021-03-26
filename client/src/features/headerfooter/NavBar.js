@@ -7,6 +7,7 @@ import { Menu, Dropdown } from 'antd'
 import {getGenres, selectGenres} from '../profile/profileSlice.js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import UserinfoNav from '../userinfoNav/UserinfoNav.js'
 // import { Menu } from 'react-bootstrap/lib/Dropdown'
 
 
@@ -79,14 +80,15 @@ export default function NavBar() {
         
         <li>
           <Link className={styles.navLink} to="/profile">
-            Profile
+          <UserinfoNav/>
           </Link>
-          &nbsp; / &nbsp;{' '}
+          {/* &nbsp; / &nbsp;{' '}
           <Link className={styles.navLink} onClick={handleLogout}>
             Logout
-          </Link>
+          </Link> */}
         </li>
       </ul>
+      
     </nav>
   )
 }
