@@ -5,10 +5,13 @@ const router = express.Router()
 router.get('/search', async (request, response) => {
 
    const qString = request.query.q
-   console.log(qString, 'wString')
    
    const searchString = qString.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
-   const newQ = `%${searchString}%`
+   const newSearchString = searchString.replace(' ', '%')
+   const newQ = `%${newSearchString}%`
+
+
+   console.log(qString, newQ, 'wString')
 
 //     // const id = request.params.bookId
   const search = await conn.raw(
@@ -26,6 +29,7 @@ router.get('/search', async (request, response) => {
    [newQ, newQ, newQ]
       )
      const rows = search.rows
+     console.log(rows, 'rows')
     response.json(rows);
 
  })
