@@ -60,7 +60,7 @@ const Discussions = ({id, gId}) => {
 
         <button
           onClick={() => handleSubmit(input, null, gId, id)}
-          className={styles.button}
+          className={"submitBtn "+styles.button}
         >
           Submit
         </button>

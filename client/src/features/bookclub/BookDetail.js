@@ -34,7 +34,7 @@ export default function BookDetail(props) {
                   alt={book.title}
                   className={styles.bookCover}/>
             { !props.isPartOfGroup 
-            ? <button className={styles.join} onClick={()=>handleJoin(book.id)}> Join This Club </button> : null}
+            ? <button className={"submitBtn "+styles.joinBtn} onClick={()=>handleJoin(book.id)}> Join This Club </button> : null}
             <div className={styles.description}>
             <strong>TITLE: </strong> 
               <p className={styles.parMargin}>{book.title}</p>
