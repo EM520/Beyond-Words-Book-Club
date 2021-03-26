@@ -4,11 +4,14 @@ import conn from '../db.js'
 const router = express.Router()
 router.get('/search', async (request, response) => {
 
-   const qString = request.query.q
-   console.log(qString, 'wString')
+   const qString = request.query.q.replace(' ', '%')
    
    const searchString = qString.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))
+   
    const newQ = `%${searchString}%`
+
+
+   console.log(qString, newQ, 'wString')
 
 //     // const id = request.params.bookId
   const search = await conn.raw(
