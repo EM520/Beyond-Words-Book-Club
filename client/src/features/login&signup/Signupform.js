@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import styles from './Signupform.module.css'
 import validator from 'validator'
-import { useAuth } from './auth'
+import { useAuth } from '../auth/auth'
 import UserGenresArray from '../usergenresselectbox/UserGenresArray'
 
 import {
