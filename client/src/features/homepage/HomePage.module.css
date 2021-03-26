@@ -38,8 +38,9 @@ h2 {
   width: 100%;
   display: grid;
   /* justify-content: center; */
-  padding: 4vh;
+  /* padding: 4vh; */
   /* grid-gap: 1vh; */
+  margin-top: 20px;
 }
 
 .adPic {
@@ -49,17 +50,19 @@ h2 {
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 4;
-  
+  border:3px solid rgb(201, 198, 198);
+  border-radius: 10px;
 }
 
 .readers {
-  width: 109%;
+  width: 111%;
   height: auto;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 5;
   grid-row-end: 4;
-  
+  border:3px solid rgb(201, 198, 198);
+  border-radius: 10px;
 }
 
 

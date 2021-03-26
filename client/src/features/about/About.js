@@ -5,7 +5,7 @@ import SearchBar from '../search/SearchBar'
 
 export default function About() {
   return (
-    <div className="container">
+    <div className="container1">
       <SearchBar />
       <div class={styles.content}>
         <ul>

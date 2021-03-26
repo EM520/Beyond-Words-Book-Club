@@ -1,10 +1,10 @@
 .profile {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border:3px solid rgb(0, 255, 98); */
+  margin-top: 30px;
 }
 .formleft {
   /* border:3px solid rgb(16, 72, 156); */
@@ -60,17 +60,14 @@
 .profileGrouplist {
   padding-top: 10px;
   width: 100%;
-
   margin: 0 auto;
-  margin-top: 20px;
   /* border:3px solid red; */
   text-indent: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 1vw;
-  row-gap: 1vw;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  
+  margin-top: 10px;
+  
   
 }
 
@@ -78,19 +75,26 @@
   /* border:3px solid blue; */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
 }
 
-.profileGrouplist p {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 2vw;
-  font-weight: bold;
+
+
+
+.profileGrouplist p { 
+  font-size: 1vw;
   line-height: 2;
-  margin: 0 10px 0 10px;
   font-family: Arial;
   color: rgb(80, 77, 77);
+  width: 200px;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  margin-right: 15px;
   /* border:3px solid rgb(214, 19, 214); */
 }
 
@@ -106,12 +110,15 @@
 .profileUpdate input {
   text-indent: 1rem;
   /* box-shadow: 5px 5px 3px rgb(133, 123, 123); */
-  background:transparent;
-  border:2px solid rgb(190, 190, 188);
+  /* background:transparent; */
+
   width: 100%;
-  height: 3vw;
   margin-top: 20px;
-  
+  padding: 0.6rem;
+  border-style: hidden;
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px #6c6c6c;
+ 
 }
 
 
@@ -129,8 +136,16 @@
   width: 100%;
   height: 5vw;
   margin-top: 20px;
-  background:transparent;
-  border:2px solid rgb(190, 190, 188);
+
+  
+  border-radius: 10px;
+
+  padding: 0.6rem;
+  border-style: hidden;
+  
+  box-shadow: inset 0 0 4px #6c6c6c;
+
+
 }
 .profileBio{
   margin-top: 30px;
@@ -163,57 +178,9 @@
 .profileSubmit button:focus {
   outline: none;
 }
-/* .userGenreslist {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin-top: 20px;
-  width: 100%;
-  padding-top: 20px;
-  border: 3px solid green;
-   border-bottom:3px solid rgb(164, 165, 173); 
- } 
 
-.userGenreslist p{
-font-family: Arial;
-font-size: 1vw;
-border: double #aca9a9;
-border-radius: 5px;
-color:rgb(49, 48, 48);;
- border:3px solid rgb(212, 27, 135); 
-height: 30px;
-margin-right: 10px;
-}  */
-/* .userGenreslist div {
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-  align-items:center;
-  width: 100%;
-  height: 20px;
-  
-  border:transparent;
-   box-shadow: 5px 5px 5px rgb(142, 156, 155); 
-  border:3px solid rgb(212, 27, 135); 
- 
-  margin-bottom: 20px;
-} */
 
-.profileGrouplist{
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
 
-.profileGrouplistp1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-   
-  margin-right: 100px;
-}
 
 .profileGrouplistp1 p{
   font-family: Arial;
@@ -221,21 +188,13 @@ margin-right: 10px;
   font-weight: normal;
   
 }
-/* .removeBtn {
-  width: 10vw;
-  height: 3vw;
-  border-radius: 5px;
-  box-shadow: 5px 5px 3px rgb(133, 123, 123);
-  margin-top: 30px;
-} */
+
 
 .updatetest{
   background-color: aqua;
 }
 
 .test{
-  /* border: 3px solid red; */
-  /* border-top: 3px solid rgb(164, 165, 173); */
 
   width: 100%;
   text-align: center;
