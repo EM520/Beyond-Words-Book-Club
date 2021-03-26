@@ -29,12 +29,10 @@ export default function GenresByUser() {
                   alt={genre.title}
                   className={styles.bookimage}
                 />
-
-              <div className={styles.genreLink}>
-                <p>
+                 <a className={styles.booktitle}>
                   {genre.name.toUpperCase()}
-                </p>
-              </div>
+                </a>
+          
               </div>
               </div>
           </Link>
