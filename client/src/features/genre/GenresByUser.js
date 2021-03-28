@@ -22,7 +22,7 @@ export default function GenresByUser() {
               search: `?q=${genre.name}`
             }}
             >
-              <div className={styles.bookandtitle}>
+              {/* <div className={styles.bookandtitle}> */}
               <div className={styles.genreUserLink}>
                 <img
                   src={genre.cover_pic}
@@ -34,8 +34,8 @@ export default function GenresByUser() {
                 {/* </a> */}
           
               </div>
-              </div>
-          </Link>
+              {/* </div> */}
+            </Link>
           </div>
           
         ))}
