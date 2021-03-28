@@ -7,7 +7,7 @@ import { Menu, Dropdown } from 'antd'
 import {getGenres, selectGenres} from '../profile/profileSlice.js'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import UserinfoNav from '../userinfoNav/UserinfoNav.js'
+import UserinfoNav from './UserinfoNav.js'
 // import { Menu } from 'react-bootstrap/lib/Dropdown'
 
 
