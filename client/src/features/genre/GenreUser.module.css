@@ -1,11 +1,14 @@
 
 .genreListMain {
   display: flex; 
+  /* flex-direction: row; */
   justify-content: flex-start;
   /* align-items: flex-end; */
   overflow: auto;
   
   width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   /* padding: 4vh; */
 }
 
@@ -36,3 +39,11 @@
   text-align: center;
   margin-left: 10px;
 } */
+.genreListsubMain:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
+.gName{
+  font-size: 14px;
+}

@@ -71,3 +71,27 @@ justify-content: flex-start;
   right : 315px;
 
 }
+
+.searchMain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.bookinfo:hover{
+  transform: scale(1.1); 
+
+
+}
+.bookImg:hover{
+
+  transform: scale(1.2); 
+
+}
+.searchContainer:hover {
+  background-color:#d6f3f3;
+
+  
+
+}
+

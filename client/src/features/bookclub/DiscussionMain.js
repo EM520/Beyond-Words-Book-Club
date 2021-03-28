@@ -15,7 +15,7 @@ export default function DiscussionMain({parent, id}) {
     
   return (
     <>
-    <div className= {styles.commentMain}>
+    <div className= {styles.replyView}>
         <img src={parent.photo} 
             alt={parent.id}
             className={styles.discImg} />
@@ -42,4 +42,3 @@ export default function DiscussionMain({parent, id}) {
 </>
   )
 }
-
