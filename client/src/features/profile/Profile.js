@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './Profile.module.css'
 import { FaTrash } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-import UserGenresArray from '../usergenresselectbox/UserGenresArray'
+import UserGenresArray from '../genre/UserGenresArray'
 import {
   selectUser,
   selectUserGroups,
@@ -142,7 +142,7 @@ export default function Profile() {
           <div>
             <div className={styles.profileImg}>
               <img src={user.photo} />
-              <span>Username:{user.username} /  userId: {user.id}</span>
+              <span>Username:{user.username} </span>
               <p className={styles.bio}>Bio:{user.bio}</p>
               
             </div>

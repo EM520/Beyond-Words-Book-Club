@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from './Signupform.module.css'
 import validator from 'validator'
 import { useAuth } from '../auth/auth'
-import UserGenresArray from '../usergenresselectbox/UserGenresArray'
+import UserGenresArray from '../genre/UserGenresArray'
 
 import {
   selectGenre,
