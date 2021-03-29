@@ -1,187 +1,165 @@
-.bookCover{
+.bookCover {
   width: 60%;
   max-width: 250px;
-  height:90%;
-  
-  }
-  
-  .description {
-      width: 30vw;
-      /* height: 250px; */
-      /* border: 1px solid black; */
-      padding: 1.1vw;
-      border: 1px solid rgb(196, 190, 190);
-      display: inline;
-      margin: .5vw;
-      font-family: Arial, Helvetica, sans-serif;
-      border-radius: 10px;
-      text-overflow: ellipsis;
-      text-align:justify;
-      /* font-size: 1.2em; */
-      
-  }
-  
-  .synopsis {
-    text-overflow: auto;
-  }
-  .parMargin {
-      margin-bottom: 0;
-      text-align: left;
-  }
-  
-  .bookclubmain {
-      display: grid;
-      grid-template-rows: 1fr auto auto;
-      gap: 10px;
-      justify-items: center;
-      width: 100%;
-      
-  }
-  
-  .discussion {
-    font-family: arial;
-    
-  }
-  
-  .footer {
-      position: absolute; 
-      bottom: 0; 
-      width: 100%
-      
-    }
-  .discussionmain{
-      border: 1px solid rgb(196, 190, 190);
-      font-size: 15px;
-      font-family: arial;
-      padding: 24px;
-      height: 100%;
-      /* height: 590px; */
-      width: 100%;
-      height: 590px;
-      /* box-shadow:rgba(0, 0, 0, 0.45); */
-      border-radius: 10px;
-      /* box-shadow: 0 3px rgb(157, 157, 157);
+  height: 90%;
+}
+
+.description {
+  width: 30vw;
+  /* height: 250px; */
+  /* border: 1px solid black; */
+  padding: 1.1vw;
+  border: 1px solid rgb(196, 190, 190);
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  text-align: justify;
+  /* font-size: 1.2em; */
+}
+
+.synopsis {
+  text-overflow: auto;
+}
+.parMargin {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.bookclubmain {
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 10px;
+  width: 100%;
+}
+
+.discussion {
+  font-family: arial;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.discussionmain {
+  border: 1px solid rgb(196, 190, 190);
+  font-size: 15px;
+  font-family: arial;
+  padding: 24px;
+  height: 100%;
+  /* height: 590px; */
+  width: 100%;
+  /* box-shadow:rgba(0, 0, 0, 0.45); */
+  border-radius: 10px;
+  /* box-shadow: 0 3px rgb(157, 157, 157);
       transform: translateY(2px); */
-      
-  
-  }
-  .clubmain{
-      display: flex;
-      /* margin-top: 20px;
+}
+.clubmain {
+  display: flex;
+  /* margin-top: 20px;
       margin-bottom: 20px; */
-      justify-content:space-between;
-      
-  }
-  
-  .discussionlist {
-    height: 27vw;
-    border-bottom: 1px solid rgb(190, 190, 190);
-    overflow-y: auto;
-    /* height: 100%; */
-  }
-  /* .discImg { */
-    /* height: 30px;
+  justify-content: space-between;
+}
+
+.discussionlist {
+  height: 27vw;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  overflow-y: auto;
+  /* height: 100%; */
+}
+/* .discImg { */
+/* height: 30px;
     width: 30px; */
-  /* } */
-  .boxcomment {
-    /* margin: 1em; */
-    margin-top: 10px;
-    /* height: 5vw; */
-    width: 100%;
-    text-indent: 5px;
-    outline: none;
-    resize: none;
-    border-radius: 10px;
-    padding: 0.8rem;
-    border-style: hidden;
-    box-shadow: inset 0 0 4px #6c6c6c;
-  }
-  .joinBtn {
-    
-    margin-top: 5px;
-    cursor: pointer;
-    
-    }
-    
-    .joinBtn:focus {
-      outline: none;
-    }
-    
-    .joinBtn:active {
-        background-color: #d69668;
-        box-shadow: 0 3px rgb(157, 157, 157);
-        transform: translateY(2px);
-    }
-  
-  
-  .commentMain {
-    margin: 0;
-      /* display: flex; */
-      
-  
-  }
-  
-  .replyView {
-    display: flex;
-    
-  
-  }
-  
-  .replyView img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-  }
-  
-   
-  .overflow {
-    /* float:left; */
-    overflow-y: auto;
-    height: 100px;
-  }
-  .replyinput {
-      height: 25px;
-      width: 100%;
-      outline: none;
-      text-indent : 10px;
-      border-radius: 10px;
-      padding: 0.6rem;
-      border-style: hidden;
-      box-shadow: inset 0 0 4px #6c6c6c;
-  
-  }
-  .userdate{
-      font-size: 12px;
-      font-family: inherit;
-      margin-bottom: 0;
-      color: rgba(0, 0, 0, 0.45); 
-  }
-  .button {
-    position: relative;
-    margin-left: 600px;
-    margin-top: 20px;
-  }
-  
-  .reply {
-      text-decoration: none;
-      color: black;
-      font-size: 12px;
-      border-style: none;
-      outline: none;
-      cursor: pointer;
-  }
-  
-  .reply:hover {
-    text-decoration: underline;
-  }
-  /* .button:hover {
+/* } */
+.boxcomment {
+  /* margin: 1em; */
+  margin-top: 10px;
+  /* height: 5vw; */
+  width: 100%;
+  text-indent: 5px;
+  outline: none;
+  resize: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  border-style: hidden;
+  box-shadow: inset 0 0 4px #6c6c6c;
+}
+.joinBtn {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.joinBtn:focus {
+  outline: none;
+}
+
+.joinBtn:active {
+  background-color: #d69668;
+  box-shadow: 0 3px rgb(157, 157, 157);
+  transform: translateY(2px);
+}
+
+.commentMain {
+  margin-top: 20px;
+  /* display: flex; */
+}
+
+.replyView {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.replyView img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.overflow {
+  /* float:left; */
+  overflow-y: auto;
+  height: 100px;
+}
+.replyinput {
+  height: 25px;
+  width: 100%;
+  outline: none;
+  text-indent: 10px;
+  border-radius: 10px;
+  padding: 0.6rem;
+  border-style: hidden;
+  box-shadow: inset 0 0 4px #6c6c6c;
+}
+.userdate {
+  font-size: 12px;
+  font-family: inherit;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.45);
+}
+.button {
+  position: relative;
+  margin-left: 600px;
+  margin-top: 20px;
+}
+
+.reply {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.reply:hover {
+  text-decoration: underline;
+}
+/* .button:hover {
   
   } */
-  .commentUser {
-    padding: 0;
-    margin: 0;
-  }
-  /* .replyComment{
+.commentUser {
+  margin-left: 15px;
+}
+/* .replyComment{
       /* margin-left: 40px;
       margin-top: -9px; */
-  
