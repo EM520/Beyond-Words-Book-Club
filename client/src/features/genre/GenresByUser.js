@@ -30,7 +30,9 @@ export default function GenresByUser() {
                   className={styles.bookimage}
                 />
                  {/* {styles.booktitle}> */}
+                 <div>
                   <strong className={styles.gName}>{genre.name.toUpperCase()}</strong>
+                  </div>  
                 {/* </a> */}
           
               </div>
