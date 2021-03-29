@@ -187,7 +187,7 @@ export default function Profile() {
             
 
         <div className={styles.test}>
-        <h1>Your favorite Groups List </h1>
+        <h1>Your favorite Clubs List </h1>
         <div className={styles.profileGrouplist}>
           {userGroups.map((item) => (
             <div className={styles.profileGrouplistp}>
