@@ -23,6 +23,7 @@ export default function RealTop20() {
     <h1> Top 20 Clubs</h1>
     <h6>Join!  Discuss!</h6>
   </div> 
+  <div className={styles.top20mainContainer}>
   <div className={styles.top20main}>
     {top20.map((top20) => (
      <Link to={{pathname: '/book-club/'+top20.id}} key={'top20-' + top20.id}>
@@ -39,10 +40,12 @@ export default function RealTop20() {
       </div> 
       </Link>  
     ))}
-    <div>
+  
+          
+  </div>
+  <div>
     <RealTop20Footer />
     </div>
-          
   </div>
   
   </div>

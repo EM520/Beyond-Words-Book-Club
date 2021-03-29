@@ -26,8 +26,8 @@ export default function BookClub() {
 
 
   return (
-    <>
-      <div>
+    
+      <div className="container1">
         <div>
         <SearchBar />
         </div>
@@ -38,6 +38,6 @@ export default function BookClub() {
 
         </div>
       </div>
-    </>
+    
   )
 }
