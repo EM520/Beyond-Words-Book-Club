@@ -11,7 +11,9 @@
     padding-top: 3vh;  
     display:grid;
     grid-template-columns: 1fr 1fr ;
-    column-gap: 15px;
+    column-gap: 10px;
+    row-gap: 15px;
+    
 }
 
 
@@ -19,12 +21,15 @@
     width: 20%;
     height: auto;
     vertical-align: middle; 
-    /* padding: .1vh; */
+    
 }
 
 .bookList {
 
 margin-bottom: 15px;
+display: flex;
+justify-content: flex-start;
+align-items:center;
 
   }
   
@@ -34,6 +39,7 @@ margin-bottom: 15px;
     display:inline-block;
     padding-left: 3vh;
     padding-bottom: 7vh;
+    justify-content: start;
     
 }  
 
