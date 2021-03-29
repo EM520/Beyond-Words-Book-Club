@@ -1,179 +1,184 @@
 .bookCover{
-width: 60%;
-max-width: 250px;
-height: auto;
-
-}
-
-.description {
-    width: 20vw;
-    /* height: 23vw; */
-    border: 1px solid black;
-    padding: 1.1vw;
-    border: 1px solid rgb(196, 190, 190);
-    display: inline;
-    margin: .5vw;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
-    
-}
-
-.parMargin {
-    margin-bottom: 0;
-    text-align: left;
-}
-
-.bookclubmain {
-    display: grid;
-    grid-template-rows: 1fr auto auto;
-    gap: 20px;
-    justify-items: center;
-}
-
-.discussion {
-  font-family: arial;
-}
-
-.footer {
-    position: absolute; 
-    bottom: 0; 
-    width: 100%
-    
+  width: 60%;
+  max-width: 250px;
+  height: auto;
+  
   }
-.discussionmain{
-    border: 1px solid rgb(196, 190, 190);
-    font-size: 14px;
+  
+  .description {
+      width: 23vw;
+      /* height: 250px; */
+      /* border: 1px solid black; */
+      padding: 1.1vw;
+      border: 1px solid rgb(196, 190, 190);
+      display: inline;
+      margin: .5vw;
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 10px;
+      text-overflow: ellipsis;
+      text-align:justify;
+      /* font-size: 1.2em; */
+      
+  }
+  
+  .synopsis {
+    text-overflow: auto;
+  }
+  .parMargin {
+      margin-bottom: 0;
+      text-align: left;
+  }
+  
+  .bookclubmain {
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      gap: 10px;
+      justify-items: center;
+  }
+  
+  .discussion {
     font-family: arial;
-    padding: 24px;
-
-
-}
-.clubmain{
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    justify-content:space-evenly;
-}
-
-.discussionlist {
-  height: 25vw;
-  border-bottom: 1px solid rgb(190, 190, 190);
-  overflow-y: auto;
-  height: 400px;
-}
-.discImg {
-  height: 30px;
-  width: 30px;
-}
-.boxcomment {
-  margin: 1em;
-  height: 5vw;
-  width: 60vw;
-  text-indent: 5px;
-  
-  outline: none;
-  
- 
-  resize: none;
-
-  border-radius: 10px;
-
-  padding: 0.6rem;
-  border-style: hidden;
-  
-  box-shadow: inset 0 0 4px #6c6c6c;
-}
-.joinBtn {
-  
-  margin-top: 5px;
-  
   }
   
-  .joinBtn:focus {
-    outline: none;
+  .footer {
+      position: absolute; 
+      bottom: 0; 
+      width: 100%
+      
+    }
+  .discussionmain{
+      border: 1px solid rgb(196, 190, 190);
+      font-size: 15px;
+      font-family: arial;
+      padding: 24px;
+      height: 100%;
+      /* height: 590px; */
+      width: 100%;
+      height: 590px;
+      /* box-shadow:rgba(0, 0, 0, 0.45); */
+      border-radius: 10px;
+      /* box-shadow: 0 3px rgb(157, 157, 157);
+      transform: translateY(2px); */
+  
+  
+  
+  }
+  .clubmain{
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      justify-content:space-evenly;
   }
   
-  .joinBtn:active {
-      background-color: #d69668;
-      box-shadow: 0 3px rgb(157, 157, 157);
-      transform: translateY(2px);
+  .discussionlist {
+    height: 27vw;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    overflow-y: auto;
+    /* height: 100%; */
   }
-
+  /* .discImg { */
     /* height: 30px;
-    width: 150px;
-    background-color: transparent;
-    color: black;
-    outline: none;
-    outline-color: rgb(197, 192, 192);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px; */
-
-/* } */
-.commentMain {
-    display: flex;
-
-}
-.commentMain img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-/* .commentDiv {
-  display: flex;
-  /* padding: 0 auto; */
-/* } */ 
-.overflow {
-  /* float:left; */
-  overflow-y: auto;
-  height: 100px;
-}
-.replyinput {
-    height: 25px;
+    width: 30px; */
+  /* } */
+  .boxcomment {
+    /* margin: 1em; */
+    margin-top: 10px;
+    /* height: 5vw; */
     width: 100%;
+    text-indent: 5px;
     outline: none;
-    
-    text-indent : 10px;
-    
+    resize: none;
     border-radius: 10px;
-
-    padding: 0.6rem;
+    padding: 0.8rem;
     border-style: hidden;
-    
     box-shadow: inset 0 0 4px #6c6c6c;
-
-
-}
-.userdate{
-    font-size: 10px;
-    font-family: inherit;
-    margin-bottom: 0;
-    color: rgba(0, 0, 0, 0.45); 
-}
-.button {
-  margin-left: 760px;
-  margin-top: 10px;
-}
-.reply {
-    text-decoration: none;
-    color: black;
-    font-size: 10px;
-    border-style: none;
-    outline: none;
+  }
+  .joinBtn {
+    
+    margin-top: 5px;
     cursor: pointer;
-}
-.reply:hover {
-  text-decoration: underline;
-}
-/* .button:hover {
-
-} */
-.commentUser {
-  padding: 0;
-  margin: 0;
-}
-.replyComment{
-    margin-left: 40px;
-    margin-top: -9px;
-}
+    
+    }
+    
+    .joinBtn:focus {
+      outline: none;
+    }
+    
+    .joinBtn:active {
+        background-color: #d69668;
+        box-shadow: 0 3px rgb(157, 157, 157);
+        transform: translateY(2px);
+    }
+  
+  
+  .commentMain {
+    margin: 0;
+      /* display: flex; */
+      
+  
+  }
+  
+  .replyView {
+    display: flex;
+    
+  
+  }
+  
+  .replyView img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+   
+  .overflow {
+    /* float:left; */
+    overflow-y: auto;
+    height: 100px;
+  }
+  .replyinput {
+      height: 25px;
+      width: 100%;
+      outline: none;
+      text-indent : 10px;
+      border-radius: 10px;
+      padding: 0.6rem;
+      border-style: hidden;
+      box-shadow: inset 0 0 4px #6c6c6c;
+  
+  }
+  .userdate{
+      font-size: 12px;
+      font-family: inherit;
+      margin-bottom: 0;
+      color: rgba(0, 0, 0, 0.45); 
+  }
+  .button {
+    position: relative;
+    margin-left: 600px;
+    margin-top: 20px;
+  }
+  
+  .reply {
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+      border-style: none;
+      outline: none;
+      cursor: pointer;
+  }
+  
+  .reply:hover {
+    text-decoration: underline;
+  }
+  /* .button:hover {
+  
+  } */
+  .commentUser {
+    padding: 0;
+    margin: 0;
+  }
+  /* .replyComment{
+      /* margin-left: 40px;
+      margin-top: -9px; */
+  

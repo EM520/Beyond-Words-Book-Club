@@ -161,19 +161,19 @@ async function main() {
       name: "Literary Fiction",
     },
      {
-       name: "Autobiographies"
+       name: "Biographies and Autobiographies"
      },
     {
-      name: "Adventure"
+      name: "Action and Adventure"
     },
     {
       name: "Fantasy",
     },
     {
-      name: "Detective",
+      name: "Detective and Mystery",
     }, 
     {
-      name: "Thrillers",
+      name: "Suspense and Thrillers",
     }, 
     {
       name: "Romance",
@@ -467,7 +467,7 @@ async function main() {
       title: "Dellia (The Ever-Branching Tree)",
       copyright: "2019",
       synopsis: "Dellia is an epic high-fantasy romance about ordinary people thrust into extraordinary circumstances. It blends alternate worlds, action, adventure, and dire peril, with political intrigue, a generous dollop of romance, and a pinch of humor.",
-      cover_pic: "https://m.media-amazon.com/images/I/51YdKNVW3EL.jpg",
+      cover_pic: "https://m.media-amazon.com/images/I/71nmJIdWu6L._AC_UY436_FMwebp_QL65_.jpg",
       genres_id: 4, 
       author_id: 14
   },

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectBookClub, getBookClub, addUserBookCollection } from './bookclubSlice'
-import { useHistory} from 'react-router-dom'
+import { useHistory, Link} from 'react-router-dom'
 import styles from './BookClub.module.css'
 
 export default function BookDetail(props) {
@@ -27,7 +27,7 @@ export default function BookDetail(props) {
   
   return (
     <>
-      <div >
+    <div>
         {bookclub.map((book) => (
           <div key={"book-" + book.id} className={styles.bookclubmain}>
             <img src={book.cover_pic} 
@@ -36,14 +36,17 @@ export default function BookDetail(props) {
             { !props.isPartOfGroup 
             ? <button className={"submitBtn "+styles.joinBtn} onClick={()=>handleJoin(book.id)}> Join This Club </button> : null}
             <div className={styles.description}>
-            <strong>TITLE: </strong> 
-              <p className={styles.parMargin}>{book.title}</p>
-              <strong>AUTHOR: </strong>
-              <p className={styles.parMargin}>{`${book.first_name} ${book.last_name}`}</p>
-              <strong>SYNOPIS: </strong>
-              <p className={styles.parMargin}>{book.synopsis}</p>
-              <strong>COPYRIGHT: </strong>
-              <p className={styles.parMargin}>{book.copyright}</p>
+            <p className={styles.parMargin}><strong>TITLE: </strong> {book.title}</p>
+            <p className={styles.parMargin}> <strong>AUTHOR: </strong>
+              <Link to={{
+                pathname: '/search',
+                search: `?q=${book.author}`
+                }}
+              > {book.author}
+              </Link>
+              </p>
+              <p className={styles.parMargin, styles.synopsis}><strong>SYNOPIS: </strong>{book.synopsis}</p>
+              <p className={styles.parMargin}><strong>COPYRIGHT: </strong>{book.copyright}</p>
 
  </div>
           </div>

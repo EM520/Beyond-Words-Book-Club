@@ -22,20 +22,22 @@ export default function GenresByUser() {
               search: `?q=${genre.name}`
             }}
             >
-              <div className={styles.bookandtitle}>
+              {/* <div className={styles.bookandtitle}> */}
               <div className={styles.genreUserLink}>
                 <img
                   src={genre.cover_pic}
                   alt={genre.title}
                   className={styles.bookimage}
                 />
-                 <a className={styles.booktitle}>
-                  {genre.name.toUpperCase()}
-                </a>
+                 {/* {styles.booktitle}> */}
+                 <div>
+                  <strong className={styles.gName}>{genre.name.toUpperCase()}</strong>
+                  </div>  
+                {/* </a> */}
           
               </div>
-              </div>
-          </Link>
+              {/* </div> */}
+            </Link>
           </div>
           
         ))}

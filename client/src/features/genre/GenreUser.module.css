@@ -6,6 +6,9 @@
   overflow: auto;
   
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   /* padding: 4vh; */
 }
 
@@ -36,3 +39,11 @@
   text-align: center;
   margin-left: 10px;
 } */
+.genreListsubMain:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
+.gName{
+  font-size: 12px;
+}

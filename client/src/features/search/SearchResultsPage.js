@@ -26,10 +26,11 @@ console.log()
          <div>
           <SearchBar />
         </div>
+        {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
+
         
-        <div className={styles.searchTitle}>
+        <div className={styles.searchMain}>
        
-          {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
         
         {search.map((s) => (
           <Link
