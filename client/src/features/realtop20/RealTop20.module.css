@@ -8,12 +8,15 @@
 
 .top20main {
     
-    padding-top: 3vh;
-    
+    padding-top: 3vh;  
+    display:grid;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 20px;
 }
 
+
 .bookimage {
-    width: 10%;
+    width: 20%;
     height: auto;
     vertical-align: middle;
     
@@ -23,6 +26,7 @@
 .bookList {
 
 margin-bottom: 15px;
+
   }
   
 .description {
@@ -34,7 +38,7 @@ margin-bottom: 15px;
 }  
 
 .adtop20 {
- height: 40vh;
+ height: 35vh;
  width:33.3%
 }
 
@@ -46,6 +50,6 @@ margin-bottom: 15px;
 
 .horizontalad {
     padding-top: 30px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }

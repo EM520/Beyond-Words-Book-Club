@@ -31,7 +31,7 @@ export default function GenresByUser() {
                 />
                  {/* {styles.booktitle}> */}
                  <div>
-                  <strong className={styles.gName}>{genre.name.toUpperCase()}</strong>
+                  <strong >{genre.name.toUpperCase()}</strong>
                   </div>  
                 {/* </a> */}
           

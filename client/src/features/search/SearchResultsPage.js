@@ -26,8 +26,8 @@ console.log()
          <div>
           <SearchBar />
         </div>
-        {searchTitle ? <h1>{searchTitle}</h1> : <h1>all results</h1>}
-
+        {search.length > 0 ? <h1>{searchTitle}</h1> : <h1>No Results Found...</h1>}
+     
         
         <div className={styles.searchMain}>
        

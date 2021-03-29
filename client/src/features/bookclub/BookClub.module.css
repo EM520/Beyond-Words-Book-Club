@@ -1,12 +1,12 @@
 .bookCover{
   width: 60%;
   max-width: 250px;
-  height: auto;
+  height:90%;
   
   }
   
   .description {
-      width: 23vw;
+      width: 30vw;
       /* height: 250px; */
       /* border: 1px solid black; */
       padding: 1.1vw;
@@ -34,10 +34,13 @@
       grid-template-rows: 1fr auto auto;
       gap: 10px;
       justify-items: center;
+      width: 100%;
+      
   }
   
   .discussion {
     font-family: arial;
+    
   }
   
   .footer {
@@ -59,15 +62,15 @@
       border-radius: 10px;
       /* box-shadow: 0 3px rgb(157, 157, 157);
       transform: translateY(2px); */
-  
-  
+      
   
   }
   .clubmain{
       display: flex;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      justify-content:space-evenly;
+      /* margin-top: 20px;
+      margin-bottom: 20px; */
+      justify-content:space-between;
+      
   }
   
   .discussionlist {
