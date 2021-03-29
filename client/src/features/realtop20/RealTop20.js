@@ -31,7 +31,10 @@ export default function RealTop20() {
           <img 
           src={top20.cover_pic}
           alt={top20.title}
-          className={styles.bookimage}/>
+          className={styles.bookimage}
+          style={{ float: 'left' }}
+
+          />
 
         <div className={styles.description}>
             {`${top20.first_name} ${top20.last_name} - "${top20.title}" 
