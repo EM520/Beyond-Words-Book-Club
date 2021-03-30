@@ -3,6 +3,7 @@ import styles from './Profile.module.css'
 import { FaTrash } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 import UserGenresArray from '../genre/UserGenresArray'
+import { Link } from 'react-router-dom'
 import {
   selectUser,
   selectUserGroups,
@@ -182,9 +183,12 @@ export default function Profile() {
           <h1>Your favorite Clubs List </h1>
           <div className={styles.profileGrouplist}>
             {userGroups.map((item) => (
-              <div className={styles.profileGrouplistp}>
-                <img src={item.cover_pic} width="50px" height="60px" />
 
+              <div className={styles.profileGrouplistp}>
+                <Link to={{pathname: '/book-club/'+item.id}} key={'bc-' + item.id}>
+  
+                <img src={item.cover_pic} width="50px" height="60px" />
+                </Link>  
                 <p key={'user-groups-' + item.id}>{item.title}</p>
 
                 <FaTrash
@@ -194,7 +198,9 @@ export default function Profile() {
                     removeBookUser(item.id)
                   }}
                 />
+                
               </div>
+  
             ))}
           </div>
         </div>

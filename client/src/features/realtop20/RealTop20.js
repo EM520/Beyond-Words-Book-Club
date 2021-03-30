@@ -20,7 +20,7 @@ export default function RealTop20() {
     <div className="container1">
    <SearchBar />
   <div className={styles.pagetitle}>
-    <h1> Top 20 Clubs</h1>
+    <h1> Top Clubs</h1>
     <h6>Join!  Discuss!</h6>
   </div> 
   <div className={styles.top20mainContainer}>

@@ -74,7 +74,7 @@ export default function NavBar() {
         </li>
         <li>
           <Link className={styles.navLink} to="/top20">
-            Top 20 Clubs
+            Top Clubs
           </Link>
         </li>
         

@@ -118,38 +118,50 @@ async function main() {
 
   const salt = createSalt(20);
   await conn("users").insert({
-    username: "bookclub",
-    password: sha512("bookclub" + salt),
+    username: "stefsesk",
+    password: sha512("1234" + salt),
     salt: salt,
-    email: "test@example.com",
-    first_name: "Elena",
-    last_name: "Lee",
-    bio: "Discover the secret to results that last!",
+    email: "stefanie@aol.com",
+    first_name: "Stafanie",
+    last_name: "Seskin",
+    bio: "Favorite author:  Gabriel Garcia Marquez",
     photo:
-      "https://image.freepik.com/free-vector/young-girl-thumbs-up-sign-cartoon-set-illustration-premium-vector_56104-310.jpg",
+      "https://dv1oh8li7xq0o.cloudfront.net/users/11524/user_profile/a0a84bb174ad4e32b599a2cdc3dc6880/640_640.jpeg",
   });
   const users = [
     {
-      username: "user1",
-      password: sha512("user1" + salt),
+      username: "em520",
+      password: sha512("123" + salt),
       salt: salt,
-      email: "user1@example.com",
-      first_name: "User",
-      last_name: "One",
-      bio: "I am user 1",
-      photo: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+      email: "elena@aol.com",
+      first_name: "Elena",
+      last_name: "Liu",
+      bio: "Hi I am Elena",
+      photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgrL0cZ7rO0tj7oDFFIc8ULAGMw7_QtxlHxw&usqp=CAU",
     },
     {
-      username: "mrCool",
+      username: "mburg05",
       password: sha512("password" + salt),
       salt: salt,
-      email: "user2@example.com",
-      first_name: "Richie",
-      last_name: "GuessWho",
-      bio: "I am Mr. Cool",
+      email: "marissa@aol.com",
+      first_name: "Marissa",
+      last_name: "Burgos",
+      bio: "Not a booklover....",
       photo:
-        "https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg",
+        "https://sites.google.com/a/unlv.nevada.edu/ms-skerritt-seskin-s-classroom/_/rsrc/1492625095994/home/DSkerrittSeskinClarke.jpg?height=320&width=240",
     },
+    {
+      username: "rachel12",
+      password: sha512("123" + salt),
+      salt: salt,
+      email: "rachel@gmail.com",
+      first_name: "Rachel",
+      last_name: "Seskin",
+      bio: "Love reading classic books",
+      photo:
+        "https://pbs.twimg.com/profile_images/1269894317029482497/1jVqJxtF_400x400.jpg",
+    },
+
   ];
   for (let user of users) {
     await conn("users").insert(user);
@@ -650,26 +662,143 @@ async function main() {
     parent_id: 1,
   });
 
-  await conn("genres_users").insert(
-    {
-      genre_id: 1,
-      user_id: 1,
-    },
-    {
-      genre_id: 2,
-      user_id: 1,
-    },
-    {
-      genre_id: 2,
-      user_id: 2,
-    },
-    {
-      genre_id: 1,
-      user_id: 2,
-    }
-  );
+  await conn("discussions").insert({
+    discussion: "I’m wondering how close this book is to reality.  Has anyone read a true historical account?",
+    user_id: 3,
+    group_id: 27,
+    parent_id: null,
+  });
 
-  await conn("book_collections").insert(
+  await conn("discussions").insert({
+    discussion: "Close to reality I guess.",
+    user_id: 1,
+    group_id: 27,
+    parent_id: 3,
+  });
+
+  await conn("discussions").insert({
+    discussion: "I’ve tried to find something, too, but no luck",
+    user_id: 2,
+    group_id: 27,
+    parent_id: 3,
+  }); 
+
+
+  await conn("discussions").insert({
+    discussion: "I read this in high school.  If you haven’t read this, it is absolutely gripping.",
+    user_id: 4,
+    group_id: 33,
+    parent_id: null,
+  }); 
+
+  await conn("discussions").insert({
+    discussion: "Not my favorite of all the classics on this site.  What did you love about it?",
+    user_id: 1,
+    group_id: 33,
+    parent_id: 6,
+  }); 
+
+  await conn("discussions").insert({
+    discussion: "I’ve been to France and the descriptions of it back in the day are so awesome",
+    user_id: 2,
+    group_id: 33,
+    parent_id: 6,
+  }); 
+
+
+const genres_users = 
+[ 
+    {
+      genre_id: 1,
+      user_id: 1,
+    },
+    {
+      genre_id: 2,
+      user_id: 1,
+    },
+    {
+      genre_id: 2,
+      user_id: 2,
+    },
+    {
+      genre_id: 1,
+      user_id: 2,
+    },
+    {
+      genre_id: 8,
+      user_id: 1,
+    },
+    {
+      genre_id: 8,
+      user_id: 2,
+    },
+    {
+      genre_id: 8,
+      user_id: 3,
+    },
+    {
+      genre_id: 10,
+      user_id: 4,
+    },
+    {
+      genre_id: 1,
+      user_id: 3,
+    },
+    {
+      genre_id: 2,
+      user_id: 3,
+    },
+    {
+      genre_id: 3,
+      user_id: 3,
+    },
+    {
+      genre_id: 4,
+      user_id: 3,
+    },
+    {
+      genre_id: 5,
+      user_id: 3,
+    },
+    {
+      genre_id: 6,
+      user_id: 3,
+    },
+  {
+    genre_id: 4,
+    user_id: 2,
+  },
+  {
+    genre_id: 5,
+    user_id: 2,
+  },
+  {
+    genre_id: 6,
+    user_id: 2,
+  },
+
+  {
+    genre_id: 7,
+    user_id: 2,
+  },
+
+  {
+    genre_id: 10,
+    user_id: 3,
+  },
+
+
+
+
+
+  ];
+
+  for (let gu of genres_users) {
+    await conn("genres_users").insert(gu);
+  }
+
+const book_collections = 
+[
     {
       book_id: 1,
       user_id: 1,
@@ -677,8 +806,41 @@ async function main() {
     {
       book_id: 2,
       user_id: 2,
-    }
-  );
+    },
+    {
+      book_id: 27,
+      user_id: 1,
+    },
+
+    {
+      book_id: 27,
+      user_id: 2,
+    },
+    {
+      book_id: 27,
+      user_id: 3,
+    },
+    {
+      book_id: 33,
+      user_id: 1,
+    },
+    {
+      book_id: 33,
+      user_id: 2,
+    },
+    {
+      book_id: 27,
+      user_id: 4,
+    },
+    {
+      book_id: 1,
+      user_id: 2,
+    },
+];
+
+  for (let bc of book_collections) {
+    await conn("book_collections").insert(bc);
+  }
   // await conn.raw('DELETE FROM users WHERE id = 1')
   process.exit();
 }
