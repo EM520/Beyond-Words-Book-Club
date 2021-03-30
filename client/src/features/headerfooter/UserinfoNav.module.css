@@ -3,10 +3,8 @@
     flex-direction: row;
     justify-content:flex-start;
     align-items:center;
-    width:280px;
-    /* border:3px solid blue; */
-   
-    
+    width: 300px;
+     
 }
 
 /* .userinfo{
@@ -28,12 +26,14 @@
 
 .username{
    margin-left:5px ;
-   margin-right: 30px;
+   margin-right: 20px;
+   width: 35%;
    font-size: 1.5vw;
    font-family: Arial;
    white-space:nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
+   
 }
 
 .logout{
