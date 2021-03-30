@@ -15,14 +15,17 @@
   
 } */
 
-
 /* .linkcolor a:hover {
   background-color: white;
 } */
 
+.BarContainer {
+  margin-bottom: 30px;
+}
+
 .BarStyling {
   width: 100vh;
-  
+
   padding: 0.6rem;
   border-radius: 10px;
   box-shadow: inset 0 0 4px #6c6c6c;
@@ -33,7 +36,6 @@
   background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
   background-repeat: no-repeat;
   background-position: right center;
-  
 }
 
 .BarStyling:focus {
@@ -41,15 +43,13 @@
 }
 
 .searchContainer {
-display: flex;
-flex-direction: columns; 
-justify-content: flex-start;
- align-items:flex-start;
- margin-top: 15px;
- margin-top: 15px;
-
+  display: flex;
+  flex-direction: columns;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 15px;
+  margin-top: 15px;
 }
-
 
 .bookImg {
   width: 30%;
@@ -62,14 +62,12 @@ justify-content: flex-start;
 .bookinfo {
   margin-top: 1vw;
   margin-left: 2vw;
-  
 }
 .buttonSearch {
   position: absolute;
   /* left:1030px; */
-  top:178px;
-  right : 315px;
-
+  top: 178px;
+  right: 315px;
 }
 
 .searchMain {
@@ -77,21 +75,12 @@ justify-content: flex-start;
   grid-template-columns: 1fr 1fr;
 }
 
-
-.bookinfo:hover{
-  transform: scale(1.1); 
-
-
+.bookinfo:hover {
+  transform: scale(1.1);
 }
-.bookImg:hover{
-
-  transform: scale(1.2); 
-
+.bookImg:hover {
+  transform: scale(1.2);
 }
 .searchContainer:hover {
-  background-color:#d6f3f3;
-
-  
-
+  background-color: #d6f3f3;
 }
-

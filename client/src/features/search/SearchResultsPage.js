@@ -14,33 +14,25 @@ export default function SearchResultsPage() {
   const urlParams = location.search
   const searchParam = urlParams.substring(3)
   let searchTitle = searchParam.replaceAll('%20', ' ')
-  console.log(searchTitle, 'loc')
 
   useEffect(() => {
     dispatch(getSearch(urlParams))
-  }, [])
-console.log()
+  }, [urlParams])
   return (
-    
-      <div className="container1">
-         <div>
-          <SearchBar />
-        </div>
-        {search.length > 0 ? <h1>{searchTitle}</h1> : <h1>No Results Found...</h1>}
-     
-        
-        <div className={styles.searchMain}>
-       
-        
+    <div className="container1">
+      <div>
+        <SearchBar />
+      </div>
+      {search.length > 0 ? (
+        <h1>{searchTitle}</h1>
+      ) : (
+        <h1>No Results Found...</h1>
+      )}
+
+      <div className={styles.searchMain}>
         {search.map((s) => (
-          <Link
-            key={'search-' + s.genre_id}
-            to={{ pathname: '/book-club/' + s.id }}
-          >
-            <div
-              key={'search-' + s.genre_id}
-              className={styles.searchContainer}
-            >
+          <Link key={'search-' + s.id} to={{ pathname: '/book-club/' + s.id }}>
+            <div key={'search-' + s.id} className={styles.searchContainer}>
               <img src={s.cover_pic} className={styles.bookImg} />
               <div className={styles.bookinfo}>
                 <p>
@@ -61,11 +53,9 @@ console.log()
               </div>
             </div>
           </Link>
-          
         ))}
-        </div>
       </div>
-    
+    </div>
   )
 }
 // style={props.isDisable ? 'disabled:true' : 'disabled:false'}
