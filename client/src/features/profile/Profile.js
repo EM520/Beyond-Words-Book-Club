@@ -112,7 +112,6 @@ export default function Profile() {
                 />
 
                 <input
-                  required
                   value={password}
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
@@ -183,12 +182,13 @@ export default function Profile() {
           <h1>Your favorite Clubs List </h1>
           <div className={styles.profileGrouplist}>
             {userGroups.map((item) => (
-
               <div className={styles.profileGrouplistp}>
-                <Link to={{pathname: '/book-club/'+item.id}} key={'bc-' + item.id}>
-  
-                <img src={item.cover_pic} width="50px" height="60px" />
-                </Link>  
+                <Link
+                  to={{ pathname: '/book-club/' + item.id }}
+                  key={'bc-' + item.id}
+                >
+                  <img src={item.cover_pic} width="50px" height="60px" />
+                </Link>
                 <p key={'user-groups-' + item.id}>{item.title}</p>
 
                 <FaTrash
@@ -198,9 +198,7 @@ export default function Profile() {
                     removeBookUser(item.id)
                   }}
                 />
-                
               </div>
-  
             ))}
           </div>
         </div>
